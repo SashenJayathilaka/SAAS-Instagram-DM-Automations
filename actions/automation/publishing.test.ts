@@ -1,0 +1,12 @@
+import {beforeEach,expect,it,vi} from "vitest";
+const m=vi.hoisted(()=>({profile:vi.fn(),existing:vi.fn(),update:vi.fn()}));
+vi.mock("@/actions/user",()=>({onCurrentUser:async()=>({id:"owner"})}));
+vi.mock("@/actions/user/queries",()=>({findUser:m.profile}));
+vi.mock("@/lib/instagram-account-scope",()=>({currentInstagramAccountId:async()=>"account"}));
+vi.mock("@/lib/prisma",()=>({client:{automation:{findFirst:m.existing}}}));
+vi.mock("./queries",()=>({updateAutomation:m.update}));
+import {saveCampaign,activateAutomation,updateAutomationName} from "./index";
+beforeEach(()=>{vi.clearAllMocks();m.profile.mockResolvedValue({id:"user",subscription:{plan:"FREE"}});m.existing.mockResolvedValue({listener:{aiReplyEnabled:true}});});
+it("rejects free AI publication before any campaign write",async()=>{const result=await saveCampaign({active:true,post:{postid:"p"},keywords:["send"],listener:{aiReplyEnabled:true}});expect(result).toEqual({status:403,data:"AI only available on paid plans."});expect(m.update).not.toHaveBeenCalled();});
+it("rejects activation of a saved AI draft from the automation list",async()=>{expect(await activateAutomation("automation",true)).toEqual({status:403,data:"AI only available on paid plans."});expect(m.update).not.toHaveBeenCalled();});
+it("rejects the alternate name/status action as a publication bypass",async()=>{expect(await updateAutomationName("automation",{active:true})).toEqual({status:403,data:"AI only available on paid plans."});expect(m.update).not.toHaveBeenCalled();});

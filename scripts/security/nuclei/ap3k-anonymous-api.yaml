@@ -1,0 +1,16 @@
+id: ap3k-anonymous-api
+info:
+  name: AP3K unexpected anonymous API success
+  author: ap3k-security-review
+  severity: medium
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/api/attachments'
+      - '{{BaseURL}}/api/dashboard/search?q=security-audit'
+      - '{{BaseURL}}/api/admin/meta-health'
+      - '{{BaseURL}}/api/debug/meta-token-health'
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code >= 200 && status_code < 300'

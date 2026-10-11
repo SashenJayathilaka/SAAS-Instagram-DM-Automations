@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "instagram-scheduler-launch-handoff",
+    "title": "Connect Scheduled Instagram Posts to a DM Launch",
+    "intro": "A scheduled post can publish correctly while its promised DM never arrives. The missing step is often ownership: one person prepares the content calendar while another manages the reply campaign. Treat publication and message delivery as two separate launch events with a named handoff.",
+    "decision": "Use a launch sheet containing the publishing account, expected time, caption keyword, destination and person responsible for activating the reply. A publishing confirmation alone is insufficient. The owner must open the live Instagram post and confirm it is the intended media before attaching a post-specific automation.",
+    "steps": [
+      "Prepare the message and test destination before publication.",
+      "When the post is live, select it in AP3K and confirm the keyword matches the final caption.",
+      "Activate, leave a new test comment from another account and verify the delivered link."
+    ],
+    "example": "For a Tuesday guide launch, the scheduler owner sends the live post URL to the automation owner. That person tests GUIDE and records the result before the team promotes the post elsewhere.",
+    "pitfall": "Do not claim AP3K schedules the post or automatically attaches a draft campaign to a future media item. Plan an explicit launch check for the capabilities actually available.",
+    "measure": "Record the gap between publication and successful test delivery. Reduce that gap without skipping the test; early comments may otherwise arrive before activation."
+  },
+  {
+    "slug": "instagram-content-calendar-dm-offers",
+    "title": "Add DM Offers to Your Instagram Content Calendar",
+    "intro": "A calendar organized only by dates and formats misses what a reader should do after seeing the post. Add an offer column so each scheduled item has a clear destination, message and success condition before production starts.",
+    "decision": "Separate educational posts with no offer from posts that invite a resource request. An automation should exist because the caption makes a relevant promise, not because every calendar row must generate a DM. Repeatedly pushing the same offer can obscure which audience problem the content solves.",
+    "steps": [
+      "Add columns for audience question, offer, keyword and destination owner.",
+      "Review whether the destination actually answers the post before approving creative.",
+      "Reserve a launch check and a later review date for each request-based post."
+    ],
+    "example": "A product tutorial offers a sizing guide, while a founder story invites discussion without automated outreach. Both belong in the calendar, but only the first needs a resource-delivery campaign.",
+    "pitfall": "Do not force every comment into a sales flow or recycle an unrelated download across all formats just to simplify production.",
+    "measure": "Review requested resources and qualified next steps by calendar theme. A busy calendar with weak destination engagement needs better offers rather than more publishing slots."
+  },
+  {
+    "slug": "instagram-scheduling-time-zone-checklist",
+    "title": "Check Time Zones Before an Instagram Campaign Launch",
+    "intro": "Scheduling mistakes often come from two correct clocks set to different zones. The content planner uses a local time, a teammate reads another zone, and the person checking the DM campaign arrives an hour late. A written time convention makes the handoff predictable.",
+    "decision": "Keep the audience-facing event time separate from the internal publishing timestamp. Include a zone name and date in the launch sheet, then confirm how the scheduling interface displays it. Around clock changes, verify the actual scheduled timestamp rather than copying last week's setting.",
+    "steps": [
+      "Write the intended local date and zone in the campaign brief.",
+      "Have a second person compare the scheduler's displayed time with that brief.",
+      "Set the automation launch check around the confirmed publication and inspect the live post."
+    ],
+    "example": "A Paris webinar promotion managed from Casablanca should list the webinar's audience time and the team's publishing time separately. The DM destination should repeat the audience time clearly.",
+    "pitfall": "Do not assume that a team's working time zone is the scheduler's zone, or that an old offset remains correct throughout the year.",
+    "measure": "Log timing incidents and missed launch checks. If clicks arrive but bookings do not, also inspect the time shown on the booking page before changing message copy."
+  },
+  {
+    "slug": "instagram-scheduler-approval-workflow",
+    "title": "Build an Approval Workflow for Scheduled Instagram Offers",
+    "intro": "Approving a post image without approving its caption and destination leaves the most important part of a lead campaign unchecked. A last-minute caption edit can change the requested keyword while the DM automation still listens for the original word.",
+    "decision": "Use one approval packet: creative, final caption, public reply, private message, button label and destination. Approval should mean these pieces agree. A reviewer does not need access to every account to check the packet, but the launch owner must verify the production configuration.",
+    "steps": [
+      "Assign an editor to check the promise and a launch owner to check the configuration.",
+      "Freeze the approved keyword and destination together.",
+      "Reopen approval when a change affects the offer rather than silently editing only the caption."
+    ],
+    "example": "If the caption changes from GUIDE to CHECKLIST, the change request includes the trigger and DM wording. The person scheduling the post cannot assume someone else will notice.",
+    "pitfall": "Avoid approvals that cover only aesthetics. A polished image cannot compensate for a button that opens an outdated product page.",
+    "measure": "Count mismatches caught before publication and corrections required afterward. Use the recurring failure type to improve the approval packet."
+  },
+  {
+    "slug": "instagram-scheduler-reel-cover-caption",
+    "title": "Review Scheduled Reels Beyond the Video File",
+    "intro": "A finished video is only one part of a scheduled Reel. Its cover, caption, on-screen instruction and destination can each make a different promise. Review the whole request path before the Reel enters the queue, especially when creative and automation work happen in different tools.",
+    "decision": "Choose one primary request that remains understandable with sound off. Put the same keyword in the final caption and message brief. If the cover advertises a different resource, decide which promise is authoritative and revise the other assets before scheduling.",
+    "steps": [
+      "Compare the cover headline with the actual resource title.",
+      "Check the final caption after pasting it into the scheduler.",
+      "After publication, watch the Reel on a phone and test the matching comment."
+    ],
+    "example": "A Reel teaching three lighting mistakes can offer a lighting checklist. A cover promising a full photography course would create a different expectation and should be rewritten.",
+    "pitfall": "Do not assume preview fidelity guarantees the final published appearance. Features available in one publishing route may differ from another.",
+    "measure": "Review comments asking where the promised item is. These may reveal a creative-message mismatch even when delivery logs show successful sends."
+  },
+  {
+    "slug": "instagram-scheduled-post-reschedule-checklist",
+    "title": "What to Recheck When an Instagram Post Is Rescheduled",
+    "intro": "Moving a post to another date changes more than its calendar slot. A limited offer may expire, a booking page may lose availability, and the person assigned to check the launch may be offline. Rescheduling should trigger a short dependency review.",
+    "decision": "Distinguish moving an unpublished item from replacing a post that already exists. For a new live media item, confirm the post selected by any post-specific automation. Do not assume an old campaign will follow a replacement simply because the caption looks identical.",
+    "steps": [
+      "Reconfirm offer dates and destination availability.",
+      "Notify the launch owner of the new time and confirm coverage.",
+      "Open the actual published post and test a fresh matching comment after activation."
+    ],
+    "example": "A workshop announcement moved from Friday to Monday needs an updated registration deadline in the caption, DM and landing page. Changing only the scheduler leaves contradictory information.",
+    "pitfall": "Avoid copying an expired deadline into a new campaign. Never manufacture urgency to make an old launch appear current.",
+    "measure": "Track rescheduled campaigns separately in the review sheet so timing changes are visible when comparing performance with the original plan."
+  },
+  {
+    "slug": "instagram-evergreen-scheduling-offer-decay",
+    "title": "Keep Evergreen Instagram Posts From Sending Stale Offers",
+    "intro": "An evergreen post can remain useful long after its attached offer stops being accurate. A scheduler encourages reuse, but repeated publication can spread old prices, unavailable downloads and obsolete booking instructions. Treat the destination as a maintained part of the content asset.",
+    "decision": "Choose a review interval based on how quickly the offer changes. A stable checklist needs less frequent review than a seasonal price list. Give every reusable campaign an owner and a retirement condition so it does not remain active indefinitely by default.",
+    "steps": [
+      "Inventory reusable posts with their resource URLs.",
+      "Open destinations on mobile and check dates, access and availability.",
+      "Update the message or pause the campaign when the original promise can no longer be fulfilled."
+    ],
+    "example": "A recurring equipment checklist can point to a maintained resource page instead of a dated PDF attachment. The page should clearly state what was updated and retain useful access.",
+    "pitfall": "Do not silently replace a promised free guide with a checkout page. The destination should continue to match the expectation created by the post.",
+    "measure": "Review stale-link incidents and resource complaints alongside clicks. A working URL can still lead to an outdated or misleading offer."
+  },
+  {
+    "slug": "instagram-scheduler-publishing-failure-runbook",
+    "title": "Handle a Failed Scheduled Instagram Post Without Confusing Leads",
+    "intro": "When a scheduled post fails to publish, the safest response is to establish what actually happened before reposting. A delayed publication and a complete failure require different actions. Duplicate posts can split comments and leave the team unsure which campaign is serving which audience.",
+    "decision": "Check the live Instagram profile, the scheduler status and the intended publication record. Choose one canonical live post for the campaign and communicate its URL internally. Keep the original offer details available while deciding whether to retry or publish manually.",
+    "steps": [
+      "Confirm whether any version of the post is already live.",
+      "Select a single recovery path and assign one person to execute it.",
+      "Attach and test the reply workflow against the confirmed live post."
+    ],
+    "example": "If a scheduler reports failure but the Reel appears on the profile, inspect that live item before uploading another copy. Test the existing post's comment path instead of creating duplicate engagement.",
+    "pitfall": "Do not activate a broad campaign as an emergency substitute without reviewing what other posts could match its keyword.",
+    "measure": "Log failure cause, recovery time and the post ultimately used. Keep campaign results tied to that actual post rather than the abandoned schedule entry."
+  },
+  {
+    "slug": "instagram-content-batching-reply-planning",
+    "title": "Batch Instagram Content Without Batching Generic Replies",
+    "intro": "Batching creative saves production time, but copying one generic DM across an entire month can weaken relevance. Prepare response assets alongside the posts so each audience request has a clear answer even when the visual production happens in one session.",
+    "decision": "Group posts by the question they answer, not simply by format. Shared production does not require a shared destination. A tutorial, comparison and announcement may all be Reels while needing three different messages and next steps.",
+    "steps": [
+      "Write a one-sentence audience promise for each post.",
+      "Draft the matching message and destination while the subject is fresh.",
+      "Review the batch for repeated keywords that could collide across account-wide campaigns."
+    ],
+    "example": "A software creator can batch five screen recordings in an afternoon, then prepare separate messages for setup instructions, pricing and a sample workflow. The reply should name the requested item.",
+    "pitfall": "Do not use content batching as permission to send broad promotional messages to everyone who interacts with any post.",
+    "measure": "Measure preparation time and correction work after launch. A small amount of upfront message planning can prevent repeated inbox explanations later."
+  },
+  {
+    "slug": "instagram-scheduler-vendor-test-plan",
+    "title": "Test an Instagram Scheduling App Before Committing",
+    "intro": "A scheduler demonstration may show a smooth calendar without proving the exact formats and account setup your team needs. Evaluate the publishing workflow with representative content and a recovery scenario before moving the entire calendar. Keep messaging automation as a separate requirement in the assessment.",
+    "decision": "Create a requirements sheet with must-have formats, approval needs, account ownership and reporting expectations. Verify capabilities in a trial or current product documentation. Do not choose on a feature-count comparison that treats every publishing and messaging tool as interchangeable.",
+    "steps": [
+      "Publish a low-risk representative item through the proposed workflow.",
+      "Test an edit, reschedule and failed-publication recovery.",
+      "Confirm how the team identifies the resulting live post for its separate DM campaign."
+    ],
+    "example": "An agency that publishes bilingual carousels should test those exact assets, not just a single-image demo. It should also check whether approvals preserve the final caption keyword.",
+    "pitfall": "AP3K handles supported interactions and replies; it is not a substitute for the publishing scheduler evaluated here.",
+    "measure": "Score successful publishing, approval clarity and recovery effort. Add messaging delivery as its own acceptance test after the post is live."
+  }
+]

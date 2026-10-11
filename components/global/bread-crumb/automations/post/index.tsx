@@ -1,3 +1,4 @@
+import { UiText } from "@/components/i18n/localized-copy";
 import Loader from "@/components/global/loader";
 import { Button } from "@/components/ui/button";
 import { useAutomationPosts } from "@/hooks/use-automation";
@@ -60,11 +61,11 @@ function PostButton({ id }: Props) {
             disabled={posts.length === 0}
             className="bg-gradient-to-br w-full from-[#3352CC] font-medium text-white to-[#1C2D70]"
           >
-            <Loader state={isPending}>Attach Post</Loader>
+            <Loader state={isPending}><UiText>{"Attach Post"}</UiText></Loader>
           </Button>
         </div>
       ) : (
-        <p className="text-text-secondary text-center">No Posts Found</p>
+        <p className="text-text-secondary text-center"><UiText>{"No Posts Found"}</UiText></p>
       )}
     </TriggerButton>
   );

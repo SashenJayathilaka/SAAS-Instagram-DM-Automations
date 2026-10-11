@@ -1,0 +1,10 @@
+.ap3k-billing { max-width: 1180px; margin-inline: auto; width: 100%; }
+.billing-overview { background-image: radial-gradient(ellipse at 100% 0%,rgb(139 92 246 / .10),transparent 65%); }
+.billing-plan { transition: border-color .18s ease, box-shadow .18s ease; }
+.billing-plan:hover { box-shadow: 0 8px 28px rgb(15 23 42 / .05); }
+@media (prefers-reduced-motion:no-preference) {
+  .ap3k-billing > section { animation: billing-appear .3s ease-out both; }
+  .ap3k-billing [role=progressbar] > div { transition: width .4s ease; }
+  @keyframes billing-appear { from { opacity:.5; transform:translateY(5px) } to { opacity:1; transform:none } }
+}
+@media (max-width: 380px) { .ap3k-billing article { padding:16px; } }

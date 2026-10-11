@@ -1,0 +1,73 @@
+name: SEO release verification
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [seo/production-verification-20261005]
+    paths:
+      - .github/workflows/seo-release-verification.yml
+      - scripts/seo-release-audit.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: seo-release-verification-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  context:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Capture tracked source for dependency analysis
+        run: |
+          mkdir -p seo-context
+          git archive --format=tar.gz --output=seo-context/source-context.tar.gz HEAD app components lib providers scripts package.json package-lock.json
+          grep -R -n -E 'i18n/translate|localize-copy-tree|i18n/localized-copy' app components providers lib --include='*.ts' --include='*.tsx' > seo-context/translation-imports.txt || true
+          git clone --depth 1 https://github.com/AgriciDaniel/claude-seo.git /tmp/claude-seo
+          (cd /tmp/claude-seo && git rev-parse HEAD && ./scripts/claude-seo doctor --json) > seo-context/skill-doctor.txt 2>&1 || true
+          tar -czf seo-context/skill-runtime-source.tar.gz -C /tmp/claude-seo scripts requirements.txt pyproject.toml 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ap3k-seo-source-context
+          path: seo-context/
+          retention-days: 3
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Crawl public production pages
+        run: |
+          mkdir -p seo-artifacts
+          python3 scripts/seo-release-audit.py --output seo-artifacts/crawl.json
+      - name: Measure production Lighthouse
+        run: |
+          export CHROME_PATH="$(command -v google-chrome || command -v chromium || true)"
+          test -n "$CHROME_PATH"
+          npm install --prefix /tmp/ap3k-seo-tools --no-audit --no-fund lighthouse@12.8.2
+          for mode in mobile desktop; do
+            extra=""
+            if [ "$mode" = desktop ]; then extra="--preset=desktop"; fi
+            /tmp/ap3k-seo-tools/node_modules/.bin/lighthouse https://ap3k.com/ --quiet --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path="seo-artifacts/lighthouse-$mode.json" $extra
+          done
+          node <<'NODE'
+          const fs = require('fs');
+          for (const mode of ['mobile', 'desktop']) {
+            const r = JSON.parse(fs.readFileSync(`seo-artifacts/lighthouse-${mode}.json`, 'utf8'));
+            console.log(JSON.stringify({mode, version:r.lighthouseVersion, time:r.fetchTime, url:r.finalDisplayedUrl, categories:Object.fromEntries(Object.entries(r.categories).map(([k,v])=>[k,Math.round(v.score*100)])), metrics:Object.fromEntries(['largest-contentful-paint','first-contentful-paint','cumulative-layout-shift','total-blocking-time','speed-index'].map(k=>[k,r.audits[k]?.numericValue])), failures:Object.values(r.audits).filter(a=>a.score!==null&&a.score<1).map(a=>({id:a.id,title:a.title,score:a.score,displayValue:a.displayValue,details:a.details?.items?.slice(0,8)}))}));
+          }
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ap3k-seo-release-verification
+          path: seo-artifacts/
+          retention-days: 14

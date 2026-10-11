@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "instagram-automation-event-dictionary",
+    "title": "Define Instagram Automation Metrics Before Reporting Them",
+    "intro": "A dashboard becomes misleading when similar labels refer to different events. Comments, matched triggers, sent actions, contacts and purchases should not be treated as interchangeable. Write a small event dictionary so everyone understands what each number represents.",
+    "decision": "For each metric, record its source, unit and known limits. A successful send is evidence of delivery processing, not proof of reading or buying. A contact record may represent an interaction rather than a qualified sales opportunity.",
+    "steps": [
+      "List the metrics used in your weekly report.",
+      "Define exactly what causes each count to increase.",
+      "Document which outcomes require website or sales-system data."
+    ],
+    "example": "A campaign that sends a public reply and a DM can produce two successful actions for one comment. Reporting those actions as two leads would distort the funnel.",
+    "pitfall": "Do not add event counts from different stages and label the sum customers. Avoid implying that AP3K measures off-site purchases without a verified measurement path.",
+    "measure": "Review reports for ambiguous labels. A useful dictionary allows another teammate to reproduce the result from the stated source."
+  },
+  {
+    "slug": "instagram-automation-cohort-reporting",
+    "title": "Compare Instagram Campaigns With Consistent Cohorts",
+    "intro": "Comparing a campaign launched yesterday with one that ran for a month favors the older campaign by construction. Cohort reporting groups results by a shared starting point and observation window. It helps separate performance from simple time in market.",
+    "decision": "Choose a common period after launch or a defined group of interactions. Keep the outcome window explicit. Campaigns can still differ in audience and offer, so cohort alignment improves comparison without proving causation.",
+    "steps": [
+      "Record each campaign's activation date.",
+      "Compare the same elapsed period or interaction cohort.",
+      "Keep later outcomes separate until all campaigns have equivalent follow-up time."
+    ],
+    "example": "Compare the first seven days of two resource campaigns rather than their lifetime totals. Note if one launched during a larger promotion that changed the audience.",
+    "pitfall": "Do not treat an incomplete cohort as final. Recent contacts may not yet have had time to complete a booking or purchase.",
+    "measure": "Report the observation window beside each result. Revisit the comparison when the cohorts are mature enough for the decision being made."
+  },
+  {
+    "slug": "instagram-dm-link-attribution-naming",
+    "title": "Create Consistent Campaign Names for Instagram DM Links",
+    "intro": "Campaign tracking becomes difficult when every teammate names links differently. A consistent naming convention makes destination traffic easier to group without stuffing customer information into URLs. The convention should identify the campaign, not the recipient.",
+    "decision": "Choose stable labels for channel, campaign and content variation. Keep names readable and document them in the launch sheet. Confirm that the destination retains the parameters and that the analytics implementation records the fields you expect.",
+    "steps": [
+      "Define the naming pattern before generating links.",
+      "Use the same pattern across posts and reply messages.",
+      "Open the final link and inspect the destination's reporting after a test."
+    ],
+    "example": "A team might use a campaign label combining offer and launch month, with a separate content label for each post. Keep personally identifying information out of these parameters.",
+    "pitfall": "Do not assume a tagged URL guarantees attribution. Redirects, consent choices and browser behavior can affect what analytics records.",
+    "measure": "Review missing or inconsistent labels in destination reports. Fix naming and routing issues before comparing small performance differences."
+  },
+  {
+    "slug": "instagram-automation-delivery-vs-business-report",
+    "title": "Separate Delivery Health From Business Performance",
+    "intro": "An automation can deliver reliably while the offer performs poorly. It can also have a strong offer undermined by a technical failure. Report delivery health and business outcomes separately so the team chooses the right remedy.",
+    "decision": "Build one view for trigger matches, sends, failures and skipped actions, and another for destination engagement and qualified outcomes. Link the views by campaign where reliable identifiers exist. Do not infer a sale from a successful DM.",
+    "steps": [
+      "Check the technical path first.",
+      "Review the destination and offer when delivery is healthy.",
+      "Use actual booking or sales records for final outcomes."
+    ],
+    "example": "If messages send successfully but visitors abandon the landing page, rewriting trigger rules is unlikely to fix the destination problem. Inspect the page's promise, usability and next step.",
+    "pitfall": "Do not report a single blended success rate without defining its stages. Different denominators can conceal where the real problem occurs.",
+    "measure": "Track stage-specific rates and absolute counts. Use the weakest verified stage to choose the next investigation."
+  },
+  {
+    "slug": "instagram-automation-small-sample-results",
+    "title": "Read Small Instagram Campaign Results Without Overclaiming",
+    "intro": "A few successful bookings can make a new campaign look exceptional, while one quiet day can make it look broken. Small samples are volatile. Use early results to find obvious problems and generate hypotheses rather than making confident growth forecasts.",
+    "decision": "Show the underlying counts beside percentages. Consider whether the result could change materially with one additional outcome. Keep audience, offer and timing differences visible when comparing campaigns with limited data.",
+    "steps": [
+      "Record counts for each measured stage.",
+      "Identify technical failures separately from weak demand.",
+      "Continue observation before making a major scaling decision."
+    ],
+    "example": "Two bookings from ten visits is a 20% observed rate, but it is not a dependable forecast for the next thousand visits. Label the example as a small sample.",
+    "pitfall": "Do not turn an early result into a guaranteed conversion claim or testimonial. Avoid presenting a modeled projection as actual customer performance.",
+    "measure": "Revisit the result as more comparable data arrives. Look for a repeated pattern rather than reacting to every daily percentage change."
+  },
+  {
+    "slug": "instagram-automation-reply-cost-model",
+    "title": "Estimate Automated Action Usage Before a Campaign",
+    "intro": "Planning usage requires knowing which actions the campaign actually sends. A public reply and a DM are separate actions; a flow using both can consume more than a DM-only flow for the same number of matching comments. Estimate from configuration rather than follower count.",
+    "decision": "Count expected successful actions per eligible interaction, then consider the uncertainty in comment volume. Keep failures, skips and any separate AI allowance distinct according to current plan rules. Use the live pricing page for available plan limits.",
+    "steps": [
+      "List the enabled actions in the campaign.",
+      "Estimate a range of eligible interactions.",
+      "Compare the resulting action range with current allowance and usage."
+    ],
+    "example": "For an illustrative 100 matching comments, one public reply plus one successful DM each would mean 200 actions. A DM-only setup would mean 100, assuming every send succeeds.",
+    "pitfall": "Do not describe the free allowance as 500 complete two-action campaigns. Do not equate automated actions with unlimited messages or unlimited contacts.",
+    "measure": "Compare the estimate with recorded successful sends after launch. Adjust future planning based on the actual workflow and demand."
+  },
+  {
+    "slug": "instagram-automation-dashboard-date-ranges",
+    "title": "Avoid Date-Range Errors in Instagram Automation Reports",
+    "intro": "Two dashboards can show different totals because they cover different dates or time zones. Before investigating a data defect, verify the reporting window and event definition. A midnight boundary can move activity into another day without losing it.",
+    "decision": "Write the start, end, time zone and included event types next to the report. Confirm whether the end date is inclusive and whether recent data is still updating. Use the same convention when reconciling product and website analytics.",
+    "steps": [
+      "Check both systems' displayed time zones.",
+      "Align the reporting period and metric definition.",
+      "Compare individual sample events when totals still differ."
+    ],
+    "example": "An admin metric using UTC may place a late-evening local interaction on a different calendar date than a local-time spreadsheet. Reconcile timestamps before changing the data.",
+    "pitfall": "Do not silently shift a date range to make totals match. Document differences that cannot be reconciled with the available records.",
+    "measure": "Track unresolved discrepancies with their source and scope. A reproducible window is more valuable than a visually tidy but unexplained total."
+  },
+  {
+    "slug": "instagram-automation-test-traffic-labeling",
+    "title": "Keep Internal Tests Out of Campaign Performance Claims",
+    "intro": "Testing is necessary, but internal comments and visits can distort a small campaign's results. Label test activity so the team does not celebrate its own checks as customer demand. Preserve the operational evidence while separating it from marketing conclusions.",
+    "decision": "Use a recognizable test campaign or documented test period. Where a reporting system supports exclusions, apply them deliberately and record the rule. Do not delete audit evidence simply to improve a conversion chart.",
+    "steps": [
+      "Record test accounts and campaign identifiers appropriately.",
+      "Mark test windows in the reporting sheet.",
+      "Exclude known tests from business summaries where the data supports it."
+    ],
+    "example": "A launch with five team comments and one customer comment should not be described as six prospective customers. The tests still demonstrate whether the delivery path worked.",
+    "pitfall": "Do not assume every event from a familiar name is a test. Use documented identifiers and keep uncertain records visible rather than guessing.",
+    "measure": "Compare reports before and after known-test exclusions. Be especially careful when sample sizes are small enough for one test to change the apparent trend."
+  },
+  {
+    "slug": "instagram-lead-source-reconciliation",
+    "title": "Reconcile Instagram Leads With Booking Records",
+    "intro": "Instagram interactions and booking records live at different stages of the customer journey. Reconciling them can show which campaigns produce useful next steps, but only when the matching method is legitimate and reliable. Similar names are not enough.",
+    "decision": "Use campaign-level attribution when person-level matching is unavailable. If the booking system preserves source parameters, validate that path with a test. Keep unmatched bookings and unknown sources visible instead of forcing every result into a campaign.",
+    "steps": [
+      "Document the fields available in both systems.",
+      "Test the destination-to-booking attribution path.",
+      "Report matched, unmatched and unknown outcomes separately."
+    ],
+    "example": "A booking page that retains a campaign label can support aggregate campaign reporting even if the Instagram handle is not collected. That does not establish a complete person-level journey.",
+    "pitfall": "Do not claim AP3K natively records off-site bookings simply because a DM contains the calendar link.",
+    "measure": "Review attribution coverage and completed bookings together. A higher reported conversion rate caused by missing records is not a genuine improvement."
+  },
+  {
+    "slug": "instagram-automation-weekly-decision-report",
+    "title": "Write a Weekly Instagram Report That Leads to Decisions",
+    "intro": "A weekly report should help the team choose what to change. Screenshots of every dashboard rarely do that. Organize the report around reliable outcomes, material problems and a small number of next actions, with sources and uncertainties visible.",
+    "decision": "Separate observations from explanations. A drop in clicks is an observation; blaming the new caption is a hypothesis until alternatives are checked. Assign an owner and a way to evaluate each proposed change.",
+    "steps": [
+      "Summarize delivery health and business outcomes separately.",
+      "Describe the most important change with its evidence.",
+      "Choose a small set of actions and review them next week."
+    ],
+    "example": "A useful action is “Check the mobile booking page because visits remained stable while completed bookings fell.” “Improve engagement” is too vague to verify.",
+    "pitfall": "Do not hide unavailable data behind a zero. Label missing connections, incomplete periods and vendor estimates clearly.",
+    "measure": "Review whether last week's actions were completed and what changed. The report is useful when it improves decisions, not when it becomes longer."
+  }
+]

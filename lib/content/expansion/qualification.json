@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "instagram-leads-first-question",
+    "title": "Ask One Useful Question After an Instagram Inquiry",
+    "intro": "An interested person does not need to complete an interview before receiving the item they requested. After delivering the promised resource, choose one question that helps the next conversation. A relevant question feels like assistance; a list of demands feels like work.",
+    "decision": "Start with the decision you need to make: route to a product, identify a service need or determine whether a human should help. Ask only the question that changes that decision. Keep a simple resource request distinct from a sales qualification conversation.",
+    "steps": [
+      "Deliver the original promise first.",
+      "Identify the most useful missing context.",
+      "Ask one clear question through an appropriate supported conversation."
+    ],
+    "example": "After sending a setup guide, a human might ask whether the reader manages one account or several. That is more useful than asking for budget, team size and phone number immediately.",
+    "pitfall": "Do not imply AP3K includes a branching qualification builder if that workflow is not configured. Use the inbox or destination form for questions the product does not automate.",
+    "measure": "Measure meaningful answers and suitable next steps. Silence after an intrusive question is not evidence that the original resource was unwanted."
+  },
+  {
+    "slug": "instagram-lead-magnet-intent-ladder",
+    "title": "Match Instagram Lead Magnets to Buying Readiness",
+    "intro": "A checklist request and a consultation request signal different levels of commitment. Treating both as immediate sales opportunities can push people too quickly. Map resources to the decision each audience is trying to make instead of labeling every interaction high intent.",
+    "decision": "Use an intent ladder such as understand the problem, compare approaches and evaluate a specific offer. This is a planning model, not a claim about an individual's private intent. Let the person's next action provide additional context.",
+    "steps": [
+      "Assign each resource a decision it supports.",
+      "Offer a relevant next step after delivering it.",
+      "Keep sales outreach proportionate to the expressed request."
+    ],
+    "example": "A beginner guide can lead to a worked example, while a product comparison can link to pricing or a demo. Neither requires assuming the recipient is ready to buy immediately.",
+    "pitfall": "Do not treat a keyword comment as blanket permission for unrelated promotional sequences. Keep responses tied to the interaction and applicable platform rules.",
+    "measure": "Compare progression between relevant steps. The goal is a useful path, not forcing every recipient into the same calendar link."
+  },
+  {
+    "slug": "instagram-lead-qualification-service-area",
+    "title": "Qualify Service-Area Inquiries Without Wasting Time",
+    "intro": "Local businesses can receive Instagram inquiries from outside the area they serve. Clarifying coverage early helps the customer and prevents unnecessary quoting work. The question should ask for enough location information to establish fit without collecting a full address too soon.",
+    "decision": "Explain the service area publicly where possible. For individual inquiries, use a city or broad area first, then request detailed information only when needed through an appropriate private process. Do not automate a confirmed appointment before eligibility is known.",
+    "steps": [
+      "Publish current coverage information.",
+      "Ask for the minimum location needed to assess fit.",
+      "Provide a clear next step for both supported and unsupported areas."
+    ],
+    "example": "A home-service provider can ask for the city or district before arranging a survey. It does not need a complete home address in a public Instagram comment.",
+    "pitfall": "Avoid implying a location is served because a generic reply says “We can help.” Keep coverage facts current in saved and AI-assisted answers.",
+    "measure": "Track unsuitable-area inquiries and where they originated. If the same confusion repeats, improve the offer's visible coverage statement."
+  },
+  {
+    "slug": "instagram-lead-qualification-budget-context",
+    "title": "Discuss Budget in Instagram Conversations Without Pressure",
+    "intro": "Budget questions are more useful when the person understands the scope first. Asking “What is your budget?” without context can feel like an attempt to change the price. Explain the offer and why a range helps determine an appropriate option.",
+    "decision": "Use current, approved pricing information and distinguish fixed packages from custom work. A budget discussion should identify fit, not manufacture urgency or an invented discount. If the offer has a minimum commitment, communicate it clearly.",
+    "steps": [
+      "Explain the service and relevant starting scope.",
+      "Ask whether the stated option fits the person's needs.",
+      "Route custom requirements to a human quote process."
+    ],
+    "example": "A studio can say that its standard package includes a defined deliverable and ask whether the project needs additional work. That creates a concrete basis for a budget conversation.",
+    "pitfall": "Do not let AI invent custom commercial terms. Any exception should come from someone authorized to make that decision.",
+    "measure": "Review quote revisions and misunderstandings about inclusions. Better scope communication should reduce avoidable negotiation loops."
+  },
+  {
+    "slug": "instagram-leads-contact-vs-opportunity",
+    "title": "Separate an Instagram Contact From a Sales Opportunity",
+    "intro": "A stored contact means the system has recorded an interaction; it does not prove the person is qualified or ready to purchase. Calling every contact an opportunity makes reports look stronger while weakening planning. Define the transition with observable evidence.",
+    "decision": "Choose a qualification rule suited to the offer, such as a relevant need plus an agreed next step. Keep the source event visible. Do not require unnecessary personal data simply to make the record look complete.",
+    "steps": [
+      "Define contact, qualified inquiry and opportunity separately.",
+      "Record the evidence that moves a record forward.",
+      "Keep rejected or incomplete cases distinguishable in reporting."
+    ],
+    "example": "A person who requests a free checklist is a contact. A person who explains a suitable project and requests a proposal may be an opportunity under the team's documented rule.",
+    "pitfall": "Do not relabel AP3K's captured leads as closed sales. Delivery and interaction counts are useful, but they represent different stages.",
+    "measure": "Measure conversion between defined stages and reasons for rejection. Stable definitions make month-to-month comparison more meaningful."
+  },
+  {
+    "slug": "instagram-leads-self-selection-page",
+    "title": "Build a Destination That Helps Instagram Leads Self-Select",
+    "intro": "A DM can deliver interest to a page, but the page still needs to help the visitor decide. A destination that hides fit criteria creates unnecessary conversations and weak applications. Explain who the offer helps, what it includes and what it does not do.",
+    "decision": "Use plain fit statements rather than vague claims about being suitable for everyone. Include the main prerequisites and a sensible alternative next step for people who are not ready. Keep the page aligned with the resource or offer promised in the post.",
+    "steps": [
+      "State the specific problem the offer addresses.",
+      "Describe requirements and exclusions honestly.",
+      "Make the next action match the commitment being requested."
+    ],
+    "example": "A service page can explain that the consultation is for businesses already using Instagram professionally and link beginners to setup guidance. This helps both audiences choose a useful route.",
+    "pitfall": "Do not use a misleading free-resource caption to send people directly into an undisclosed sales application.",
+    "measure": "Review unsuitable inquiries and repeated fit questions. Improve the destination before adding more qualification friction inside the DM."
+  },
+  {
+    "slug": "instagram-leads-consultation-preparation",
+    "title": "Prepare Instagram Leads for a Better Consultation",
+    "intro": "A booked call can still be unproductive if the person does not know its purpose or what information to bring. A preparation page helps both sides use the appointment well. Deliver it through the actual booking process rather than assuming a DM send equals a reservation.",
+    "decision": "Explain the call's scope, participants and useful materials. Keep preparation proportional to the meeting. Do not request sensitive account access or passwords as routine pre-call homework.",
+    "steps": [
+      "Clarify what the consultation will and will not cover.",
+      "List a few useful facts the person can prepare.",
+      "Show how to change or cancel the appointment through the booking system."
+    ],
+    "example": "For an automation consultation, ask the person to identify one post and the outcome they want from it. A concrete example is more useful than a broad request to “prepare your strategy.”",
+    "pitfall": "Do not promise a full implementation during an introductory conversation unless that service is explicitly included.",
+    "measure": "Review attendance, fit and whether the conversation produced an agreed next step. More bookings alone do not establish better lead quality."
+  },
+  {
+    "slug": "instagram-leads-objection-notes",
+    "title": "Turn Repeated Instagram Objections Into Better Content",
+    "intro": "When different prospects ask the same question, the problem may be missing information rather than weak persuasion. Record recurring objections in a simple, anonymized log and use them to improve public explanations. This reduces repetitive selling and helps people decide independently.",
+    "decision": "Separate factual confusion from a real product limitation. Correct the former with clearer content; acknowledge the latter honestly. An unsupported promise may temporarily remove an objection but creates a worse customer problem later.",
+    "steps": [
+      "Group recurring questions by topic.",
+      "Identify whether the answer is a fact, limitation or unresolved decision.",
+      "Update the relevant page or reply and test it with the team."
+    ],
+    "example": "If people repeatedly ask whether AP3K schedules posts, explain its messaging role clearly and link to the scheduling workflow guide. Do not imply the missing publishing feature exists.",
+    "pitfall": "Do not publish private conversation details as testimonials or case studies without appropriate permission. Summarize the recurring question instead.",
+    "measure": "Track whether the same confusion decreases after the update. Use outcomes to prioritize the next content improvement."
+  },
+  {
+    "slug": "instagram-leads-no-response-interpretation",
+    "title": "Interpret Silence After an Instagram Resource Request",
+    "intro": "A recipient who does not reply may still have received exactly what they wanted. Silence after a resource delivery is not automatically a failed lead. Interpret the result according to the campaign's purpose and the data actually available.",
+    "decision": "Separate message delivery, destination engagement and further conversation. A guide campaign may succeed through a download without a reply, while a consultation campaign needs a different next step. Avoid assigning intent where the evidence is absent.",
+    "steps": [
+      "Confirm which outcome the campaign was designed to support.",
+      "Check available destination data without assuming every visit is identifiable.",
+      "Review whether the message required a reply at all."
+    ],
+    "example": "A DM that says “Here is the checklist” gives no reason to answer if the link works. Low reply volume should not trigger unnecessary follow-up pressure.",
+    "pitfall": "Do not use silence as permission for repeated messages or claim that a successful send proves the recipient read the content.",
+    "measure": "Compare the intended outcome with the measured stage. Report unknowns explicitly rather than labeling every silent contact lost."
+  },
+  {
+    "slug": "instagram-leads-offer-retirement",
+    "title": "Retire an Instagram Lead Offer Without Breaking Its Promise",
+    "intro": "Offers eventually end, but old posts can continue attracting comments. Retiring the campaign requires more care than deleting a destination. Decide how later visitors will understand the change and what happens to people who already requested the original item.",
+    "decision": "Preserve useful access where feasible and make expired conditions explicit. If the offer cannot be fulfilled, pause the related automation and update the public explanation. Avoid substituting an unrelated paid offer behind a previously free-resource promise.",
+    "steps": [
+      "Inventory posts and campaigns connected to the offer.",
+      "Update or retire destinations and messages consistently.",
+      "Check old links from a phone after the change."
+    ],
+    "example": "An expired event registration page can explain that registration is closed and point to current events. It should not still accept applications for a date that has passed.",
+    "pitfall": "Do not silently overwrite a promised download with a sales page. A working URL is not enough if the content no longer matches the request.",
+    "measure": "Track inquiries caused by retired offers and repair the originating post or page. Keep a record of which campaigns were paused."
+  }
+]

@@ -1,310 +1,313 @@
-<div align="center">
+# AP3k
 
-  <img src="https://github.com/user-attachments/assets/b802b892-9867-4520-90bb-59923310c3f2" alt="logo" width="250" height="auto" />
-  
-# Instagram Automation
-  
-  <p>
-📹 Instagram API integration with OAuth 💻 Automation builder to trigger automations ⏳ Seamless dashboard for metrics 📤 Instagram comment automations to automate dm outreach 👥 Instagram DM automations for keywords 📝 Instagram DM automations for story replies
-  </p>
-  
-<!-- Badges -->
-<a href="[https://slideproject.vercel.app/](https://slideproject.vercel.app/)" target="_blank">![](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)</a>
-![](https://img.shields.io/badge/Maintained-Yes-indigo)
-![](https://img.shields.io/github/forks/SashenJayathilaka/SAAS-Instagram-DM-Automations.svg)
-![](https://img.shields.io/github/stars/SashenJayathilaka/SAAS-Instagram-DM-Automations.svg)
-![](https://img.shields.io/github/issues/SashenJayathilaka/SAAS-Instagram-DM-Automations)
-![](https://img.shields.io/github/last-commit/SashenJayathilaka/SAAS-Instagram-DM-Automations)
+AP3k turns Instagram comments into automated DMs, leads, and sales.
 
-<h4>
-    <a href="https://slideproject.vercel.app">View Demo</a>
-  <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/SAAS-Instagram-DM-Automations/blob/master/README.md">Documentation</a>
-  <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/SAAS-Instagram-DM-Automations/issues">Report Bug</a>
-  <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/SAAS-Instagram-DM-Automations/issues">Request Feature</a>
-  </h4>
-</div>
+---
 
-<br />
+## Features
 
-<!-- Table of Contents -->
+- **Comment → DM automation** — trigger a private DM when a keyword is spotted in a comment
+- **3 matching modes** — Exact, Contains, and Smart AI (OpenAI-powered intent matching)
+- **Template variables** — `{{username}}`, `{{first_name}}`, `{{keyword}}`, `{{link}}` in every DM
+- **Optional public reply** — reply to the comment thread at the same time
+- **Lead tracking** — every triggered DM is saved as a lead with full event log
+- **Analytics** — per-automation stats: triggers, DMs sent, replies sent, leads captured
+- **Stripe billing** — FREE (3 automations) and PRO (unlimited) plans
 
-## :notebook_with_decorative_cover: Table of Contents
+---
 
-- [About the Project](#star2-about-the-project)
-  - [Screenshots](#camera-screenshots)
-  - [Tech Stack](#space_invader-tech-stack)
-  - [Environment Variables](#key-environment-variables)
-- [Getting Started](#toolbox-getting-started)
-  - [Prerequisites](#bangbang-prerequisites)
-  - [Installation](#gear-installation)
-  - [Run Locally](#running-run-locally)
-  - [Deployment](#triangular_flag_on_post-deployment)
-- [Contact](#handshake-contact)
+## Tech Stack
 
-<!-- About the Project -->
+Next.js 14 · TypeScript · Prisma (PostgreSQL) · Clerk (auth) · Stripe · Meta Graph API · OpenAI · Tailwind CSS · React Query · Vitest
 
-## :star2: About the Project
+---
 
-<!-- Screenshots -->
+## Local Setup
 
-### :camera: Screenshots
+### 1. Prerequisites
 
-<div align="center">
-<a href="https://slideproject.vercel.app/"><img  src='https://github.com/user-attachments/assets/001cf5c4-4d3a-42d0-9bdb-c514874041dd' alt='image'/></a>
-</div>
+- Node.js 18+
+- PostgreSQL running locally (or a hosted DB — Neon, Supabase, etc.)
+- A [Meta Developer account](https://developers.facebook.com) with an app
+- A [Clerk account](https://clerk.com) with an application
+- A [Stripe account](https://stripe.com) in test mode
+- (Optional) An [OpenAI API key](https://platform.openai.com) for Smart AI matching
 
-## <a href="https://slideproject.vercel.app/" target="_blank">LIVE DEMO 💥</a>
-
-![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
-![forthebadge](https://forthebadge.com/images/badges/for-you.svg)
-![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)
-
-### :space_invader: Tech Stack
-
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://#/">Typescript</a></li>
-    <li><a href="https://nextjs.org/">Next.js</a></li>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-    <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
-    <li><a href="https://www.prisma.io">Prisma</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-  <li><a href="https://neon.tech/">Neon</a></li>
-  </ul>
-</details>
-
-<br />
-
-<table>
-    <tr>
-        <td>
-<a href="#"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="" width="30" height="30" /></a>
-        </td>
-                <td>
-<a href="#"><img src="https://user-images.githubusercontent.com/99184393/183096870-fdf58e59-d78c-44f4-bd1c-f9033c16d907.png" alt="Google" width="30" height="30" /></a>
-        </td>
-                        <td>
-<a href="#"><img src="https://user-images.githubusercontent.com/99184393/179383376-874f547c-4e6f-4826-850e-706b009e7e2b.png" alt="" width="30" height="30" /></a>
-        </td>
-                              <td>
-<a href="#"><img src="https://github.com/user-attachments/assets/e9a86072-de0f-4b06-b5de-8bca27dd4b45" alt="" width="30" height="30" /></a>
-        </td>
-                        <td>
-<a href="#"><img src="https://user-images.githubusercontent.com/99184393/180462270-ea4a249c-627c-4479-9431-5c3fd25454c4.png" alt="" width="30" height="30" /></a>
-        </td>
-                                <td>
-<a href="#"><img src="https://github.com/user-attachments/assets/caa288f0-ce83-404d-aafb-7dbad6fad78e" alt="" width="30"height="30"/></a>
-        </td>
-                                      <td>
-<a href="#"><img src="https://github.com/user-attachments/assets/58b9098c-56f0-467f-9881-b4c6aebdd127" alt="" width="30"height="30"/></a>
-        </td>
-      <td>
-<a href="#"><img src="https://github.com/user-attachments/assets/d24e0437-5919-4fc0-b0b5-4b15b8e7768e" alt="" width="30"height="30"/></a>
-        </td>
-    </tr>
-</table>
-
-## :toolbox: Getting Started
-
-### :bangbang: Prerequisites
-
-- Install Node JS in your computer <a href='https://nodejs.org/en/'>HERE</a>
-- Sign up for a clerk account <a href='https://clerk.com/'>HERE</a>
-- Sign up for a Neon<a href='https://neon.tech/'>HERE</a>
-- Sign up for a Stripe <a href='https://liveblocks.io/'>HERE</a>
-
-<!-- Env Variables -->
-
-### :key: Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-`OPEN_AI_KEY`
-
-`CLERK_SECRET_KEY`
-
-`NEXT_PUBLIC_HOST_URL`
-
-`INSTAGRAM_BASE_URL`
-
-`INSTAGRAM_CLIENT_ID`
-
-`INSTAGRAM_TOKEN_URL`
-
-`STRIPE_CLIENT_SECRET`
-
-`INSTAGRAM_CLIENT_SECRET`
-
-`INSTAGRAM_EMBEDDED_OAUTH_URL`
-
-`NEXT_PUBLIC_CLERK_SIGN_IN_URL`
-
-`NEXT_PUBLIC_CLERK_SIGN_UP_URL`
-
-`STRIPE_SUBSCRIPTION_PRICE_ID`
-
-`NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
-
-`NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL`
-
-`NEXT_PUBLIC_CLERK_SIGN_UP_FORCE_REDIRECT_URL`
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-### :gear: Installation
-
-![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![](https://img.shields.io/badge/next.js-20232A?style=for-the-badge&logo=next.js&logoColor=61DAFB)
-
-Install my-project with npm
-
-```
-npx create-next-app@latest my-project --typescript --eslint
-```
-
-```
-cd my-project
-```
-
-Install dependencies
-
-<!-- ### :test_tube: Install Tailwind CSS with Next.js
-
-#### Install Tailwind CSS
-
-![](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-
-Install tailwindcss and its peer dependencies via npm, and then run the init command to generate both `tailwind.config.js` and `postcss.config.js`.
-
-```
-npm install -D tailwindcss postcss autoprefixer
-```
-
-```
-npx tailwindcss init -p
-```
-
-#### Configure your template paths
-
-Add the paths to all of your template files in your `tailwind.config.js` file.
-<br>
-
-```js
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-
-    // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
-```
-
-#### Add the Tailwind directives to your CSS
-
-Add the `@tailwind` directives for each of Tailwind’s layers to your `./styles/globals.css` file.
-
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-``` -->
-
-Install dependencies
-
-<a href="https://github.com/SashenJayathilaka/SAAS-Instagram-DM-Automations/blob/main/package.json" target="_blank">🔶 Dependency Info</a>
-
-<!-- Run Locally -->
-
-### :running: Run Locally
-
-![](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
-
-Clone the project
+### 2. Clone and Install
 
 ```bash
-  https://github.com/SashenJayathilaka/Miro-Clone.git
+git clone <your-repo-url>
+cd SAAS-Instagram-DM-Automations
+npm install
 ```
 
-change directory
+### 3. Environment Variables
+
+Copy the example and fill in all values:
 
 ```bash
-  cd Miro-Clone
+cp .env.example .env.local
 ```
 
-Install dependencies
+See `.env.example` for the full list with inline documentation. Every variable must be set before running `npm run dev`.
+
+### 4. Database
 
 ```bash
-  npm install
+# Apply migrations and generate the Prisma client
+npx prisma migrate deploy
+npx prisma generate
 ```
 
-Start the server
+To inspect the database locally:
 
 ```bash
-  npm run dev
+npx prisma studio
 ```
 
-<hr />
+### 5. Run Locally
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+```bash
+npm run dev
+```
 
-<hr />
+The app runs at `http://localhost:3000`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Meta Developer Setup
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Create a Meta App
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. Go to [developers.facebook.com](https://developers.facebook.com) → **My Apps** → **Create App**
+2. Choose **Business** type
+3. Add the **Instagram** product to your app
 
-### Learn More
+### Configure OAuth
 
-To learn more about Next.js, take a look at the following resources:
+1. Under **Instagram Login / Business Login**, add an OAuth redirect URI:
+   ```
+   https://ap3k.com/callback/instagram
+   ```
+2. Copy the parent Meta **App ID** → `META_APP_ID`
+3. Copy the Instagram API setup **Instagram App ID** → `INSTAGRAM_APP_ID`
+4. Copy the matching app secret → `INSTAGRAM_APP_SECRET` if Meta shows a separate Instagram app secret; otherwise `META_APP_SECRET` is used.
+4. Request the comment-to-DM permissions used by AP3k:
+   - `instagram_business_basic`
+   - `instagram_business_manage_comments`
+   - `instagram_business_manage_messages`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Configure the Webhook
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+You need a public HTTPS URL for Meta to send events. Use [ngrok](https://ngrok.com) in development:
 
-<!-- Deployment -->
+```bash
+# Install ngrok, then:
+ngrok http 3000
+```
 
-### :triangular_flag_on_post: Deployment
+Copy the `https://xxxx.ngrok.io` URL.
 
-To deploy this project run
+1. Under **Instagram → Webhooks**, add a new subscription:
+   - **Callback URL:** `https://ap3k.com/api/webhooks/meta`
+   - **Verify Token:** the value you set in `META_VERIFY_TOKEN`
+2. Subscribe to `comments` and `messages` fields
 
-##### Deploy on Vercel
+Meta will make a GET request to verify the URL — the handler at `/api/webhooks/meta` responds to this automatically.
 
-![](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+### Test Accounts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+During development, add your personal Instagram account as a **Test User** in the Meta app so it can receive webhooks without going through App Review.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
 
-## :handshake: Contact
+## Stripe Setup
 
-Sashen - [@twitter_handle](https://twitter.com/SashenHasinduJ) - sashenjayathilaka95@gmail.com
+### Test Mode Keys
 
-Project Link: [https://github.com/SashenJayathilaka/SAAS-Instagram-DM-Automations.git](https://github.com/SashenJayathilaka/SAAS-Instagram-DM-Automations.git)
+1. Go to [dashboard.stripe.com](https://dashboard.stripe.com) → **Developers → API Keys**
+2. Copy the **Secret key** (`sk_test_...`) → `STRIPE_SECRET_KEY`
+3. Copy the **Publishable key** (`pk_test_...`) → `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`
 
-<br />
+### Create Prices
 
-<br />
+1. Go to **Products → Add Product** → create `AP3k Creator` as a recurring monthly product
+2. Copy the Creator **Price ID** (`price_...`) → `STRIPE_PRICE_ID_CREATOR`
+3. Create `AP3k Agency` as a recurring monthly product
+4. Copy the Agency **Price ID** (`price_...`) → `STRIPE_PRICE_ID_AGENCY`
 
-<div align="center">Don't forget to leave a star ⭐️</div>
+### Stripe Webhook (Local)
+
+```bash
+# Install Stripe CLI, then:
+stripe listen --forward-to http://localhost:3000/api/webhooks/stripe
+```
+
+Copy the **webhook signing secret** it prints → `STRIPE_WEBHOOK_SECRET`
+
+Events handled:
+- `checkout.session.completed` — binds the verified Stripe customer and subscription
+- `customer.subscription.created` — syncs a new subscription if it arrives before/after checkout completion
+- `customer.subscription.updated`, `customer.subscription.paused`, `customer.subscription.resumed` — sync plan status
+- `customer.subscription.deleted` — downgrades to FREE
+- `invoice.paid` — syncs access and qualifies an eligible referral reward
+- `invoice.payment_failed` — keeps subscription recovery state in sync without issuing a reward
+- `charge.refunded`, `charge.dispute.created` — reverse referral rewards tied to refunded or disputed invoices
+
+---
+
+## Running Tests
+
+```bash
+npm test           # run once
+npm run test:watch # watch mode
+```
+
+---
+
+## Vercel Deployment
+
+### 1. Push to GitHub
+
+```bash
+git push origin main
+```
+
+### 2. Import in Vercel
+
+1. Go to [vercel.com/new](https://vercel.com/new) → import repository
+2. Framework: **Next.js** (auto-detected)
+
+### 3. Set Environment Variables
+
+In Vercel → Project → Settings → Environment Variables, add every variable from `.env.example` with production values. Key differences from local:
+
+| Variable | Production value |
+|---|---|
+| `NEXT_PUBLIC_HOST_URL` | `https://ap3k.com` |
+| `META_APP_ID` | Meta app ID |
+| `META_APP_SECRET` | Meta app secret |
+| `INSTAGRAM_APP_ID` | Instagram app ID from Instagram API setup; used as OAuth `client_id` |
+| `INSTAGRAM_APP_SECRET` | Optional Instagram app secret if different from Meta app secret |
+| `META_VERIFY_TOKEN` | Same value entered in Meta webhook config |
+| `META_REDIRECT_URI` | `https://ap3k.com/callback/instagram` |
+| `INSTAGRAM_EMBEDDED_OAUTH_URL` | Full Instagram OAuth URL with `redirect_uri=https://ap3k.com/callback/instagram` |
+| `STRIPE_SECRET_KEY` | Live or test secret key from Stripe |
+| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Matching live or test publishable key from Stripe |
+| `STRIPE_PRICE_ID_CREATOR` | Creator recurring price ID |
+| `STRIPE_PRICE_ID_AGENCY` | Agency recurring price ID |
+| `STRIPE_WEBHOOK_SECRET` | Secret from Vercel webhook endpoint (see below) |
+| `AI_CONFIG_ENCRYPTION_KEY` | 32-byte secret used only to encrypt provider API keys at rest |
+
+### 4. Stripe Webhook (Production)
+
+1. Go to Stripe → **Developers → Webhooks → Add endpoint**
+2. URL: `https://ap3k.com/api/webhooks/stripe`
+3. Events: `checkout.session.completed`, `customer.subscription.created`, `customer.subscription.updated`, `customer.subscription.paused`, `customer.subscription.resumed`, `customer.subscription.deleted`, `invoice.paid`, `invoice.payment_failed`, `charge.refunded`, `charge.dispute.created`
+4. Copy the signing secret → `STRIPE_WEBHOOK_SECRET` in Vercel env vars
+
+### 5. Meta Webhook (Production)
+
+Update the webhook callback URL in Meta Developer Console:
+
+```text
+https://ap3k.com/api/webhooks/meta
+```
+
+Use the same verify token value that is stored in `META_VERIFY_TOKEN`.
+
+Subscribe the Instagram webhook to:
+- `comments`
+- `messages`
+
+Webhook POST requests are verified with Meta's `x-hub-signature-256` header
+using `META_APP_SECRET`. Comment and messaging receipts are stored in
+`WebhookEvent`, matched campaign activity is stored in `AutomationEvent`, and
+send attempts are stored in `MessageLog`.
+
+AP3k only sends a private reply/DM to users who commented or messaged the connected Instagram account. It does not scrape Instagram, log in with passwords, or send unsolicited DMs.
+
+### AP3K AI provider setup
+
+Open **Admin → System & safety → AP3K AI routing**. AP3K stores a separate encrypted key for Google AI Studio, Groq Cloud, and OpenRouter, while routing traffic through only one active provider.
+
+For each provider:
+
+1. Open **Get API key**, create a key on the provider's official site, and paste it into AP3K.
+2. Choose a listed model or enter another model ID supported by that provider.
+3. Save the configuration, run **Test saved connection**, then select **Make active provider**.
+
+Recommended free starting points:
+
+- Google AI Studio: `gemini-3.5-flash-lite`
+- Groq Cloud: `openai/gpt-oss-20b`
+- OpenRouter: `openrouter/free`
+
+Gemini 1.5 and 2.0 Flash are intentionally not offered because Google has shut them down. Provider free tiers and model availability can change, so the model field accepts current provider model IDs without requiring a deployment.
+
+### Why real comments may not trigger in Meta development mode
+
+Meta dashboard test webhooks only prove the callback URL and verify token work.
+They do not prove that a real Instagram comment is eligible for delivery.
+
+For real comment delivery while the app is still in Development mode, verify:
+
+- The connected Instagram account is Business or Creator.
+- The connected account owns the media being commented on.
+- The commenter is a separate Instagram account, not the connected business account.
+- The commenter has been added as a Meta app admin/developer/tester and accepted the invite.
+- The app is subscribed to `comments,messages,messaging_postbacks` for the connected IG user after OAuth.
+- Vercel production has `INSTAGRAM_APP_ID`, `INSTAGRAM_APP_SECRET`, `META_APP_ID`, `META_APP_SECRET`, `META_VERIFY_TOKEN`, `META_REDIRECT_URI`, and `NEXT_PUBLIC_HOST_URL`.
+
+The dashboard Integrations page includes **Resubscribe webhooks** and webhook
+health cards. Do not mark delivery fixed until a real comment creates
+`WebhookEvent.eventType = REAL_COMMENT_EVENT`.
+
+### Owner Admin
+
+AP3k includes a safe owner-only admin UI at:
+
+```text
+/admin
+```
+
+Access is server-side restricted to:
+
+```text
+ADMIN_EMAILS=officialabde@gmail.com
+ADMIN_CLERK_USER_IDS=<optional comma-separated Clerk user IDs>
+```
+
+The admin panel shows production counts, users, integrations, campaigns,
+webhook events, automation events, message logs, and leads. It masks tokens and
+does not expose Prisma Studio or raw secrets publicly.
+
+---
+
+## Project Structure
+
+```
+app/
+  (website)/          # Public pages: landing, pricing
+  (auth)/             # Clerk sign-in / sign-up
+  (protected)/        # Auth-gated: dashboard, onboarding, callback
+    dashboard/[slug]/ # Per-user slug: campaigns, integrations, settings
+    onboarding/       # First-run flow: connect Instagram
+  api/
+    webhooks/meta/    # Meta comment + DM webhook (GET verify, POST events)
+    webhooks/stripe/  # Stripe subscription lifecycle webhook
+actions/              # Next.js Server Actions (DB writes + reads)
+components/global/    # Reusable UI: wizard-stepper, dm-editor, stat-card, etc.
+hooks/                # Client state: use-wizard, use-automation, etc.
+lib/                  # Utilities: prisma client, stripe proxy, openai, fetch helpers
+prisma/               # Schema + migrations
+```
+
+---
+
+## Known Limitations
+
+- **Plan enforcement** — FREE plan limit (3 automations) is tracked in the DB schema but not yet enforced on the backend. Activation is not blocked for FREE users. Marked as TODO.
+- **Story reply automations** — the DB schema supports story reply triggers but the wizard UI does not expose them.
+- **Token refresh** — Instagram long-lived tokens expire after 60 days. AP3k refreshes near expiry when the user profile is loaded, but users may need to reconnect if Meta revokes a token or permissions change.
+- **Legacy Smart AI matching** — the older trigger-matching mode still uses `OPENAI_API_KEY`. AP3K AI comment and DM replies use the encrypted provider selected in the admin dashboard.

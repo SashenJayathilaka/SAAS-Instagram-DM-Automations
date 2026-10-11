@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "instagram-lead-ad-form-vs-message-goal",
+    "title": "Choose Between an Instagram Lead Form and a Conversation",
+    "intro": "A form and a messaging destination ask people to make different commitments. A form collects structured information; a conversation lets someone explain a question before deciding. Choose based on the next decision your business needs, not simply which route produces the largest lead count.",
+    "decision": "Write down the information required to take the next useful action. If the team needs a standardized application, a form may fit. If the offer needs explanation, a staffed conversation may be more appropriate. Both require a real follow-up process outside the ad click.",
+    "steps": [
+      "Define the business outcome before selecting the destination.",
+      "List the minimum information needed for that outcome.",
+      "Test the complete route, including who receives and handles the inquiry."
+    ],
+    "example": "A quotation request may need project size and location. A simple product question may be better answered in a conversation before asking for a long application.",
+    "pitfall": "AP3K is not an ad-buying platform or a native lead-form synchronization service. Do not assume form submissions become Instagram DM contacts automatically.",
+    "measure": "Compare qualified outcomes and handling effort for each route. A cheaper submission can cost more overall if nobody can use the information."
+  },
+  {
+    "slug": "instagram-lead-ad-question-design",
+    "title": "Write Lead-Ad Questions Your Team Will Actually Use",
+    "intro": "A lead form should collect information that changes what happens next. Every extra question introduces work for the person responding and for the team reviewing it. Design the form backward from the follow-up decision instead of copying a competitor's application.",
+    "decision": "For each proposed field, name the decision it supports. Remove questions whose answers will never affect routing, eligibility or the next conversation. Use plain choices where possible and reserve open text for information that cannot be captured reliably otherwise.",
+    "steps": [
+      "List the decisions the follow-up team must make.",
+      "Assign each field to one decision.",
+      "Test whether a teammate can act on a completed sample without asking everything again."
+    ],
+    "example": "A service provider might need location and project type before assigning a callback. Asking for a favorite social platform would add little unless it affects the service offered.",
+    "pitfall": "Do not collect sensitive information just because a form supports a text field. Keep the request proportional to the actual service inquiry.",
+    "measure": "Review missing-information callbacks and abandoned forms. Improve question clarity before assuming the audience is low quality."
+  },
+  {
+    "slug": "instagram-lead-ad-thank-you-page",
+    "title": "Make the Lead-Ad Confirmation Explain What Happens Next",
+    "intro": "After submitting a lead form, people need confirmation and a credible next step. A generic thank-you can leave them wondering whether they booked anything or merely requested information. The confirmation should match the action that actually occurred.",
+    "decision": "State whether the submission is a request, application or confirmed booking. Explain the expected follow-up channel and provide a useful resource when appropriate. Do not imply that submitting a form automatically starts an Instagram DM conversation.",
+    "steps": [
+      "Name the action completed in plain language.",
+      "Describe the team's real follow-up process.",
+      "Check the destination and message on a phone."
+    ],
+    "example": "For a consultation request, say that the team will review the request and explain how scheduling happens. If a separate calendar is required, identify it clearly rather than labeling the submission a booking.",
+    "pitfall": "Avoid unsupported response-time guarantees. A confirmation screen should not promise an instant call if staffing cannot support it.",
+    "measure": "Measure how many submitters ask what happens next or assume they already booked. Those questions reveal missing confirmation details."
+  },
+  {
+    "slug": "instagram-lead-ad-sales-handoff",
+    "title": "Build a Reliable Handoff From Instagram Leads to Sales",
+    "intro": "Collecting a lead is the beginning of an operational process, not its completion. Without an owner, context and a next action, even a well-designed ad can produce a neglected list. Define the handoff before increasing the campaign budget.",
+    "decision": "Create a small lead record with source, requested offer, submission time and responsible person. Keep form-submission records separate from Instagram interaction records unless a verified connection exists. A matching name alone is not a reliable identity link.",
+    "steps": [
+      "Assign ownership before the campaign starts.",
+      "Include the offer and relevant answers in the handoff.",
+      "Record the next action and whether it was completed."
+    ],
+    "example": "A team member receiving “Interested customer” has little context. Receiving “Requested installation quote for location X; prefers a callback” supports a specific next step.",
+    "pitfall": "Do not claim AP3K automatically sends ad leads to a CRM unless that integration has been implemented and tested. Document manual handoffs honestly.",
+    "measure": "Review unassigned leads and time to useful contact. More submissions will amplify an ownership problem rather than solve it."
+  },
+  {
+    "slug": "instagram-lead-ad-quality-scorecard",
+    "title": "Measure Instagram Lead Quality Beyond Cost per Lead",
+    "intro": "Cost per lead describes how much a submission costs, not whether the person is a suitable customer. A campaign can look efficient while sending the team irrelevant or unreachable requests. Define quality with observable criteria rather than a salesperson's general impression.",
+    "decision": "Use a short scorecard tied to the offer: valid contact route, relevant need, serviceable location and a clear next step. Avoid scoring based on assumptions about the person. Apply the same criteria across campaigns so comparisons mean something.",
+    "steps": [
+      "Define what makes an inquiry usable.",
+      "Record quality outcomes after a consistent review window.",
+      "Compare campaigns using the same denominator and period."
+    ],
+    "example": "If one campaign generates 100 requests and 15 qualified conversations, while another generates 40 and 18, the smaller campaign may deserve attention despite a higher submission cost.",
+    "pitfall": "Do not present this illustrative example as AP3K customer performance. Keep estimated, submitted, qualified and purchased stages separate.",
+    "measure": "Track cost per qualified inquiry and the reasons leads fail qualification. Feed those reasons into the offer and form design."
+  },
+  {
+    "slug": "instagram-lead-ad-organic-offer-consistency",
+    "title": "Keep Paid and Organic Instagram Offers Consistent",
+    "intro": "A person may see a paid ad, visit the profile and then comment on an organic post. If those surfaces describe different offers, the team creates confusion before any conversation starts. Align the promise across channels while retaining clear source measurement.",
+    "decision": "Use one approved offer brief with scope, eligibility, destination and current terms. Adapt the creative to the channel without changing the underlying promise. Keep an explicit note when a promotion genuinely differs so the team can explain it accurately.",
+    "steps": [
+      "Compare the ad, profile link and relevant organic captions.",
+      "Check every destination for consistent information.",
+      "Give support staff the current offer brief."
+    ],
+    "example": "If an ad promotes a workshop and a profile post sends an old event registration page, update or retire the old route before spending more on promotion.",
+    "pitfall": "Do not silently replace the organic offer to match an ad if earlier commenters were promised something else. Preserve or clearly explain the original resource.",
+    "measure": "Review inquiries mentioning conflicting prices, dates or inclusions. These are coordination failures, not necessarily weak ad targeting."
+  },
+  {
+    "slug": "instagram-lead-ad-budget-readiness",
+    "title": "Check Follow-Up Capacity Before Scaling Instagram Lead Ads",
+    "intro": "Increasing budget can overwhelm a small team if lead handling is already slow. Before scaling, estimate the number of inquiries the team can review and respond to meaningfully. A larger backlog is not a growth milestone.",
+    "decision": "Measure the current processing capacity and unresolved queue. Decide who handles overflow and which offers require specialist input. Automation can deliver routine information after supported interactions, but it does not replace ownership of an ad-lead follow-up process.",
+    "steps": [
+      "Count actionable leads waiting for review.",
+      "Estimate realistic daily handling capacity.",
+      "Increase volume only with a documented plan for additional demand."
+    ],
+    "example": "A team that can review ten detailed applications daily should not celebrate fifty new daily submissions without changing staffing or process. Otherwise response quality deteriorates.",
+    "pitfall": "Do not use automated acknowledgments to disguise a growing unresolved queue. Customers need a meaningful next step, not merely a fast timestamp.",
+    "measure": "Monitor queue age and qualified contact completion alongside spend. Pause scaling when handling quality falls below the team's stated standard."
+  },
+  {
+    "slug": "instagram-lead-ad-creative-prequalification",
+    "title": "Use Instagram Ad Creative to Set Lead Expectations",
+    "intro": "An ad can attract many responses by being vague, but the follow-up team then has to explain who the offer is actually for. Clear creative helps suitable people recognize themselves before submitting. This is qualification through useful information, not exclusion through confusing wording.",
+    "decision": "State the service type, relevant scope and commitment honestly. If a prerequisite materially affects eligibility, communicate it before the form. Avoid hiding essential conditions in a later message to preserve a high click rate.",
+    "steps": [
+      "Identify the most common mismatch in current leads.",
+      "Add the missing expectation to the creative or destination.",
+      "Review whether the new wording remains clear on mobile."
+    ],
+    "example": "A course consultation aimed at established businesses should explain that context. A generic “Grow fast” hook may attract people seeking unrelated free advice.",
+    "pitfall": "Do not invent earnings claims or imply guaranteed results. Specificity should describe the offer, not exaggerate what it can achieve.",
+    "measure": "Compare qualified outcomes and mismatch reasons after the change. A lower raw lead count can still represent a better fit."
+  },
+  {
+    "slug": "instagram-lead-ad-duplicate-source-records",
+    "title": "Avoid Double-Counting Instagram Leads Across Channels",
+    "intro": "The same person can submit a form, comment on a post and send a DM. Counting each event as a new customer inflates the funnel. Define the unit being reported before combining paid and organic lead data.",
+    "decision": "Distinguish interactions, submissions, contacts and customers. Use only legitimate identifiers available in the systems involved; do not infer identity from a similar display name. Where records cannot be matched reliably, report source-level counts without pretending they are unique people.",
+    "steps": [
+      "Label every metric with its unit.",
+      "Keep event counts separate from deduplicated contact counts.",
+      "Document matching rules and unmatched records."
+    ],
+    "example": "A report can say “30 form submissions and 22 Instagram conversations” when overlap is unknown. Calling the sum “52 unique leads” would overstate the evidence.",
+    "pitfall": "Do not assume AP3K contacts contain the identifiers needed to merge every ad record. Validate any integration before using its combined totals.",
+    "measure": "Review duplicate rates where matching is reliable and disclose unknown overlap elsewhere. Consistent definitions matter more than a larger headline number."
+  },
+  {
+    "slug": "instagram-lead-ad-experiment-brief",
+    "title": "Design a Lead-Ad Experiment Your Team Can Interpret",
+    "intro": "An experiment becomes hard to interpret when creative, offer, form and follow-up all change together. A written brief helps the team identify what is being tested and which result would justify a decision. It also prevents a convenient metric from replacing the original goal.",
+    "decision": "Choose one primary question and a business-relevant outcome. Keep the follow-up process comparable across variants. Record major differences in audience, timing or handling that could explain the result without attributing everything to the creative.",
+    "steps": [
+      "Write the hypothesis before launch.",
+      "Define the measurement period and qualification rule.",
+      "Review both performance and operational differences before choosing a winner."
+    ],
+    "example": "Test whether a clearer service-scope explanation improves qualified inquiries. Do not simultaneously change the offer price and assign one variant to a faster sales team.",
+    "pitfall": "Do not claim statistical certainty from a handful of outcomes. Small samples can suggest a direction without establishing a dependable winner.",
+    "measure": "Record qualified conversions and uncertainty. Use the result to decide the next focused test rather than declaring a permanent best ad."
+  }
+]

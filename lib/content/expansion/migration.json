@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "manychat-alternative-migration-inventory",
+    "title": "Inventory Your Instagram Workflows Before Leaving ManyChat",
+    "intro": "Switching tools starts with understanding what is currently running. A list of automation names is not enough if it omits triggers, destinations and business purpose. Build an inventory before making changes so valuable workflows are not lost during migration.",
+    "decision": "Record each active workflow's entry point, response, linked resource, owner and known dependencies. Distinguish Instagram-only needs from capabilities involving other channels. Evaluate AP3K against the workflows it actually supports rather than assuming a one-to-one import.",
+    "steps": [
+      "List active flows and their customer purpose.",
+      "Capture approved copy and destination URLs.",
+      "Mark each workflow as rebuild, retire or investigate."
+    ],
+    "example": "A guide-delivery flow may be straightforward to rebuild, while a complex multichannel process may require a different solution. Document the gap before disconnecting the original tool.",
+    "pitfall": "Do not promise automatic ManyChat imports or feature parity. Manual reconstruction and testing may be necessary.",
+    "measure": "Track inventory coverage and unresolved dependencies. A migration is ready to plan when every important workflow has a known destination or an explicit gap."
+  },
+  {
+    "slug": "manychat-alternative-cutover-plan",
+    "title": "Plan an Instagram Automation Cutover Without Duplicate Replies",
+    "intro": "A migration can create duplicate messages if the old and new tools listen to the same live interaction. Define a cutover window and a responsible owner before activating replacements. The aim is one intended responder for each campaign at a time.",
+    "decision": "Map the old and new trigger scopes, not just their names. Keep the replacement ready for testing while controlling when it becomes active. Preserve a documented rollback option until the new workflow passes its acceptance checks.",
+    "steps": [
+      "Choose a low-risk campaign for the first cutover.",
+      "Pause the corresponding old automation before activating the replacement.",
+      "Test a new interaction and inspect the delivered result."
+    ],
+    "example": "For a GUIDE keyword campaign on one post, record exactly which old flow is paused and which new AP3K automation replaces it. Avoid activating a broader account-wide rule accidentally.",
+    "pitfall": "Do not leave both tools active to “see which works better.” That can expose customers to duplicated or contradictory responses.",
+    "measure": "Record cutover time, test outcome and any affected interactions. Escalate unexpected behavior before moving the next campaign."
+  },
+  {
+    "slug": "manychat-alternative-message-copy-audit",
+    "title": "Audit Message Copy When Moving to a ManyChat Alternative",
+    "intro": "Copying messages unchanged can carry old variables, stale prices and tool-specific instructions into a new platform. Migration is a good moment to review the promise and remove unnecessary steps. Preserve the useful customer outcome rather than every historical message.",
+    "decision": "Separate actual copy from configuration syntax. Verify which variables, buttons and message types the destination tool supports. Replace unsupported tokens with clear static wording instead of hoping the new platform will interpret them.",
+    "steps": [
+      "Export or record the approved message text where available.",
+      "Remove obsolete claims and unsupported placeholders.",
+      "Test the received message and every destination."
+    ],
+    "example": "A token that inserts a first name in one platform may appear literally in another. A natural greeting without personalization is preferable to a broken variable.",
+    "pitfall": "Do not describe migrated copy as tested until it has been received through the intended workflow. Editor previews alone can miss real formatting issues.",
+    "measure": "Track corrections found during migration and update the maintained message library so the old mistakes are not copied again."
+  },
+  {
+    "slug": "manychat-alternative-trigger-mapping",
+    "title": "Map Trigger Meaning When Rebuilding Instagram Automations",
+    "intro": "Two tools can use similar trigger labels while applying them differently. A keyword, broad comment rule or incoming-message event must be tested in the replacement platform's actual context. Map intended behavior before copying settings.",
+    "decision": "Write examples of comments that should and should not qualify. Include the intended post scope and account. Evaluate the new tool against those examples without assuming identical matching semantics or automatic processing of historical interactions.",
+    "steps": [
+      "Describe the audience action in plain language.",
+      "Build positive and negative test cases.",
+      "Activate the replacement only after supported new interactions behave as intended."
+    ],
+    "example": "For a PRICE campaign, test the exact requested word and an unrelated comment. If broader matching is needed, verify its real behavior instead of inferring it from the label.",
+    "pitfall": "Do not claim old comments will be reprocessed during migration. AP3K responds to eligible new events after activation.",
+    "measure": "Record test results and unresolved differences. A known limitation is easier to manage than an untested assumption about equivalent triggers."
+  },
+  {
+    "slug": "manychat-alternative-history-preservation",
+    "title": "Preserve Useful Context During an Instagram Tool Migration",
+    "intro": "Historical conversations and campaign reports may not transfer into a new automation tool in the same form. Decide which records are needed for operations and reporting before access changes. Keep a clear distinction between archived history and live data in the replacement.",
+    "decision": "Review the original platform's actual export options and retention needs. Preserve only appropriate business records in an access-controlled location. A manual archive should not be presented as if it were natively imported into AP3K.",
+    "steps": [
+      "Identify records needed for ongoing customer handling.",
+      "Document what can be exported and what cannot.",
+      "Keep the migration date visible in future reports."
+    ],
+    "example": "A campaign performance snapshot can preserve a baseline even when detailed events are not portable. New AP3K results should start from the actual activation period.",
+    "pitfall": "Do not promise complete inbox history transfer or merge customers based on display names alone. Respect the available identifiers and access controls.",
+    "measure": "Track missing context that affects support. Include history limitations in the operational handoff so teammates do not assume the new dashboard contains everything."
+  },
+  {
+    "slug": "manychat-alternative-comparison-worksheet",
+    "title": "Compare ManyChat Alternatives by Workflow Fit",
+    "intro": "A useful comparison should help a buyer choose, not manufacture a winner. Start with the specific Instagram tasks required and evaluate each vendor against the same evidence. Current capabilities, limits and pricing matter more than a list copied from an old review.",
+    "decision": "Include must-have triggers, response types, account requirements, human handling, diagnostics and cost for a representative workload. Verify competitor information using current official material. Mark unknown capabilities as unverified rather than unsupported.",
+    "steps": [
+      "Write the actual workflow requirements.",
+      "Gather current evidence for each essential capability.",
+      "Run a practical test for the shortlisted tools."
+    ],
+    "example": "If the requirement is a straightforward comment-to-DM resource flow, a focused tool may fit. If the business needs broader multichannel functions, evaluate those separately before switching.",
+    "pitfall": "Do not claim AP3K is universally better, cheaper or equivalent. A fair comparison includes the situations where another product may suit the buyer.",
+    "measure": "Score requirement completion and documented trade-offs. Recheck the worksheet when pricing or product capabilities materially change."
+  },
+  {
+    "slug": "manychat-alternative-pilot-acceptance",
+    "title": "Define Acceptance Criteria for a ManyChat Alternative Pilot",
+    "intro": "A pilot should end with a decision supported by observable results. Without acceptance criteria, a team can mistake a polished interface for a successful migration. Define what the replacement must do for the customer and for the people operating it.",
+    "decision": "Use criteria covering correct targeting, accurate message content, working destinations and understandable activity. Include operational effort and the ability to stop or change a campaign. Keep optional features separate from essential requirements.",
+    "steps": [
+      "Choose a representative low-risk flow.",
+      "Write pass and fail conditions before testing.",
+      "Record the evidence and unresolved issues."
+    ],
+    "example": "A resource-delivery pilot passes when the intended new comment triggers the expected message and working link, unrelated comments do not qualify, and the operator can inspect the outcome.",
+    "pitfall": "Do not call a pilot complete after testing only the positive path. Include an unrelated comment and a scenario requiring human attention.",
+    "measure": "Review which requirements passed, failed or remain unknown. Move to broader rollout only when critical uncertainties are resolved."
+  },
+  {
+    "slug": "manychat-alternative-rollback-checklist",
+    "title": "Prepare a Rollback Before Replacing an Instagram Automation",
+    "intro": "A rollback plan reduces pressure during a migration problem. It specifies how to stop the replacement, restore the previous workflow where appropriate and explain the interruption internally. Prepare it before cutover, while the old configuration is still understood.",
+    "decision": "Keep the previous campaign settings documented and identify who can restore them. Define the conditions that justify rollback, such as incorrect recipients or broken destinations. Avoid restoring a flow without first stopping the conflicting replacement.",
+    "steps": [
+      "Record the previous active configuration.",
+      "Name the rollback owner and decision conditions.",
+      "Test the restoration sequence on a low-risk setup where practical."
+    ],
+    "example": "If the replacement sends the wrong resource, pause it, verify the issue and restore the known working route only after confirming that duplicate responders will not remain active.",
+    "pitfall": "Do not improvise by enabling every old campaign. Restore only the affected workflow with its verified scope.",
+    "measure": "Log the incident and why rollback was needed. Resolve the root issue before repeating the migration attempt."
+  },
+  {
+    "slug": "manychat-alternative-team-training",
+    "title": "Train Your Team on the New Instagram Workflow",
+    "intro": "A technically successful migration can still fail operationally if teammates do not know where to check activity or pause a campaign. Training should cover the tasks people perform daily, not a tour of every screen. Use the team's actual workflows as examples.",
+    "decision": "Give each role a short task list: launch, review, support and maintain. Explain product terminology that changed between tools. Confirm who can authorize edits to offers and who handles connection issues.",
+    "steps": [
+      "Demonstrate one complete campaign lifecycle.",
+      "Have a teammate repeat the key tasks independently.",
+      "Document escalation routes and ownership."
+    ],
+    "example": "Ask an operator to identify the active account, locate a campaign's activity and explain how to pause it. Their ability to complete the task reveals more than attendance at a training call.",
+    "pitfall": "Do not share owner-level access merely to simplify training. Use the access model actually available and authorized for the team.",
+    "measure": "Track repeated operational questions after launch. Improve the task guide where people consistently become stuck."
+  },
+  {
+    "slug": "manychat-alternative-post-migration-review",
+    "title": "Review the First Week After an Instagram Tool Migration",
+    "intro": "The first week after migration should focus on reliability and understanding. A sudden difference in reported totals may reflect changed metric definitions rather than a real business change. Compare the customer path and data sources before judging the replacement.",
+    "decision": "Review representative conversations, campaign scope and delivery activity. Reconcile old and new counting methods. Keep the migration period labeled so partial days, tests and paused workflows are not mistaken for normal performance.",
+    "steps": [
+      "Inspect the most important migrated workflows.",
+      "Separate internal tests from customer outcomes.",
+      "Record gaps and assign corrective actions."
+    ],
+    "example": "If the old report counted contacts and the new report counts successful actions, the totals are not directly comparable. Rebuild the comparison around a shared stage or outcome.",
+    "pitfall": "Do not declare growth or decline solely from incompatible dashboard totals. Verify the underlying unit and observation window.",
+    "measure": "Close the review with resolved issues, remaining risks and a decision about broader rollout. Keep successful workflows stable while addressing specific defects."
+  }
+]

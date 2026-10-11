@@ -1,6 +1,7 @@
-import { SIDEBAR_MENU } from "@/constants/menu";
+import { PRIMARY_NAVIGATION, primaryNavigationHref } from "@/constants/menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useI18n } from "@/providers/i18n-provider";
 
 type Props = {
   page: string;
@@ -8,22 +9,31 @@ type Props = {
 };
 
 function Items({ page, slug }: Props) {
-  return SIDEBAR_MENU.map((item) => (
-    <Link
-      key={item.id}
-      href={`/dashboard/${slug}/${item.label === "home" ? "/" : item.label}`}
-      className={cn(
-        "capitalize flex gap-x-2 rounded-full p-3",
-        page === item.label && "bg-[#0f0f0f]",
-        page === slug && item.label === "home"
-          ? "bg-[#0f0f0f]"
-          : "text-[#9B9CA0]"
-      )}
-    >
-      {item.icon}
-      {item.label}
-    </Link>
-  ));
+  const { t } = useI18n();
+  return PRIMARY_NAVIGATION.map((item) => {
+    const Icon = item.icon;
+    const isActive =
+      item.segment === ""
+        ? page === slug || page === ""
+        : page === item.segment;
+
+    return (
+      <Link
+        key={item.segment || "home"}
+        href={primaryNavigationHref(slug, item.segment)}
+        aria-current={isActive ? "page" : undefined}
+        className={cn(
+          "flex min-h-11 items-center gap-x-2 rounded-xl border border-transparent px-3 py-2.5 text-sm font-semibold transition-colors duration-fast",
+          isActive
+            ? "border-violet-200 bg-violet-50 text-violet-800 dark:border-violet-400/20 dark:bg-violet-400/10 dark:text-violet-200"
+            : "text-slate-500 light:text-slate-600 hover:bg-slate-100 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-white/[0.06] dark:hover:text-white"
+        )}
+      >
+        <Icon aria-hidden="true" className="h-4 w-4 shrink-0" />
+        {t(item.messageKey)}
+      </Link>
+    );
+  });
 }
 
 export default Items;

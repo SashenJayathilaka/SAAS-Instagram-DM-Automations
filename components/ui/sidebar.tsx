@@ -1,4 +1,8 @@
-"use client"
+"use client";
+import { UiText } from "@/components/i18n/localized-copy";
+
+
+import { LocalizedButton } from "@/components/i18n/localized-controls";
 
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
@@ -279,7 +283,7 @@ const SidebarTrigger = React.forwardRef<
       {...props}
     >
       <PanelLeft />
-      <span className="sr-only">Toggle Sidebar</span>
+      <span className="sr-only"><UiText>{"Toggle Sidebar"}</UiText></span>
     </Button>
   )
 })
@@ -292,7 +296,7 @@ const SidebarRail = React.forwardRef<
   const { toggleSidebar } = useSidebar()
 
   return (
-    <button
+    <LocalizedButton
       ref={ref}
       data-sidebar="rail"
       aria-label="Toggle Sidebar"

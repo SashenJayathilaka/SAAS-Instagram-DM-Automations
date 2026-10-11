@@ -1,4 +1,6 @@
 "use client";
+import { UiText } from "@/components/i18n/localized-copy";
+
 
 import { Separator } from "@/components/ui/separator";
 import { useQueryAutomations } from "@/hooks/user-queries";
@@ -25,13 +27,11 @@ function PostNode({ id }: Props) {
           <span className="h-[9px] w-[9px] bg-connector/10 rounded-full" />
         </div>
         <div className="flex gap-x-2">
-          <Warning />
-          If they comment on...
-        </div>
+          <Warning /><UiText>{" If they comment on... "}</UiText></div>
         <div className="bg-background-80 p-3 rounded-xl flex flex-col gap-y-2">
           <div className="flex gap-x-2 items-center">
             <InstagramBlue />
-            <p className="font-bold text-lg">These posts</p>
+            <p className="font-bold text-lg"><UiText>{"These posts"}</UiText></p>
           </div>
           <div className="flex gap-2 flex-wrap mt-3">
             {data.data.posts.map((post) => (

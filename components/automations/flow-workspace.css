@@ -1,0 +1,44 @@
+.flow-workspace{background:#f5f5f5;color:#111827;font-family:inherit}.dark .flow-workspace{background:#0d1421;color:#e2e8f0}.flow-card{width:320px;border:1px solid transparent;border-radius:12px;background:#fff;box-shadow:0 1px 2px #0f172a14;font-size:12px;line-height:1.5}.dark .flow-card{background:#192233;border-color:#ffffff0d}.flow-card.is-selected{border-color:#22a45a;box-shadow:0 0 0 1px #22a45a}.flow-card .react-flow__handle{width:10px;height:10px;min-width:10px;min-height:10px;background:#fff;border:1.5px solid #aaa}.dark .flow-card .react-flow__handle{background:#192233;border-color:#9ba5ba}.flow-workspace .react-flow__controls{margin:14px;border:1px solid #e5e7eb;box-shadow:0 2px 8px #0f172a10}.flow-workspace .react-flow__controls-button{width:32px;height:32px;background:#fff;color:#111;border-bottom:1px solid #eee}.dark .flow-workspace .react-flow__controls{border-color:#334155}.dark .flow-workspace .react-flow__controls-button{background:#192233;color:#e2e8f0;border-color:#334155}.flow-workspace .react-flow__attribution{font-size:8px;background:transparent;opacity:.55}.flow-workspace .react-flow__edge.selected path{stroke:#7c3aed;stroke-width:2}.flow-workspace .react-flow__node:focus-visible{outline:2px solid #7c3aed;outline-offset:4px}.flow-assistant-input{box-shadow:0 8px 22px #4f46e517}.flow-editor-input{width:100%;margin-top:8px;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;background:#fff;font-size:14px;outline:none}.flow-editor-input:focus{border-color:#8b5cf6}.dark .flow-editor-input{border-color:#ffffff1a;background:#0d1421;color:#e2e8f0}@media(max-width:767px){.flow-card{width:300px}.flow-editor-input{font-size:16px}}
+
+/* Make the Then label and port one drag target, including on touch screens. */
+.flow-card .flow-output-handle{width:64px;height:28px;right:0;min-width:24px;min-height:24px;background:transparent;border:0;border-radius:0;transform:translateY(-50%);cursor:crosshair}
+.flow-card .flow-output-handle::after{content:"";position:absolute;right:-6px;top:50%;width:12px;height:12px;transform:translateY(-50%);border:1.5px solid #aaa;border-radius:50%;background:#fff}
+.dark .flow-card .flow-output-handle{background:transparent;border:0}
+.dark .flow-card .flow-output-handle::after{background:#192233;border-color:#9ba5ba}
+.flow-card .flow-output-handle:hover::after,.flow-card .flow-output-handle.connectingfrom::after{border-color:#7c3aed;background:#ede9fe}
+.flow-workspace .react-flow__node.draggable{cursor:grab}
+.flow-workspace .react-flow__node.dragging{cursor:grabbing}
+
+/* Light canvas: visible boundaries and ports without changing canvas geometry. */
+html:not(.dark) .flow-workspace { background:#eef1f6; }
+html:not(.dark) .flow-card { border-color:#aebccc; box-shadow:0 2px 6px #0f172a0d,0 8px 24px #0f172a08; }
+html:not(.dark) .flow-card.is-selected { border-color:#168343; }
+html:not(.dark) .flow-card .react-flow__handle,html:not(.dark) .flow-output-handle::after { border-color:#64748b; }
+html:not(.dark) .flow-card .flow-output-handle { border:0; }
+html:not(.dark) .flow-editor-input { border-color:#94a3b8; }
+.flow-editor-input:focus-visible { outline:2px solid #7c3aed; outline-offset:2px; }
+html:not(.dark) .flow-workspace .react-flow__controls { border-color:#94a3b8; }
+
+html:not(.dark) .flow-workspace .react-flow__attribution { color:#475569; font-size:11px; opacity:1; }
+html:not(.dark) .flow-workspace .react-flow__attribution a { color:inherit; }
+html:not(.dark) .flow-assistant-input input::placeholder, html:not(.dark) .flow-editor-input::placeholder { color:#475569; opacity:1; }
+
+/* Scroll the container, never compress the post grid's implicit rows. */
+.flow-post-scroll { scrollbar-gutter:stable; -webkit-overflow-scrolling:touch; }
+.flow-post-tile { min-height:0; align-self:start; background:#e2e8f0; }
+.dark .flow-post-tile { background:#263247; }
+:is(.flow-editor-shell,.flow-editor-dialog) button { touch-action:manipulation; transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease,box-shadow 160ms ease,transform 160ms ease; }
+:is(.flow-editor-shell,.flow-editor-dialog) button:focus-visible { outline:2px solid #8b5cf6; outline-offset:3px; }
+:is(.flow-editor-shell,.flow-editor-dialog) button:disabled { cursor:not-allowed; }
+.flow-primary-button:hover:not(:disabled) { box-shadow:0 4px 14px #7c3aed30; filter:brightness(1.06); }
+.flow-primary-button:active:not(:disabled) { transform:scale(.98); }
+.flow-editor-shell aside { animation:flow-panel-in 180ms ease-out; }
+@keyframes flow-panel-in { from { opacity:0; transform:translateX(12px); } to { opacity:1; transform:translateX(0); } }
+@media(max-width:767px) {
+  :is(.flow-editor-shell,.flow-editor-dialog) input:not([type=checkbox]):not([type=radio]), :is(.flow-editor-shell,.flow-editor-dialog) textarea, :is(.flow-editor-shell,.flow-editor-dialog) select { font-size:16px; }
+  .flow-editor-shell aside header button { min-width:44px; min-height:44px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  :is(.flow-editor-shell,.flow-editor-dialog) button,.flow-editor-shell aside { transition:none; animation:none; }
+  .flow-primary-button:active:not(:disabled) { transform:none; }
+}

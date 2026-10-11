@@ -1,0 +1,693 @@
+[
+  {
+    "slug": "post-automation/create-instagram-comment-to-dm-automation",
+    "group": "post-automation",
+    "title": "Create an Instagram Comment-to-DM Automation",
+    "html": "<p>Imagine every time someone drops a comment on your Instagram post, they get an instant, friendly DM from you, without you even touching your phone. That’s Comment-to-DM Automation.</p>\n<p>It’s like having a superpower where every comment turns into a private conversation, automatically. No more missed opportunities. No more forgetting to reply. Just smooth, real-time engagement that feels personal, not robotic.</p>\n<p>Whether it’s a giveaway, a product inquiry, or a casual question, AP3K slides into your follower’s DMs for you, starting conversations while you’re busy running your brand (or, let’s be real, binge-watching your favorite series).</p>\n<p>Once your Instagram account is connected to AP3K, you’re ready to create your first automation. Here’s exactly how to do it in just a few clicks:</p>\n<aside><p>Before you begin</p><ul><li>An Instagram account <a href=\"/docs/getting-started/connect-instagram-account\">connected to AP3K</a></li><li>A published post or reel for the automation to watch</li><li>The DM you want to send: text, or an image with buttons</li></ul></aside>\n<h2 id=\"step-1-go-to-the-dashboard\">Step 1: Go to the Dashboard</h2>\n<p>After logging in, you’ll land on the AP3K dashboard. This is your main control panel.</p>\n<h2 id=\"step-2-open-automations\">Step 2: Open Automations</h2>\n<p>Open <strong>Automations</strong> in the sidebar to see your saved automations. Above the list, <strong>All / Basic / Flow</strong> filter what you are looking at.</p>\n<h2 id=\"step-3-create-a-post-automation\">Step 3: Create a Post Automation</h2>\n<p>Click <strong>+ New automation</strong>. The dialog offers three quick automations:</p>\n<ul>\n<li><strong>Post automation</strong>: replies when someone comments on a post or reel</li>\n<li><strong>Story automation</strong>: replies to story replies and reactions</li>\n<li><strong>Chat automation</strong>: replies to keywords sent in DMs</li>\n</ul>\n<p>Below those sit the advanced options — <a href=\"/docs/flow-builder/wiring-basics\"><strong>Flow\nbuilder</strong></a> and <a href=\"/docs/flow-builder/ai-flow-builder\"><strong>AI assisted flow\nbuilder</strong></a> — plus a conversation starter and\n<a href=\"/docs/flow-builder/flow-templates\">ready-made templates</a>.</p>\n<p>Choose <strong>Post automation</strong> for a comment-to-DM flow.</p>\n<h2 id=\"step-4-configure-your-automation\">Step 4: Configure Your Automation</h2><p>You’ll now walk through a few quick setup steps:</p><ol><li><strong>Select Post or Reel:</strong> choose <strong>a specific post or reel</strong> and click its thumbnail, or choose <strong>Any post</strong> for an account-wide campaign.</li><li><strong>Set Trigger:</strong> choose <strong>Any comment</strong> or <strong>a specific word (s)</strong>. Add campaign keywords such as LINK, GUIDE or INFO; choose Contains keyword or Exact match.</li><li><strong>Set Public comment reply:</strong> write saved replies in Manual, or use an AI prompt. Free accounts can generate a prompt and preview samples within the preview allowance; publishing AI replies requires a paid plan.</li><li><strong>Choose Message format:</strong> plain text, text with button (up to three links), image with button, or attachment.</li><li><strong>Add optional steps:</strong> an Opener message can ask the person to tap before the final DM. Paid plans can add Collect info, Ask to follow and Follow up message.</li></ol><p>Use the live preview to review the reply, DM and button labels. This automation listens for new matching interactions after publication. To process eligible comments from the previous seven days, review and run the separate Backtrack comments action.</p><h2 id=\"step-5-publish-and-go-live\">Step 5: Publish and Go Live</h2>\n<p>Choose Publish to open the safety review. Read its findings, adjust the setup if needed, then confirm publication. Verify Enabled status and test a fresh interaction from another account.</p>\n<aside><p>Pro Tip</p><p>Always test your automation by commenting from another account to make sure it’s firing correctly.</p></aside><aside><p>You should now have</p><p>A live post automation that watches the post you chose, replies to matching\ncomments, and sends your DM, running whether or not you’re online.</p><a href=\"/docs/post-automation/instagram-automation-triggers\">Next: <strong>Triggers in automation</strong></a></aside>\n<h2 id=\"real-world-cases-and-examples\">Real-World Cases and Examples</h2>\n<ul>\n<li><strong>Giveaway Madness:</strong> “Comment ‘Done’ to enter!” → Auto DM bonus entry steps and watch excitement build.</li>\n<li><strong>Flash Sales:</strong> “Comment ‘SALE’ for your code!” → DM them a time-limited discount and drive FOMO.</li>\n<li><strong>Product Teasers:</strong> “Want early access? Comment ‘VIP’!” → DM secret launch info to your biggest fans.</li>\n<li><strong>Service Bookings:</strong> “Need help? Comment ‘Consult’!” → DM your booking link and get those calls lined up.</li>\n<li><strong>Event Hype:</strong> “Coming to our event? Comment ‘RSVP’!” → DM them venue details and save the date.</li>\n<li><strong>Freebies &amp; Guides:</strong> “Want the checklist? Comment ‘Guide’!” → DM them the PDF instantly.</li>\n<li><strong>Support Made Easy:</strong> “Got an issue? Comment ‘Help’!” → DM a quick troubleshooting guide.</li>\n<li><strong>Newsletter Signups:</strong> “Stay updated! Comment ‘Subscribe’!” → DM signup link.</li>\n<li><strong>Lead Magnets:</strong> “Grab the resource! Comment ‘Download’!” → DM a freebie and collect leads.</li>\n</ul>\n<h2 id=\"best-ways-to-set-up\">Best Ways to Set Up</h2>\n<ul>\n<li><strong>Mix up your replies.</strong> Random message variations = natural convo vibes.</li>\n<li><strong>Always drop a clear CTA:</strong> “Tap the link!”, “Reply YES!”, “Claim now!”</li>\n<li><strong>Keep it on-brand:</strong> Sound like you, not a bot. Emojis? Humor? Go for it.</li>\n<li><strong>Always preview/test</strong> with a dummy account first. Nobody likes broken automations.</li>\n<li>If expecting loads of comments (think big promos), let <strong>AI Auto-Reply</strong> help you out without missing a beat.</li>\n</ul>",
+    "updated": "2026-10-06",
+    "headings": [
+      {
+        "id": "step-1-go-to-the-dashboard",
+        "text": "Step 1: Go to the Dashboard",
+        "level": 2
+      },
+      {
+        "id": "step-2-open-automations",
+        "text": "Step 2: Open Automations",
+        "level": 2
+      },
+      {
+        "id": "step-3-create-a-post-automation",
+        "text": "Step 3: Create a Post Automation",
+        "level": 2
+      },
+      {
+        "id": "step-4-configure-your-automation",
+        "text": "Step 4: Configure Your Automation",
+        "level": 2
+      },
+      {
+        "id": "step-5-publish-and-go-live",
+        "text": "Step 5: Publish and Go Live",
+        "level": 2
+      },
+      {
+        "id": "real-world-cases-and-examples",
+        "text": "Real-World Cases and Examples",
+        "level": 2
+      },
+      {
+        "id": "best-ways-to-set-up",
+        "text": "Best Ways to Set Up",
+        "level": 2
+      }
+    ],
+    "description": "Imagine every time someone drops a comment on your Instagram post, they get an instant, friendly DM from you, without you even touching your phone. That’s Comment-to-DM Automation.",
+    "video": true
+  },
+  {
+    "slug": "post-automation/choose-which-post-or-reel-to-automate",
+    "group": "post-automation",
+    "title": "Choose Which Post or Reel an Automation Watches",
+    "html": "<p><strong>Post</strong> is the first card in the automation editor, and it answers one\nquestion: which piece of content is this automation listening to?</p>\n<p>Nothing else runs until this is set. A trigger with no post attached has nothing\nto watch.</p>\n<h2 id=\"the-three-choices\">Choose the post scope</h2><p>Open the dropdown on the <strong>Post</strong> card:</p><ul><li><strong>a specific post or reel</strong> — pick one piece of published content from the grid. The automation listens on that post.</li><li><strong>Any post</strong> — listen across the account’s posts and reels. Use a relevant campaign keyword so unrelated comments do not receive the wrong link.</li></ul><p>Pick a specific post and a grid of your published content appears underneath. Click a thumbnail to select it and review the selected post in the preview. Use the search field or Refresh if the post you need is missing.</p><p>To prepare a campaign for your next upload, use the <strong>Auto-DM on next post or reel</strong> template. The quick Post picker itself has the two choices above.</p><h2 id=\"which-one-to-use\">Which one to use</h2><p><strong>A specific post</strong> is the right default. Most automations exist for one campaign — a giveaway, a launch, a lead magnet — and the DM you write only makes sense next to that post.</p><p><strong>Any post</strong> suits a broad, evergreen campaign. Check that the message makes sense across your feed, including future posts.</p><aside><p><strong>Avoid overlapping campaigns</strong></p><p>Review other active automations before publishing. Give campaigns distinct keywords or use the Flow builder to route people through one conversation. Multiple keywords in a quick automation are alternatives that lead to the same response.</p></aside><h2 id=\"changing-the-post-later\">Changing the post later</h2>\n<p>The selection is not locked once you publish. Reopen the automation, click the\n<strong>Post</strong> card, and choose different content — the trigger, replies and DM all\nstay as they were. This is the quick way to reuse a campaign that worked: point\nlast month’s automation at this month’s post rather than rebuilding it.</p>\n<p>Reels, image posts and carousels all work the same way. Stories do not appear\nhere — those belong to a story automation, which is a separate type.</p>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "the-three-choices",
+        "text": "Choose the post scope",
+        "level": 2
+      },
+      {
+        "id": "which-one-to-use",
+        "text": "Which one to use",
+        "level": 2
+      },
+      {
+        "id": "changing-the-post-later",
+        "text": "Changing the post later",
+        "level": 2
+      }
+    ],
+    "description": "Post is the first card in the automation editor, and it answers one\nquestion: which piece of content is this automation listening to?"
+  },
+  {
+    "slug": "post-automation/instagram-automation-triggers",
+    "group": "post-automation",
+    "title": "Instagram Automation Triggers",
+    "html": "<p>Triggers tell AP3K when to jump into action: a comment on a post, an interaction with a story, or a message sent to your inbox. Choose the automation type first, then set a rule that matches your call to action.</p><h2 id=\"any-comment\">1: Any comment</h2><p>If you want to keep it simple and respond to any eligible comment on your selected post or reel, choose <strong>Any comment</strong>. This is useful for giveaways where the caption says “comment anything to enter.”</p><p>Someone comments “Love this 🥰” on your product reel → AP3K can send your thank-you message and offer link.</p><h2 id=\"specific-keywords\">2: Specific keywords</h2><p>Choose <strong>a specific word (s)</strong> when the campaign asks people to comment LINK, GUIDE, INFO or another word. Type a keyword into <strong>Add keyword</strong> and press Enter. Each becomes a chip you can remove with its ×. Matching any one of the saved keywords is enough.</p><p><strong>Contains keyword</strong> matches the word or phrase inside a longer comment. <strong>Exact match</strong> requires the comment to match the keyword. Matching ignores letter case. For example, “What’s the price?” can match <code>price</code> in Contains mode; <code>price</code> does not match <code>pricing</code>.</p><p>AP3K does not offer an Intent Match trigger in this editor. Add the different words your audience uses, or choose Any comment when every comment should qualify.</p><h2 id=\"which-trigger\">When to use which</h2><table><thead><tr><th>You want to…</th><th>Use</th></tr></thead><tbody><tr><td>DM people who comment on the selected post</td><td>Any comment</td></tr><tr><td>DM people using a campaign word in a sentence</td><td>Specific keywords + Contains keyword</td></tr><tr><td>Require the campaign word alone</td><td>Specific keywords + Exact match</td></tr></tbody></table><h2 id=\"also-trigger-on-shares\">Also trigger on shares</h2><p>This switch runs the automation when someone shares the selected post to your DMs. It does not mean sharing the post to any other inbox. AP3K checks the shared post against the configured post scope.</p><h2 id=\"one-dm-per-user\">One DM per user</h2><p>Even if someone comments several times, they get only one initial DM from this automation. The same conversation can still continue through its buttons and configured steps. Turn this on for campaigns where people tend to comment repeatedly.</p><h2 id=\"stories-and-incoming-dms\">Stories and incoming DMs</h2><p>A <a href=\"/docs/story-automation/create-instagram-story-automation\">Story automation</a> selects <strong>Mentions me</strong>, <strong>Reacts</strong> or <strong>Replies</strong>. A <a href=\"/docs/chat-automation/create-a-chat-automation\">Chat automation</a> selects specific keywords or <strong>Any incoming DM</strong>. These are separate from the Post automation’s comment trigger.</p><h2 id=\"best-practices\">Best practices for triggers</h2><ul><li>Use a short, clear word in both the caption and your automation.</li><li>Test a matching comment and a non-matching comment from another account.</li><li>Check which other automations listen to the same posts or inbox.</li><li>Keep the reply relevant to the promise people responded to.</li></ul>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "any-comment",
+        "text": "1: Any comment",
+        "level": 2
+      },
+      {
+        "id": "specific-keywords",
+        "text": "2: Specific keywords",
+        "level": 2
+      },
+      {
+        "id": "which-trigger",
+        "text": "When to use which",
+        "level": 2
+      },
+      {
+        "id": "also-trigger-on-shares",
+        "text": "Also trigger on shares",
+        "level": 2
+      },
+      {
+        "id": "one-dm-per-user",
+        "text": "One DM per user",
+        "level": 2
+      },
+      {
+        "id": "stories-and-incoming-dms",
+        "text": "Stories and incoming DMs",
+        "level": 2
+      },
+      {
+        "id": "best-practices",
+        "text": "Best practices for triggers",
+        "level": 2
+      }
+    ],
+    "description": "Triggers tell AP3K when to jump into action: a comment on a post, an interaction with a story, or a message sent to your inbox. Choose the automation type first, then set a rule…"
+  },
+  {
+    "slug": "post-automation/write-your-own-public-comment-replies",
+    "group": "post-automation",
+    "title": "Public Comment Replies You Write Yourself",
+    "html": "<p>When your automation fires, it does two things: it sends the DM, and — if you\nlet it — it leaves a public reply under the comment that triggered it.</p>\n<p>The public reply is the part everyone else scrolling the post can see. It tells\nthe commenter to go and check their inbox, and it tells everyone else that\ncommenting gets a response.</p>\n<h2 id=\"turning-it-on\">Turning it on</h2>\n<p>The <strong>Public comment reply</strong> card has a toggle on its right. Off, the automation\nstill sends DMs — it just stays out of your comment section.</p>\n<p>Switch it on and choose <strong>Manual</strong> to write the replies yourself. (The other\ntab, <a href=\"/docs/post-automation/ai-public-comment-replies\">AI</a>, generates a fresh\nreply for every comment from a prompt.)</p>\n<h2 id=\"writing-the-replies\">Writing the replies</h2>\n<p>Type a reply and press Enter. It joins the list above the field, with a bin\nicon to delete it. Add up to 20 saved replies.</p>\n<p><strong>Insert <code>{{username}}</code></strong> to drop the commenter’s Instagram handle into the\nreply — there’s a shortcut button on the right of the input. “Sent it over,\n<code>{{username}}</code> 💌” reads like you typed it; “Sent it over” repeated forty times\ndoes not.</p>\n<h2 id=\"add-three-or-more\">Add three or more</h2>\n<p>Three or more short replies make a busy comment section less repetitive. AP3K can rotate the saved replies rather than posting the same sentence every time.</p>\n<p>With more than one reply saved, <strong>Rotate randomly per comment</strong> selects from your saved replies, so the section reads like a person answering rather\nthan a script.</p>\n<p>Three or four short variants is plenty:</p>\n<ul>\n<li>“Just sent it 📩”</li>\n<li>“Check your DMs, <code>{{username}}</code>!”</li>\n<li>“On its way — have a look at your message requests too”</li>\n<li>“Sent! Let me know if it doesn’t land”</li>\n</ul>\n<h2 id=\"limit-how-many-go-out\">Limit how many go out</h2>\n<p>The public reply limit offers no cap, 100 or 200 replies per post. Choose a limit deliberately. Once the cap is reached, public replies stop while eligible DM delivery can continue.</p>\n<p>This matters on a post that takes off. A hundred replies from your account under\none post is engagement; a thousand is a wall of your own name, and Instagram’s\nspam systems notice. If you want the reasoning and the numbers, see\n<a href=\"/docs/how-tos/limit-public-replies-on-instagram-automation\">Limit public replies</a>.</p>\n<aside><p>Pro Tip</p><p>Mention the message request folder in at least one variant. First-time DMs from\nan account someone doesn’t follow often land there, and “check your requests” is\nthe difference between a delivered DM and an unread one.</p></aside>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "turning-it-on",
+        "text": "Turning it on",
+        "level": 2
+      },
+      {
+        "id": "writing-the-replies",
+        "text": "Writing the replies",
+        "level": 2
+      },
+      {
+        "id": "add-three-or-more",
+        "text": "Add three or more",
+        "level": 2
+      },
+      {
+        "id": "limit-how-many-go-out",
+        "text": "Limit how many go out",
+        "level": 2
+      }
+    ],
+    "description": "When your automation fires, it does two things: it sends the DM, and — if you\nlet it — it leaves a public reply under the comment that triggered it."
+  },
+  {
+    "slug": "post-automation/ai-public-comment-replies",
+    "group": "post-automation",
+    "title": "AI Public Comment Replies",
+    "html": "<p>Writing four public replies by hand is fine. Writing enough of them that a busy\npost never repeats itself is not — which is where the <strong>AI</strong> tab comes in.</p>\n<p>Instead of a list of replies, you give AP3K a prompt. Every comment that\nfires the automation gets its own reply, written on the spot from that prompt\nand the comment it’s answering.</p>\n<h2 id=\"setting-it-up\">Setting it up</h2>\n<p>In the <strong>Public comment reply</strong> card, switch the toggle on and pick <strong>AI</strong> —\nit’s the recommended tab.</p>\n<h2 id=\"writing-the-prompt\">Writing the prompt</h2>\n<p>The prompt is a description of what the reply should do and how it should sound,\nnot the reply itself. The default is a good shape to copy:</p>\n<blockquote>\n<p>Thank <code>{{username}}</code> for commenting and let them know a special link is waiting\nin their DMs, with a friendly, cheerful tone.</p>\n</blockquote>\n<p>Three things make a prompt work:</p>\n<ul>\n<li><strong>The job.</strong> Point them to their DMs, thank them, answer the question — say\nwhich.</li>\n<li><strong>The tone.</strong> “Friendly and cheerful”, “short and dry”, “warm, no emojis”. The\nAI will otherwise default to a brightness that may not be yours.</li>\n<li><strong><code>{{username}}</code></strong> where you want the commenter’s handle.</li>\n</ul>\n<p>You have 400 characters, and the counter under the box tracks them.</p>\n<p><strong>Regenerate prompt</strong> rewrites the prompt itself — useful when you know roughly\nwhat you want but not how to phrase it. <strong>Show preview</strong> renders sample replies\nso you can hear the tone before anyone else does.</p>\n<h2 id=\"ai-or-manual\">AI or manual?</h2>\n<p>Use <strong>AI</strong> when comment volume is high or unpredictable, when comments are\nactual questions rather than a keyword, or when you want the section to look\ngenuinely conversational.</p>\n<p>Use <a href=\"/docs/post-automation/write-your-own-public-comment-replies\"><strong>manual</strong></a> when the\nreply must be exact — a legal phrase, a promo code, a specific instruction — or\nwhen you’d rather approve every sentence your account posts in public.</p>\n<aside><p>Preview before publishing</p><p>The AI writes in public, under your name, at comment speed. Run <strong>Show preview</strong>\nand read a few samples first — a prompt that’s slightly off produces dozens of\nslightly-off replies before you notice.</p></aside>\n<p>The per-post cap in the card header applies here exactly as it does to manual\nreplies: once it’s reached, public replies stop and DMs carry on.</p><h2 id=\"free-previews-and-paid-publishing\">Free previews and paid publishing</h2><p>Free users can generate a prompt and sample replies within the preview allowance. This lets you review the tone before upgrading. When a Free account attempts to publish an automation with AI replies, AP3K shows <strong>AI only available on paid plans.</strong></p><p>Choose Manual and review your saved replies if you want to publish without AI, or move to a paid plan. Published AI replies also depend on your plan’s AI allowance and the connected provider being available.</p>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "setting-it-up",
+        "text": "Setting it up",
+        "level": 2
+      },
+      {
+        "id": "writing-the-prompt",
+        "text": "Writing the prompt",
+        "level": 2
+      },
+      {
+        "id": "ai-or-manual",
+        "text": "AI or manual?",
+        "level": 2
+      },
+      {
+        "id": "free-previews-and-paid-publishing",
+        "text": "Free previews and paid publishing",
+        "level": 2
+      }
+    ],
+    "description": "Writing four public replies by hand is fine. Writing enough of them that a busy\npost never repeats itself is not — which is where the AI tab comes in."
+  },
+  {
+    "slug": "post-automation/dm-message-layouts-text-buttons-attachments",
+    "group": "post-automation",
+    "title": "DM Message Layouts: Plain Text, Buttons and Attachments",
+    "html": "<p>The <strong>Message</strong> card is the DM itself. The dropdown in its header decides what\nshape that DM takes — and the shape matters more than most people expect,\nbecause a tappable button gets clicked far more often than a link pasted into a\nsentence.</p>\n<h2 id=\"plain-text\">Plain text</h2>\n<p>Just words. Up to 1,000 characters, links included.</p>\n<p>Instagram turns a pasted URL into a tappable link, so plain text is perfectly\nworkable for a single link — it just looks like a normal message rather than a\ncard. Use it for conversational openers, answers to questions, and anywhere a\ndesigned card would feel like an ad.</p>\n<h2 id=\"text-with-button\">Text with button</h2>\n<p>The same message, with up to three buttons underneath it. Each button has a\n<strong>link</strong> and a <strong>label</strong> of up to 20 characters.</p>\n<p>This is the workhorse for link campaigns. The message explains, the button\ngets tapped, and you get a click you can count. <strong>+ Add link</strong> adds a second\nand third button — enough for “Shop now / See sizes / Talk to us” without\nturning the DM into a menu.</p>\n<p>Keep the message concise so the action remains easy to find. The editor lets you write up to 1,000 characters; button labels are limited to 20 characters.</p>\n<h2 id=\"image-with-button\">Image with button</h2><p>A product card: image on top, title, optional subtitle, and up to three buttons underneath. The quick Post editor creates one card. For a swipeable carousel of up to ten cards, use <strong>Auto DM product link carousel</strong> in Templates or the <strong>Product carousel</strong> node in Flow builder.</p><p>See <a href=\"/docs/post-automation/send-images-video-gifs-and-carousels-in-dms\">Media in DMs</a> for upload formats and limits.</p><h2 id=\"attachment\">Attachment</h2>\n<p>Sends a file — image, video, GIF, audio or PDF — instead of a formatted\nmessage. Also in <a href=\"/docs/post-automation/send-images-video-gifs-and-carousels-in-dms\">Media in DMs</a>.</p>\n<h2 id=\"choosing\">Choosing</h2>\n<table>\n<thead>\n<tr>\n<th>You want to…</th>\n<th>Use</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Answer a question, sound human</td>\n<td>Plain text</td>\n</tr>\n<tr>\n<td>Send one link and count the taps</td>\n<td>Text with button</td>\n</tr>\n<tr>\n<td>Show a product, or several</td>\n<td>Image with button</td>\n</tr>\n<tr>\n<td>Deliver a guide, price list or clip</td>\n<td>Attachment</td>\n</tr>\n</tbody>\n</table>\n<aside><p>Pro Tip</p><p>Switching layout keeps the text you’ve already written where it can carry\nover, so it’s cheap to try one against another. Watch the live preview on the\nright as you switch — it helps you review the message before testing it in Instagram.</p></aside>\n<p>Text messages can use <a href=\"/docs/post-automation/dm-message-variations\">variations</a>. The quick editor’s attachment and product-card layouts do not rotate uploaded media.</p>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "plain-text",
+        "text": "Plain text",
+        "level": 2
+      },
+      {
+        "id": "text-with-button",
+        "text": "Text with button",
+        "level": 2
+      },
+      {
+        "id": "image-with-button",
+        "text": "Image with button",
+        "level": 2
+      },
+      {
+        "id": "attachment",
+        "text": "Attachment",
+        "level": 2
+      },
+      {
+        "id": "choosing",
+        "text": "Choosing",
+        "level": 2
+      }
+    ],
+    "description": "The Message card is the DM itself. The dropdown in its header decides what\nshape that DM takes — and the shape matters more than most people expect,\nbecause a tappable button gets…"
+  },
+  {
+    "slug": "post-automation/send-images-video-gifs-and-carousels-in-dms",
+    "group": "post-automation",
+    "title": "Send Images, Video, GIFs and Carousels in a DM",
+    "html": "<p>Two of the four <a href=\"/docs/post-automation/dm-message-layouts-text-buttons-attachments\">message\nlayouts</a> send media rather than\ntext: <strong>image with button</strong> builds a card, and <strong>attachment</strong> sends a file.</p>\n<h2 id=\"image-cards-and-carousels\">Image cards and carousels</h2><p>Pick <strong>image with button</strong> in a Post automation to create one product card:</p><ul><li><strong>Product image:</strong> upload PNG or JPEG, up to 10 MB. AP3K optimizes the image for delivery.</li><li><strong>Product title:</strong> up to 80 characters.</li><li><strong>Subtitle:</strong> optional, up to 80 characters.</li><li><strong>Buttons:</strong> up to three, each with a destination URL and a label of up to 20 characters.</li></ul><p>For multiple cards, choose the <strong>Auto DM product link carousel</strong> template or the <strong>Product carousel</strong> node in Flow builder. A carousel holds up to ten cards, with up to three links per card.</p><p>A carousel is useful when the reader has a choice to make — products, price tiers or services. For one action, a single card or text with button keeps the decision simple.</p><aside><p><strong>Pro tip</strong></p><p>Put your most relevant product first and test every destination link before publishing.</p></aside><h2 id=\"attachments\">Attachments</h2>\n<p>Pick <strong>attachment</strong> and you get an upload box: drop a file in, click <strong>Upload\nfile</strong>, <strong>Record audio</strong> for a voice note, or <strong>Pick recent</strong> to reuse something\nyou’ve already sent.</p>\n<h3 id=\"what-you-can-send\">What you can send</h3>\n<table>\n<thead>\n<tr>\n<th>Type</th>\n<th>Formats</th>\n<th>Limit</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Image</td>\n<td>PNG, JPG, GIF</td>\n<td>8 MB</td>\n</tr>\n<tr>\n<td>Video</td>\n<td>MP4, MOV</td>\n<td>25 MB</td>\n</tr>\n<tr>\n<td>Audio</td>\n<td>AAC, M4A, WAV</td>\n<td>25 MB</td>\n</tr>\n<tr>\n<td>Document</td>\n<td>PDF</td>\n<td>25 MB</td>\n</tr>\n</tbody>\n</table>\n<p>GIFs go through as images — an 8 MB ceiling, which most short loops fit under\ncomfortably, but a long screen recording exported as a GIF will not. Export it\nas MP4 instead and it gets the 25 MB video allowance.</p>\n<h3 id=\"using-them-well\">Using them well</h3>\n<ul>\n<li><strong>PDFs</strong> are delivered as a <strong>Download PDF</strong> button linking to the saved file. Test the download from another Instagram account.</li>\n<li><strong>Video</strong> works for demos and unboxings, where showing beats describing.</li>\n<li><strong>Voice notes</strong> are unusually effective for high-touch services — a fifteen\nsecond “hey, thanks for commenting” in your actual voice reads as personal in\na way no text can.</li>\n</ul>\n<aside><p>Attachments send on their own</p><p>An attachment is the whole message — there’s no caption field alongside it. If\nthe file needs context, add an <a href=\"/docs/post-automation/opener-message-before-sending-the-link\">opener\nmessage</a> before it — that one does take\ntext and a button.</p></aside>\n<p>Uploads are fixed for the saved attachment or card. Text variations do not swap media files between recipients.</p><h2 id=\"record-audio\">Record audio</h2><ol><li>Select <strong>Record audio</strong> and allow microphone access when your browser asks.</li><li>Start recording, then stop when your message is ready.</li><li>Listen to the recording. Choose <strong>Upload</strong> to keep it, <strong>Re-record</strong> to start again, or <strong>Discard</strong> to remove it.</li><li>Wait for the upload to finish before saving or publishing.</li></ol><p><strong>Pick recent</strong> lists your saved uploads for reuse. If a file fails, check its format and size, then retry before publishing.</p>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "image-cards-and-carousels",
+        "text": "Image cards and carousels",
+        "level": 2
+      },
+      {
+        "id": "attachments",
+        "text": "Attachments",
+        "level": 2
+      },
+      {
+        "id": "what-you-can-send",
+        "text": "What you can send",
+        "level": 3
+      },
+      {
+        "id": "using-them-well",
+        "text": "Using them well",
+        "level": 3
+      },
+      {
+        "id": "record-audio",
+        "text": "Record audio",
+        "level": 2
+      }
+    ],
+    "description": "Two of the four message\nlayouts send media rather than\ntext: image with button builds a card, and attachment sends a file."
+  },
+  {
+    "slug": "post-automation/dm-message-variations",
+    "group": "post-automation",
+    "title": "Message Variations: Stop Every DM Reading the Same",
+    "html": "<p>An automation that sends one message sends it perfectly, identically, every\ntime. That’s the problem. A hundred people receiving a character-for-character\nidentical DM is the most legible bot signal there is — to the people reading it,\nand to the platform delivering it.</p>\n<p>Variations are alternate wordings of the same DM. AP3K chooses among your original and saved variations for a conversation. Different people may receive the same variation; a retried delivery keeps the same wording for that journey.</p>\n<h2 id=\"adding-them\">Adding them</h2>\n<p>The <strong>Variations</strong> strip sits at the top of the Message card, above the text.\nClick <strong>Add variations</strong> — or <strong>Edit variations (5)</strong> once some exist.</p>\n<p>The dialog opens with your message as the starting point and generates\nalternates from it.</p>\n<p>Each variation has its own box, a <strong>regenerate</strong> icon to rewrite just that one,\nand a bin to delete it. <strong>Regenerate</strong> at the top rewrites the whole set. Edit\nany of them by typing — they’re normal text fields, and the AI’s suggestion is a\nstarting point rather than the finished copy. <strong>Save</strong> when you’re happy.</p>\n<h2 id=\"how-many\">How many</h2>\n<p>Five is the practical target and what the dialog generates by default. Below\nthree, the rotation is noticeable to anyone who compares notes; above five,\nyou’re maintaining copy nobody will read closely.</p>\n<h2 id=\"what-to-vary\">What to vary</h2>\n<p>Vary the <strong>wrapper</strong>, not the <strong>payload</strong>.</p>\n<p>The link, the offer, the discount code and the instruction have to be identical\nin every variation — that’s the thing you’re actually sending. What changes is\nthe sentence around it:</p>\n<ul>\n<li>“Here’s the link: …”</li>\n<li>“Check this out: …”</li>\n<li>“As promised 👇 …”</li>\n<li>“Link’s right here: …”</li>\n<li>“Sending it over now — …”</li>\n</ul>\n<p>Keep them the same length and register. A set where one variation is a chirpy\ntwo-liner and another is a formal paragraph doesn’t read as natural variety, it\nreads as two different people.</p>\n<aside><p>Check every variation before you publish</p><p>Variations rotate without further review, so a typo or a broken link in one\nvariation can reach recipients even when your own test used a different version. Read all of them.</p></aside>\n<h2 id=\"where-else-they-apply\">Where else they apply</h2><p>In the quick editor, variations apply to plain text and text-with-button messages. Your links and buttons stay the same. They do not change attachment files or product-card images.</p><p>The same idea drives <a href=\"/docs/post-automation/write-your-own-public-comment-replies\">multiple public replies</a>. The <a href=\"/docs/flow-builder/randomizer-node\">Randomizer node</a> splits people down different flow paths instead of rewording one message.</p><p>You can save up to ten alternate messages in addition to the original. Use <strong>Write my own</strong> to add reviewed copy, or generate more when AI drafting is available.</p>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "adding-them",
+        "text": "Adding them",
+        "level": 2
+      },
+      {
+        "id": "how-many",
+        "text": "How many",
+        "level": 2
+      },
+      {
+        "id": "what-to-vary",
+        "text": "What to vary",
+        "level": 2
+      },
+      {
+        "id": "where-else-they-apply",
+        "text": "Where else they apply",
+        "level": 2
+      }
+    ],
+    "description": "An automation that sends one message sends it perfectly, identically, every\ntime. That’s the problem. A hundred people receiving a character-for-character\nidentical DM is the most…"
+  },
+  {
+    "slug": "post-automation/add-delay-between-automation-steps",
+    "group": "post-automation",
+    "title": "Add a Delay Between Automation Steps",
+    "html": "<p>An instant reply is the one thing no human has ever sent. Someone comments, and\nhalf a second later a perfectly formatted DM arrives — the timing alone gives it\naway.</p>\n<p><strong>Delay</strong> puts a pause between two steps.</p>\n<h2 id=\"turning-delays-on\">Turning delays on</h2><p>In the Post editor, switch on <strong>Enable delay</strong>. The <strong>Add delay</strong> control appears below the trigger. Open it, enter an amount, choose seconds, minutes or hours, then click <strong>Add delay</strong> to apply it.</p><p>Click the saved delay to edit it, or remove it with ×. Switching Enable delay off resets this wait to zero. Save or publish the automation to persist the change.</p><p>This is one delivery wait, not a separate delay for every card. For independent waits between multiple steps, use a <a href=\"/docs/flow-builder/delay-node\">Delay node</a> in Flow builder. Follow-up messages have their own wait selector.</p><h2 id=\"how-long\">How long</h2><p>The Post editor accepts a wait from one second to <strong>23 hours</strong>. A short delay of five to fifteen seconds keeps an initial response timely. Use longer waits only when they serve the conversation.</p><aside><p><strong>Instagram’s messaging window</strong></p><p>A comment’s initial private reply does not by itself open a general follow-up window. The person must interact in the DM conversation. Subsequent automated messages need to remain within the allowed window after their inbound interaction. A delay does not extend that window.</p></aside><p>Delivery is scheduled and may occur later than the selected minimum wait. Publishing checks scheduling availability; if the scheduler is not ready, resolve the readiness error before relying on delayed delivery.</p><h2 id=\"where-delays-earn-their-keep\">Where delays earn their keep</h2><ul><li>Before the initial DM — a short pause while the offer is still relevant.</li><li>Between flow steps — separate messages with a Delay node.</li><li>Before a follow-up — choose the follow-up wait and condition together.</li></ul><p>Test a short wait from a second account before using a long one in a live campaign.</p>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "turning-delays-on",
+        "text": "Turning delays on",
+        "level": 2
+      },
+      {
+        "id": "how-long",
+        "text": "How long",
+        "level": 2
+      },
+      {
+        "id": "where-delays-earn-their-keep",
+        "text": "Where delays earn their keep",
+        "level": 2
+      }
+    ],
+    "description": "An instant reply is the one thing no human has ever sent. Someone comments, and\nhalf a second later a perfectly formatted DM arrives — the timing alone gives it\naway."
+  },
+  {
+    "slug": "post-automation/opener-message-before-sending-the-link",
+    "group": "post-automation",
+    "title": "Opener Message: Get a Tap Before You Send the Link",
+    "html": "<p>An <strong>opener message</strong> is a short greeting with a button, sent before the message\nthat actually carries your link.</p>\n<p>It looks like a wasted step. It isn’t — it’s the step that gets your link\nopened.</p>\n<h2 id=\"why-it-works\">Why it works</h2><p>A first DM may appear in <strong>message requests</strong>. An opener gives the person a clear button to tap before AP3K sends the main content. Their interaction allows the conversation to continue within Instagram’s messaging rules.</p><p>It also filters for interest: someone who taps <strong>Get the link</strong> has chosen to continue. Inbox placement remains controlled by Instagram; an opener does not guarantee placement in the primary inbox.</p><h2 id=\"setting-it-up\">Setting it up</h2><p>Click <strong>Opener message</strong> in the row of add-on buttons. Fill in <strong>Opening message</strong> (up to 640 characters) and <strong>Continue quick reply</strong> (up to 20 characters). Use <code>{{username}}</code> where you want the recipient’s handle.</p><p>The main message waits until the recipient taps the continuation button. Preview the wording, then test both the initial DM and the button from a second account.</p><h2 id=\"writing-one\">Writing one</h2>\n<p>Keep it to one or two lines. The opener’s whole job is earning a tap, so\nanything that isn’t working towards the tap is in the way.</p>\n<ul>\n<li><strong>Greet them by name.</strong> <code>Hey {{username}}!</code> — it makes the greeting specific to the recipient.</li>\n<li><strong>Say what the button does.</strong> “Get the link”, “Send me the guide”, “Show me\nthe code”. Never “Click here” — the label is the promise.</li>\n<li><strong>Don’t explain the offer yet.</strong> That’s the next message’s job.</li>\n</ul>\n<p>A working opener:</p>\n<blockquote>\n<p>Hey <code>{{username}}</code>! So glad you commented 😊 Tap below and I’ll send that link\nstraight over.</p>\n</blockquote>\n<aside><p>Pro Tip</p><p>Put a <a href=\"/docs/post-automation/add-delay-between-automation-steps\">delay</a> of five to ten seconds\nbefore the opener. An instant greeting the moment someone comments is the\ntell-tale sign of automation; a few seconds reads as you noticing.</p></aside>\n<h2 id=\"opener-or-ask-to-follow\">Opener, or ask to follow?</h2>\n<p>They’re different asks and they stack in this order:</p>\n<ol>\n<li><strong>Opener message</strong> — get a tap, warm up the thread</li>\n<li><strong><a href=\"/docs/post-automation/ask-to-follow-before-sending-dm\">Ask to follow</a></strong> — require a\nfollow before the DM goes out</li>\n<li><strong><a href=\"/docs/post-automation/collect-email-and-phone-number-in-dm\">Collect email</a></strong> — ask\nfor contact details</li>\n<li><strong>Message</strong> — deliver what you promised</li>\n</ol>\n<p>Each one adds friction. Adding all four to a giveaway will cost you entrants —\npick the ones whose value you’d defend out loud.</p>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "why-it-works",
+        "text": "Why it works",
+        "level": 2
+      },
+      {
+        "id": "setting-it-up",
+        "text": "Setting it up",
+        "level": 2
+      },
+      {
+        "id": "writing-one",
+        "text": "Writing one",
+        "level": 2
+      },
+      {
+        "id": "opener-or-ask-to-follow",
+        "text": "Opener, or ask to follow?",
+        "level": 2
+      }
+    ],
+    "description": "An opener message is a short greeting with a button, sent before the message\nthat actually carries your link."
+  },
+  {
+    "slug": "post-automation/ask-to-follow-before-sending-dm",
+    "group": "post-automation",
+    "title": "Ask to Follow Before Sending the DM",
+    "html": "<p><strong>Ask to follow to receive DM</strong> holds the message back until the recipient\nfollows you. It’s the follow-for-value trade, run automatically: they wanted the\nlink, the link costs a follow.</p>\n<h2 id=\"the-two-steps\">How the follow check works</h2><p>On a paid plan, add <strong>Ask to follow</strong> from the buttons under the DM section. In a Post automation, keep the Opener message enabled so the person can start the conversation.</p><ol><li>AP3K checks whether the person follows the connected account. People who already follow skip the request.</li><li>Other recipients get your follow request and a verification button. They follow the account, then tap the button so AP3K can check again before continuing.</li></ol><p>The button does not substitute for following: delivery depends on the follow check. If Instagram cannot confirm the status, do not assume the gate has passed.</p><h2 id=\"editing-the-copy\">Editing the copy</h2><p>Edit <strong>Follow request DM</strong> (up to 640 characters) and <strong>Verification button</strong> (up to 20 characters). These are the two editable fields in the quick editor.</p><p>Keep the ask light and explain the value: “Follow our account, then tap below and I’ll send the guide.” The recipient should know what they will receive and how to continue.</p><h2 id=\"when-to-use-it--and-when-not-to\">When to use it — and when not to</h2>\n<p><strong>Worth it</strong> for giveaways, exclusive drops, and any lead magnet where “follow\nto enter” was already the deal you announced in the caption.</p>\n<p><strong>Not worth it</strong> for customer support, order questions, or anything a paying\ncustomer asked for. Making someone follow you before you’ll answer their\nquestion about a delivery is the fastest way to turn a customer into an ex-one.</p>\n<aside><p>It will cost you conversions</p><p>Every gate loses people. Some proportion of your commenters will read the ask,\ndecide the link isn’t worth a follow, and leave. That’s the trade — a smaller\nnumber of more committed followers. Make sure the thing behind the gate is worth\nit, and say what it is in the ask.</p></aside>\n<h2 id=\"ordering-it\">Ordering it</h2>\n<p>Ask to follow sits after the <a href=\"/docs/post-automation/opener-message-before-sending-the-link\">opener\nmessage</a> and before <a href=\"/docs/post-automation/collect-email-and-phone-number-in-dm\">collecting\ncontact details</a>. One gate is\nusually plenty — asking for a follow <em>and</em> an email <em>and</em> a phone number before\ndelivering a free checklist is three chances to be told no.</p>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "the-two-steps",
+        "text": "How the follow check works",
+        "level": 2
+      },
+      {
+        "id": "editing-the-copy",
+        "text": "Editing the copy",
+        "level": 2
+      },
+      {
+        "id": "when-to-use-it--and-when-not-to",
+        "text": "When to use it — and when not to",
+        "level": 2
+      },
+      {
+        "id": "ordering-it",
+        "text": "Ordering it",
+        "level": 2
+      }
+    ],
+    "description": "Ask to follow to receive DM holds the message back until the recipient\nfollows you. It’s the follow-for-value trade, run automatically: they wanted the\nlink, the link costs a follow."
+  },
+  {
+    "slug": "post-automation/collect-email-and-phone-number-in-dm",
+    "group": "post-automation",
+    "title": "Collect an Email or Phone Number in the DM",
+    "html": "<p>A DM conversation is a lead you can only reach on one platform. <strong>Collect email</strong>\nand <strong>Collect phone</strong> turn it into one you own — asked for in the thread,\nvalidated on the spot, and saved to Contacts.</p>\n<p>Both are added from <strong>Collect info</strong> in the row of step buttons.</p>\n<h2 id=\"collect-email\">Collect email</h2><p>On a paid plan, choose <strong>Collect info → Email</strong>. Write the <strong>Email request</strong>, up to 640 characters. A single clear question usually works best.</p><p>AP3K waits for a valid email reply before continuing. An invalid reply is not saved as an email address; the person can retry. The quick editor does not expose a separate custom retry-message field.</p><h2 id=\"collect-phone\">Collect phone</h2><p>Choose <strong>Collect info → Phone</strong> and write the <strong>Phone request</strong>, up to 640 characters. Ask for the country code and include an example such as <code>+14155550123</code>.</p><p>AP3K validates the reply before saving it to the sender’s contact. Ask for one piece of information per message so the person knows exactly what to send.</p><h2 id=\"where-the-answers-go\">Where the answers go</h2>\n<p>Valid replies save to <strong>Contacts</strong>, against the Instagram profile that sent them. If someone drops out later, details already captured remain on that contact. Open Contacts to review or export them.</p>\n<h2 id=\"asking-well\">Asking well</h2>\n<ul>\n<li><strong>Give first, ask second.</strong> Put the collect step after they’ve received\nsomething, or at minimum after the opener. Asking for an email before you’ve\ndelivered anything is a form nobody filled in.</li>\n<li><strong>Say why.</strong> “Where should I send the guide?” outperforms “Enter your email” —\nthe first is a delivery question, the second is a data request.</li>\n<li><strong>Ask for one thing.</strong> Email <em>or</em> phone. Both, back to back, reads as a\nsignup form and gets abandoned like one.</li>\n<li><strong>Match the channel to the follow-up.</strong> Only collect a phone number if you\ngenuinely intend to text or call. Collecting it because the field exists\nbuilds a list you’ll never use and a permission you didn’t need.</li>\n</ul>\n<aside><p>Consent isn’t implied</p><p>Someone answering an email question has not automatically subscribed to a newsletter. Explain your intended use in the request and record the consent your own process requires.</p></aside>\n<h2 id=\"ordering-it\">Ordering it</h2>\n<p>Collect steps come last, after the <a href=\"/docs/post-automation/opener-message-before-sending-the-link\">opener\nmessage</a> and any <a href=\"/docs/post-automation/ask-to-follow-before-sending-dm\">ask to\nfollow</a>, and before the message that\ndelivers what you promised — so the exchange is a fair one: they give you an\naddress, and the thing they wanted arrives right after.</p><p>For Post automations, collecting details requires the <a href=\"/docs/post-automation/opener-message-before-sending-the-link\">Opener message</a>. If the person has already messaged you in a Story or Chat automation, the inbound message starts the conversation.</p>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "collect-email",
+        "text": "Collect email",
+        "level": 2
+      },
+      {
+        "id": "collect-phone",
+        "text": "Collect phone",
+        "level": 2
+      },
+      {
+        "id": "where-the-answers-go",
+        "text": "Where the answers go",
+        "level": 2
+      },
+      {
+        "id": "asking-well",
+        "text": "Asking well",
+        "level": 2
+      },
+      {
+        "id": "ordering-it",
+        "text": "Ordering it",
+        "level": 2
+      }
+    ],
+    "description": "A DM conversation is a lead you can only reach on one platform. Collect email and Collect phone turn it into one you own — asked for in the thread,\nvalidated on the spot, and saved…"
+  },
+  {
+    "slug": "post-automation/send-follow-up-messages-with-conditions",
+    "group": "post-automation",
+    "title": "Follow-Up Messages and When They Send",
+    "html": "<p>Most people who receive your DM won’t act on it the first time. They’re mid-scroll,\nthe link gets read later, later never arrives.</p>\n<p>A <strong>follow-up message</strong> is the second attempt — and because you can attach a\ncondition to it, it goes only to the people who need it.</p>\n<h2 id=\"adding-one\">Adding one</h2>\n<p>On a paid plan, click <strong>Follow up message</strong> in the add-on row. Write a text message of up to 640 characters, choose <strong>Send when</strong>, then set <strong>Minimum wait before sending</strong> to 15 or 30 minutes, or 1, 3 or 12 hours. The quick follow-up does not have separate attachment or button layouts.</p>\n<h2 id=\"the-conditions\">The conditions</h2>\n<p><strong>Always</strong> sends to everyone who reached this point, no condition applied.</p>\n<h3 id=\"message\">Message</h3>\n<ul>\n<li><strong>Seen message</strong> — they opened the DM</li>\n<li><strong>Not seen message</strong> — they didn’t</li>\n<li><strong>Reacted with emoji</strong> — they tapped a reaction on it</li>\n</ul>\n<h3 id=\"link\">Link</h3>\n<ul>\n<li><strong>Clicked the link</strong> — they tapped through</li>\n<li><strong>Didn’t click the link</strong> — they didn’t</li>\n</ul>\n<h3 id=\"follow\">Follow</h3>\n<ul>\n<li><strong>Followed you</strong> — they followed after the DM</li>\n<li><strong>Unfollowed you</strong> — they left</li>\n</ul>\n<h2 id=\"choosing-the-right-one\">Choosing the right one</h2>\n<p>The condition is what separates a useful nudge from a message people mute you\nover. Match it to what you actually want to happen next.</p>\n<p><strong>Not seen message</strong> is the safest and usually the most valuable. These people\nnever saw the first DM at all — very often it’s sitting in message requests. A\nfollow-up here isn’t a repeat, it’s a first delivery.</p>\n<p><strong>Didn’t click the link</strong> is the conversion nudge. They read it and didn’t act,\nso the second message should give a different reason rather than repeat the\nfirst — a deadline, an objection answered, a shorter ask.</p>\n<p><strong>Clicked the link</strong> is the one people forget, and it’s the warmest audience you\nhave. They’re interested. Follow up with the next step: a question, a discount,\na booking link.</p>\n<p><strong>Reacted with emoji</strong> is a reply without words. A 🔥 on a product DM is\npermission to keep talking.</p>\n<p><strong>Followed you</strong> pairs naturally with <a href=\"/docs/post-automation/ask-to-follow-before-sending-dm\">ask to\nfollow</a> — thank them, or deliver the\nthing the follow unlocked.</p>\n<p><strong>Unfollowed you</strong> should almost always be left alone. Someone who just left is\ntelling you they want fewer messages, and a follow-up argues with that.</p>\n<aside><p>Time it inside 24 hours</p><p>A follow-up requires an inbound DM interaction and must remain within the allowed messaging window. In Post automations, enable the Opener message and wait for the recipient to tap. A comment alone does not authorize an unrestricted sequence. If the window closes before the scheduled job runs, the follow-up is not sent.</p></aside>\n<h2 id=\"writing-one\">Writing one</h2>\n<ul>\n<li><strong>Don’t resend the first message.</strong> They either didn’t see it or weren’t\nconvinced, and a copy fixes neither.</li>\n<li><strong>Keep it shorter than the first.</strong> One line and the link.</li>\n<li><strong>Give an out.</strong> “If it’s not for you, no worries at all” costs you nothing\nand stops the nudge reading as pressure.</li>\n<li><strong>One follow-up.</strong> Two is persistence, three is the block button.</li>\n</ul>\n<p>A follow-up on <strong>Not seen message</strong>:</p>\n<blockquote>\n<p>Hey — think this landed in your requests 👀 Here’s that link again in case it\ngot buried.</p>\n</blockquote><h2 id=\"delivery-and-receipts\">Delivery and receipts</h2><p>Conditions are checked after the wait. Seen and reaction conditions depend on Instagram receipts. Followed and Unfollowed require confirmed before-and-after follow status. A newer inbound reply can cancel an outdated reminder, and a paused automation or closed messaging window can stop delivery.</p><p>Test with a short supported wait and the Always condition first. Then test the condition your campaign actually needs. Scheduler availability and Instagram delivery rules still apply.</p>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "adding-one",
+        "text": "Adding one",
+        "level": 2
+      },
+      {
+        "id": "the-conditions",
+        "text": "The conditions",
+        "level": 2
+      },
+      {
+        "id": "message",
+        "text": "Message",
+        "level": 3
+      },
+      {
+        "id": "link",
+        "text": "Link",
+        "level": 3
+      },
+      {
+        "id": "follow",
+        "text": "Follow",
+        "level": 3
+      },
+      {
+        "id": "choosing-the-right-one",
+        "text": "Choosing the right one",
+        "level": 2
+      },
+      {
+        "id": "writing-one",
+        "text": "Writing one",
+        "level": 2
+      },
+      {
+        "id": "delivery-and-receipts",
+        "text": "Delivery and receipts",
+        "level": 2
+      }
+    ],
+    "description": "Most people who receive your DM won’t act on it the first time. They’re mid-scroll,\nthe link gets read later, later never arrives."
+  },
+  {
+    "slug": "post-automation/disable-direct-message-in-automation",
+    "group": "post-automation",
+    "title": "Automation Settings: Run the Public Reply Without the DM",
+    "html": "<p>The <strong>⋯</strong> button at the top right of the <strong>Setup direct message</strong> section holds\nthe settings for the DM half of the automation.</p>\n<h2 id=\"disable-direct-message\">Disable direct message</h2>\n<p>One toggle, with a consequence worth reading twice: <em>when disabled, only the\npublic comment reply works.</em></p>\n<p>Switch it on and the automation still watches the post, still matches your\ntrigger, and still replies publicly under the comment. It just doesn’t send\nanything to anyone’s inbox. Everything you built in the DM section — the opener,\nthe collect steps, the message, the follow-up — stays saved exactly as it is,\nand comes back the moment you switch it off.</p>\n<h2 id=\"when-to-use-it\">When to use it</h2>\n<p><strong>Comment engagement without the DM load.</strong> Some posts want a lively comment\nsection and nothing more. A public reply to every comment is engagement\nInstagram can see; a DM to every commenter is send volume you may not want to\nspend.</p>\n<p><strong>Testing your triggers safely.</strong> Publish with DMs disabled, comment from a\nsecond account, and confirm the right keywords fire and the public replies read\nwell — without a single real person receiving a half-finished DM.</p>\n<p><strong>Pausing a campaign mid-flight.</strong> The offer sold out, the link broke, the code\nexpired. Disabling the DM stops delivery immediately while the automation stays\nlive and your comment section keeps answering. It’s a far lighter action than\nunpublishing, and nothing has to be rebuilt to resume.</p>\n<p><strong>A post that outgrew its automation.</strong> Something went unexpectedly viral and\nthe DM volume is more than you want. Turn off the DM, keep the replies.</p>\n<aside><p>The public reply is now the whole message</p><p>With DMs off, the reply under the comment is all anyone gets — so “check your\nDMs!” becomes a promise the automation no longer keeps. Rewrite your <a href=\"/docs/post-automation/write-your-own-public-comment-replies\">public\nreplies</a> to stand on their\nown before you disable the DM, or people will go looking for a message that\nisn’t coming.</p></aside>\n<h2 id=\"what-it-doesnt-do\">What it doesn’t do</h2><p>This setting applies to the automation you are editing. It does not pause other automations, and it cannot retract a DM Instagram has already received. Save or publish the change, then test that new matching comments receive only the intended public reply.</p>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "disable-direct-message",
+        "text": "Disable direct message",
+        "level": 2
+      },
+      {
+        "id": "when-to-use-it",
+        "text": "When to use it",
+        "level": 2
+      },
+      {
+        "id": "what-it-doesnt-do",
+        "text": "What it doesn’t do",
+        "level": 2
+      }
+    ],
+    "description": "The ⋯ button at the top right of the Setup direct message section holds\nthe settings for the DM half of the automation."
+  },
+  {
+    "slug": "post-automation/post-automation-templates",
+    "group": "post-automation",
+    "title": "Post Automation Templates",
+    "html": "<p>Building a post automation from scratch means deciding the trigger, the reply,\nthe DM layout and the follow-up before you’ve seen one working. The template\ngallery skips that: <strong>nine ready-made post automations</strong>, each already wired for\none common job, waiting for your post and your copy.</p>\n<h2 id=\"opening-the-gallery\">Opening the gallery</h2>\n<p>Click <strong>New automation</strong>, then <strong>Browse templates</strong>. Filter by <strong>All</strong>, <strong>Basic</strong> or <strong>Flow</strong>, or search by the job you want to do. Some Basic templates use a flow underneath to support multi-step behavior; review the editor they open.</p>\n<p>The gallery shows its current template count, with Basic and Flow filters. Cards show the automation type and whether a paid plan is required.</p>\n<h2 id=\"the-nine-post-templates\">The nine post templates</h2>\n<table>\n<thead>\n<tr>\n<th>Template</th>\n<th>What it does</th>\n<th>Built on</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>Auto-DM from comments</strong> <br/><em>Popular</em></td>\n<td>DMs anyone who comments on a post or reel</td>\n<td><a href=\"/docs/post-automation/create-instagram-comment-to-dm-automation\">Comment-to-DM</a></td>\n</tr>\n<tr>\n<td><strong>Grow followers from comments</strong> <br/><em>Popular</em></td>\n<td>Asks the commenter to follow you before it sends the content</td>\n<td><a href=\"/docs/post-automation/ask-to-follow-before-sending-dm\">Ask to follow</a></td>\n</tr>\n<tr>\n<td><strong>Auto-DM on all posts and reels</strong></td>\n<td>One automation covering every post and reel on the account</td>\n<td><a href=\"/docs/post-automation/choose-which-post-or-reel-to-automate\">Post selection</a></td>\n</tr>\n<tr>\n<td><strong>Auto-DM on next post or reel</strong></td>\n<td>Arms itself and waits for your next upload to publish</td>\n<td><a href=\"/docs/post-automation/choose-which-post-or-reel-to-automate\">Post selection</a></td>\n</tr>\n<tr>\n<td><strong>Collect email/phone from comments</strong></td>\n<td>Asks for an email or phone number before it hands over the content</td>\n<td><a href=\"/docs/post-automation/collect-email-and-phone-number-in-dm\">Collect email and phone</a></td>\n</tr>\n<tr>\n<td><strong>Auto-DM when someone shares your Post or Reel</strong></td>\n<td>Replies when someone shares a post or reel into your business inbox</td>\n<td><a href=\"/docs/post-automation/instagram-automation-triggers\">Share triggers</a></td>\n</tr>\n<tr>\n<td><strong>Re-engage with follow-up message</strong></td>\n<td>Sends a second message on conditions and time delays to people who went quiet</td>\n<td><a href=\"/docs/post-automation/send-follow-up-messages-with-conditions\">Follow-ups</a></td>\n</tr>\n<tr>\n<td><strong>Auto-DM from comments with an opener message</strong></td>\n<td>Sends a short greeting with a button first, then the real content on the tap</td>\n<td><a href=\"/docs/post-automation/opener-message-before-sending-the-link\">Opener message</a></td>\n</tr>\n<tr>\n<td><strong>Auto DM product link carousel</strong></td>\n<td>Sends up to ten clickable links in a single swipeable message</td>\n<td><a href=\"/docs/post-automation/send-images-video-gifs-and-carousels-in-dms\">Carousels</a></td>\n</tr>\n</tbody>\n</table>\n<h3 id=\"which-one-to-start-with\">Which one to start with</h3>\n<p><strong>Auto-DM from comments</strong> is the baseline. Everything else on the list is that\nautomation with one thing added, so it’s the one to open if you want to\nunderstand the editor rather than just ship something.</p>\n<p>Pick a more specific template when the <em>shape</em> of the campaign is already decided:</p>\n<ul>\n<li>Running the same offer across your whole feed → <strong>Auto-DM on all posts and reels</strong></li>\n<li>Launching something tomorrow → <strong>Auto-DM on next post or reel</strong>, set up before you upload</li>\n<li>Building a mailing list, not just clicks → <strong>Collect email/phone from comments</strong></li>\n<li>Growing the account rather than the list → <strong>Grow followers from comments</strong></li>\n<li>Sending several links at once → <strong>Auto DM product link carousel</strong></li>\n</ul>\n<aside><p>The opener template is worth a look</p><p><strong>Auto-DM from comments with an opener message</strong> gets the recipient to tap a continuation button before the main content arrives. That interaction lets AP3K continue the conversation within Instagram’s messaging rules; it does not guarantee primary-inbox placement.</p></aside>\n<h2 id=\"making-a-template-yours\">Making a template yours</h2>\n<p>A template opens as an unpublished <strong>draft</strong> with a placeholder name and a\n<code>Draft</code> badge, so nothing goes out while you edit. Work down the editor:</p>\n<p><strong>1. Point it at a post.</strong> The <a href=\"/docs/post-automation/choose-which-post-or-reel-to-automate\">Post card</a>\nis the one thing no template can guess. Templates that say <em>all posts</em> or <em>next\npost</em> have already made this choice for you — check it’s the one you wanted.</p>\n<p><strong>2. Set the trigger words.</strong> Replace generic keywords with the word in your caption. For a quick Post automation, choose Any comment or a specific word (s). Flow templates expose their own trigger settings.</p>\n<p><strong>3. Rewrite the message.</strong> Placeholder copy reads like placeholder copy. Replace\nit, put your real link in, and use <code>{{username}}</code> where a name belongs. Then add\n<a href=\"/docs/post-automation/dm-message-variations\">variations</a> so a hundred people\ndon’t all receive the identical message.</p>\n<p><strong>4. Check the steps the template added.</strong> An opener, a collect-info step or a\nfollow-up arrives pre-wired with its own copy and conditions — read those too,\nnot just the main message.</p>\n<p><strong>5. Publish, then test from a second account.</strong> Comment your own keyword and\nwatch the DM arrive. It’s the only check that covers the whole chain.</p>\n<aside><p>Templates are also worth reading</p><p>Opening a template close to what you want and looking at how it’s assembled is\nthe fastest way to learn the editor — which steps were added, in what order, and\nwhat each one is for. You can close it without publishing.</p></aside>",
+    "updated": "2026-10-11",
+    "headings": [
+      {
+        "id": "opening-the-gallery",
+        "text": "Opening the gallery",
+        "level": 2
+      },
+      {
+        "id": "the-nine-post-templates",
+        "text": "The nine post templates",
+        "level": 2
+      },
+      {
+        "id": "which-one-to-start-with",
+        "text": "Which one to start with",
+        "level": 3
+      },
+      {
+        "id": "making-a-template-yours",
+        "text": "Making a template yours",
+        "level": 2
+      }
+    ],
+    "description": "Building a post automation from scratch means deciding the trigger, the reply,\nthe DM layout and the follow-up before you’ve seen one working. The template\ngallery skips that: nine…"
+  },
+  {
+    "slug": "story-automation/create-instagram-story-automation",
+    "group": "story-automation",
+    "title": "Create an Instagram Story Automation",
+    "html": "<p>A story automation replies to the people who react to your story, answer it with a message, or tag you in a story of their own. These interactions arrive through Instagram messaging, so the automation answers the person in a DM.</p><aside><p><strong>Before you begin</strong></p><ul><li>An Instagram professional account <a href=\"/docs/getting-started/connect-instagram-account\">connected to AP3K</a>.</li><li>A second account for testing the story interaction.</li><li>The message or resource you want to send.</li></ul></aside><h2 id=\"start-a-story-automation\">Start a story automation</h2><p>Choose <strong>New automation → Story automation</strong>. The editor opens with <strong>Setup Triggers</strong> and <strong>Setup Direct Message</strong>. There is no public comment reply because the event is a story interaction.</p><h2 id=\"choose-story-interaction\">1. Choose the story interaction</h2><p>Open <strong>Story interaction</strong> and select the event that should start the automation:</p><table><thead><tr><th>Option</th><th>When it fires</th></tr></thead><tbody><tr><td>Mentions me</td><td>Someone tags the connected account in their story.</td></tr><tr><td>Reacts</td><td>Someone sends an emoji reaction to your story.</td></tr><tr><td>Replies</td><td>Someone sends a text reply to your story.</td></tr></tbody></table><p>The quick Story editor selects an interaction type. It does not have a specific-story grid, a next-story selector, keyword filtering or Intent Match. Review the rule summary below the control before publishing.</p><h2 id=\"write-the-dm\">2. Write the DM</h2><p>In <strong>Message</strong>, choose <strong>plain text</strong>, <strong>text with button</strong>, or <strong>attachment</strong>. Text supports up to 1,000 characters; link messages can have up to three buttons. Use <code>{{username}}</code> to personalize the message and review the phone preview.</p><p><strong>Add variations</strong> helps create alternate wordings for text messages. Review every variation and keep the link and offer consistent.</p><h2 id=\"optional-steps\">3. Add optional steps</h2><p>Paid plans can add <strong>Collect info</strong>, <strong>Ask to follow</strong> and <strong>Follow up message</strong>. These can capture an email or phone number, check follow status, or send a conditional reminder. Story interactions already start in DMs, so the quick Story editor has no separate Opener message step.</p><p>The <strong>AP3K AI reply</strong> message option uses your AI knowledge, behavior and guardrails on a paid plan. Choose a saved message instead if you need collection or follow-up steps in the same quick automation.</p><h2 id=\"publish-and-test\">4. Publish and test</h2><p>Name the automation and click <strong>Publish</strong>. From another account, perform the exact interaction you selected: mention, reaction or text reply. Check the DM, every button and any capture step.</p><aside><p><strong>Messaging window</strong></p><p>Story replies are inbound conversations. Follow-ups must stay within Instagram’s allowed messaging window; scheduling a wait does not keep a conversation open indefinitely.</p></aside><p>You should now have a tested Story automation for the interaction you chose. Next: <a href=\"/docs/story-automation/story-automation-templates\">Story automation templates</a>.</p>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "start-a-story-automation",
+        "text": "Start a story automation",
+        "level": 2
+      },
+      {
+        "id": "choose-story-interaction",
+        "text": "1. Choose the story interaction",
+        "level": 2
+      },
+      {
+        "id": "write-the-dm",
+        "text": "2. Write the DM",
+        "level": 2
+      },
+      {
+        "id": "optional-steps",
+        "text": "3. Add optional steps",
+        "level": 2
+      },
+      {
+        "id": "publish-and-test",
+        "text": "4. Publish and test",
+        "level": 2
+      }
+    ],
+    "description": "A story automation replies to the people who react to your story, answer it with a message, or tag you in a story of their own. These interactions arrive through Instagram…"
+  },
+  {
+    "slug": "story-automation/story-automation-templates",
+    "group": "story-automation",
+    "title": "Story Automation Templates",
+    "html": "<p>The Basic template gallery includes <strong>Respond to story mentions</strong>. Open it from <strong>New automation → Browse templates</strong>, then choose Basic or search for “story”.</p><h2 id=\"respond-to-story-mentions\">Respond to story mentions</h2><p>Send a thank-you message, offer or link when someone mentions you in their story. Someone tagging your account is already opening a conversation; the template gives you a starting response.</p><h2 id=\"what-it-arrives-with\">What it arrives with</h2><ul><li>A Story automation using <strong>Mentions me</strong>.</li><li>A saved thank-you DM to customize.</li><li>The same message and optional engagement controls as the quick Story editor.</li></ul><h2 id=\"what-to-change\">What to change before publishing</h2><p><strong>Rewrite the message.</strong> A thank-you can include a discount code, the resource they mentioned, or a question that keeps the thread going. Replace placeholders with your real offer.</p><p><strong>Review variations.</strong> If you add alternate copy, make sure every version still promises the same thing. Use <code>{{username}}</code> where a handle fits naturally.</p><p><strong>Check the next step.</strong> A paid plan can collect contact details or add a follow-up, but only add a question when its purpose is clear.</p><aside><p><strong>Test a real mention</strong></p><p>Instagram only sends the events and media your connected account is allowed to access. Visibility and privacy settings can affect a mention. Test from another account and check the connection if a particular event is missing.</p></aside><h2 id=\"other-story-interactions\">Other story interactions</h2><p>For an emoji reaction or text reply, create a new <a href=\"/docs/story-automation/create-instagram-story-automation\">Story automation</a> and choose <strong>Reacts</strong> or <strong>Replies</strong>. The quick editor watches the interaction type rather than selecting one story from a grid.</p>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "respond-to-story-mentions",
+        "text": "Respond to story mentions",
+        "level": 2
+      },
+      {
+        "id": "what-it-arrives-with",
+        "text": "What it arrives with",
+        "level": 2
+      },
+      {
+        "id": "what-to-change",
+        "text": "What to change before publishing",
+        "level": 2
+      },
+      {
+        "id": "other-story-interactions",
+        "text": "Other story interactions",
+        "level": 2
+      }
+    ],
+    "description": "The Basic template gallery includes Respond to story mentions . Open it from New automation → Browse templates , then choose Basic or search for “story”."
+  },
+  {
+    "slug": "chat-automation/how-chat-automation-works",
+    "group": "chat-automation",
+    "title": "How Chat Automation Works",
+    "html": "<p>AP3K has three quick automation types, distinguished by where the person is when they trigger one:</p><table><thead><tr><th>Automation</th><th>Fires when someone…</th></tr></thead><tbody><tr><td>Post automation</td><td>Comments on the selected post or reel.</td></tr><tr><td>Story automation</td><td>Performs the selected story interaction.</td></tr><tr><td>Chat automation</td><td>Sends a matching message to your inbox.</td></tr></tbody></table><p>A Chat automation has no post or story attached. It watches incoming DMs and responds when its keyword rule matches.</p><h2 id=\"what-a-chat-automation-contains\">What a Chat automation contains</h2><ul><li><strong>Trigger:</strong> specific keywords or Any incoming DM.</li><li><strong>Message:</strong> plain text, text with button, attachment, or a paid AP3K AI reply.</li><li><strong>Optional paid steps:</strong> Collect info, Ask to follow and Follow up message for saved-message automations.</li></ul><p>The editor uses cards and a phone preview. For a branching conversation with choices, custom fields and multiple messages, use <strong>Flow builder</strong> or a lead-capture template.</p><h2 id=\"when-to-use-one\">When to use one</h2><p>Chat automation answers a call to action such as “DM me BOOK”. It works for bio instructions, a welcome response, resource delivery or common questions. Choose a Post automation when the trigger is a public comment.</p><p>Keep a quick Chat automation for a focused response. Reach for the Flow builder when the next message depends on which choice a person taps, a stored answer, a tag or a condition.</p><h2 id=\"what-is-different-from-post-automation\">What is different from Post automation</h2><ul><li>No public comment reply: there is no comment to answer.</li><li>No post picker: the incoming message is the event.</li><li>No separate opener: the person has already messaged you.</li></ul><aside><p><strong>The messaging window is already running</strong></p><p>The inbound DM starts a conversation. Automated replies and follow-ups must remain within Instagram’s allowed window after the person’s latest interaction.</p></aside><p>Ready to build one? <a href=\"/docs/chat-automation/create-a-chat-automation\">Create a Chat automation</a>.</p>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "what-a-chat-automation-contains",
+        "text": "What a Chat automation contains",
+        "level": 2
+      },
+      {
+        "id": "when-to-use-one",
+        "text": "When to use one",
+        "level": 2
+      },
+      {
+        "id": "what-is-different-from-post-automation",
+        "text": "What is different from Post automation",
+        "level": 2
+      }
+    ],
+    "description": "AP3K has three quick automation types, distinguished by where the person is when they trigger one:"
+  },
+  {
+    "slug": "chat-automation/create-a-chat-automation",
+    "group": "chat-automation",
+    "title": "Create an Instagram Chat Automation",
+    "html": "<p>A Chat automation answers people who message your inbox directly — the “DM me BOOK” call to action. This guide takes you from an empty automation to a tested response.</p><aside><p><strong>Before you begin</strong></p><ul><li>An Instagram account connected to AP3K.</li><li>A second Instagram account to test from.</li><li>Your campaign keyword and the response it should send.</li></ul></aside><h2 id=\"open-the-chat-editor\">Open the Chat editor</h2><p>Choose <strong>New automation → Chat automation</strong>. Rename the automation so it is easy to identify later. The editor shows the trigger above your message and a conversation preview alongside it.</p><h2 id=\"set-trigger-keywords\">1. Set the trigger keywords</h2><p>Choose <strong>a specific word (s)</strong>. Type one keyword into <strong>Add keyword</strong> and press Enter, or use the plus button. Repeat for alternatives such as <code>pricing</code>, <code>price</code> and <code>cost</code>. Remove a keyword with its ×.</p><p>Keywords match without case sensitivity inside incoming messages. Choose deliberate campaign words: <code>BOOK</code> is more focused than a common greeting.</p><p>Choose <strong>Any incoming DM</strong> only when every eligible message should receive this response. That option ignores the keyword list. Check other active automations to avoid overlapping replies.</p><h2 id=\"write-the-message\">2. Write the message</h2><p>Open <strong>Message</strong> and choose plain text, text with button or attachment. Text supports up to 1,000 characters. For buttons, complete each label and destination URL; you can add up to three.</p><p>Write the opening of a conversation, not a broadcast. Review the preview and use <strong>Add variations</strong> if you want alternate approved wordings.</p><h2 id=\"add-conversation-steps\">3. Add conversation steps</h2><p>Paid plans can add <strong>Collect info</strong>, <strong>Ask to follow</strong> and <strong>Follow up message</strong> to a saved-message automation. A collected email or phone is stored on the contact who sent it.</p><p>For branching choices, a multi-question script or a custom answer field, open <strong>Flow builder</strong> instead. See <a href=\"/docs/chat-automation/chat-choices-and-collecting-replies\">Choices and collecting replies</a>.</p><p>The paid <strong>AP3K AI reply</strong> option uses the person’s message plus your AI knowledge and guardrails. Configure a safe fallback message. AI reply mode cannot be combined with the quick editor’s capture and follow-up steps.</p><h2 id=\"publish-and-test\">4. Publish and test</h2><p>Click <strong>Publish</strong>, then send the keyword from your second account. Confirm the response, link destinations and any capture behavior.</p><p>Test the wrong input too: send a message without the keyword and confirm the campaign does not trigger. Then send a sentence containing the keyword and confirm the expected match. If you chose Any incoming DM, test that broader rule deliberately.</p><p>You should now have a tested Chat automation. For more complex conversations, continue with <a href=\"/docs/chat-automation/chat-automation-templates\">Chat automation templates</a>.</p>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "open-the-chat-editor",
+        "text": "Open the Chat editor",
+        "level": 2
+      },
+      {
+        "id": "set-trigger-keywords",
+        "text": "1. Set the trigger keywords",
+        "level": 2
+      },
+      {
+        "id": "write-the-message",
+        "text": "2. Write the message",
+        "level": 2
+      },
+      {
+        "id": "add-conversation-steps",
+        "text": "3. Add conversation steps",
+        "level": 2
+      },
+      {
+        "id": "publish-and-test",
+        "text": "4. Publish and test",
+        "level": 2
+      }
+    ],
+    "description": "A Chat automation answers people who message your inbox directly — the “DM me BOOK” call to action. This guide takes you from an empty automation to a tested response."
+  },
+  {
+    "slug": "chat-automation/chat-choices-and-collecting-replies",
+    "group": "chat-automation",
+    "title": "Chat Choices, Branches and Collecting Replies",
+    "html": "<p>Choices let a person pick a direction. Capture steps let the automation wait for something they type and save it to their contact. In AP3K, use the quick Chat editor for a saved response and email or phone collection; use <strong>Flow builder</strong> for branching choices and custom answers.</p><h2 id=\"adding-choices\">Adding choices in Flow builder</h2><p>Add a question/choice step, write the question and give each choice a short label. Connect each option to the message or step that should follow it. A choice should lead somewhere useful before you publish.</p><p>For example, “What are you here for?” can offer <strong>Get expert tips</strong> and <strong>Discover products</strong>. Each option leads to its own response. A link button opens a website; a choice routes the conversation. Use the right kind of button for the job.</p><p>Keep the labels short. Two or three words are easier to read in a chat bubble than a full sentence. Use a Condition node when the branch depends on stored information instead of a button tap.</p><h2 id=\"collecting-a-reply\">Collecting a reply</h2><p>In a quick Chat automation, choose <strong>Collect info → Email</strong> or <strong>Phone</strong> on a paid plan. Write the request. The automation waits for the reply, validates it and saves a valid value to the sender’s contact.</p><p>In Flow builder, use an email, phone or capture-answer step. Set the next connection so the conversation continues after the answer. Capture-answer stores free text in the field you select.</p><h2 id=\"email-phone-and-free-text\">Email, phone and free text</h2><table><thead><tr><th>Type</th><th>Use it for</th></tr></thead><tbody><tr><td>Email</td><td>A valid email address.</td></tr><tr><td>Phone</td><td>A phone number; ask for the country code.</td></tr><tr><td>Capture answer</td><td>A name, city or other free-text value in a flow field.</td></tr></tbody></table><p>Email and phone details appear in <strong>Contacts</strong> on the profile that provided them. Free text needs a clear question because the automation cannot infer whether an arbitrary answer is useful.</p><h2 id=\"ask-one-thing-at-a-time\">Ask for one thing at a time</h2><p>Every question is a point where someone may stop replying. Ask only for details the next step needs, explain why, and confirm what happens after the person answers.</p><h2 id=\"a-worked-shape\">A worked conversation</h2><ol><li><strong>Greet and offer choices:</strong> “What are you here for?”</li><li><strong>Branch:</strong> each choice leads to a response that answers it.</li><li><strong>Collect where useful:</strong> request an email in the branch that needs one.</li><li><strong>Confirm:</strong> deliver the promised link or explain the next step.</li></ol><p>The <strong>Capture leads from DMs</strong> and <strong>Sell products or services from DMs</strong> templates demonstrate these flow patterns.</p>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "adding-choices",
+        "text": "Adding choices in Flow builder",
+        "level": 2
+      },
+      {
+        "id": "collecting-a-reply",
+        "text": "Collecting a reply",
+        "level": 2
+      },
+      {
+        "id": "email-phone-and-free-text",
+        "text": "Email, phone and free text",
+        "level": 2
+      },
+      {
+        "id": "ask-one-thing-at-a-time",
+        "text": "Ask for one thing at a time",
+        "level": 2
+      },
+      {
+        "id": "a-worked-shape",
+        "text": "A worked conversation",
+        "level": 2
+      }
+    ],
+    "description": "Choices let a person pick a direction. Capture steps let the automation wait for something they type and save it to their contact. In AP3K, use the quick Chat editor for a saved…"
+  },
+  {
+    "slug": "chat-automation/chat-automation-templates",
+    "group": "chat-automation",
+    "title": "Chat Automation Templates",
+    "html": "<p>The Basic template gallery includes three inbox-focused starting points: answer a message, collect details, or offer a choice of products and services. Open <strong>New automation → Browse templates</strong> and select Basic or search for “DM”.</p><h2 id=\"respond-to-all-your-dms\">Respond to all your DMs</h2><p>One trigger, one welcome message. This is the simplest starting point for the quick Chat editor.</p><p><strong>What it arrives with:</strong> a greeting keyword such as <code>Hello</code> and a saved welcome response.</p><p><strong>What to change:</strong> replace the keyword with the one in your bio or caption. If you really want to answer all incoming messages, choose <strong>Any incoming DM</strong>. Rewrite the message with a useful next action or a button link.</p><h2 id=\"capture-leads-from-dms\">Capture leads from DMs</h2><p>This paid template uses a flow to collect an email, phone number and name before a confirmation. The starting keyword is <code>connect</code>.</p><p><strong>What to change:</strong> remove any question you do not need, explain what the person gets and review the connections between steps. Email and phone values are saved to the sender’s contact; the name step captures a free-text answer.</p><p>Three questions in a row can feel like a form. If you only need an email for the requested guide, keep the conversation focused on that.</p><h2 id=\"sell-products-or-services-from-dms\">Sell products or services from DMs</h2><p>This paid flow template starts with <code>Hello</code>, asks how it can help and offers <strong>Get expert tips</strong> or <strong>Discover products</strong>.</p><p><strong>What to change:</strong> rename the choices to your actual categories, write each branch and replace every placeholder URL. Test every branch; the first message is only the beginning of the conversation.</p><h2 id=\"make-it-yours\">Make a template yours</h2><ol><li>Give it a clear campaign name.</li><li>Set the keyword or incoming-message rule.</li><li>Replace placeholder copy and links.</li><li>Review any paid features and the next-step connections.</li><li>Publish, then test from a second account.</li></ol><p>You can also build a <a href=\"/docs/chat-automation/create-a-chat-automation\">Chat automation from scratch</a>, or learn more about <a href=\"/docs/chat-automation/chat-choices-and-collecting-replies\">choices and collecting replies</a>.</p>",
+    "updated": "2026-10-02",
+    "headings": [
+      {
+        "id": "respond-to-all-your-dms",
+        "text": "Respond to all your DMs",
+        "level": 2
+      },
+      {
+        "id": "capture-leads-from-dms",
+        "text": "Capture leads from DMs",
+        "level": 2
+      },
+      {
+        "id": "sell-products-or-services-from-dms",
+        "text": "Sell products or services from DMs",
+        "level": 2
+      },
+      {
+        "id": "make-it-yours",
+        "text": "Make a template yours",
+        "level": 2
+      }
+    ],
+    "description": "The Basic template gallery includes three inbox-focused starting points: answer a message, collect details, or offer a choice of products and services. Open New automation → Browse…"
+  }
+]

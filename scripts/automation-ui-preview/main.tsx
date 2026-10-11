@@ -1,0 +1,19 @@
+// Sample data only. This fixture never imports server actions or sends messages.
+import React, { useState } from "react";
+import { createRoot } from "react-dom/client";
+import EngagementOptions from "@/components/automations/engagement-options";
+import InstagramPhonePreview from "@/components/automations/instagram-phone-preview";
+import type { WizardData } from "@/hooks/use-wizard";
+import { DEFAULT_EMAIL_CAPTURE_PROMPT, DEFAULT_FOLLOW_UP_MESSAGE } from "@/lib/automation-engagement-settings";
+const initial: WizardData = {
+  post: { postid: "ANY", media: "", mediaType: "IMAGE" }, campaignName: "Send affiliate product links", triggerMode: "SPECIFIC_KEYWORD", keywords: ["LINK"], matchingMode: "CONTAINS", sendPrivateDm: true,
+  dmMessage: "Your next favorite find", productCard: true, productImageUrl: "https://ap3k.com/brand/ap3k-social-avatar.png", productSubtitle: "Explore my latest collaboration", linkButtons: [{ label: "Shop the collection", url: "https://example.com" }],
+  followGateRequired: false, openingDmEnabled: true, openingDmText: "Hey! Thanks for your interest ✨ Tap below and I’ll send you the link.", openingDmButtonText: "Send me the link", followRequestDmText: "Follow my account, then tap below for your link ✨", followRequestButtonText: "I followed ✅",
+  publicReplyEnabled: true, publicReply: "Thanks! Please see DMs.", publicReply2: "Sent you a message! Check it out!", publicReply3: "Nice! Check your DMs!", aiReplyEnabled: false, aiReplyTone: "FRIENDLY", aiReplyInstructions: "", aiProtectionRules: {} as WizardData["aiProtectionRules"], active: false,
+  emailCaptureEnabled: false, emailCapturePrompt: DEFAULT_EMAIL_CAPTURE_PROMPT, followUpEnabled: false, followUpMessage: DEFAULT_FOLLOW_UP_MESSAGE, followUpDelayMinutes: 30,
+};
+function Preview() {
+ const [data, setData] = useState(initial), [dark, setDark] = useState(true), [mode, setMode] = useState<"comments" | "dm">("comments"), [mobile, setMobile] = useState(false);
+ return <div className={dark ? "dark" : ""}><div className="min-h-screen bg-[#f7f8fc] text-slate-950 dark:bg-[#0b0e16] dark:text-white"><header className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-white px-6 py-4 dark:border-white/10 dark:bg-[#101420]"><div className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-xl bg-violet-600 font-bold text-white">A3</span><span className="font-bold">AP3K <span className="ml-2 text-xs font-normal text-slate-500 dark:text-slate-400">Automation preview · sample data</span></span></div><div className="flex gap-2"><button onClick={() => setMobile(!mobile)} className="rounded-lg border border-slate-300 px-3 py-2 text-sm dark:border-white/20">{mobile ? "Desktop layout" : "Mobile layout"}</button><button onClick={() => setDark(!dark)} className="rounded-lg border border-slate-300 px-3 py-2 text-sm dark:border-white/20">{dark ? "Light mode" : "Dark mode"}</button></div></header><main style={mobile ? { maxWidth: 390 } : {}} className={`mx-auto grid max-w-6xl gap-8 px-5 py-8 ${!mobile ? "lg:grid-cols-[1fr_430px]" : ""}`}><div><p className="text-xs font-semibold uppercase tracking-widest text-violet-600 dark:text-violet-300">Quick automation</p><h1 className="mt-2 text-2xl font-bold tracking-tight">Send affiliate product links</h1><p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">A product photo, a personal message, and the right next step.</p><EngagementOptions data={data} update={v => setData(d => ({...d,...v}))} followUpsReady={false} onPreview={setMode} /></div><aside className={!mobile ? "sticky top-5 h-[760px]" : "h-[650px]"}><InstagramPhonePreview data={data} step={3} username="yourbrand" requestedMode={mode}/></aside></main></div></div>;
+}
+createRoot(document.getElementById('root')!).render(<Preview/>);

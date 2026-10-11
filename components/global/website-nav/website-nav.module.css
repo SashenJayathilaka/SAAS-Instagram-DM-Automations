@@ -1,0 +1,31 @@
+.space { height: 68px; }
+.nav { position: fixed; z-index: 50; top: 24px; left: 50%; transform: translateX(-50%); width: max-content; min-width: 584px; max-width: calc(100% - 32px); padding: 12px 17px; border-radius: 999px; background: rgba(239,237,243,.72); backdrop-filter: blur(16px); color: #374151; }
+:global(.dark) .nav { background: rgba(32,30,43,.8); color: #d6d0e4; }
+.row, .brand, .links { display: flex; align-items: center; }
+.row { justify-content: space-between; gap: 32px; }
+.brand { gap: 12px; }
+.language { flex-shrink: 0; }
+.actions { display: flex; align-items: center; gap: 10px; }
+.actions > .theme { flex: 0 0 40px; width: 40px; height: 40px; border-radius: 50%; }
+.links { gap: 24px; font-size: 16px; font-weight: 500; white-space: nowrap; }
+.links > a:not(.join):hover { color: #7435db; }
+.join { display: inline-flex; align-items: center; justify-content: center; padding: 8px 16px; border-radius: 999px; background: linear-gradient(110deg,#7c3aed,#db2777); color: #fff; font-weight: 600; line-height: 24px; transition: opacity .2s; }
+.join:hover { opacity: .87; }
+.nav a:focus-visible, .toggle:focus-visible { outline: 2px solid #a78bfa; outline-offset: 4px; }
+.theme:focus-visible { outline: 2px solid #a78bfa; outline-offset: 4px; }
+.toggle, .mobile { display: none; }
+@media (max-width: 1023px) {
+  .nav { width: 584px; min-width: 0; padding: 9px 17px; }
+  .nav[data-open="true"] { border-radius: 28px; }
+  .links { display: none; }
+  .row { gap: 12px; }
+  .language > button { min-width: 44px; min-height: 44px; }
+  .toggle { display: grid; flex-shrink: 0; place-items: center; width: 44px; height: 44px; border-radius: 50%; }
+  .mobile:not([hidden]) { display: flex; flex-direction: column; align-items: stretch; gap: 8px; padding: 12px 0 5px; font-size: 16px; font-weight: 500; }
+  .mobile > a { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 16px; border-radius: 999px; }
+  .mobile > a:not(.join):hover { background: rgba(139,92,246,.1); }
+  .mobile .actions { width: 100%; }
+  .mobile .join { flex: 1; min-width: 0; min-height: 44px; text-align: center; }
+  .mobile .theme { flex-basis: 44px; width: 44px; height: 44px; }
+}
+@media (max-width: 639px) { .nav { width: calc(100% - 32px); } }

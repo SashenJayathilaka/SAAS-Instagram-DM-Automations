@@ -2,28 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+/* The workspace has no global toolbar. Keep mobile navigation clear of content. */
+.ap3k-app-shell:has([data-automation-library]) { min-height:100dvh; background:#fff; }
+.dark .ap3k-app-shell:has([data-automation-library]) { background:#0e1019; }
+@media (max-width: 1023px) {
+  .ap3k-app-shell { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
+  .ap3k-app-shell [data-automation-scroll-region] { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+}
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --background: 220 30% 95%;
+    --foreground: 222 47% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 263 70% 50%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 25% 32%;
+    --accent: 260 30% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 72% 45%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
-    --radius: 0.5rem;
+    --border: 214 25% 84%;
+    --input: 215 20% 76%;
+    --ring: 263 70% 50%;
+    --radius: 0.75rem;
+    --primary-hover: 263 70% 43%;
+    --primary-active: 263 70% 38%;
+    --primary-subtle: 263 90% 97%;
+    --surface-elevated: 0 0% 100%;
+    --border-subtle: 214 25% 89%;
+    --text-secondary: 215 25% 32%;
+    --success: 158 64% 28%;
+    --warning: 32 95% 32%;
+    --shadow-surface: 0 1px 2px rgb(15 23 42 / 0.04), 0 4px 16px rgb(15 23 42 / 0.03);
+    --shadow-overlay: 0 12px 36px -8px rgb(15 23 42 / 0.18), 0 2px 8px rgb(15 23 42 / 0.06);
+    --page-gutter: clamp(0.75rem, 2vw, 1.5rem);
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -37,48 +56,65 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-    --page-background: white;
+    --page-background: #eef1f6;
+    --brand-pink: 333 71% 35%;
+    --brand-purple: 109 40 217;
+    --brand-magenta: 179 30 97;
 
     --scrollbar-track: transparent;
-    --scrollbar-thumb: #545454;
-    --scrollbar-thumb-hover: #5c5c5f;
+    --scrollbar-thumb: #c1c8d5;
+    --scrollbar-thumb-hover: #94a3b8;
 
     --scrollbar-width: 12px;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 230 53% 5%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 29% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 263 70% 50%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 221 39% 11%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 22% 16%;
+    --muted-foreground: 217 11% 65%;
+    --accent: 253 24% 18%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 65% 44%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 18%;
+    --input: 217 15% 42%;
+    --ring: 258 90% 74%;
+    --chart-1: 217 91% 60%;
+    --chart-2: 160 84% 39%;
+    --chart-3: 238 84% 67%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 84% 60%;
+    --sidebar-background: 222 29% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 222 22% 16%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 32% 19%;
+    --sidebar-ring: 217 91% 60%;
+    --page-background: #050816;
+    --brand-pink: 329 86% 70%;
+    --brand-purple: 167 139 250;
+    --brand-magenta: 221 42 123;
+    --scrollbar-thumb: #545454;
+    --scrollbar-thumb-hover: #5c5c5f;
+    --primary-subtle: 260 30% 16%;
+    --surface-elevated: 222 30% 14%;
+    --border-subtle: 222 26% 15%;
+    --text-secondary: 214 20% 78%;
+    --success: 156 62% 68%;
+    --warning: 43 96% 70%;
+    --shadow-surface: 0 1px 2px rgb(0 0 0 / 0.18), 0 4px 16px rgb(0 0 0 / 0.12);
+    --shadow-overlay: 0 16px 40px -8px rgb(0 0 0 / 0.4);
   }
 }
 
@@ -86,8 +122,204 @@
   * {
     @apply border-border;
   }
+
+  html,
   body {
-    @apply bg-background text-foreground;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 12% -10%, rgba(249, 115, 22, 0.12), transparent 34rem),
+      radial-gradient(circle at 78% 0%, rgba(236, 72, 153, 0.12), transparent 32rem),
+      radial-gradient(circle at 45% 42%, rgba(139, 92, 246, 0.08), transparent 38rem),
+      linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--background)) 100%);
+    background-attachment: fixed;
+  }
+
+  body * {
+    min-width: 0;
+  }
+
+  html:not(.dark) body {
+    background: hsl(var(--background));
+  }
+
+  html:not(.dark) body::before {
+    display: none;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.16;
+    background-image:
+      linear-gradient(rgba(100, 116, 139, 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(100, 116, 139, 0.09) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(to bottom, black, transparent 72%);
+  }
+}
+
+@layer components {
+  .ap3k-card {
+    @apply min-w-0 border border-border bg-card text-card-foreground shadow-surface;
+  }
+
+  .ap3k-card-hover {
+    @apply transition-[border-color,transform,box-shadow] duration-base ease-ui-out hover:border-violet-300 hover:shadow-surface dark:hover:border-violet-400/40 motion-safe:hover:-translate-y-0.5;
+  }
+
+  .ap3k-gradient-text {
+    @apply bg-ap3k-gradient bg-[length:180%_180%] bg-clip-text text-transparent;
+  }
+
+  .ap3k-gradient-button {
+    @apply relative inline-flex min-h-11 items-center justify-center gap-2 overflow-hidden rounded-xl bg-primary px-4 text-center font-bold text-primary-foreground shadow-sm transition-[background-color,box-shadow,transform] duration-fast ease-ui-out hover:bg-primary-hover hover:shadow-md active:bg-primary-active motion-safe:hover:-translate-y-px motion-safe:active:translate-y-0 motion-safe:active:scale-[0.99] disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .ap3k-outline-button {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-border bg-card font-bold text-foreground shadow-sm transition-[background-color,border-color,transform] duration-fast hover:border-violet-300 hover:bg-accent motion-safe:active:scale-[0.99] disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .ap3k-kicker {
+    @apply text-xs font-black uppercase tracking-[0.2em] text-pink-700 dark:text-rf-pink;
+  }
+
+  .ap3k-page {
+    @apply min-h-screen min-w-0 overflow-x-hidden bg-background text-slate-950 dark:bg-[#050816] dark:text-slate-50;
+  }
+
+  .ap3k-panel {
+    @apply min-w-0 rounded-2xl border border-border bg-card shadow-surface;
+  }
+
+  .ap3k-muted {
+    @apply text-slate-600 dark:text-slate-300;
+  }
+
+  .ap3k-input {
+    @apply max-w-full min-w-0 border border-input bg-white text-slate-950 shadow-sm selection:bg-rf-blue selection:text-white placeholder:text-slate-500 outline-none transition-colors duration-fast hover:border-slate-400 aria-[invalid=true]:border-destructive aria-[invalid=true]:ring-destructive/15 focus:border-violet-500 focus:ring-2 focus:ring-violet-500/15 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-600 disabled:opacity-100 dark:border-input dark:bg-[#101827] dark:text-slate-50 dark:placeholder:text-slate-400 dark:focus:border-violet-400 dark:focus:ring-violet-400/20 dark:disabled:bg-white/[0.06] dark:disabled:text-slate-300;
+  }
+
+  .ap3k-textarea {
+    @apply ap3k-input min-h-[90px] resize-y leading-relaxed;
+  }
+
+  .ap3k-select {
+    @apply ap3k-input;
+  }
+
+  .ap3k-review-row {
+    @apply flex w-full max-w-full min-w-0 items-center justify-between gap-3 overflow-hidden rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-950 shadow-sm dark:border-white/10 dark:bg-[#101827] dark:text-slate-50;
+    min-inline-size: 0;
+    contain: inline-size;
+  }
+
+  .ap3k-review-row > * {
+    min-width: 0 !important;
+  }
+
+  .ap3k-review-row > span:nth-of-type(2),
+  .ap3k-review-row .truncate {
+    display: block !important;
+    flex: 1 1 0% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .ap3k-review-row span,
+  .ap3k-review-row p {
+    overflow-wrap: anywhere;
+  }
+
+  .ap3k-preview-card {
+    @apply min-w-0 max-w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-slate-950 dark:border-white/10 dark:bg-[#101827] dark:text-slate-50;
+  }
+
+  .ap3k-preview-card * {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .ap3k-preview-card p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ap3k-input:-webkit-autofill,
+  .ap3k-textarea:-webkit-autofill,
+  .ap3k-select:-webkit-autofill {
+    -webkit-text-fill-color: rgb(15 23 42);
+    transition: background-color 9999s ease-in-out 0s;
+  }
+
+  .dark .ap3k-input:-webkit-autofill,
+  .dark .ap3k-textarea:-webkit-autofill,
+  .dark .ap3k-select:-webkit-autofill {
+    -webkit-text-fill-color: rgb(248 250 252);
+    box-shadow: 0 0 0 1000px #101827 inset;
+  }
+
+  .ap3k-badge {
+    @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-[10px] font-black uppercase tracking-[0.12em];
+  }
+  .ap3k-badge-green  { @apply border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-300; }
+  .ap3k-badge-amber  { @apply border-amber-200 bg-amber-50 text-amber-800 dark:border-amber-500/30 dark:bg-amber-500/10 dark:text-amber-200; }
+  .ap3k-badge-red    { @apply border-red-200 bg-red-50 text-red-700 dark:border-red-500/30 dark:bg-red-500/10 dark:text-red-300; }
+  .ap3k-badge-blue   { @apply border-blue-200 bg-blue-50 text-blue-700 dark:border-blue-500/30 dark:bg-blue-500/10 dark:text-blue-200; }
+  .ap3k-badge-pink   { @apply border-rf-pink/25 bg-rf-pink/10 text-rf-magenta dark:text-rf-pink; }
+  .ap3k-badge-slate  { @apply border-slate-200 bg-slate-50 text-slate-600 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-300; }
+
+  .ap3k-page-header {
+    @apply flex min-w-0 flex-col gap-4 md:flex-row md:items-center md:justify-between;
+  }
+
+  .ap3k-table-action {
+    @apply whitespace-nowrap rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-bold text-slate-600 transition-colors hover:bg-slate-50 disabled:opacity-50 dark:border-white/10 dark:bg-transparent dark:text-slate-300 dark:hover:bg-white/[0.06];
+  }
+  .ap3k-table-action-danger {
+    @apply whitespace-nowrap rounded-lg border border-red-200 bg-white px-2.5 py-1.5 text-xs font-bold text-red-600 transition-colors hover:bg-red-50 disabled:opacity-50 dark:border-red-500/30 dark:bg-transparent dark:text-red-300 dark:hover:bg-red-500/10;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 3px;
+  }
+}
+
+/* Product demos provide motion; their surrounding decoration stays still. */
+.ap3k-video-frame { box-shadow: var(--shadow-overlay); }
+@media (max-width: 767px) {
+  .ap3k-orb-one, .ap3k-orb-two { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ap3k-product-float,
+  .ap3k-orb-one,
+  .ap3k-orb-two,
+  .ap3k-ring-one,
+  .ap3k-ring-two { animation: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
@@ -95,17 +327,14 @@
   -webkit-backdrop-filter: blur(5px);
 }
 
-/* Firefox */
 * {
-  scrollbar-width: thin; /* none | auto  */
+  scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
-/* Firefox */
 
-/* Chrome, Edge, Safari */
 *::-webkit-scrollbar {
-  width: var(--scrollbar-width); /* vertical scrollbar */
-  height: var(--scrollbar-width); /* horizontal scrollbar */
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-width);
 }
 
 *::-webkit-scrollbar-track {
@@ -170,4 +399,56 @@
   );
   background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+/* A compact phone + benefits composition. */
+.ap3k-feature-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  grid-template-areas: "intro intro" "phone benefits" "cta cta";
+  grid-template-rows: auto 1fr auto;
+  gap: 20px 16px;
+  min-width: 0;
+}
+.ap3k-feature-intro { grid-area: intro; }
+.ap3k-feature-benefits { grid-area: benefits; }
+.ap3k-feature-cta { grid-area: cta; align-self: start; }
+.ap3k-feature-cta a { width: 100%; }
+.ap3k-feature-phone { grid-area: phone; width: min(100%, 185px); }
+
+@media (min-width: 640px) {
+  .ap3k-feature-panel {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    grid-template-areas: "intro phone" "benefits phone" "cta phone";
+    grid-template-rows: 1fr auto 1fr;
+    gap: 24px 32px;
+    min-height: 420px;
+  }
+  .ap3k-feature-intro { align-self: end; }
+  .ap3k-feature-cta a { width: auto; }
+  .ap3k-feature-phone { width: min(100%, 245px); }
+}
+@media (min-width: 1024px) {
+  .ap3k-feature-panel { column-gap: 72px; min-height: 470px; }
+  .ap3k-feature-phone { width: 265px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html:has(.ap3k-home) { scroll-behavior: smooth; scroll-padding-top: 88px; }
+}
+
+/* Presentation primitives shared by custom product controls. */
+@layer components {
+  .ap3k-control {
+    @apply transition-[color,background-color,border-color,opacity,transform] duration-fast ease-ui-out;
+  }
+  .ap3k-content-enter { animation: ap3k-content-enter 360ms cubic-bezier(0.22, 1, 0.36, 1) backwards; }
+  .ap3k-app-shell { padding-inline: var(--page-gutter); scroll-padding-block: 7rem 6rem; }
+  .ap3k-app-shell :is(input, textarea, select, button, a) { scroll-margin-block: 7rem 6rem; }
+  .ap3k-app-shell :is(h1, h2, h3) { overflow-wrap: anywhere; }
+  .ap3k-mobile-actions { padding-bottom: max(0.75rem, env(safe-area-inset-bottom)); }
+  .ap3k-menu { max-height: min(32rem, var(--radix-popper-available-height, 80dvh)); overflow-y: auto; overscroll-behavior: contain; }
+}
+@keyframes ap3k-content-enter { from { transform: translateY(6px); } to { transform: translateY(0); } }
+@media (pointer: coarse) {
+  .ap3k-app-shell button:not([role="switch"]):not([role="checkbox"]):not([role="radio"]), .ap3k-table-action, .ap3k-table-action-danger { min-height: 44px; }
+  .ap3k-input, .ap3k-textarea, .ap3k-select { font-size: 16px; }
 }

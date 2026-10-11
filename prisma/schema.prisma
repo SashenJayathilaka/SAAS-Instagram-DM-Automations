@@ -1,9 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -14,50 +11,325 @@ datasource db {
 }
 
 model User {
-  id           String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  clerkId      String         @unique
-  email        String         @unique
-  firstname    String?
-  lastname     String?
-  createdAt    DateTime       @default(now())
-  subscription Subscription?
-  integrations Integrations[]
-  automations  Automation[]
+  id                  String               @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  clerkId             String               @unique
+  email               String               @unique
+  firstname           String?
+  lastname            String?
+  timeZone            String?              @db.VarChar(64)
+  timeZoneAuto        Boolean              @default(true)
+  status              String               @default("ACTIVE")
+  suspendedAt         DateTime?
+  suspendedReason     String?
+  createdAt           DateTime             @default(now())
+  subscription        Subscription?
+  integrations        Integrations[]
+  automations         Automation[]
+  conversations       Conversation[]
+  metaOAuthSelections MetaOAuthSelection[]
+  referralPartner     ReferralPartner?     @relation("ReferralPartnerOwner")
+  referralAttribution ReferralAttribution? @relation("ReferredUser")
+  aiWorkspace         AiWorkspaceConfig?
+  aiUsageEvents       AiUsageEvent[]
+  aiChatMessages      AiChatMessage[]
+  emailPreference     EmailPreference?
+  emailDeliveries     EmailDelivery[]
+  deletedReplyUsage   DeletedReplyUsage[]
+  automationImages   AutomationImage[]
+  automationAttachments AutomationAttachment[]
+  policyScans AutomationPolicyScan[]
+}
+
+// Prospects explicitly requesting the public launch-kit email series. Never import
+// customer Instagram contacts or infer marketing consent from account creation.
+model MarketingLead {
+  id               String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  email            String    @unique
+  audience         String
+  source           String
+  consentVersion   String
+  confirmationHash String
+  expiresAt        DateTime
+  confirmedAt      DateTime?
+  unsubscribedAt   DateTime?
+  suppressedAt     DateTime?
+  completedAt      DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@index([confirmedAt, completedAt])
+}
+
+// Separate retention from short-lived Meta webhook buckets so a daily marketing
+// cap cannot be cleared by the webhook worker's two-hour cleanup.
+model MarketingRateLimit {
+  key         String   @db.VarChar(64)
+  windowStart DateTime
+  count       Int      @default(1)
+  updatedAt   DateTime @updatedAt
+
+  @@id([key, windowStart])
+  @@index([updatedAt])
+}
+
+model EmailPreference {
+  id            String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId        String   @unique @db.Uuid
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productTips   Boolean  @default(true)
+  weeklyReports Boolean  @default(true)
+  promotions    Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model EmailDelivery {
+  id                String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId            String?               @db.Uuid
+  user              User?                 @relation(fields: [userId], references: [id], onDelete: SetNull)
+  templateId        String
+  category          String
+  recipient         String
+  subject           String
+  status            EMAIL_DELIVERY_STATUS @default(PENDING)
+  providerMessageId String?               @unique
+  idempotencyKey    String                @unique
+  errorCode         String?
+  errorMessage      String?
+  metadata          Json?
+  sentAt            DateTime?
+  deliveredAt       DateTime?
+  openedAt          DateTime?
+  clickedAt         DateTime?
+  createdAt         DateTime              @default(now())
+  updatedAt         DateTime              @updatedAt
+
+  @@index([userId, createdAt])
+  @@index([status, createdAt])
+  @@index([templateId, createdAt])
 }
 
 model Subscription {
-  id         String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  User       User?             @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId     String?           @unique @db.Uuid
-  createdAt  DateTime          @default(now())
-  plan       SUBSCRIPTION_PLAN @default(FREE)
-  updatedAt  DateTime          @default(now())
-  customerId String?           @unique
+  id                     String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  User                   User?             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId                 String?           @unique @db.Uuid
+  createdAt              DateTime          @default(now())
+  plan                   SUBSCRIPTION_PLAN @default(FREE)
+  updatedAt              DateTime          @default(now())
+  customerId             String?           @unique
+  usageResetAt           DateTime?
+  welcomeTrialStartedAt  DateTime?
+  welcomeTrialEndsAt     DateTime?
+  welcomeTrialReplyLimit Int?
+
+  // Internal Overrides
+  monthlyReplyLimitOverride     Int?
+  activeCampaignLimitOverride   Int?
+  connectedAccountLimitOverride Int?
+  aiReplyLimitOverride          Int?
+  overrideReason                String?
+  overrideExpiresAt             DateTime?
+}
+
+model ReferralPartner {
+  id                   String               @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId               String?               @unique @db.Uuid
+  user                 User?                 @relation("ReferralPartnerOwner", fields: [userId], references: [id], onDelete: SetNull)
+  code                 String               @unique @db.VarChar(24)
+  founderRank          Int?                 @unique
+  promoCode            String?              @unique
+  stripeCouponId       String?              @unique
+  promoEnabled         Boolean              @default(false)
+  eligibilityCheckedAt DateTime?
+  followers            Int                  @default(0)
+  eligibleUsername     String?
+  commissions          ReferralCommission[]
+  withdrawals          ReferralWithdrawal[]
+  clicks               ReferralClick[]
+  invites              ReferralInvite[]
+  qualifiedAt          DateTime?
+  createdAt            DateTime             @default(now())
+  updatedAt            DateTime             @updatedAt
+
+  attributions ReferralAttribution[]
+  rewards      ReferralReward[]
+
+  @@index([createdAt])
+}
+
+model ReferralAttribution {
+  id                 String                      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  partnerId          String                      @db.Uuid
+  partner            ReferralPartner             @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  referredUserId     String?                      @unique @db.Uuid
+  referredUser       User?                        @relation("ReferredUser", fields: [referredUserId], references: [id], onDelete: SetNull)
+  status             REFERRAL_ATTRIBUTION_STATUS @default(SIGNED_UP)
+  connectedAt        DateTime?
+  qualifiedAt        DateTime?
+  firstPaidInvoiceId String?                     @unique
+  createdAt          DateTime                    @default(now())
+  updatedAt          DateTime                    @updatedAt
+
+  programVersion   Int                  @default(2)
+  source           String               @default("LINK")
+  firstPeriodStart DateTime?
+  commissions      ReferralCommission[]
+
+  reward ReferralReward?
+
+  @@index([partnerId, status])
+  @@index([createdAt])
+}
+
+model ReferralReward {
+  id                         String                 @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  partnerId                  String                 @db.Uuid
+  partner                    ReferralPartner        @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  attributionId              String                 @unique @db.Uuid
+  attribution                ReferralAttribution    @relation(fields: [attributionId], references: [id], onDelete: Cascade)
+  qualifyingInvoiceId        String                 @unique
+  amountCents                Int                    @default(900)
+  currency                   String                 @default("usd") @db.VarChar(3)
+  status                     REFERRAL_REWARD_STATUS @default(PENDING)
+  stripeBalanceTransactionId String?                @unique
+  failureReason              String?
+  createdAt                  DateTime               @default(now())
+  appliedAt                  DateTime?
+  reversedAt                 DateTime?
+
+  @@index([partnerId, status])
+  @@index([createdAt])
 }
 
 model Integrations {
-  id          String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  name        INTEGRATIONS @default(INSTAGRAM)
-  createdAt   DateTime     @default(now())
-  User        User?        @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId      String?      @db.Uuid
-  token       String       @unique
-  expiresAt   DateTime?
-  instagramId String?      @unique
+  id                                 String                     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name                               INTEGRATIONS               @default(INSTAGRAM)
+  createdAt                          DateTime                   @default(now())
+  User                               User?                      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId                             String?                    @db.Uuid
+  token                              String                     @unique
+  expiresAt                          DateTime?
+  instagramId                        String?                    @unique
+  metaAppScopedUserId                String?
+  webhookAccountId                   String?
+  pageId                             String?
+  pageName                           String?
+  businessId                         String?
+  instagramUsername                  String?
+  profilePictureUrl                  String?
+  igAccountSource                    String?
+  oauthResolutionDiagnostics         Json?
+  webhookSubscriptionLastAttemptedAt DateTime?
+  webhookSubscriptionStatusCode      Int?
+  webhookSubscriptionSubscribed      Boolean?
+  webhookSubscriptionMode            String?
+  webhookSubscriptionError           String?
+  oauthLastError                     String?
+  oauthLastErrorAt                   DateTime?
+  oauthLastErrorSource               String?
+  status                             String                     @default("CONNECTED")
+  disconnectedAt                     DateTime?
+  disconnectedReason                 String?
+  reconnectRequired                  Boolean                    @default(false)
+  lastAdminNote                      String?
+  lastAdminActionAt                  DateTime?
+  snapshots                          InstagramAccountSnapshot[]
+  planLocked                         Boolean                    @default(false)
+  automations                        Automation[]
+  conversations                      Conversation[]
+  aiConfig                           InstagramAiConfig?
+  aiChats                            AiChatMessage[]
+  followerStates                     AutomationFollowerState[]
+  conversationStarters               Json?
+  starterReceipts                    ConversationStarterReceipt[]
+
+  @@index([metaAppScopedUserId])
+}
+
+model InstagramAccountSnapshot {
+  id            String       @id @default(cuid())
+  integrationId String       @db.Uuid
+  integration   Integrations @relation(fields: [integrationId], references: [id], onDelete: Cascade)
+
+  instagramId       String?
+  username          String?
+  profilePictureUrl String?
+  followersCount    Int?
+  mediaCount        Int?
+  accountType       String?
+
+  source    String   @default("meta_graph")
+  fetchedAt DateTime @default(now())
+  createdAt DateTime @default(now())
+
+  @@index([integrationId, fetchedAt])
+  @@index([instagramId])
+}
+
+model MetaOAuthSelection {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  User      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String   @db.Uuid
+  accounts  Json
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId, expiresAt])
 }
 
 model Automation {
-  id        String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  name      String    @default("Untitled")
-  createdAt DateTime  @default(now())
-  active    Boolean   @default(false)
-  trigger   Trigger[]
-  listener  Listener?
-  posts     Post[]
-  dms       Dms[]
-  User      User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId    String?   @db.Uuid
-  keywords  Keyword[]
+  adAutomation Boolean @default(false)
+  integrationId        String?           @db.Uuid
+  integration          Integrations?     @relation(fields: [integrationId], references: [id], onDelete: Cascade)
+  id                   String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name                 String            @default("Untitled")
+  createdAt            DateTime          @default(now())
+  active               Boolean           @default(false)
+  matchingMode         MATCHING_MODE     @default(CONTAINS)
+  triggerMode          String            @default("SPECIFIC_KEYWORD")
+  sendPrivateDm        Boolean           @default(true)
+  source               String            @default("COMMENT")
+  storyTriggerType     String?
+  storyConfig          Json?
+  postConfig           Json?
+  followGateRequired   Boolean           @default(false)
+  typingIndicator      Boolean           @default(false)
+  stepDelays           Json?
+  deliveryDelaySeconds Int               @default(0)
+  triggerOnShares      Boolean           @default(false)
+  oneDmPerUser         Boolean           @default(false)
+  needsReview          Boolean           @default(false)
+  reviewReason         String?
+  archivedAt           DateTime?
+  archivedByAdminEmail String?
+  archiveReason        String?
+  trigger              Trigger[]
+  listener             Listener?
+  posts                Post[]
+  dms                  Dms[]
+  User                 User?             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId               String?           @db.Uuid
+  keywords             Keyword[]
+  leads                Lead[]
+  events               AutomationEvent[]
+  messageLogs          MessageLog[]
+  deliveryJobs         AutomationDeliveryJob[]
+  dmRecipients         AutomationDmRecipient[]
+  publicReplySlots     PublicReplySlot[]
+  webhookEvents        WebhookEvent[]
+  conversations        Conversation[]
+  aiUsageEvents        AiUsageEvent[]
+  engagementJobs       AutomationEngagementJob[]
+  aiConversationSessions AiConversationSession[]
+  flowSessions           AutomationFlowSession[]
+  flowEntries            AutomationFlowEntry[]
+  flowReceipts           AutomationFlowReceipt[]
+  analyticsHits          AutomationHit[]
+  trackedLinks           AutomationTrackedLink[]
+  analyticsClicks        AutomationClick[]
+  followerStates         AutomationFollowerState[]
+
+  @@index([userId, integrationId])
 }
 
 model Dms {
@@ -81,14 +353,181 @@ model Post {
 }
 
 model Listener {
-  id           String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  Automation   Automation @relation(fields: [automationId], references: [id], onDelete: Cascade)
-  automationId String     @unique @db.Uuid
-  listener     LISTENERS  @default(MESSAGE)
-  prompt       String
-  commentReply String?
-  dmCount      Int        @default(0)
-  commentCount Int        @default(0)
+  id                      String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  Automation              Automation @relation(fields: [automationId], references: [id], onDelete: Cascade)
+  automationId            String     @unique @db.Uuid
+  listener                LISTENERS  @default(MESSAGE)
+  prompt                  String
+  commentReply            String?
+  commentReply2           String?
+  commentReply3           String?
+  commentReplies          Json?
+  messageVariations       Json?
+  publicReplyLimit        Int        @default(0)
+  aiReplyEnabled          Boolean    @default(false)
+  aiReplyTone             String     @default("FRIENDLY")
+  aiReplyInstructions     String?
+  aiProtectionRules       Json?
+  aiDmReplyEnabled        Boolean    @default(false)
+  aiConversation          Json?
+  flowDefinition          Json?
+  flowTriggers Json?
+  flowDraft Json?
+  flowRevision            Int        @default(0)
+  ctaLink                 String?
+  ctaButtonTitle          String?
+  responseFormat          String     @default("TEXT")
+  quickReplies            Json?
+  mediaUrl                String?
+  mediaType               String?
+  cardSubtitle            String?
+  phoneCaptureEnabled     Boolean @default(false)
+  phoneCapturePrompt      String?
+  phoneCaptureRetryMessage String?
+  followUpCondition       String @default("ALWAYS")
+  emailCaptureEnabled     Boolean    @default(false)
+  emailCapturePrompt      String?
+  emailCaptureRetryMessage String?
+  followUpEnabled         Boolean    @default(false)
+  followUpMessage         String?
+  followUpDelayMinutes    Float        @default(30)
+  openingDmFormat         String     @default("BUTTON")
+  openingDmText           String?
+  openingDmButtonText     String?
+  openingDmEnabled        Boolean    @default(true)
+  followRequestDmText     String?
+  followRequestButtonText String?
+  dmCount                 Int        @default(0)
+  commentCount            Int        @default(0)
+}
+
+model AiProviderConfig {
+  id              String    @id @default("google")
+  enabled         Boolean   @default(false)
+  providerName    String    @default("Google AI Studio")
+  baseUrl         String    @default("https://generativelanguage.googleapis.com/v1beta/openai")
+  model           String    @default("gemini-3.5-flash-lite")
+  encryptedApiKey String?
+  apiKeyHint      String?
+  lastTestedAt    DateTime?
+  lastTestStatus  String?
+  lastTestError   String?
+  fallbackEnabled Boolean   @default(false)
+  benchmarkLatencyMs Int?
+  lastBenchmarkedAt DateTime?
+  lastSuccessAt DateTime?
+  consecutiveFailures Int @default(0)
+  cooldownUntil DateTime?
+  lastFailureCode String?
+  updatedBy       String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model AiWorkspaceConfig {
+  id                String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId            String   @unique @db.Uuid
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  aiRepliesEnabled  Boolean  @default(false)
+  aiCommentsEnabled Boolean  @default(false)
+  role              String   @default("Helpful Instagram assistant")
+  brandVoice        String   @default("Friendly, clear, concise, and human")
+  guardrails        String?
+  defaultTone       String   @default("FRIENDLY")
+  protectionRules   Json?
+  knowledge         Json?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model InstagramAiConfig {
+  id                String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId            String       @db.Uuid
+  integrationId     String       @unique @db.Uuid
+  integration       Integrations @relation(fields: [integrationId], references: [id], onDelete: Cascade)
+  aiRepliesEnabled  Boolean      @default(false)
+  aiCommentsEnabled Boolean      @default(false)
+  role              String       @default("Helpful Instagram assistant")
+  brandVoice        String       @default("Friendly, clear, concise, and human")
+  guardrails        String?
+  defaultTone       String       @default("FRIENDLY")
+  protectionRules   Json?
+  knowledge         Json?
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @updatedAt
+}
+
+model AiUsageEvent {
+  id           String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId       String      @db.Uuid
+  user         User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  automationId String?     @db.Uuid
+  automation   Automation? @relation(fields: [automationId], references: [id], onDelete: SetNull)
+  channel      String
+  status       String      @default("RESERVED")
+  meta         Json?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  @@index([userId, createdAt])
+  @@index([automationId, createdAt])
+}
+
+model AiChatMessage {
+  integrationId String?       @db.Uuid
+  integration   Integrations? @relation(fields: [integrationId], references: [id], onDelete: Cascade)
+  id            String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId        String        @db.Uuid
+  user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  context       String
+  role          String
+  content       String
+  createdAt     DateTime      @default(now())
+
+  @@index([userId, context, createdAt])
+  @@index([userId, integrationId, context])
+}
+
+model Conversation {
+  integrationId     String?        @db.Uuid
+  integration       Integrations?  @relation(fields: [integrationId], references: [id], onDelete: Cascade)
+  id                String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId            String         @db.Uuid
+  user              User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  automationId      String?        @db.Uuid
+  automation        Automation?    @relation(fields: [automationId], references: [id], onDelete: SetNull)
+  recipientIgId     String
+  recipientUsername String?
+  email             String?
+  emailCollectedAt  DateTime?
+  phone             String?
+  profilePictureUrl String?
+  lastMessageAt     DateTime       @default(now())
+  lastInboundAt     DateTime?
+  unreadCount       Int            @default(0)
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+  messages          InboxMessage[]
+
+  @@unique([integrationId, recipientIgId])
+  @@index([userId, integrationId, lastMessageAt])
+  @@index([userId, lastMessageAt])
+}
+
+model InboxMessage {
+  id             String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  conversationId String       @db.Uuid
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  metaMessageId  String?      @unique
+  senderIgId     String
+  direction      String
+  content        String
+  messageType    String       @default("TEXT")
+  mediaUrl       String?
+  status         String       @default("RECEIVED")
+  createdAt      DateTime     @default(now())
+
+  @@index([conversationId, createdAt])
 }
 
 model Trigger {
@@ -104,12 +543,149 @@ model Keyword {
   Automation   Automation? @relation(fields: [automationId], references: [id], onDelete: Cascade)
   automationId String?     @db.Uuid
 
-  @@unique([automationId, word]) //this constraints ensure user cant use the same keyword on multiple automations
+  @@unique([automationId, word])
 }
+
+model Lead {
+  id           String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  automationId String     @db.Uuid
+  automation   Automation @relation(fields: [automationId], references: [id], onDelete: Cascade)
+  igUserId     String
+  igUsername   String?
+  commentText  String?
+  email        String?
+  emailCollectedAt DateTime?
+  phone        String?
+  customFields Json @default("{}")
+  mediaId      String?
+  createdAt    DateTime   @default(now())
+
+  @@unique([automationId, igUserId])
+}
+
+model AutomationEvent {
+  id           String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  automationId String     @db.Uuid
+  automation   Automation @relation(fields: [automationId], references: [id], onDelete: Cascade)
+  eventType    EVENT_TYPE
+  igUserId     String?
+  mediaId      String?
+  commentId    String?
+  keyword      String?
+  meta         Json?
+  createdAt    DateTime   @default(now())
+}
+
+model WebhookEvent {
+  id           String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  automationId String?     @db.Uuid
+  automation   Automation? @relation(fields: [automationId], references: [id], onDelete: SetNull)
+  provider     String      @default("meta")
+  eventSource  String      @default("META_REAL")
+  eventType    String
+  field        String?
+  igAccountId  String?
+  igUserId     String?
+  mediaId      String?
+  commentId    String?
+  status       String      @default("RECEIVED")
+  errorMessage String?
+  payload      Json?
+  createdAt    DateTime    @default(now())
+  processedAt  DateTime?
+
+  @@index([automationId, createdAt])
+  @@index([igAccountId, createdAt])
+  @@index([commentId])
+  @@index([eventSource, createdAt])
+}
+
+model WebhookRateLimitBucket {
+  key         String   @db.VarChar(64)
+  windowStart DateTime
+  count       Int      @default(1)
+  updatedAt   DateTime @updatedAt
+
+  @@id([key, windowStart])
+  @@index([updatedAt])
+}
+
+model MessageLog {
+  id            String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  automationId  String       @db.Uuid
+  automation    Automation   @relation(fields: [automationId], references: [id], onDelete: Cascade)
+  recipientIgId String
+  mediaId       String?
+  commentId     String?
+  messageType   MESSAGE_TYPE
+  status        SEND_STATUS
+  errorMessage  String?
+  sentAt        DateTime?
+  createdAt     DateTime     @default(now())
+}
+
+// Draft and published snapshots are separate: saving never changes the public site.
+model EditorialPost {
+  slug        String   @id
+  draft       Json
+  published   Json?
+  hidden      Boolean  @default(false)
+  version     Int      @default(1)
+  updatedBy   String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model AdminAuditLog {
+  id String @id @default(cuid())
+
+  adminUserId String?
+  adminEmail  String?
+
+  action      String
+  targetType  String
+  targetId    String?
+  targetLabel String?
+
+  reason       String?
+  confirmation String?
+
+  before   Json?
+  after    Json?
+  metadata Json?
+
+  status String  @default("SUCCESS")
+  error  String?
+
+  createdAt DateTime @default(now())
+
+  @@index([adminUserId, createdAt])
+  @@index([adminEmail, createdAt])
+  @@index([targetType, targetId])
+  @@index([action, createdAt])
+}
+
+// ---------------------------------------------------------------------------
+// Enums
+// ---------------------------------------------------------------------------
 
 enum SUBSCRIPTION_PLAN {
   PRO
+  BUSINESS
   FREE
+}
+
+enum REFERRAL_ATTRIBUTION_STATUS {
+  SIGNED_UP
+  CONNECTED
+  QUALIFIED
+  WAITLISTED
+}
+
+enum REFERRAL_REWARD_STATUS {
+  PENDING
+  APPLIED
+  REVERSED
 }
 
 enum INTEGRATIONS {
@@ -119,10 +695,367 @@ enum INTEGRATIONS {
 enum MEDIATYPE {
   IMAGE
   VIDEO
-  CAROSEL_ALBUM
+  CAROUSEL_ALBUM
 }
 
 enum LISTENERS {
   SMARTAI
   MESSAGE
+}
+
+enum MATCHING_MODE {
+  EXACT
+  CONTAINS
+  SMART_AI
+}
+
+enum EVENT_TYPE {
+  WEBHOOK_RECEIVED
+  COMMENT_RECEIVED
+  KEYWORD_MATCHED
+  DM_SENT
+  DM_SKIPPED
+  PUBLIC_REPLY_SENT
+  DM_FAILED
+  PUBLIC_REPLY_FAILED
+  AI_REPLY_GENERATED
+  DUPLICATE_SKIPPED
+  SELF_COMMENT_SKIPPED
+  COMMENT_SKIPPED
+  LOOP_GUARD_TRIGGERED
+  LOOP_GUARD_PAUSED_CAMPAIGN
+  NO_MATCH
+}
+
+enum MESSAGE_TYPE {
+  DM
+  COMMENT_REPLY
+}
+
+enum SEND_STATUS {
+  SENT
+  FAILED
+  SKIPPED
+}
+
+enum EMAIL_DELIVERY_STATUS {
+  PENDING
+  SENT
+  DELIVERED
+  OPENED
+  CLICKED
+  BOUNCED
+  COMPLAINED
+  SUPPRESSED
+  FAILED
+  SKIPPED
+}
+
+// Billing-only counters survive campaign/account removal until the owner deletes
+// the AP3K account. No Instagram identity or message content is retained here.
+model DeletedReplyUsage {
+  id        String   @id @db.Uuid
+  userId    String   @db.Uuid
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime
+
+  @@index([userId, createdAt])
+}
+
+// Optimized product images, isolated by owner. Never included in automation queries.
+model AutomationImage {
+  id String @id @default(uuid()) @db.Uuid
+  userId String @db.Uuid
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  digest String
+  data Bytes
+  createdAt DateTime @default(now())
+  @@unique([userId, digest])
+  @@index([userId, createdAt])
+}
+
+model AutomationEngagementJob {
+  id             String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  automationId   String     @db.Uuid
+  automation     Automation @relation(fields: [automationId], references: [id], onDelete: Cascade)
+  recipientIgId  String
+  flowId         String
+  sentMessageId  String?
+  seenAt         DateTime?
+  reactedAt      DateTime?
+  clickedAt      DateTime?
+  baselineFollows Boolean?
+  condition      String @default("ALWAYS")
+  replyMessageId String?    @unique
+  kind           String
+  status         String     @default("PENDING")
+  dueAt          DateTime
+  expiresAt      DateTime
+  inboundAt      DateTime
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+  @@unique([automationId, recipientIgId, flowId, kind], map: "AutomationEngagementJob_journey_key")
+  @@index([kind, status, dueAt])
+  @@index([recipientIgId, kind, status])
+}
+
+model AutomationSchedulerHeartbeat {
+  id        String   @id
+  lastRunAt DateTime
+}
+
+model AiConversationSession {
+  id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  integrationId String @db.Uuid
+  recipientIgId String
+  automationId String @db.Uuid
+  automation Automation @relation(fields: [automationId], references: [id], onDelete: Cascade)
+  history Json @default("[]")
+  status String @default("ACTIVE")
+  expiresAt DateTime
+  updatedAt DateTime @updatedAt
+  @@unique([integrationId, recipientIgId])
+  @@index([automationId])
+}
+
+// A single active custom conversation owns replies for an Instagram recipient.
+model AutomationFlowSession {
+  id            String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  automationId  String @db.Uuid
+  automation    Automation @relation(fields: [automationId], references: [id], onDelete: Cascade)
+  integrationId String @db.Uuid
+  recipientIgId String
+  definition    Json
+  values        Json @default("{}")
+  nodeId        String?
+  status        String @default("READY")
+  lastEventId   String?
+  startEventId  String?
+  startedAt     DateTime @default(now())
+  resumeAt      DateTime?
+  expiresAt     DateTime
+  updatedAt     DateTime @updatedAt
+  @@unique([integrationId, recipientIgId])
+  @@index([status, expiresAt])
+  @@index([status, resumeAt])
+}
+
+// Durable once-per-contact entry; edits never reset giveaway eligibility.
+model AutomationFlowEntry {
+  id            String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  automationId  String @db.Uuid
+  automation    Automation @relation(fields: [automationId], references: [id], onDelete: Cascade)
+  recipientIgId String
+  outcome       String?
+  createdAt     DateTime @default(now())
+  @@unique([automationId, recipientIgId])
+}
+
+model AutomationFlowReceipt {
+  id            String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  automationId  String @db.Uuid
+  automation    Automation @relation(fields: [automationId], references: [id], onDelete: Cascade)
+  integrationId String @db.Uuid
+  recipientIgId String
+  eventId       String
+  createdAt     DateTime @default(now())
+  @@unique([integrationId, recipientIgId, eventId])
+  @@index([createdAt])
+}
+
+// Per-post rolling cap and concurrent-send reservation. Ambiguous sends keep their slot.
+model PublicReplySlot {
+  id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  automationId String @db.Uuid
+  automation Automation @relation(fields: [automationId], references: [id], onDelete: Cascade)
+  mediaId String
+  commentId String
+  status String @default("RESERVED")
+  createdAt DateTime @default(now())
+  @@unique([automationId, commentId])
+  @@index([automationId, mediaId, createdAt])
+  @@index([createdAt])
+}
+
+// Analytics begins when this migration is deployed; no inferred history.
+model AutomationHit {
+  id            String     @id @default(cuid())
+  automationId  String     @db.Uuid
+  automation    Automation @relation(fields: [automationId], references: [id], onDelete: Cascade)
+  eventKey      String
+  recipientIgId String
+  source        String
+  createdAt     DateTime   @default(now())
+  @@index([automationId, recipientIgId])
+  @@unique([automationId, eventKey])
+  @@index([automationId, createdAt])
+}
+
+model AutomationTrackedLink {
+  id            String     @id @default(uuid()) @db.Uuid
+  automationId  String     @db.Uuid
+  automation    Automation @relation(fields: [automationId], references: [id], onDelete: Cascade)
+  recipientIgId String
+  destination   String
+  key           String     @unique
+  createdAt     DateTime   @default(now())
+  firstClickedAt DateTime?
+  @@index([automationId])
+}
+
+model AutomationClick {
+  id            String     @id @default(cuid())
+  automationId  String     @db.Uuid
+  automation    Automation @relation(fields: [automationId], references: [id], onDelete: Cascade)
+  recipientIgId String
+  country       String?
+  createdAt     DateTime   @default(now())
+  @@unique([automationId, recipientIgId])
+  @@index([automationId, createdAt])
+}
+
+model AutomationFollowerState {
+  id             String       @id @default(cuid())
+  integrationId  String       @db.Uuid
+  integration    Integrations @relation(fields: [integrationId], references: [id], onDelete: Cascade)
+  recipientIgId  String
+  automationId   String?      @db.Uuid
+  automation     Automation?  @relation(fields: [automationId], references: [id], onDelete: SetNull)
+  firstFollowing Boolean
+  firstSeenAt    DateTime     @default(now())
+  lastNotFollowingAt DateTime?
+  followedAt     DateTime?
+  lastCheckedAt  DateTime?
+  @@unique([integrationId, recipientIgId])
+  @@index([automationId, followedAt])
+}
+
+model ConversationStarterReceipt {
+  id String @id @default(uuid()) @db.Uuid
+  integrationId String @db.Uuid
+  integration Integrations @relation(fields: [integrationId], references: [id], onDelete: Cascade)
+  recipientIgId String
+  eventId String
+  status String @default("PROCESSING")
+  createdAt DateTime @default(now())
+  @@unique([integrationId, recipientIgId, eventId])
+  @@index([integrationId, status, createdAt])
+}
+
+model AutomationDmRecipient {
+  automationId String @db.Uuid
+  recipientIgId String
+  createdAt DateTime @default(now())
+  automation Automation @relation(fields:[automationId],references:[id],onDelete:Cascade)
+  @@id([automationId,recipientIgId])
+}
+model AutomationDeliveryJob {
+  id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  automationId String @db.Uuid
+  automation Automation @relation(fields:[automationId],references:[id],onDelete:Cascade)
+  eventKey String
+  payload Json
+  status String @default("PENDING")
+  dueAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  @@unique([automationId,eventKey])
+  @@index([status,dueAt])
+}
+
+model AutomationAttachment {
+ id String @id @default(uuid()) @db.Uuid
+ userId String @db.Uuid
+ user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+ storageKey String @unique
+ uploadId String? @unique
+ filename String
+ contentType String
+ mediaType String
+ size Int
+ status String @default("PENDING")
+ createdAt DateTime @default(now())
+ @@index([userId, status, createdAt])
+}
+
+// Recurring cash commissions are separate from previously earned invoice credits.
+model ReferralCommission {
+  id             String              @id @default(cuid())
+  partnerId      String              @db.Uuid
+  partner        ReferralPartner     @relation(fields: [partnerId], references: [id], onDelete: Restrict)
+  attributionId  String              @db.Uuid
+  attribution    ReferralAttribution @relation(fields: [attributionId], references: [id], onDelete: Restrict)
+  invoiceId      String              @unique
+  subscriptionId String
+  amountCents    Int
+  reversedCents  Int                 @default(0)
+  basisCents     Int
+  rateBps        Int
+  currency       String              @default("usd")
+  periodStart    DateTime
+  periodEnd      DateTime
+  reversalReason String?
+  createdAt      DateTime            @default(now())
+
+  @@index([partnerId, createdAt])
+}
+
+model ReferralWithdrawal {
+  id               String          @id @default(cuid())
+  partnerId        String          @db.Uuid
+  partner          ReferralPartner @relation(fields: [partnerId], references: [id], onDelete: Restrict)
+  amountCents      Int
+  paypalEmail      String
+  status           String          @default("REQUESTED")
+  paymentReference String?         @unique
+  reviewedBy       String?
+  reviewedAt       DateTime?
+  reviewNote       String?
+  createdAt        DateTime        @default(now())
+
+  @@index([partnerId, status])
+}
+
+model ReferralClick {
+  id             String          @id @default(cuid())
+  partnerId      String          @db.Uuid
+  partner        ReferralPartner @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  visitorDayHash String
+  createdAt      DateTime        @default(now())
+
+  @@unique([partnerId, visitorDayHash])
+}
+
+model ReferralInvite {
+  id        String          @id @default(cuid())
+  partnerId String          @db.Uuid
+  partner   ReferralPartner @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  recipient String
+  day       DateTime        @db.Date
+  status    String          @default("PENDING")
+  createdAt DateTime        @default(now())
+
+  @@unique([partnerId, recipient, day])
+  @@index([partnerId, createdAt])
+}
+
+// Cumulative adjustments survive refund events arriving before invoice.paid.
+model ReferralInvoiceAdjustment {
+  invoiceId String @id
+  refundedCents Int @default(0)
+  chargedCents Int @default(0)
+  disputed Boolean @default(false)
+  fullReversal Boolean @default(false)
+  updatedAt DateTime @updatedAt
+}
+
+// Separate lifetime policy-scan allowance; never consumes AI delivery credits.
+model AutomationPolicyScan {
+  id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId String @db.Uuid
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status String @default("PENDING")
+  createdAt DateTime @default(now())
+  completedAt DateTime?
+  @@index([userId, status, createdAt])
 }

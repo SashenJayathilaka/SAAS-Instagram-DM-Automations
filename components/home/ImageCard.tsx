@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { ImageCardProps } from "@/types/types";
 import React from "react";
 

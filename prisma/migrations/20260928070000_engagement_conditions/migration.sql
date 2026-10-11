@@ -1,0 +1,3 @@
+ALTER TABLE "Listener" ADD COLUMN "phoneCaptureEnabled" BOOLEAN NOT NULL DEFAULT false, ADD COLUMN "phoneCapturePrompt" TEXT, ADD COLUMN "followUpCondition" TEXT NOT NULL DEFAULT 'ALWAYS';
+ALTER TABLE "AutomationEngagementJob" ADD COLUMN "sentMessageId" TEXT, ADD COLUMN "seenAt" TIMESTAMP(3), ADD COLUMN "reactedAt" TIMESTAMP(3), ADD COLUMN "clickedAt" TIMESTAMP(3), ADD COLUMN "baselineFollows" BOOLEAN, ADD COLUMN "condition" TEXT NOT NULL DEFAULT 'ALWAYS';
+ALTER TABLE "Automation" ADD COLUMN "adAutomation" BOOLEAN NOT NULL DEFAULT false;

@@ -1,0 +1,96 @@
+name: Clean up merged preview branches
+
+on:
+  pull_request_target:
+    types: [closed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      pull_request:
+        description: Merged pull request number to clean up
+        required: true
+        type: number
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: preview-cleanup
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # No checkout: never execute code from a pull request with a privileged token.
+      - name: Remove completed Git branch and its Neon preview
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
+          NEON_PROJECT_ID: crimson-glade-62465087
+          PRODUCTION_BRANCH_ID: br-square-base-aq844tky
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const event = JSON.parse(readFileSync(process.env.GITHUB_EVENT_PATH, 'utf8'));
+          const repo = process.env.GITHUB_REPOSITORY;
+          const number = Number(event.pull_request?.number ?? event.inputs?.pull_request);
+          if (!Number.isSafeInteger(number) || number < 1) throw new Error('Invalid PR number');
+          async function api(base, path, token, method = 'GET') {
+            const response = await fetch(base + path, {
+              method,
+              headers: { Authorization: 'Bearer ' + token, Accept: 'application/json' }
+            });
+            if (response.status === 404) return null;
+            if (!response.ok) throw new Error(method + ' failed: HTTP ' + response.status);
+            return response.status === 204 ? true : response.json();
+          }
+          const gh = (path, method) => api('https://api.github.com', path, process.env.GH_TOKEN, method);
+          const prefix = '/repos/' + repo;
+          const pr = await gh(prefix + '/pulls/' + number);
+          if (!pr?.merged || pr.base.ref !== 'main' || pr.head.repo?.full_name !== repo) {
+            throw new Error('Only merged, same-repository PRs targeting main may be cleaned up');
+          }
+          const head = pr.head.ref;
+          if (!/^(codex|fix|feat|feature|perf|test|preview|brand)\//.test(head)) {
+            throw new Error('Branch is outside the disposable development prefixes');
+          }
+          const open = await gh(prefix + '/pulls?state=open&head=' + encodeURIComponent(repo.split('/')[0] + ':' + head));
+          if (open?.length) throw new Error('Branch still has an open PR');
+          const branch = await gh(prefix + '/branches/' + encodeURIComponent(head));
+          if (branch?.protected || (branch && branch.commit.sha !== pr.head.sha)) {
+            throw new Error('Branch is protected or has changed since this PR');
+          }
+          if (branch) await gh(prefix + '/git/refs/heads/' + encodeURIComponent(head), 'DELETE');
+          console.log('Merged Git branch cleaned up.');
+          if (!process.env.NEON_API_KEY) {
+            console.log('::warning::Add the NEON_API_KEY repository secret for immediate database cleanup. Enable Automatically delete obsolete Neon branches in the Neon Vercel integration for cleanup on the next preview deployment.');
+          } else {
+            const base = '/projects/' + process.env.NEON_PROJECT_ID;
+            const neon = (path, method) => api('https://console.neon.tech/api/v2', path, process.env.NEON_API_KEY, method);
+            const branches = [];
+            let cursor;
+            do {
+              const page = await neon(base + '/branches?limit=100' + (cursor ? '&cursor=' + encodeURIComponent(cursor) : ''));
+              if (!page || !Array.isArray(page.branches)) throw new Error('Invalid Neon branch response');
+              branches.push(...page.branches);
+              cursor = page.pagination?.cursor;
+            } while (cursor);
+            const target = branches.find(b => b.name === 'preview/' + head);
+            if (target) {
+              if (target.id === process.env.PRODUCTION_BRANCH_ID || target.default || target.primary || target.protected ||
+                  target.creation_source !== 'vercel' || target.parent_id !== process.env.PRODUCTION_BRANCH_ID ||
+                  branches.some(b => b.parent_id === target.id)) {
+                throw new Error('Preview failed production/parent/child safety checks');
+              }
+              await neon(base + '/branches/' + target.id, 'DELETE');
+              console.log('Neon preview deleted.');
+            } else {
+              console.log('No matching Neon preview remains.');
+            }
+          }
+          NODE

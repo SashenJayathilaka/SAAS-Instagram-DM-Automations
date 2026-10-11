@@ -1,0 +1,47 @@
+.layout { display:grid; grid-template-columns:minmax(150px, .34fr) minmax(0,1fr); gap:30px; align-items:start; }
+.previewColumn h4 { margin:2px 0 16px; font-size:12px; color:#98a2b3; text-transform:uppercase; font-weight:600; }
+.miniPreview { border-radius:18px; padding:12px; background:#f1f3f8; font-size:13px; line-height:1.5; overflow-wrap:anywhere; }
+.miniPreview p { background:white; border-radius:14px 14px 14px 4px; padding:12px; white-space:pre-wrap; }
+.button { display:block; margin-top:6px; background:white; border:1px solid #e5e7eb; padding:8px; border-radius:10px; text-align:center; font-weight:600; }
+.quickReply { display:inline-block; margin-top:7px; color:#3563fa; border:1px solid #adbdff; padding:5px 10px; border-radius:999px; }
+.fields { min-width:0; }
+.captureAnswer { margin:10px 0 0 auto; width:fit-content; max-width:100%; padding:10px 12px; border-radius:14px 14px 4px 14px; background:#2563eb; color:white; }
+.retryCondition { display:flex; align-items:center; gap:10px; margin:4px 0 16px; color:#945400; font-size:13px; }
+.retryCondition::before,.retryCondition::after { content:""; height:1px; flex:1; background:#e4e7ec; }
+.retryCondition span { display:flex; align-items:center; gap:8px; padding:9px 14px; border:1px solid #ffdfb5; background:#fff8ec; border-radius:999px; }
+.retryCondition svg,.contactsNote svg { flex-shrink:0; }
+.contactsNote { display:flex; align-items:center; gap:10px; margin-top:-12px; padding:12px 14px; border-radius:12px; background:#f7f8fa; color:#667085; font-size:13px; line-height:1.5; }
+.contactsNote a { color:#2563eb; font-weight:500; }
+.contactsNote a:focus-visible { outline:2px solid #2563eb; outline-offset:3px; }
+:global(.dark) .contactsNote { background:#1b1d2b; color:#b7c0d3; }
+:global(.dark) .contactsNote a { color:#92b4ff; }
+:global(.dark) .retryCondition span { background:#302518; border-color:#694b21; color:#f3c681; }
+:global(.dark) .retryCondition::before,:global(.dark) .retryCondition::after { background:#393d50; }
+.label { display:block; margin-bottom:9px; color:#374151; font-size:15px; font-weight:600; }
+.composer { border:1px solid #dfe3e9; border-radius:16px; margin-bottom:20px; overflow:hidden; background:white; }
+.composer [role="textbox"] { border:0; border-radius:0; padding:16px; font-size:15px; line-height:1.6; }
+.composer > div:last-child { padding:8px 16px 14px; }
+.help { font-size:12px; color:#8e99aa; line-height:1.6; margin-bottom:9px; }
+.actionCard { border:1px solid #e1e5ea; border-radius:16px; overflow:hidden; }
+.actionInput { display:flex; align-items:center; gap:12px; padding:14px; color:#8c97a8; }
+.actionInput label { flex:1; min-width:0; }
+.actionInput small, .nextStep small { display:block; font-size:11px; color:#98a2b3; }
+.actionInput input { width:100%; border:0; outline:0; background:transparent; color:#171b24; font-size:14px; }
+.nextStep { display:flex; align-items:center; gap:12px; padding:12px 14px; background:#f6f7f9; border-top:1px solid #eceef2; color:#a0a8b5; font-size:13px; }
+.nextStep span { display:block; }
+.lastMessage { opacity:.55; }
+.wait { display:flex; align-items:center; justify-content:center; gap:6px; color:#98a2b3; font-size:11px; margin:12px 0; }
+.wait::before,.wait::after { content:""; flex:1; height:1px; background:#dce1eb; }
+.wait svg { color:#d76713; }
+.timing { margin-bottom:20px; }
+.timing button { min-height:64px; width:100%; background:transparent; border:1px solid #dfe3e9; border-radius:14px; font-size:14px; text-align:left; }
+.timingLabel { display:flex; gap:12px; align-items:center; }
+.timingLabel svg { color:#ce5d07; }
+.timingLabel small { display:block; color:#98a2b3; font-size:12px; font-weight:400; }
+:global(.dark) .label { color:#d8ddea; }
+:global(.dark) .miniPreview { background:#1b1d2b; }
+:global(.dark) .miniPreview p,:global(.dark) .button,:global(.dark) .composer { background:#232636; color:#e7e9f0; }
+:global(.dark) .composer,:global(.dark) .actionCard,:global(.dark) .timing button,:global(.dark) .button { border-color:#393d50; }
+:global(.dark) .actionInput input { color:#f0f2fa; }
+:global(.dark) .nextStep { background:#1b1d29; border-color:#303445; }
+@media(max-width:1100px) { .layout { grid-template-columns:minmax(0,1fr); gap:20px; }.previewColumn { max-width:260px; } }

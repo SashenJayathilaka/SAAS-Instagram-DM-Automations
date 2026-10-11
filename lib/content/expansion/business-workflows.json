@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "instagram-dm-automation-wedding-vendors",
+    "title": "Route Wedding Inquiries From Instagram to a Useful Brief",
+    "intro": "Wedding inquiries often arrive with excitement but little practical context. A DM workflow can deliver a service guide, then help the couple reach a brief that collects the information needed for a meaningful response. Keep availability and final quotes with the business's actual process.",
+    "decision": "Separate inspiration content from a booking inquiry. The first message should fulfill the post's promise, while the destination can explain service area, package scope and the information needed to check a date. Do not confirm availability automatically from static copy.",
+    "steps": [
+      "Offer a specific planning or service guide.",
+      "Link to a current inquiry page.",
+      "Have a person verify date, location and scope before quoting."
+    ],
+    "example": "A photographer's post can invite GUIDE comments for a planning checklist. The linked page can separately offer an inquiry form for couples ready to discuss their event.",
+    "pitfall": "Do not ask couples to post private event details publicly. Avoid presenting an automated acknowledgment as a confirmed reservation.",
+    "measure": "Track relevant inquiries and completed briefs rather than raw guide requests alone. Review which missing details delay useful follow-up."
+  },
+  {
+    "slug": "instagram-dm-automation-home-renovation",
+    "title": "Turn Renovation Interest Into a Clear Project Inquiry",
+    "intro": "A renovation Reel may attract viewers looking for inspiration, price estimates or a contractor. A single generic sales DM will not serve all three. Deliver the promised resource and provide a clear route for people who want to describe an actual project.",
+    "decision": "Use a destination that explains service area and the information needed for an initial assessment. Ask for broad scope before sensitive details. Estimates should come from the appropriate person after reviewing the project, not from an automated guess.",
+    "steps": [
+      "Name the resource or service clearly in the caption.",
+      "Deliver the requested guide or portfolio link.",
+      "Route project requests to a brief with location and scope."
+    ],
+    "example": "A kitchen transformation post can offer a renovation planning checklist, with a separate option to request an assessment. The checklist remains useful even for viewers not ready to hire.",
+    "pitfall": "Do not quote a project price based only on a keyword comment. Avoid requesting a home address in the public thread.",
+    "measure": "Measure serviceable project inquiries and time to a useful assessment. High engagement from outside the service area needs different interpretation."
+  },
+  {
+    "slug": "instagram-dm-automation-language-schools",
+    "title": "Help Instagram Learners Choose the Right Course Information",
+    "intro": "Language-school prospects may differ by level, learning goal and schedule. A useful DM delivers the requested course information without pretending to know the learner's proficiency. Use a clear destination or human assessment process for placement decisions.",
+    "decision": "Organize course information by the decisions learners need to make: level, format, timing and verified fees. Explain whether placement is required and how it happens. Keep the automated resource separate from enrollment confirmation.",
+    "steps": [
+      "Offer a specific course guide or sample lesson.",
+      "Link to current course details and placement instructions.",
+      "Provide a human route for questions the guide does not answer."
+    ],
+    "example": "A post about conversation practice can send a sample lesson. The destination can explain which course levels it relates to and how a learner checks placement.",
+    "pitfall": "Do not promise fluency within a fixed period or confirm a learner's level from a comment. Avoid advertising schedules that are no longer available.",
+    "measure": "Track suitable course inquiries and completed placement steps. Resource downloads alone do not establish enrollments."
+  },
+  {
+    "slug": "instagram-dm-automation-b2b-consulting",
+    "title": "Qualify B2B Consulting Interest Without a Long DM Interrogation",
+    "intro": "B2B consulting buyers often need evidence of fit before agreeing to a meeting. A DM workflow can deliver a relevant framework or case-study page and let the buyer decide whether to continue. Keep the first step useful even when no sale follows.",
+    "decision": "Choose a resource that demonstrates how the consultancy thinks about a specific problem. The next page should explain suitable clients, scope and the consultation process. Use real, permissioned evidence rather than invented results or anonymous claims presented as proof.",
+    "steps": [
+      "Offer one relevant framework or diagnostic resource.",
+      "Explain the type of problem the service addresses.",
+      "Provide a clear optional route to a consultation brief."
+    ],
+    "example": "A post about slow lead handoffs can send a workflow checklist, followed by an optional service-fit page. It should not immediately demand a phone number to access the promised checklist.",
+    "pitfall": "Do not fabricate customer outcomes or imply the resource is a personalized audit. Distinguish an example framework from actual analysis of the recipient's business.",
+    "measure": "Measure relevant business inquiries and agreed next steps. Keep educational engagement separate from qualified consulting opportunities."
+  },
+  {
+    "slug": "instagram-dm-automation-workshop-hosts",
+    "title": "Deliver Workshop Details Without Creating Booking Confusion",
+    "intro": "Workshop posts need accurate dates, location, capacity and registration instructions. A DM can make those details easier to find, but it must not imply a seat is reserved merely because a person commented. Keep the registration system as the source of confirmed attendance.",
+    "decision": "Use a current event page that clearly states availability and completion steps. The DM should name the workshop and direct the person there. If the event sells out or changes, update the destination and campaign together.",
+    "steps": [
+      "Prepare a maintained event-information page.",
+      "Send the exact registration destination after the relevant request.",
+      "Check the route again when capacity or dates change."
+    ],
+    "example": "A ceramics workshop can use DETAILS to deliver the event page. The message should say “View dates and register,” not “Your place is confirmed.”",
+    "pitfall": "Do not use static copy to promise remaining seats. Avoid leaving an active campaign pointing at an expired registration form.",
+    "measure": "Track completed registrations and questions caused by unclear instructions. Separate requested information from confirmed attendance."
+  },
+  {
+    "slug": "instagram-dm-automation-membership-communities",
+    "title": "Explain a Membership Before Asking Instagram Leads to Join",
+    "intro": "Membership offers need more than a join link. Prospects want to understand who the community serves, what participation looks like and what is included. A DM resource can answer those questions before asking for a recurring commitment.",
+    "decision": "Send a transparent overview or sample experience that matches the post. Explain current membership terms on the destination and keep them maintained. Do not imply that a social interaction automatically creates a membership or ongoing messaging consent.",
+    "steps": [
+      "Describe the community's specific purpose.",
+      "Deliver the requested overview or sample.",
+      "Offer an optional route to current membership details."
+    ],
+    "example": "A writing community can share a sample weekly exercise and explain how member sessions work. The example should be labeled as a sample, not access to a paid account.",
+    "pitfall": "Do not invent member counts, testimonials or guaranteed outcomes. Avoid hiding recurring terms behind a vague “Get access” button.",
+    "measure": "Measure informed membership inquiries and completed joins using the actual membership system. DM sends are not recurring subscribers."
+  },
+  {
+    "slug": "instagram-dm-automation-digital-template-shops",
+    "title": "Deliver Template Previews That Match the Product",
+    "intro": "A template preview should help someone judge whether the product fits their task. A DM can send that preview after an Instagram request, but the destination must distinguish the sample from the full paid product. Clear scope reduces disappointment and support work.",
+    "decision": "Explain format, intended use and any software requirements using verified product information. Show a representative sample rather than an exaggerated mockup. Keep download delivery and purchase confirmation in the systems that actually handle them.",
+    "steps": [
+      "Choose a preview that reflects the paid product.",
+      "State what the sample includes.",
+      "Link to current product details for optional purchase."
+    ],
+    "example": "A planning-template shop can send one sample page and explain that the complete pack contains additional layouts. The sample should not be described as the full download.",
+    "pitfall": "Do not imply AP3K hosts or sells the file automatically. It can deliver a configured destination; checkout and file access remain separate.",
+    "measure": "Track preview access and informed purchases in the relevant systems. Review refund questions that suggest the preview misrepresented the product."
+  },
+  {
+    "slug": "instagram-dm-automation-fitness-studios",
+    "title": "Route Fitness Studio Inquiries to Accurate Class Information",
+    "intro": "People asking about a fitness studio may need class times, beginner suitability or membership details. A useful response helps them find current information without making personalized health claims. Keep the workflow focused on logistics and the studio's verified services.",
+    "decision": "Use a maintained schedule and clear class descriptions. Explain how a person can ask the studio about suitability or accessibility. Do not let a generic automation prescribe exercise or guarantee a physical outcome.",
+    "steps": [
+      "Offer the relevant class or introductory information.",
+      "Send the current schedule or booking page.",
+      "Route individual suitability questions to qualified staff."
+    ],
+    "example": "A beginner-class post can send an overview describing format and booking steps. It should not promise that every participant will achieve a specific result in a fixed period.",
+    "pitfall": "Do not collect sensitive health information in a public comment. Avoid treating a DM request as a confirmed class reservation.",
+    "measure": "Measure completed appropriate bookings and recurring logistics questions. Improve the destination when people cannot find essential class information."
+  },
+  {
+    "slug": "instagram-dm-automation-local-retail",
+    "title": "Answer Local Retail Questions With a Maintained Destination",
+    "intro": "Local retail Instagram comments often ask about stock, opening times or how to find an item. A DM can deliver useful information quickly, but static messages become stale when hours and inventory change. Put volatile details in a maintained destination.",
+    "decision": "Identify which facts are stable and which need live confirmation. Use the store's current information page for opening times and product details. Keep a human route for item-specific stock checks if no verified inventory connection exists.",
+    "steps": [
+      "Choose the exact information promised by the post.",
+      "Link to the maintained store or product page.",
+      "Explain how customers can confirm uncertain availability."
+    ],
+    "example": "A furniture shop can send the collection page after a CATALOG request. The message should not guarantee that every photographed item is currently in stock.",
+    "pitfall": "Do not imply a real-time inventory integration merely because the DM links to the store. Verify what the destination actually shows.",
+    "measure": "Track useful store inquiries and corrections caused by stale information. Fix the source page rather than repeatedly explaining the same discrepancy in DM."
+  },
+  {
+    "slug": "instagram-dm-automation-professional-portfolios",
+    "title": "Use Instagram DMs to Share a Relevant Portfolio",
+    "intro": "A broad portfolio can overwhelm someone interested in a specific type of work. A targeted DM destination helps them see relevant examples and understand how to make an inquiry. Choose evidence that supports the post's subject rather than sending every viewer to the same generic homepage.",
+    "decision": "Organize portfolio pages by service or project type where useful. Describe actual work accurately and obtain appropriate permission for client material. The next step should explain what information is needed for an inquiry without implying availability is confirmed.",
+    "steps": [
+      "Match the portfolio destination to the post topic.",
+      "Include concise context for each real example.",
+      "Provide a clear inquiry route with relevant project details."
+    ],
+    "example": "An illustrator showing packaging work can link to a packaging portfolio and a project brief. A general gallery of unrelated styles may create more questions than it answers.",
+    "pitfall": "Do not fabricate client logos or project results. Label concept work clearly so it is not mistaken for commissioned work.",
+    "measure": "Measure relevant inquiries and whether prospects understand the service scope. Review requests that consistently fall outside the work shown."
+  }
+]

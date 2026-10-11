@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "instagram-automation-tool-requirements-sheet",
+    "title": "Write Requirements Before Choosing an Instagram Automation Tool",
+    "intro": "A tool comparison is useful only when it reflects the job you need done. Publishing calendars, comment replies, inbox assistance and lead forms are different workflows. Start with requirements so a long feature list does not distract from the essential path.",
+    "decision": "Describe the trigger, response, destination and operational owner for each required workflow. Mark capabilities as essential, useful or unnecessary. Verify important claims in the current product and a realistic test rather than relying on a generic comparison chart.",
+    "steps": [
+      "Write your first three actual workflows.",
+      "Identify the minimum required capabilities for each.",
+      "Test those paths before evaluating optional extras."
+    ],
+    "example": "If the immediate need is sending a guide after a keyword comment, prove that path first. A sophisticated publishing calendar does not replace it.",
+    "pitfall": "Do not assume tools with “Instagram automation” in their name support the same actions. AP3K focuses on supported interaction and reply workflows.",
+    "measure": "Score completed workflows and ongoing handling effort. Reject a tool that misses a critical requirement even if its overall feature count is higher."
+  },
+  {
+    "slug": "instagram-automation-tool-permission-review",
+    "title": "Review Account Access Before Connecting an Automation Tool",
+    "intro": "Connecting a tool gives it a role in your Instagram workflow. Understand who is authorized to connect the account and which access is being requested. A clear ownership process prevents confusion when employees leave or an agency relationship changes.",
+    "decision": "Use the platform authorization flow and review the requested permissions. Keep account credentials out of shared setup documents. Document the business owner and the person responsible for maintaining the connection without copying secret tokens.",
+    "steps": [
+      "Confirm the account owner authorizes the connection.",
+      "Review the tool's supported account requirements.",
+      "Record who will handle future access renewal or removal."
+    ],
+    "example": "An agency can manage setup while the client retains ownership of the account. The handoff should describe how access is reviewed, not distribute the client's Instagram password.",
+    "pitfall": "Do not promise that using an official authorization flow eliminates every operational risk. Permissions and platform requirements still need attention.",
+    "measure": "Review connection ownership periodically and after staffing changes. Track reconnection issues separately from campaign-copy problems."
+  },
+  {
+    "slug": "instagram-automation-tool-account-separation",
+    "title": "Evaluate Multi-Account Separation in an Instagram Tool",
+    "intro": "Managing several Instagram accounts requires more than a dropdown. The team must know which account owns each automation, inbox and contact record. Evaluate separation with a realistic switching test so one client's offer does not accidentally appear in another account's campaign.",
+    "decision": "Use visibly different sample campaigns and account names during evaluation. Check the active account before creating, editing and reviewing results. Confirm current plan eligibility for multiple connections rather than assuming every tier includes it.",
+    "steps": [
+      "Switch accounts and inspect the visible campaign list.",
+      "Create or review a clearly labeled test workflow.",
+      "Verify that inbox and contact context match the selected account."
+    ],
+    "example": "An agency can test a bakery menu workflow and a coaching guide workflow. Their distinct names make accidental cross-account context easier to spot.",
+    "pitfall": "Do not advertise unlimited accounts from a generic “multi-account” feature label. Confirm the current product limits and available plan.",
+    "measure": "Record misrouting risks and the steps needed to identify the active account. Good separation should be understandable during normal daily use."
+  },
+  {
+    "slug": "instagram-automation-tool-delivery-observability",
+    "title": "Check Whether an Instagram Tool Explains Failed Delivery",
+    "intro": "A tool that only displays a total sent count may leave you guessing when a customer says no message arrived. Evaluate whether the product helps distinguish trigger matching, attempted actions, failures and skipped events. Useful diagnostics reduce unnecessary changes to working campaigns.",
+    "decision": "Choose a simple test and inspect the available activity record. Confirm how the tool communicates connection problems and unsupported situations. A human-friendly explanation matters more than exposing raw technical errors to everyone.",
+    "steps": [
+      "Run a supported test interaction.",
+      "Locate the corresponding campaign activity.",
+      "Check what information is available when the test does not produce the expected result."
+    ],
+    "example": "If a keyword never matched, changing the DM link will not fix the trigger. If the match occurred but sending failed, the next investigation should focus on delivery or access.",
+    "pitfall": "Do not equate a provider accepting a send with the recipient reading it. Different stages need different labels.",
+    "measure": "Measure how quickly the team can identify the failed stage. Favor diagnostics that support action without leaking private credentials or customer data."
+  },
+  {
+    "slug": "instagram-automation-tool-ai-vs-rules",
+    "title": "Decide When You Need AI and When a Saved Rule Is Enough",
+    "intro": "AI is not necessary for every Instagram reply. Delivering a known guide after a specific keyword is a predictable task; answering varied questions about approved product facts is different. Choose the response method based on uncertainty and the cost of a wrong answer.",
+    "decision": "Use deterministic copy when the promised output should stay exact. Consider AI for varied wording only when its knowledge and boundaries can be maintained. Keep business commitments and unsupported topics outside free-form invention.",
+    "steps": [
+      "List responses that must remain identical.",
+      "Identify questions that genuinely vary.",
+      "Test AI answers against approved facts before broader use."
+    ],
+    "example": "A product download should use the verified link and message. An assistant explaining a supported feature may benefit from flexible wording, provided the explanation stays accurate.",
+    "pitfall": "Do not enable AI merely to make a simple flow look advanced. More variability can create review work without adding customer value.",
+    "measure": "Compare answer quality and maintenance effort. Use the simplest method that reliably completes the customer task."
+  },
+  {
+    "slug": "instagram-automation-tool-pricing-workload",
+    "title": "Compare Automation Pricing Using Your Actual Workload",
+    "intro": "Headline subscription prices can hide differences in what usage is counted. One tool may emphasize contacts while another counts successful actions or includes separate AI limits. Compare a realistic workload rather than assuming every plan unit means the same thing.",
+    "decision": "Describe the number of accounts, active campaigns, expected interactions and actions per interaction. Check current pricing pages and record the date. Include essential capabilities that may require a different tier without inventing future discounts.",
+    "steps": [
+      "Build a representative monthly workload.",
+      "Translate that workload into each vendor's billing units.",
+      "Verify required features and limits in the current plan details."
+    ],
+    "example": "A comment flow with both public reply and DM uses two successful AP3K actions when both send. Comparing it with another vendor requires understanding that vendor's actual counting rules.",
+    "pitfall": "Do not reuse an old competitor price as a permanent claim. Avoid declaring one tool universally cheapest from a single example.",
+    "measure": "Compare total expected cost and uncertainty for the same workload. Revisit the model when campaign volume or required features change."
+  },
+  {
+    "slug": "instagram-automation-tool-exit-checklist",
+    "title": "Check Your Exit Options Before Adopting an Automation Tool",
+    "intro": "A tool decision is easier to reverse when ownership and exit steps are clear. Before moving essential workflows, understand how to document configuration, stop sends and disconnect access. The goal is operational continuity, not assuming every platform can export every object.",
+    "decision": "Keep your approved message copy, destination list and campaign inventory in a controlled workspace. Review actual export options in the product. Document a manual fallback for important workflows if migration support is limited.",
+    "steps": [
+      "Record the active campaigns and account ownership.",
+      "Confirm how automations are paused and access is removed.",
+      "Test an orderly handoff on a low-risk workflow."
+    ],
+    "example": "A campaign inventory with post URLs, keywords and message copy can support rebuilding even when two tools use incompatible flow formats.",
+    "pitfall": "Do not promise one-click migration or complete historical-data portability unless it has been verified for the specific tools.",
+    "measure": "Measure the time and information needed to rebuild a representative campaign. Include that effort in the adoption decision."
+  },
+  {
+    "slug": "instagram-automation-tool-support-evaluation",
+    "title": "Evaluate Support Using a Real Automation Question",
+    "intro": "A support badge does not tell you whether a tool can help with your actual workflow. During evaluation, ask a precise question about a representative setup or limitation. The response should help you make a decision rather than simply direct you to a generic sales page.",
+    "decision": "Choose a question involving an important requirement, such as account eligibility, action counting or a failed test. Assess accuracy and clarity, not just response speed. Keep confidential customer information out of an unnecessary pre-sales example.",
+    "steps": [
+      "Describe the intended workflow and observed issue.",
+      "Ask what is supported and what is not.",
+      "Verify the explanation in the product or documentation."
+    ],
+    "example": "A useful question is whether a workflow reacts to old comments or only eligible new interactions after activation. A clear limitation is more valuable than an ambiguous promise.",
+    "pitfall": "Do not assume a fast answer is correct. Check whether support distinguishes product behavior from platform restrictions.",
+    "measure": "Record whether the answer enabled a successful test or a clear decision not to proceed. Use repeated evidence rather than one unusually good interaction."
+  },
+  {
+    "slug": "instagram-automation-tool-accessibility-review",
+    "title": "Check the Accessibility of an Instagram Automation Workflow",
+    "intro": "Accessibility includes the messages customers receive and the workspace used by the team. A feature that technically works can still be difficult to read, navigate or understand. Test the complete workflow on common devices and with clear language.",
+    "decision": "Review contrast, keyboard access, button labels and mobile layouts in the tool. For messages, avoid instructions that depend entirely on color, sound or a tiny visual detail. A link label should describe its destination without requiring surrounding decoration.",
+    "steps": [
+      "Navigate setup using the keyboard where practical.",
+      "Read the message and button on a small screen.",
+      "Check whether the next step remains understandable without the promotional image."
+    ],
+    "example": "“Open the sizing guide” is more informative than “Click here.” A pale table label on a white background is a usability defect even when the underlying data is correct.",
+    "pitfall": "Do not claim formal accessibility certification from a brief spot check. Document what was tested and which issues remain.",
+    "measure": "Track obstacles that prevent task completion. Prioritize unreadable controls and unclear actions over purely decorative differences."
+  },
+  {
+    "slug": "instagram-automation-tool-pilot-scorecard",
+    "title": "Run a Fair Pilot Before Switching Instagram Tools",
+    "intro": "A fair pilot compares tools on the same customer task and operational conditions. Testing one platform with a simple guide and another with a complex support scenario produces a misleading result. Define the acceptance criteria before the trial.",
+    "decision": "Use the same account type, offer, trigger intent and destination where supported. Keep tests isolated so two tools do not respond to the same interaction. Score reliability, clarity, maintenance and current cost separately.",
+    "steps": [
+      "Write the pilot workflow and pass criteria.",
+      "Run one controlled test environment at a time.",
+      "Record exceptions and required manual work."
+    ],
+    "example": "A pilot might require a correct keyword match, the expected message, a working mobile link and a clear activity record. Optional AI features can be evaluated separately.",
+    "pitfall": "Do not run overlapping live automations merely to compare response speed. That can create duplicate messages and confuse recipients.",
+    "measure": "Choose based on completed requirements and documented trade-offs. A polished demo is not a substitute for the workflow your business needs."
+  }
+]

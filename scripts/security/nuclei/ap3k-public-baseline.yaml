@@ -1,0 +1,12 @@
+id: ap3k-public-baseline
+info:
+  name: AP3K read-only availability baseline
+  author: ap3k-security-review
+  severity: info
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/api/health'
+    matchers:
+      - type: status
+        status: [200]

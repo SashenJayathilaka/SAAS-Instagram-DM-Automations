@@ -1,0 +1,29 @@
+.section { padding: 60px 24px; background: #fff; color: #111; scroll-margin-top: 100px; }
+.container { max-width: 885px; margin: 0 auto; }
+.heading { padding: 20px 0; text-align: center; }
+.heading p { color: #747474; font-size: 18px; line-height: 28px; }
+.heading h2 { margin-top: 4px; font-size: 30px; line-height: 36px; font-weight: 700; letter-spacing: -.5px; }
+.questions { margin-top: 8px; }
+.item { border: 0; }
+.trigger { display: flex; align-items: center; justify-content: space-between; cursor: pointer; list-style: none; min-height: 52px; padding: 16px 0; gap: 24px; color: inherit; font-size: 16px; line-height: 24px; font-weight: 500; text-decoration: none; }
+.trigger::-webkit-details-marker { display: none; }
+.trigger:hover { text-decoration: none; color: #6128c8; }
+.trigger:focus-visible { outline: 2px solid #8b5cf6; outline-offset: 4px; border-radius: 4px; }
+.trigger > svg { color: currentColor; flex-shrink: 0; width: 16px; height: 16px; transition: transform .2s ease; }
+.item[open] > .trigger > svg { transform: rotate(180deg); }
+.answer { padding: 12px 24px 20px 0; color: #4e4949; font-size: 16px; line-height: 1.6; overflow-wrap: anywhere; }
+.trust { display: flex; align-items: center; gap: 17px; max-width: 492px; margin: 40px auto 0; padding: 18px 20px; border-radius: 18px; background: #f4f6f8; }
+.badge { display: block; flex-shrink: 0; width: 88px; }
+.trust p { color: #626870; font-size: 14px; line-height: 20px; font-weight: 500; }
+.darkLogo { display: none; }
+:global(.dark) .section { color: #f5f6fa; background: #080911; }
+:global(.dark) .heading p { color: #a5adbd; }
+:global(.dark) .trigger:hover { color: #c4b5fd; }
+:global(.dark) .answer { color: #b8c0cf; }
+:global(.dark) .trust { background: #161a25; }
+:global(.dark) .trust p { color: #b8c0cf; }
+:global(.dark) .lightLogo { display: none; }
+:global(.dark) .darkLogo { display: block; }
+@media (max-width: 767px) { .section { padding: 40px 20px; } .heading p { font-size: 16px; } .heading h2 { font-size: 24px; line-height: 32px; } .trigger { gap: 16px; } }
+@media (max-width: 359px) { .trust { flex-direction: column; align-items: flex-start; gap: 12px; } }
+@media (prefers-reduced-motion: reduce) { .trigger > svg { transition: none; } }

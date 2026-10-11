@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "instagram-autoresponder-response-boundaries",
+    "title": "Define What Your Instagram Autoresponder Should Not Answer",
+    "intro": "An autoresponder is useful only when its scope is clear. A message system that answers every question with confidence can create promises the business cannot fulfill. Define its boundaries before adding more knowledge or adjusting tone.",
+    "decision": "Separate stable product facts from account-specific decisions. Basic setup information may be suitable for automation; refunds, disputed orders and exceptional arrangements often need a person. A boundary is useful only when the fallback tells the customer what to do next.",
+    "steps": [
+      "List common questions and classify their risk.",
+      "Write approved facts for routine answers.",
+      "Route exceptions to a maintained support path."
+    ],
+    "example": "An automation can explain where a pricing page is. It should not invent a custom discount because someone says a competitor is cheaper.",
+    "pitfall": "Do not assume a longer knowledge document removes the need for human review. Conflicting or outdated facts can make generated answers less reliable.",
+    "measure": "Review unsupported claims and escalations. Expand coverage only when the team can supply clear, current information for the new topic."
+  },
+  {
+    "slug": "instagram-autoresponder-out-of-hours",
+    "title": "Set Honest Expectations for Out-of-Hours Instagram Replies",
+    "intro": "An immediate automated answer can make a business appear staffed when nobody is available to help. Out-of-hours wording should distinguish resource delivery from human support so people understand which response they can expect now and which requires waiting.",
+    "decision": "State verified support hours or a realistic process rather than a guessed response time. Keep urgent or sensitive issues out of generic sales flows. If the team has no guaranteed service window, avoid implying one.",
+    "steps": [
+      "Write the automated message's purpose clearly.",
+      "Link to self-service information that actually answers common questions.",
+      "Explain how human follow-up is requested and when the team normally reviews it."
+    ],
+    "example": "Try: “This message delivers the setup guide automatically. For account help, contact support through the link below; the team reviews requests during the hours listed there.”",
+    "pitfall": "Do not promise a scheduled after-hours rule in AP3K unless that configuration is present. Wording can set expectations without claiming a native staffing scheduler.",
+    "measure": "Compare promised response expectations with actual support handling. Revise the message if customers routinely wait longer than it suggests."
+  },
+  {
+    "slug": "instagram-autoresponder-knowledge-pruning",
+    "title": "Remove Conflicting Facts From Your Instagram AI Knowledge",
+    "intro": "Adding every document to an AI knowledge field can make answers worse when the documents disagree. Old pricing, abandoned features and draft policies compete with the current facts. A smaller, maintained knowledge set is easier to verify.",
+    "decision": "Start with questions the assistant is meant to answer. Keep one current statement for each fact and remove superseded versions. Separate internal notes from customer-facing facts so an explanation written for staff does not become a public promise.",
+    "steps": [
+      "Inventory duplicated or contradictory statements.",
+      "Replace drafts with approved product facts.",
+      "Test the questions most likely to expose contradictions."
+    ],
+    "example": "If one paragraph says a feature is planned and another calls it available, resolve the product status first. Do not ask the assistant to guess which paragraph is newer.",
+    "pitfall": "Do not insert private credentials or customer-specific records into general business knowledge. Use the minimum information needed for approved answers.",
+    "measure": "Track corrections needed in test answers. A useful update reduces contradictions without making previously supported questions harder to answer."
+  },
+  {
+    "slug": "instagram-autoresponder-confidence-fallback",
+    "title": "Write a Useful Fallback for Unanswered Instagram Questions",
+    "intro": "A fallback should help someone continue when automation cannot answer. “I do not understand” repeated several times gives no direction. A useful fallback acknowledges the limit, offers a relevant human route and avoids inventing an answer to keep the conversation moving.",
+    "decision": "Choose the fallback based on the question's context. A product inquiry may need a support link; an existing account issue may need authenticated help. Keep the fallback short enough that the next step remains obvious.",
+    "steps": [
+      "Identify questions outside approved knowledge.",
+      "Provide a specific support destination.",
+      "Test vague, contradictory and unfamiliar questions."
+    ],
+    "example": "Try: “I don’t have enough verified information to answer that accurately. Please use this support page and describe the issue so the team can help.” Only promise a response process that exists.",
+    "pitfall": "Do not make the fallback look like an escalation has already been assigned if it only supplies a link. Avoid unsupported completion claims.",
+    "measure": "Review whether people successfully reach the next step after a fallback. Repeated fallback loops indicate a broken route or an unclear message."
+  },
+  {
+    "slug": "instagram-autoresponder-answer-evaluation",
+    "title": "Evaluate Instagram AI Answers Before Enabling Them Widely",
+    "intro": "A single successful demo does not establish that an AI responder handles real customer questions. Build a small evaluation set that includes normal requests, ambiguous wording and questions the system should decline to answer. Judge the response against approved facts.",
+    "decision": "Use a rubric with accuracy, relevance, unsupported promises and next-step clarity. Tone matters after correctness. Save the expected answer or boundary for each test so later changes can be compared consistently.",
+    "steps": [
+      "Collect representative questions without unnecessary customer identifiers.",
+      "Define the factual answer or expected fallback.",
+      "Retest the same set after changing knowledge or behavior."
+    ],
+    "example": "Include “Can I use a personal account?”, “What happens if the link fails?” and a request for an invented discount. The last example should test boundaries, not persuasion.",
+    "pitfall": "Do not score an answer as correct because it sounds confident. Check the claim against the actual product and current plan information.",
+    "measure": "Count factual errors separately from style issues. Block broad rollout when answers misrepresent capabilities, billing or support commitments."
+  },
+  {
+    "slug": "instagram-autoresponder-repeated-question-diagnosis",
+    "title": "Why People Repeat Questions After an Automated Reply",
+    "intro": "Repeated questions do not always mean the automation failed to send. The answer may be too vague, contain the wrong link or require knowledge the reader does not have. Diagnose comprehension separately from technical delivery.",
+    "decision": "Read the original question and the delivered response together. Identify the exact information still missing. If the message arrived but did not answer the request, adding more retries will repeat the same confusion.",
+    "steps": [
+      "Confirm the response was sent to the expected conversation.",
+      "Compare its wording with the customer's actual question.",
+      "Revise the answer or route the case to a person."
+    ],
+    "example": "If someone asks whether a plan supports multiple accounts and receives only “View pricing,” a direct factual explanation may be needed before the link. Verify the current plan capability before writing it.",
+    "pitfall": "Do not interpret repeated questions as permission for repeated promotional messages. The person may need a different answer, not more volume.",
+    "measure": "Track repeat-contact reasons by topic. Use them to improve the knowledge or destination that caused the misunderstanding."
+  },
+  {
+    "slug": "instagram-autoresponder-tone-by-intent",
+    "title": "Choose Autoresponder Tone by Customer Intent",
+    "intro": "A playful reply can work for a requested guide and feel dismissive during a service problem. Choosing a brand tone is not enough; the response must also fit why the person is contacting the business. Start with intent before adding personality.",
+    "decision": "Define suitable wording for discovery, purchase questions and support. Keep complaint handling calm and specific. Where the tool exposes one general tone, choose a safe baseline and keep sensitive cases outside automated persuasion.",
+    "steps": [
+      "Identify the most common conversation intents.",
+      "Write a clear baseline response for each.",
+      "Remove jokes or sales pressure from support examples."
+    ],
+    "example": "A guide request can receive “Here’s the checklist you asked for.” A billing concern should receive an accurate support route, not “Let’s get you back to crushing it!”",
+    "pitfall": "Do not let a tone setting override factual boundaries. Friendly wording cannot make an unsupported refund promise acceptable.",
+    "measure": "Review replies that caused confusion or irritation. Separate problems caused by wording from those caused by missing product information."
+  },
+  {
+    "slug": "instagram-autoresponder-human-review-sampling",
+    "title": "Create a Human Review Routine for Automated Instagram Replies",
+    "intro": "Reviewing every message may be impractical, while reviewing none allows mistakes to repeat unnoticed. A sampling routine gives a small team a manageable way to inspect real outcomes. Prioritize messages most likely to expose incorrect knowledge or a broken next step.",
+    "decision": "Sample across common intents and unusual cases instead of reading only the easiest conversations. Include fallbacks, complaints and questions asked after a product change. Keep the review focused on improvements rather than collecting unnecessary personal information.",
+    "steps": [
+      "Select a regular review window and responsible reviewer.",
+      "Classify findings as factual, routing, tone or delivery issues.",
+      "Update the relevant knowledge or workflow and retest."
+    ],
+    "example": "After a pricing change, inspect pricing-related replies first. A random sample may miss the exact topic most affected by the update.",
+    "pitfall": "Do not export private conversation content into public reports. Summarize patterns and use anonymized examples when sharing findings internally.",
+    "measure": "Track recurring error types and whether fixes reduce them. Review volume alone is not evidence of improved answer quality."
+  },
+  {
+    "slug": "instagram-autoresponder-launch-scope",
+    "title": "Launch an Instagram Autoresponder With a Narrow Scope",
+    "intro": "Turning on every available response option at once makes it difficult to understand what caused a problem. A narrow launch creates a clear baseline: one audience request, one reliable answer and a visible next step. Broader coverage can follow once that path works.",
+    "decision": "Choose a routine question with stable facts and low exception risk. Test the exact supported trigger and message route. Keep other overlapping automations out of the initial experiment so the resulting conversation is attributable.",
+    "steps": [
+      "Define the first question the responder will handle.",
+      "Prepare the approved answer and fallback.",
+      "Test from another account and review real activity before expansion."
+    ],
+    "example": "Start with delivering a setup guide requested by a specific keyword. Do not simultaneously enable broad AI responses and several overlapping account-wide campaigns.",
+    "pitfall": "Do not interpret a successful send as proof that every question will work. Delivery and answer accuracy need separate checks.",
+    "measure": "Evaluate correct answers, useful next steps and exceptional cases. Expand one topic at a time when the existing scope is dependable."
+  },
+  {
+    "slug": "instagram-autoresponder-product-change-release",
+    "title": "Update Automated Replies When Your Product Changes",
+    "intro": "A product release changes the facts customers need, but automated messages often remain untouched. The result is an assistant describing an old interface or an offer that no longer exists. Include reply updates in the release process rather than treating them as later marketing work.",
+    "decision": "Map each changed capability to its public help, saved replies, AI knowledge and landing pages. Update the claims together. Keep historical instructions only when they are clearly labeled for users who still need them.",
+    "steps": [
+      "List customer-facing facts affected by the release.",
+      "Revise messages and linked instructions before promotion.",
+      "Run regression questions covering both changed and unchanged features."
+    ],
+    "example": "If a setting moves from one setup step to another, update the guide and the reply that describes its location. A correct link with obsolete instructions still wastes time.",
+    "pitfall": "Do not advertise a planned feature as live just because the release copy is ready. Verify production availability before changing automated promises.",
+    "measure": "Review post-release support questions for stale instructions. Use those findings to improve the next release checklist."
+  }
+]

@@ -1,0 +1,54 @@
+.picker { min-width:0; }
+.drop { display:flex; min-height:240px; flex-direction:column; align-items:center; justify-content:center; gap:16px; padding:28px; border:1px dashed #e2e5ec; border-radius:16px; text-align:center; }
+.drag { border-color:#8b5cf6; background:#f5f3ff; }
+.button { display:inline-flex; min-height:40px; align-items:center; justify-content:center; gap:10px; border:1px solid #e2e3e9; border-radius:8px; background:#fff; padding:8px 16px; color:#17171c; font-size:14px; font-weight:600; }
+.button:hover { background:#f7f7fa; }
+.button:disabled { opacity:.5; cursor:wait; }
+.button:focus-visible,.icon:focus-visible { outline:2px solid #7c3aed; outline-offset:3px; }
+.primary,.primary:hover { background:#18181b; color:white; border-color:#18181b; }
+.ghost { border-color:transparent; background:transparent; }
+.pill { border-radius:999px; }
+.help { max-width:520px; color:#838799; font-size:12px; line-height:1.65; }
+.actions { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px; margin-top:10px; }
+.recording { display:flex; min-width:0; align-items:center; gap:14px; padding:12px 0; }
+.dot { width:12px; height:12px; flex-shrink:0; border-radius:50%; background:#ff334c; box-shadow:0 0 0 6px #fff0f2; }
+.waveform { display:flex; flex:1; min-width:0; height:56px; align-items:center; gap:3px; overflow:hidden; border-radius:5px; background:#f7f7fb; padding:0 2px; }
+.bar { flex:1; min-width:1px; max-height:44px; background:#3b82f6; transition:height 80ms linear; }
+.timer { flex-shrink:0; font:600 12px/1.2 ui-monospace,monospace; color:#111; }
+.icon { display:inline-flex; width:32px; height:36px; flex-shrink:0; align-items:center; justify-content:center; border-radius:6px; color:#16161a; }
+.icon:hover { background:#ececf3; }
+.review audio,.audio { display:block; width:100%; height:54px; }
+.file { display:flex; min-width:0; align-items:center; gap:12px; padding:12px; border-radius:14px; background:#f7f7fb; }
+.file + .file { margin-top:8px; }
+.preview { margin-bottom:10px; }
+.video { width:100%; max-height:360px; border-radius:12px; background:#000; }
+.thumbnail { flex-shrink:0; width:54px; height:54px; object-fit:cover; border-radius:10px; }
+.badge { display:grid; width:54px; height:54px; flex-shrink:0; place-items:center; border-radius:10px; background:#f2eaff; color:#8b5cf6; font-size:12px; font-weight:750; }
+.audioBadge { background:#fff3e3; color:#dc7900; }
+.fileInfo { min-width:0; flex:1; text-align:start; }
+.filename { display:block; overflow:hidden; color:#20202d; font-size:14px; font-weight:650; text-overflow:ellipsis; white-space:nowrap; }
+.size { margin-top:4px; color:#87899d; font-size:12px; }
+.remove { color:#8b8d9f; }
+.progress { padding:14px; border-radius:10px; background:#f7f7fb; }
+.progressLabel { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:10px; color:#252531; font-size:12px; }
+.progressLabel span:first-child { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.progressTrack { height:6px; overflow:hidden; border-radius:99px; background:#e7e7ef; }
+.progressFill { height:100%; border-radius:inherit; background:#1ca36d; transition:width 150ms linear; }
+.error { margin-top:12px; color:#dc2626; font-size:13px; }
+:global(.dark) .drop { border-color:#3c3d4e; }
+:global(.dark) .drag { background:#8b5cf619; }
+:global(.dark) .button { background:#242633; border-color:#3c3e50; color:#f2f2f7; }
+:global(.dark) .button:hover,:global(.dark) .icon:hover { background:#333647; }
+:global(.dark) .primary,:global(.dark) .primary:hover { background:#f3f3f6; color:#17171c; border-color:#f3f3f6; }
+:global(.dark) .ghost { background:transparent; border-color:transparent; }
+:global(.dark) .waveform,:global(.dark) .file,:global(.dark) .progress { background:#222432; }
+:global(.dark) .timer,:global(.dark) .icon,:global(.dark) .filename,:global(.dark) .progressLabel { color:#f0f0f7; }
+:global(.dark) .dot { box-shadow:0 0 0 6px #ff334c18; }
+:global(.dark) .badge { background:#8b5cf620; color:#c4b5fd; }
+:global(.dark) .audioBadge { background:#f59e0b18; color:#fbbf24; }
+:global(.dark) .help,:global(.dark) .size { color:#aaaec0; }
+:global(.dark) .progressTrack { background:#3b3e50; }
+:global(.dark) .error { color:#fca5a5; }
+:global(.dark) .review audio,:global(.dark) .audio { color-scheme:dark; }
+@media(prefers-reduced-motion:reduce) { .bar,.progressFill { transition:none; } }
+@media(max-width:480px) { .recording { gap:8px; } .waveform { gap:2px; } .icon { width:28px; } .drop { padding:20px 12px; } .button { padding:8px 12px; font-size:13px; } .file { gap:10px; padding:10px; } .thumbnail,.badge { width:44px; height:44px; } .filename { font-size:12px; } }

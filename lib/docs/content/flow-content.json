@@ -1,0 +1,502 @@
+[
+  {
+    "slug": "flow-builder/wiring-basics",
+    "group": "flow-builder",
+    "title": "Flow Builder Wiring Basics: Nodes, Handles and Connectors",
+    "description": "A flow is a set of nodes on a canvas, joined by lines. One node sends a message, another waits, another checks a condition, and the lines decide what runs after what.",
+    "html": "<p>A flow is a set of nodes on a canvas, joined by lines. One node sends a message, another waits, another checks a condition, and the lines decide what runs after what.</p><h2 id=\"open-the-flow-builder\">Open the Flow builder</h2><p>Choose <strong>Create automation → Flow builder</strong>. Start with the <strong>Begin when…</strong> block and add a trigger, then connect it to your first step. Free accounts can save and preview a draft; publishing custom flows requires Pro or Business.</p><h2 id=\"adding-a-node\">Adding a node</h2><p>Click <strong>+</strong> on the canvas, choose a node type, configure it in the editor and connect its output to the next step. Message options include text, buttons, product cards, carousels and collecting information.</p><h2 id=\"the-node-types\">The node types</h2><ul><li><strong>Trigger:</strong> starts the flow from an Instagram interaction.</li><li><strong>Send message:</strong> sends text or a linked message.</li><li><strong>Collect email, phone or information:</strong> waits for an answer.</li><li><strong>Action:</strong> adds or removes a tag, sets a field or sends an external request.</li><li><strong>Conditions:</strong> checks a value and branches.</li><li><strong>Delay:</strong> waits before continuing.</li><li><strong>Randomizer:</strong> splits traffic between two paths.</li><li><strong>Finish:</strong> ends the flow.</li></ul><aside><p>AP3K does not have a Payment node. Send an existing HTTPS checkout link in a message instead.</p></aside><h2 id=\"connecting-nodes\">Connecting nodes</h2><p>Drag an output handle to the next node. You can also choose the destination in the node editor. Conditions have Yes and No branches, randomizers have two percentage branches, and questions have one branch per choice. Collection steps have a response path and a skip path.</p><p>Leave an output set to <strong>Finish here</strong> to end that path. Check every branch before publishing. Unreachable steps and automatic loops without a customer response are rejected.</p><h2 id=\"review-the-canvas\">Review the canvas</h2><p>Use zoom and fit controls to see the whole flow. After deleting a node, check its neighbouring connections. Preview every route, then test a published flow from a second Instagram account. Comment flows require an opening message and button so the contact can start the messaging window.</p>",
+    "headings": [
+      {
+        "id": "open-the-flow-builder",
+        "text": "Open the Flow builder",
+        "level": 2
+      },
+      {
+        "id": "adding-a-node",
+        "text": "Adding a node",
+        "level": 2
+      },
+      {
+        "id": "the-node-types",
+        "text": "The node types",
+        "level": 2
+      },
+      {
+        "id": "connecting-nodes",
+        "text": "Connecting nodes",
+        "level": 2
+      },
+      {
+        "id": "review-the-canvas",
+        "text": "Review the canvas",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "flow-builder/trigger-node",
+    "group": "flow-builder",
+    "title": "Trigger Node: Start a Flow in the Flow Builder",
+    "description": "Every flow has to start somewhere, and that’s what a Trigger is. It’s the event\nthat wakes your automation up and gets it moving.",
+    "html": "\n<p>Every flow has to start somewhere, and that’s what a Trigger is. It’s the event\nthat wakes your automation up and gets it moving.</p>\n<p>No trigger, no flow. It’s step one, always.</p>\n<h2 id=\"setting-one-up\">Setting one up</h2>\n<ol>\n<li>Click <strong>+ New Trigger</strong> in the <strong>Begin when…</strong> block</li>\n<li>Pick the event that should kick things off</li>\n<li>Set any conditions the trigger needs</li>\n<li>Connect it to your first step</li>\n</ol>\n<h2 id=\"available-triggers\">Available triggers</h2>\n<table>\n<thead>\n<tr>\n<th>Trigger</th>\n<th>Fires when…</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>User comments on your Post or Reel</td>\n<td>Someone comments on a post or reel</td>\n</tr>\n<tr>\n<td>User replies to your Story</td>\n<td>Someone replies to your story</td>\n</tr>\n<tr>\n<td>User sends a message</td>\n<td>Someone DMs you</td>\n</tr>\n<tr>\n<td>User mentions you in a Story</td>\n<td>You get story-mentioned</td>\n</tr>\n<tr>\n<td>User shares a post or reel</td>\n<td>Someone shares your content via DM</td>\n</tr>\n</tbody>\n</table>\n<h2 id=\"narrowing-a-trigger\">Narrowing a trigger</h2>\n<p>A trigger doesn’t have to fire on everything. Once you’ve picked the event, set\nthe condition that goes with it — a <strong>User sends a message</strong> trigger can listen\nfor any message, or only ones containing a keyword like <code>hello</code>, exactly like\nthe <a href=\"/docs/post-automation/instagram-automation-triggers\">keyword triggers</a>\nin a basic automation.</p>\n<p>The node shows what it settled on: the event on top, the condition underneath.</p>\n<aside><p>Pro Tip</p><p>Start with the event you can test yourself. Comment on your own post from a\nsecond account, or DM yourself the keyword, and watch the flow run before you\npoint it at anything that matters.</p></aside>\n<h2 id=\"where-to-go-next\">Where to go next</h2>\n<p>With the trigger in place, drag its <strong>Then</strong> handle to the first real step —\nusually a <a href=\"/docs/flow-builder/send-message-node\">Send message node</a>.</p><aside><p>Comment flows need an opening message and button before the full conversation can proceed. Test with a second account and use a post owned by the connected Instagram account.</p></aside>",
+    "headings": [
+      {
+        "id": "setting-one-up",
+        "text": "Setting one up",
+        "level": 2
+      },
+      {
+        "id": "available-triggers",
+        "text": "Available triggers",
+        "level": 2
+      },
+      {
+        "id": "narrowing-a-trigger",
+        "text": "Narrowing a trigger",
+        "level": 2
+      },
+      {
+        "id": "where-to-go-next",
+        "text": "Where to go next",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "flow-builder/send-message-node",
+    "group": "flow-builder",
+    "title": "Send Message Node: Layouts and Content Blocks",
+    "description": "This is how your flow talks to people. Add a message step, pick the content type and write the message in the editor.",
+    "html": "<p>This is how your flow talks to people. Add a message step, pick the content type and write the message in the editor.</p><h2 id=\"content-types\">Content types</h2><table><thead><tr><th>Step</th><th>Use it for</th></tr></thead><tbody><tr><td>Send message</td><td>Text and up to three HTTPS link buttons.</td></tr><tr><td>Message with buttons</td><td>Up to three choices that route to separate steps.</td></tr><tr><td>Product card</td><td>An image, title, subtitle and link buttons.</td></tr><tr><td>Product carousel</td><td>Up to ten scrollable product cards.</td></tr><tr><td>Collect email, phone or information</td><td>A prompt that waits for the contact’s reply.</td></tr></tbody></table><p>Connect separate steps to send several pieces of content. File attachments in the basic automation editor are separate from these flow node types.</p><h2 id=\"setup\">Setup</h2><ol><li>Add the message step.</li><li>Write your text and give the step a useful label.</li><li>Add your destination links, using HTTPS.</li><li>Connect the next step or choose Finish here.</li><li>Preview the conversation and test the links on a phone.</li></ol><p>A plain flow message supports up to 1,000 characters. Link button labels support up to 20 characters. Product card titles and subtitles support up to 80 characters each.</p><h2 id=\"using-collected-values\">Using collected values</h2><p>A stored custom field can be inserted with a token such as <code>{{first_name}}</code>. Collect or set that field before using it: unavailable values render empty. Preview and test the result rather than assuming every contact has the same data.</p><h2 id=\"waiting-for-an-answer\">Waiting for an answer</h2><p>A collection step pauses until the person replies. Connect its valid response path to the next step and configure the skip path. Email and phone collection validates the answer before advancing and stores the details against the responding contact.</p><aside><p>Keep each burst to at most six messages between customer replies or delays. A flow is a conversation, not a reason to send every available message at once.</p></aside>",
+    "headings": [
+      {
+        "id": "content-types",
+        "text": "Content types",
+        "level": 2
+      },
+      {
+        "id": "setup",
+        "text": "Setup",
+        "level": 2
+      },
+      {
+        "id": "using-collected-values",
+        "text": "Using collected values",
+        "level": 2
+      },
+      {
+        "id": "waiting-for-an-answer",
+        "text": "Waiting for an answer",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "flow-builder/action-node",
+    "group": "flow-builder",
+    "title": "Action Node: Tags, Custom Fields and API Requests",
+    "description": "While other nodes control where a flow goes, actions change what AP3K knows about a contact or send data to an external service.",
+    "html": "<p>While other nodes control where a flow goes, actions change what AP3K knows about a contact or send data to an external service.</p><h2 id=\"setup\">Setup</h2><p>Add an action from the canvas, select its type and configure it in the node editor. Connect another action after it when several operations need to run in order.</p><h2 id=\"available-actions\">Available actions</h2><table><thead><tr><th>Action</th><th>What it does</th></tr></thead><tbody><tr><td>Contact tag</td><td>Adds or removes a tag.</td></tr><tr><td>Set custom field</td><td>Saves a field value for later messages and conditions.</td></tr><tr><td>External request / Zapier</td><td>Sends a JSON POST request to a public HTTPS webhook.</td></tr></tbody></table><p>AP3K does not provide a Delete contact flow action. Manage contacts from the Contacts page instead.</p><h2 id=\"setting-a-field\">Setting a field</h2><p>Enter the field name and the value to save. Use the same name in later collection steps, conditions and message tokens. Instagram profile fields are reserved and cannot be overwritten with a custom-field action.</p><h2 id=\"tags-versus-custom-fields\">Tags versus custom fields</h2><p>Tags are labels, and a contact can have several. Custom fields hold values such as language, membership tier or campaign source. Use tags to segment; use fields to store.</p><h2 id=\"sending-an-external-request\">Sending an external request</h2><p>Use a public HTTPS URL on port 443 and a JSON object body. Variables belong inside JSON string values. This action uses POST and does not offer custom request headers. Do not paste credentials into a message or a public link.</p><p>The label mentions Zapier because a compatible webhook can receive the request; AP3K does not supply the separate native Zapier app described by some migration guides.</p><h2 id=\"example-flow\">Example flow</h2><p>Incoming DM → Collect email → Set campaign field → Add interested tag → Send confirmation. Review the contact record after testing to confirm that the right person’s data was updated.</p>",
+    "headings": [
+      {
+        "id": "setup",
+        "text": "Setup",
+        "level": 2
+      },
+      {
+        "id": "available-actions",
+        "text": "Available actions",
+        "level": 2
+      },
+      {
+        "id": "setting-a-field",
+        "text": "Setting a field",
+        "level": 2
+      },
+      {
+        "id": "tags-versus-custom-fields",
+        "text": "Tags versus custom fields",
+        "level": 2
+      },
+      {
+        "id": "sending-an-external-request",
+        "text": "Sending an external request",
+        "level": 2
+      },
+      {
+        "id": "example-flow",
+        "text": "Example flow",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "flow-builder/conditions-node",
+    "group": "flow-builder",
+    "title": "Conditions Node: Branch a Flow with Yes and No Paths",
+    "description": "A Conditions node checks a value and sends the contact down one of two paths: Yes when it matches, or No when it does not.",
+    "html": "<p>A Conditions node checks a value and sends the contact down one of two paths: Yes when it matches, or No when it does not.</p><h2 id=\"setup\">Setup</h2><p>Add a Conditions step, choose the condition type, select a comparison and enter a value where required. Wire both branches to their next steps.</p><h2 id=\"available-condition-types\">Available condition types</h2><ul><li>If user followed me.</li><li>If business follows user.</li><li>Verified on Instagram.</li><li>Followers count.</li><li>Opened a tracked link.</li><li>Contact email or phone.</li><li>A custom field.</li></ul><p>Comparisons include Equals, Does not equal, Contains, Greater than, Less than and Has a value. Choose one that fits the data being checked.</p><h2 id=\"collect-the-data-first\">Collect the data first</h2><p>Email, phone and custom fields should be collected or set before the check. Use Has a value when you want to skip a collection prompt for someone whose information is already stored.</p><p>Instagram profile conditions are verified when the step runs. Unavailable profile data does not qualify, so provide a useful fallback path.</p><h2 id=\"example\">Example</h2><p>Trigger → Conditions: Contact email has a value → Yes: send the resource → No: collect email, then send the resource.</p><p>An unwired branch ends the path. Test both outcomes so a missing field does not silently strand a contact.</p>",
+    "headings": [
+      {
+        "id": "setup",
+        "text": "Setup",
+        "level": 2
+      },
+      {
+        "id": "available-condition-types",
+        "text": "Available condition types",
+        "level": 2
+      },
+      {
+        "id": "collect-the-data-first",
+        "text": "Collect the data first",
+        "level": 2
+      },
+      {
+        "id": "example",
+        "text": "Example",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "flow-builder/delay-node",
+    "group": "flow-builder",
+    "title": "Delay Node: Pause a Flow Before the Next Step",
+    "description": "The Delay node pauses a flow before moving on. Use it to space messages or wait before a follow-up, while respecting Instagram’s reply window.",
+    "html": "<p>The Delay node pauses a flow before moving on. Use it to space messages or wait before a follow-up, while respecting Instagram’s reply window.</p><h2 id=\"setup\">Setup</h2><ol><li>Add a Delay step.</li><li>Enter the duration and choose seconds, minutes, hours or days.</li><li>Connect the next step.</li><li>Preview the path and test its timing from another account.</li></ol><h2 id=\"how-timing-works\">How timing works</h2><p>The wait is saved before the flow pauses. A first short delay of up to 30 seconds can resume in the background. Longer waits and recovery depend on the scheduler, so the selected duration is a minimum wait rather than a promise of delivery at an exact second.</p><p>Nothing downstream runs until the delay is due and the flow remains eligible to continue. An unavailable scheduler can prevent publication or postpone delivery.</p><h2 id=\"instagram-s-reply-window\">Instagram’s reply window</h2><p>Scheduled flow messages only send while the Instagram reply window is open. AP3K checks the conversation window again before sending; a wait beyond the current window is cancelled rather than used to bypass it. A duration field accepting days does not guarantee that a message can be delivered days later.</p><h2 id=\"use-this-for\">Use this for</h2><ul><li>A brief pause between related messages.</li><li>A timely follow-up after the contact has engaged.</li><li>Waiting before checking a tracked-link condition.</li></ul><aside><p>For a missing delayed DM, check the automation is active, the account is connected and the reply window is still open before changing the duration.</p></aside>",
+    "headings": [
+      {
+        "id": "setup",
+        "text": "Setup",
+        "level": 2
+      },
+      {
+        "id": "how-timing-works",
+        "text": "How timing works",
+        "level": 2
+      },
+      {
+        "id": "instagram-s-reply-window",
+        "text": "Instagram’s reply window",
+        "level": 2
+      },
+      {
+        "id": "use-this-for",
+        "text": "Use this for",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "flow-builder/randomizer-node",
+    "group": "flow-builder",
+    "title": "Randomizer Node: Split a Flow Across Random Paths",
+    "description": "The Randomizer splits contacts between two paths by chance, in the proportions you set. The choice is not based on what you know about a contact.",
+    "html": "<p>The Randomizer splits contacts between two paths by chance, in the proportions you set. The choice is not based on what you know about a contact.</p><h2 id=\"setup\">Setup</h2><ol><li>Add a Randomizer node.</li><li>Set First branch probability using the slider.</li><li>Connect the first percentage output to one next step.</li><li>Connect the second percentage output to another step.</li></ol><p>The first branch can be 1–99%. The second is calculated automatically as the remainder, so the total is always 100%.</p><h2 id=\"percentages-are-odds-not-quotas\">Percentages are odds, not quotas</h2><p>A 50/50 split does not alternate contacts. Each draw can take either branch, so a small sample may look uneven. Compare results over enough conversations to avoid drawing conclusions from a handful of people.</p><h2 id=\"returning-contacts\">Returning contacts</h2><p>AP3K saves the selected outcome before sending so a retry does not redraw that step. It does not offer a separate sticky-assignment or “Pick a random path every time” toggle. Do not assume a returning contact is permanently assigned to one variation across new flow runs.</p><h2 id=\"example-compare-two-openers\">Example: compare two openers</h2><p>Incoming keyword → Randomizer at 50% → First branch: short welcome → Second branch: detailed welcome. Send each branch to an appropriate next step and change only the wording you want to compare.</p><h2 id=\"wire-both-paths\">Wire both paths</h2><p>An unwired output ends the flow for contacts assigned to it. Make each variation easy to recognize during testing. AP3K’s randomizer has two outputs; there is no four-variation editor or payment-gateway experiment node.</p>",
+    "headings": [
+      {
+        "id": "setup",
+        "text": "Setup",
+        "level": 2
+      },
+      {
+        "id": "percentages-are-odds-not-quotas",
+        "text": "Percentages are odds, not quotas",
+        "level": 2
+      },
+      {
+        "id": "returning-contacts",
+        "text": "Returning contacts",
+        "level": 2
+      },
+      {
+        "id": "example-compare-two-openers",
+        "text": "Example: compare two openers",
+        "level": 2
+      },
+      {
+        "id": "wire-both-paths",
+        "text": "Wire both paths",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "flow-builder/payment-node",
+    "group": "flow-builder",
+    "title": "Payments in a Flow: Send a Checkout Link",
+    "description": "AP3K does not currently include a Payment or Collect payment flow node. You can send a checkout link created with your existing store or payment provider.",
+    "html": "<p>AP3K does not currently include a Payment or Collect payment flow node. You can send a checkout link created with your existing store or payment provider.</p><h2 id=\"send-a-checkout-link\">Send a checkout link</h2><ol><li>Create the checkout or product link with your payment provider.</li><li>Add a Send message or Product card step in AP3K.</li><li>Write a clear description of the offer.</li><li>Add an HTTPS button such as Buy now pointing to the checkout.</li><li>Test the button and checkout with your provider’s testing tools.</li></ol><h2 id=\"what-ap3k-does-and-does-not-track\">What AP3K does and does not track</h2><p>AP3K can track a click on a tracked link. Clicking a link is not proof of payment. Check payment completion in your provider or store.</p><p>There is no built-in gateway-connection wizard, dynamic payment-link creation or Payment successful/Payment failed branch in AP3K. Do not promise automatic paid-only delivery based solely on a link click.</p><h2 id=\"a-supported-sales-flow\">A supported sales flow</h2><p>Incoming DM → Ask which product the contact needs → Send the matching product card and checkout link. Use your store’s normal fulfilment process after a confirmed purchase.</p><h2 id=\"related-steps\">Related steps</h2><p>See <a href=\"/docs/flow-builder/send-message-node\">Send message</a> for link buttons and product cards, or <a href=\"/docs/flow-builder/conditions-node\">Conditions</a> for supported contact checks.</p>",
+    "headings": [
+      {
+        "id": "send-a-checkout-link",
+        "text": "Send a checkout link",
+        "level": 2
+      },
+      {
+        "id": "what-ap3k-does-and-does-not-track",
+        "text": "What AP3K does and does not track",
+        "level": 2
+      },
+      {
+        "id": "a-supported-sales-flow",
+        "text": "A supported sales flow",
+        "level": 2
+      },
+      {
+        "id": "related-steps",
+        "text": "Related steps",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "flow-builder/ai-flow-builder",
+    "group": "flow-builder",
+    "title": "AI Flow Builder: Build a Flow from a Prompt",
+    "description": "Describe the automation in plain words and let the Flow Assistant prepare an editable draft. It builds ordinary flow nodes that you can inspect and change.",
+    "html": "<p>Describe the automation in plain words and let the Flow Assistant prepare an editable draft. It builds ordinary flow nodes that you can inspect and change.</p><h2 id=\"open-the-assistant\">Open the assistant</h2><p>Choose Create automation → AI assisted flow builder, or open the Flow Assistant from the flow editor. AI flow generation requires Pro or Business and uses your AI allowance.</p><h2 id=\"how-it-works\">How it works</h2><ol><li>Describe the trigger, message, desired branches and destination links.</li><li>Generate the draft and read the assistant’s summary.</li><li>Inspect the trigger and each node on the canvas.</li><li>Replace missing destinations or placeholders.</li><li>Preview the conversation, then save or publish when ready.</li></ol><p>Generation prepares a draft; it does not send messages or publish the automation for you.</p><h2 id=\"example-prompts\">Example prompts</h2><ul><li>“When someone comments LINK, send an opener and then my download link after they respond.”</li><li>“When someone sends pricing, tag them as a lead and send this pricing page.”</li><li>“Collect email addresses from people who reply FREEBIE, then send my resource.”</li><li>“Ask whether the contact is a creator or a brand and send each answer to a different message.”</li></ul><h2 id=\"review-before-publishing\">Review before publishing</h2><p>Check message wording, selected post, links, conditions and actions. If a destination was not provided, the assistant may leave a placeholder that must be replaced. It cannot create unsupported payment nodes, send outbound email or invent an integration.</p><p>Use a second Instagram account for a real test after publishing. Draft preview helps review the logic but does not prove that an external API or live Instagram delivery succeeded.</p>",
+    "headings": [
+      {
+        "id": "open-the-assistant",
+        "text": "Open the assistant",
+        "level": 2
+      },
+      {
+        "id": "how-it-works",
+        "text": "How it works",
+        "level": 2
+      },
+      {
+        "id": "example-prompts",
+        "text": "Example prompts",
+        "level": 2
+      },
+      {
+        "id": "review-before-publishing",
+        "text": "Review before publishing",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "flow-builder/flow-analytics",
+    "group": "flow-builder",
+    "title": "Flow Analytics: See How Your Automations Perform",
+    "description": "Look at the results after publishing to see whether people trigger your flow and use its links. AP3K provides automation-level analytics and account performance views.",
+    "html": "<p>Look at the results after publishing to see whether people trigger your flow and use its links. AP3K provides automation-level analytics and account performance views.</p><h2 id=\"the-automations-list\">The Automations list</h2><p>Find the flow in Automations and check whether it is active. Open its analytics to review Hits and Clicks, daily activity and available click-country data. Select the intended Instagram account before comparing results.</p><h2 id=\"account-performance\">Account performance</h2><p>The Instagram account performance view provides account-level context. Its totals are broader than a single flow, so use the automation’s own analytics when evaluating one campaign.</p><h2 id=\"reading-the-result\">Reading the result</h2><ul><li><strong>Few hits:</strong> confirm the selected post and keyword match what people actually send.</li><li><strong>Hits but few clicks:</strong> verify delivery, then review the DM, link destination and call to action.</li><li><strong>A branch appears unused:</strong> test its condition and confirm the required contact data exists.</li></ul><p>A draft has not sent live messages. Pausing an automation stops new processing; it does not erase historical results.</p><h2 id=\"compare-one-change-at-a-time\">Compare one change at a time</h2><p>Change a message, trigger or link individually so you can judge its effect. AP3K does not provide the source documentation’s per-node conversion counters or payment-success analytics. Use live test conversations to inspect individual branches.</p>",
+    "headings": [
+      {
+        "id": "the-automations-list",
+        "text": "The Automations list",
+        "level": 2
+      },
+      {
+        "id": "account-performance",
+        "text": "Account performance",
+        "level": 2
+      },
+      {
+        "id": "reading-the-result",
+        "text": "Reading the result",
+        "level": 2
+      },
+      {
+        "id": "compare-one-change-at-a-time",
+        "text": "Compare one change at a time",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "flow-builder/flow-templates",
+    "group": "flow-builder",
+    "title": "Flow Templates: Start From a Ready-Made Automation",
+    "description": "Start from an AP3K automation template, customize its trigger and messages, review the required plan, then publish and test your flow.",
+    "html": "\n<p>An empty canvas is the slowest way to start. The template gallery holds <strong>ready-made automations</strong>, and the <strong>Flow</strong> tab filters it down to the ones that\nopen on the flow canvas rather than in the simple editor. Choose a template, customize its settings and review it before publishing.</p>\n<h2 id=\"opening-the-template-gallery\">Opening the template gallery</h2>\n<p>Click <strong>+ New automation</strong>, then <strong>Browse templates</strong> at the foot of the dialog,\nand switch to the <strong>Flow</strong> tab. The <strong>Basic</strong> tab beside it holds the\n<a href=\"/docs/post-automation/post-automation-templates\">post</a>,\n<a href=\"/docs/story-automation/story-automation-templates\">story</a> and chat templates; some of these use the flow editor for their conversation steps.</p>\n<h2 id=\"making-a-template-yours\">Making a template yours</h2>\n<p>A template is a starting point, not a finished automation. Once it opens in the\n<a href=\"/docs/flow-builder/wiring-basics\">Flow builder</a>, go through it the same way\nyou’d review your own work:</p>\n<ul>\n<li><strong>The <a href=\"/docs/flow-builder/trigger-node\">trigger</a></strong> — point it at your post,\nreel or keyword. This is the part a template can’t guess.</li>\n<li><strong>The <a href=\"/docs/flow-builder/send-message-node\">message content</a></strong> — replace the\nplaceholder copy and links with yours, and check it sounds like you.</li>\n<li><strong>Any <a href=\"/docs/flow-builder/conditions-node\">conditions</a> and\n<a href=\"/docs/flow-builder/action-node\">actions</a></strong> — tags and custom fields in a\ntemplate refer to names that may not exist in your account yet.</li>\n</ul>\n<p>Then publish, and test it from a second account before you point real traffic at\nit.</p>\n<aside><p>Pro Tip</p><p>Templates are also the fastest way to <em>read</em> a good flow. Open one close to what\nyou want, see how it’s wired, and you’ll know how to build the next one from\nscratch.</p></aside><aside><p>Some templates open in the flow editor even when listed under Basic. Free users can save and preview flow drafts; publishing custom flows requires Pro or Business. Replace all example destinations before publishing.</p></aside>",
+    "headings": [
+      {
+        "id": "opening-the-template-gallery",
+        "text": "Opening the template gallery",
+        "level": 2
+      },
+      {
+        "id": "making-a-template-yours",
+        "text": "Making a template yours",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-11"
+  },
+  {
+    "slug": "queue/dm-queue",
+    "group": "queue",
+    "title": "DM Queue",
+    "description": "AP3K stores delayed deliveries, scheduled follow-ups and waiting flow sessions so eligible work can continue later. There is no separate In queue panel in the AP3K sidebar.",
+    "html": "<p>AP3K stores delayed deliveries, scheduled follow-ups and waiting flow sessions so eligible work can continue later. There is no separate In queue panel in the AP3K sidebar.</p><h2 id=\"what-waits-for-delivery\">What waits for delivery?</h2><p>A configured delay waits until its due time. A follow-up waits for its schedule and conditions. A collection step waits for the contact’s reply. These are different reasons for a message not appearing immediately.</p><h2 id=\"immediate-and-scheduled-messages\">Immediate and scheduled messages</h2><p>Do not assume every immediate message passes through a visible account-wide queue. Scheduled work is stored durably and processed by delivery workers or the scheduler. Eligibility is checked again when it resumes.</p><h2 id=\"what-can-stop-a-waiting-message\">What can stop a waiting message?</h2><ul><li>The automation is inactive or archived.</li><li>The Instagram connection requires attention.</li><li>The contact or conversation no longer meets the conditions.</li><li>The reply window has expired.</li><li>An API or delivery error prevents sending.</li></ul><p>Stored work is not a guarantee of eventual delivery. Expired or ineligible work can be cancelled, and ambiguous failures are not blindly replayed.</p><h2 id=\"check-delivery\">Check delivery</h2><p>Review the automation status, the recipient’s Inbox conversation and account connection. For delay-specific checks, see <a href=\"/docs/flow-builder/delay-node\">Delay node</a>. For general problems, see <a href=\"/docs/troubleshoot/fix-instagram-automation-not-working\">Automation not working</a>.</p>",
+    "headings": [
+      {
+        "id": "what-waits-for-delivery",
+        "text": "What waits for delivery?",
+        "level": 2
+      },
+      {
+        "id": "immediate-and-scheduled-messages",
+        "text": "Immediate and scheduled messages",
+        "level": 2
+      },
+      {
+        "id": "what-can-stop-a-waiting-message",
+        "text": "What can stop a waiting message?",
+        "level": 2
+      },
+      {
+        "id": "check-delivery",
+        "text": "Check delivery",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "queue/how-the-dm-queue-works",
+    "group": "queue",
+    "title": "How the DM Queue Works",
+    "description": "When an AP3K step is scheduled for later, its due time and state are stored before processing pauses. A worker resumes eligible work when it becomes due.",
+    "html": "<p>When an AP3K step is scheduled for later, its due time and state are stored before processing pauses. A worker resumes eligible work when it becomes due.</p><h2 id=\"the-trip-a-scheduled-message-makes\">The trip a scheduled message makes</h2><ol><li>An interaction matches an active automation.</li><li>A delay or follow-up creates waiting work.</li><li>A worker claims that work when it is due.</li><li>AP3K checks that the automation, account and conversation are still eligible.</li><li>The message is sent, cancelled or marked failed according to the outcome.</li></ol><h2 id=\"two-kinds-of-waiting\">Two kinds of waiting</h2><p><strong>Waiting for time:</strong> a delay or follow-up has not reached its due date. <strong>Waiting for a person:</strong> a flow needs an answer or button interaction before it can continue. Neither means that the message is ready to send immediately.</p><h2 id=\"timing-and-recovery\">Timing and recovery</h2><p>A saved due time is a minimum wait. Worker availability and scheduler cadence can add latency. Durable state allows recovery after an interrupted worker, but AP3K avoids automatically replaying an ambiguous external send that might duplicate a DM.</p><h2 id=\"messages-can-expire\">Messages can expire</h2><p>Instagram’s reply window still applies. Expired flow sessions are cancelled, and delayed jobs may be cancelled when the conversation has moved on or the automation is no longer active. There is no promise that a queued message waits forever.</p><h2 id=\"common-questions\">Common questions</h2><p><strong>Can I buy faster delivery?</strong> A subscription does not bypass Instagram’s limits.</p><p><strong>Where is the queue count?</strong> AP3K does not expose the source site’s In queue panel or account-wide messages-per-minute readout.</p><p><strong>How do I investigate a missing message?</strong> Check the Inbox, active automation, selected account, configured wait and any connection or publishing error.</p>",
+    "headings": [
+      {
+        "id": "the-trip-a-scheduled-message-makes",
+        "text": "The trip a scheduled message makes",
+        "level": 2
+      },
+      {
+        "id": "two-kinds-of-waiting",
+        "text": "Two kinds of waiting",
+        "level": 2
+      },
+      {
+        "id": "timing-and-recovery",
+        "text": "Timing and recovery",
+        "level": 2
+      },
+      {
+        "id": "messages-can-expire",
+        "text": "Messages can expire",
+        "level": 2
+      },
+      {
+        "id": "common-questions",
+        "text": "Common questions",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "queue/dm-sending-rate-limits-and-throttling",
+    "group": "queue",
+    "title": "DM Rate Limits and Throttling",
+    "description": "Instagram controls which messages its API will accept. Account restrictions, usage limits and the conversation window can affect delivery independently of your AP3K subscription.",
+    "html": "<p>Instagram controls which messages its API will accept. Account restrictions, usage limits and the conversation window can affect delivery independently of your AP3K subscription.</p><h2 id=\"what-rate-limiting-means\">What rate limiting means</h2><p>A rate-limit response means the platform is restricting API activity. Repeatedly triggering the same automation does not raise that limit and can make diagnosis harder. Inspect the reported error and the account’s connection state first.</p><h2 id=\"no-speed-override\">No speed override</h2><p>AP3K does not offer a user-configurable DM sending rate or a paid priority lane. It also does not display the source documentation’s Smart Queue Control panel. Avoid treating an example rate such as 60 DMs/min as a guaranteed AP3K delivery speed.</p><h2 id=\"reduce-unnecessary-activity\">Reduce unnecessary activity</h2><ul><li>Use a specific keyword when only interested commenters need the response.</li><li>Review overlapping automations on the same post.</li><li>Use the one-DM-per-user setting where appropriate.</li><li>Keep flows concise and test with a small audience before a launch.</li></ul><h2 id=\"distinguish-a-wait-from-a-failure\">Distinguish a wait from a failure</h2><p>A configured delay has a due time; a collection step waits for an answer; a failed API request needs investigation. These are not interchangeable. A long wait can also cross the reply window, preventing later delivery.</p><h2 id=\"further-help\">Further help</h2><p>Review <a href=\"/docs/troubleshoot/fix-instagram-messaging-api-error\">Instagram messaging API errors</a> and <a href=\"/docs/troubleshoot/fix-slow-dm-delivery\">Slow DM delivery</a>. Platform limits can change; use Meta’s current documentation when investigating a specific API limit rather than an old numeric table.</p>",
+    "headings": [
+      {
+        "id": "what-rate-limiting-means",
+        "text": "What rate limiting means",
+        "level": 2
+      },
+      {
+        "id": "no-speed-override",
+        "text": "No speed override",
+        "level": 2
+      },
+      {
+        "id": "reduce-unnecessary-activity",
+        "text": "Reduce unnecessary activity",
+        "level": 2
+      },
+      {
+        "id": "distinguish-a-wait-from-a-failure",
+        "text": "Distinguish a wait from a failure",
+        "level": 2
+      },
+      {
+        "id": "further-help",
+        "text": "Further help",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "queue/check-dm-queue-status",
+    "group": "queue",
+    "title": "Check Your DM Queue Status",
+    "description": "AP3K does not currently include an In queue panel with pending counts, delivery speed or queue controls. Use the automation and conversation views to check what happened.",
+    "html": "<p>AP3K does not currently include an In queue panel with pending counts, delivery speed or queue controls. Use the automation and conversation views to check what happened.</p><h2 id=\"check-the-right-account\">Check the right account</h2><p>Select the Instagram account that owns the automation. Confirm it is connected and that no reconnection warning is shown.</p><h2 id=\"check-the-automation\">Check the automation</h2><ol><li>Find it in Automations and confirm it is active.</li><li>Review its trigger, selected post and keyword.</li><li>Check whether a delay, collection step or follow-up condition intentionally waits.</li><li>Open its analytics to see whether the trigger received hits.</li></ol><h2 id=\"check-the-conversation\">Check the conversation</h2><p>Open the contact in Inbox. Compare the latest inbound interaction with the expected step. A flow waiting for an answer will not advance merely because time has passed. A delay cannot extend an expired Instagram reply window.</p><h2 id=\"if-delivery-still-looks-stuck\">If delivery still looks stuck</h2><p>Test once from a second Instagram account, note the automation and approximate time, and review any visible error. Use <a href=\"/docs/troubleshoot/fix-instagram-automation-not-working\">Automation not working</a> for the next checks. Do not repeatedly publish duplicate automations to force a message through.</p>",
+    "headings": [
+      {
+        "id": "check-the-right-account",
+        "text": "Check the right account",
+        "level": 2
+      },
+      {
+        "id": "check-the-automation",
+        "text": "Check the automation",
+        "level": 2
+      },
+      {
+        "id": "check-the-conversation",
+        "text": "Check the conversation",
+        "level": 2
+      },
+      {
+        "id": "if-delivery-still-looks-stuck",
+        "text": "If delivery still looks stuck",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "queue/pause-or-clear-queued-dms",
+    "group": "queue",
+    "title": "Pause, Clear or Cancel Queued DMs",
+    "description": "AP3K does not have account-wide queue pause, resume or clear buttons. To stop a campaign, turn off the relevant automation from the Automations list.",
+    "html": "<p>AP3K does not have account-wide queue pause, resume or clear buttons. To stop a campaign, turn off the relevant automation from the Automations list.</p><h2 id=\"pause-an-automation\">Pause an automation</h2><ol><li>Select the Instagram account that owns it.</li><li>Open Automations and find the campaign.</li><li>Turn the automation off.</li><li>Make and review your changes before activating it again.</li></ol><p>Turning it off prevents new processing. Delivery workers also check active status before resuming eligible work. A message already handed to Instagram cannot be recalled this way.</p><h2 id=\"what-happens-to-scheduled-work\">What happens to scheduled work</h2><p>Inactive or ineligible work can be cancelled when a worker checks it. Do not treat turning an automation off as a temporary account-wide queue hold with a guaranteed replay later. Reactivating it does not guarantee that previously cancelled messages will be sent.</p><h2 id=\"if-the-wrong-message-was-published\">If the wrong message was published</h2><p>Deactivate the automation first, correct the content and inspect affected conversations in Inbox. Review the trigger and test the replacement before restarting. There is no Clear queue command in AP3K to cancel all account messages with one click.</p><h2 id=\"keep-public-replies-without-a-dm\">Keep public replies without a DM</h2><p>For a basic post automation, use its supported DM controls when you want public replies without direct messages. See <a href=\"/docs/post-automation/disable-direct-message-in-automation\">Disable direct messages</a> for the relevant editor.</p>",
+    "headings": [
+      {
+        "id": "pause-an-automation",
+        "text": "Pause an automation",
+        "level": 2
+      },
+      {
+        "id": "what-happens-to-scheduled-work",
+        "text": "What happens to scheduled work",
+        "level": 2
+      },
+      {
+        "id": "if-the-wrong-message-was-published",
+        "text": "If the wrong message was published",
+        "level": 2
+      },
+      {
+        "id": "keep-public-replies-without-a-dm",
+        "text": "Keep public replies without a DM",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  }
+]

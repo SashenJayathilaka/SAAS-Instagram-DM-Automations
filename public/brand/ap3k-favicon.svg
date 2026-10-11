@@ -1,0 +1,12 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="48" y1="44" x2="464" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6D28D9"/><stop offset="0.48" stop-color="#8B5CF6"/><stop offset="0.76" stop-color="#EC4899"/><stop offset="1" stop-color="#FF6B35"/>
+    </linearGradient>
+  </defs>
+  <!-- Fill the canvas so search engines cannot show a pale backing through transparent edges. -->
+  <rect width="512" height="512" fill="url(#g)"/>
+  <path d="M142 352L230.5 157.5C240.5 135.5 271.5 135.5 281.5 157.5L370 352" stroke="white" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M182 290H323" stroke="white" stroke-width="38" stroke-linecap="round"/>
+  <path d="M304 263L339 290L304 317" stroke="white" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

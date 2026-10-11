@@ -1,4 +1,6 @@
 "use client";
+import { UiText } from "@/components/i18n/localized-copy";
+
 
 import { useQueryAutomation } from "@/hooks/user-queries";
 
@@ -23,28 +25,26 @@ function MetricsCard({}: Props) {
         >
           {i === 1 ? (
             <div>
-              <h2 className="text-3xl text-white font-bold">Comments</h2>
-              <p className="text-sm text-text-secondary">On your posts</p>
+              <h2 className="text-3xl text-white font-bold"><UiText>{"Comments"}</UiText></h2>
+              <p className="text-sm text-text-secondary"><UiText>{"On your posts"}</UiText></p>
             </div>
           ) : (
             <div className="flex flex-col">
-              <h2 className="text-3xl text-white font-bold">Direct Messages</h2>
-              <p className="text-sm text-text-secondary">On your account</p>
+              <h2 className="text-3xl text-white font-bold"><UiText>{"Direct Messages"}</UiText></h2>
+              <p className="text-sm text-text-secondary"><UiText>{"On your account"}</UiText></p>
             </div>
           )}
           {i === 1 ? (
             <div>
               <h3 className="text-3xl font-bold">100%</h3>
               <p className="text-sm text-text-secondary">
-                {comments} out of {comments} comments replied
-              </p>
+                {comments}<UiText>{" out of "}</UiText>{comments}<UiText>{" comments replied "}</UiText></p>
             </div>
           ) : (
             <div>
               <h3 className="text-3xl font-bold">100%</h3>
               <p className="text-sm text-text-secondary">
-                {dms} out of {dms} DMs replied
-              </p>
+                {dms}<UiText>{" out of "}</UiText>{dms}<UiText>{" DMs replied "}</UiText></p>
             </div>
           )}
         </div>

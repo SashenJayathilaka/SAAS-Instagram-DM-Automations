@@ -1,0 +1,18 @@
+import {beforeEach,describe,expect,it,vi} from "vitest";
+const mocks=vi.hoisted(()=>({findMany:vi.fn(),bind:vi.fn(),intent:vi.fn()}));
+vi.mock("@/lib/prisma",()=>({client:{automation:{findMany:mocks.findMany}}}));vi.mock("@/lib/story-automation-runtime",()=>({bindNextStoryAutomation:mocks.bind}));vi.mock("@/lib/story-intent",()=>({storyIntentMatches:mocks.intent}));
+import {findAutomationForStory} from "./queries";
+const time=Date.parse("2026-10-04T12:00:00Z");
+const make=(overrides:any={})=>({id:"a",userId:"u",integrationId:"i",source:"STORY",storyTriggerType:"REPLY",triggerMode:"ANY_MESSAGE",matchingMode:"CONTAINS",storyConfig:{version:1,scope:"ALL",stories:[],intentPrompt:"request a guide",cards:[]},keywords:[],listener:{flowTriggers:null},User:{subscription:{plan:"PRO"},integrations:[{id:"i",token:"test"}]},...overrides});
+const specific=()=>make({id:"specific",storyConfig:{...make().storyConfig,scope:"SPECIFIC",stories:[{id:"story-1",mediaUrl:"https://test.example/s.jpg",mediaType:"IMAGE",timestamp:new Date(time-3600000).toISOString()}]}});
+beforeEach(()=>{vi.resetAllMocks();mocks.findMany.mockResolvedValue([]);mocks.intent.mockResolvedValue(true);});
+describe("Story routing",()=>{
+ it("scopes the query to the receiving account and connected ownership",async()=>{await findAutomationForStory("REPLY","account");const where=mocks.findMany.mock.calls[0][0].where;expect(where.integration.OR).toContainEqual({instagramId:"account"});expect(where.integration).toMatchObject({status:"CONNECTED",planLocked:false,reconnectRequired:false});expect(where.User.status.not).toBe("SUSPENDED");});
+ it("prefers the matching specific story over a broad catch-all",async()=>{mocks.findMany.mockResolvedValue([make({id:"all"}),specific()]);expect((await findAutomationForStory("REPLY","account","hello","story-1",time))?.id).toBe("specific");});
+ it("never matches a selected-story rule when the incoming story ID is missing",async()=>{mocks.findMany.mockResolvedValue([specific()]);expect(await findAutomationForStory("REPLY","account","hello",undefined,time)).toBeNull();});
+ it("applies stored keywords to replies and reactions",async()=>{mocks.findMany.mockResolvedValue([make({triggerMode:"SPECIFIC_KEYWORD",keywords:[{word:"guide"}]})]);expect(await findAutomationForStory("REPLY","account","unrelated","s",time)).toBeNull();expect(await findAutomationForStory("REACTION","account","guide","s",time)).not.toBeNull();});
+ it("separates story mentions from replies",async()=>{mocks.findMany.mockResolvedValue([make({storyConfig:{...make().storyConfig,scope:"MENTION"}})]);expect(await findAutomationForStory("REPLY","account","guide","s",time)).toBeNull();expect(await findAutomationForStory("MENTION","account","","s",time)).not.toBeNull();});
+ it("fails closed for free intent rules even if forged in storage",async()=>{mocks.findMany.mockResolvedValue([make({triggerMode:"INTENT_MATCH",User:{subscription:{plan:"FREE"},integrations:[]}})]);expect(await findAutomationForStory("REPLY","account","guide","s",time)).toBeNull();expect(mocks.intent).not.toHaveBeenCalled();});
+ it("classifies paid intent with quota ownership context",async()=>{mocks.findMany.mockResolvedValue([make({triggerMode:"INTENT_MATCH"})]);expect(await findAutomationForStory("REPLY","account","guide","s",time)).not.toBeNull();expect(mocks.intent).toHaveBeenCalledWith("request a guide","guide",{userId:"u",automationId:"a"});});
+ it("retains legacy story-type semantics",async()=>{mocks.findMany.mockResolvedValue([make({storyConfig:null,storyTriggerType:"REACTION"})]);expect(await findAutomationForStory("REPLY","account","hello")).toBeNull();expect(await findAutomationForStory("REACTION","account","❤️")).not.toBeNull();});
+});

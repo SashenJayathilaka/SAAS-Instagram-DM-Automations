@@ -1,0 +1,26 @@
+{
+  "articles": 175,
+  "images": 556,
+  "missing_inline_images": [
+    {
+      "slug": "how-to-set-up-auto-dm-on-instagram",
+      "source": "https://public-files.linktodm.com/how-to-setup-auto-dm-on-instagram/Firefly%2020260124104839%201.png"
+    },
+    {
+      "slug": "how-to-set-up-auto-dm-on-instagram",
+      "source": "https://public-files.linktodm.com/how-to-setup-auto-dm-on-instagram/linktodm%201.png"
+    },
+    {
+      "slug": "how-to-set-up-auto-dm-on-instagram",
+      "source": "https://public-files.linktodm.com/how-to-setup-auto-dm-on-instagram/Frame%2042002.png"
+    }
+  ],
+  "source_order_count": 175,
+  "min_word_count": 208,
+  "preserved_source_authors": false,
+  "product_claims": "Adapted AP3K pricing, limits, connection instructions, and unsupported source features. Replaced source certification and Facebook setup articles with Instagram API and Instagram setup guides.",
+  "author": "AP3K",
+  "branding_updated": "2026-10-02",
+  "actual_product_screenshots": 10,
+  "logo_edited_images": 11
+}

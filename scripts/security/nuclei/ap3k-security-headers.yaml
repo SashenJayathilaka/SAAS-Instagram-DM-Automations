@@ -1,0 +1,17 @@
+id: ap3k-security-headers
+info:
+  name: AP3K missing configured browser protection header
+  author: ap3k-security-review
+  severity: info
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/'
+      - '{{BaseURL}}/manychat-alternative'
+    matchers-condition: and
+    matchers:
+      - type: status
+        status: [200]
+      - type: dsl
+        dsl:
+          - '!contains(to_lower(all_headers), "strict-transport-security:") || !contains(to_lower(all_headers), "x-content-type-options: nosniff") || !contains(to_lower(all_headers), "x-frame-options: sameorigin")'

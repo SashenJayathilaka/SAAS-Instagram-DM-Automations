@@ -5,6 +5,7 @@ type Props = {};
 function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
     <div className="flex flex-col flex-1 shrink basis-0 min-w-[240px]">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         loading="lazy"
         src={icon}

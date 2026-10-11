@@ -1,3 +1,4 @@
+import { UiText } from "@/components/i18n/localized-copy";
 import Loader from "@/components/global/loader";
 import SubscriptionPlan from "@/components/global/subscription-plan";
 import { Button } from "@/components/ui/button";
@@ -84,7 +85,7 @@ function ThenActions({ id }: Props) {
           className="bg-background-80 outline-none border-none ring-0 focus:ring-0"
         />
         <Button className="bg-gradient-to-br w-full from-[#3352CC] font-medium text-white to-[#1C2D70]">
-          <Loader state={isPending}>Add listener</Loader>
+          <Loader state={isPending}><UiText>{"Add listener"}</UiText></Loader>
         </Button>
       </form>
     </TriggerButton>

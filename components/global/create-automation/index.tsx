@@ -1,41 +1,27 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useCreateAutomation } from "@/hooks/use-automation";
 import { AutomationDuoToneWhite } from "@/icons";
-import React, { useMemo } from "react";
-import { v4 } from "uuid";
-import Loader from "../loader";
+import Link from "next/link";
+import { useI18n } from "@/providers/i18n-provider";
 
-type Props = {};
+type Props = {
+  slug?: string;
+};
 
-function CreateAutomation({}: Props) {
-  const mutationId = useMemo(
-    () => v4(),
-    [
-      /* v4() */
-    ]
-  );
-  //console.log("🚀 ~ CreateAutomation ~ mutationId:", mutationId);
-
-  const { isPending, mutate } = useCreateAutomation(mutationId);
+function CreateAutomation({ slug }: Props) {
+  const { t } = useI18n();
+  const href = slug ? `/dashboard/${slug}/automation/new` : "/dashboard";
 
   return (
     <Button
-      onClick={() =>
-        mutate({
-          name: "Untitled",
-          id: mutationId,
-          createdAt: new Date(),
-          keywords: [],
-        })
-      }
-      disabled={isPending}
-      className="lg:px-10 py-6 bg-gradient-to-br hover:opacity-80 text-white rounded-full from-[#3352CC] font-medium to-[#1C2D70]"
+      asChild
+      className="ap3k-gradient-button h-10 rounded-xl px-3 text-white sm:px-4 lg:px-5"
     >
-      <Loader state={false} />
-      <AutomationDuoToneWhite />
-      <p className="lg:inline hidden">Create Automation</p>
+      <Link href={href} className="whitespace-nowrap">
+        <AutomationDuoToneWhite />
+        <p className="hidden sm:inline">{t("createAutomation")}</p>
+      </Link>
     </Button>
   );
 }

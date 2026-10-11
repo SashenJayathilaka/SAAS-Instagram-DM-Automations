@@ -29,9 +29,14 @@ yarn-error.log*
 .env*.local
 .env
 
+# one-time Clerk production migration files
+clerk-id-mapping*.json
+.clerk-migration/
+
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.superpowers/

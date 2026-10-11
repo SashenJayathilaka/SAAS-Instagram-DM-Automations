@@ -1,0 +1,678 @@
+{
+  "instagram-comment-to-dm-automation": {
+    "src": "/images/blog/covers/instagram-comment-to-dm-automation.webp",
+    "alt": "One comment. A useful next step.: COMMENT; MATCH; DELIVER. An eligible request → a configured response → the promised resource"
+  },
+  "instagram-scheduler-launch-handoff": {
+    "src": "/images/blog/covers/instagram-scheduler-launch-handoff.webp",
+    "alt": "The post is live. Is the DM ready?: PUBLISH; CONNECT; TEST. Publishing tool → launch owner → AP3K reply campaign"
+  },
+  "instagram-content-calendar-dm-offers": {
+    "src": "/images/blog/covers/instagram-content-calendar-dm-offers.webp",
+    "alt": "Give every offer a place in the calendar: TUTORIAL; FOUNDER STORY; LAUNCH CHECK. Plan the audience question, resource and destination together."
+  },
+  "instagram-scheduling-time-zone-checklist": {
+    "src": "/images/blog/covers/instagram-scheduling-time-zone-checklist.webp",
+    "alt": "One launch. Two time references.: AUDIENCE TIME; PUBLISHING TIME; VERIFY. Illustrative clocks · Verify the named zones and actual date."
+  },
+  "instagram-scheduler-approval-workflow": {
+    "src": "/images/blog/covers/instagram-scheduler-approval-workflow.webp",
+    "alt": "Approve the whole promise: CREATIVE + CAPTION; KEYWORD + MESSAGE; BUTTON + DESTINATION. A caption change must reach the trigger, DM and destination."
+  },
+  "instagram-scheduler-reel-cover-caption": {
+    "src": "/images/blog/covers/instagram-scheduler-reel-cover-caption.webp",
+    "alt": "Review more than the Reel: COVER; CAPTION; DM LINK. Cover, video, caption and resource should make the same promise."
+  },
+  "instagram-scheduled-post-reschedule-checklist": {
+    "src": "/images/blog/covers/instagram-scheduled-post-reschedule-checklist.webp",
+    "alt": "Move the date. Recheck the dependencies.: OFFER DATES; LAUNCH OWNER; LIVE POST. A new publication time needs a new launch check."
+  },
+  "instagram-evergreen-scheduling-offer-decay": {
+    "src": "/images/blog/covers/instagram-evergreen-scheduling-offer-decay.webp",
+    "alt": "Evergreen content needs a current offer: REVIEW; MAINTAIN; RETIRE. A working URL can still lead to an outdated promise."
+  },
+  "instagram-scheduler-publishing-failure-runbook": {
+    "src": "/images/blog/covers/instagram-scheduler-publishing-failure-runbook.webp",
+    "alt": "When publishing fails, pause the promise: CHECK; REPAIR; RETEST. Confirm the failed stage before changing your reply campaign."
+  },
+  "instagram-content-batching-reply-planning": {
+    "src": "/images/blog/covers/instagram-content-batching-reply-planning.webp",
+    "alt": "Batch the content. Keep each reply relevant.: POST A; POST B; POST C. Each caption needs its own matching resource and response."
+  },
+  "instagram-scheduler-vendor-test-plan": {
+    "src": "/images/blog/covers/instagram-scheduler-vendor-test-plan.webp",
+    "alt": "Test a scheduler before you commit: PUBLISHING; OPERATIONS; HANDOFF. A publishing evaluation worksheet — not an AP3K scheduler."
+  },
+  "instagram-quick-reply-price-request": {
+    "src": "/images/blog/covers/instagram-quick-reply-price-request.webp",
+    "alt": "Price replies need context: CUSTOMER; YOUR REPLY; NEXT STEP. Verify the price and inclusions before saving your reply."
+  },
+  "instagram-quick-reply-availability": {
+    "src": "/images/blog/covers/instagram-quick-reply-availability.webp",
+    "alt": "Answer availability without guessing: CUSTOMER; CHECK; YOUR REPLY. A saved reply is not a live inventory check."
+  },
+  "instagram-quick-reply-delivery-question": {
+    "src": "/images/blog/covers/instagram-quick-reply-delivery-question.webp",
+    "alt": "Make delivery answers useful: CUSTOMER; CONTEXT; YOUR REPLY. Use the relevant destination and verified delivery policy."
+  },
+  "instagram-quick-reply-booking-question": {
+    "src": "/images/blog/covers/instagram-quick-reply-booking-question.webp",
+    "alt": "One booking question. One next step.: CUSTOMER; YOUR REPLY; BOOKING PAGE. A booking link is not a confirmed appointment."
+  },
+  "instagram-quick-reply-complaint-acknowledgment": {
+    "src": "/images/blog/covers/instagram-quick-reply-complaint-acknowledgment.webp",
+    "alt": "Write a Complaint Acknowledgment That Does Not Sound Dismissive: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-quick-reply-partnership-request": {
+    "src": "/images/blog/covers/instagram-quick-reply-partnership-request.webp",
+    "alt": "Qualify Instagram Partnership Requests Politely: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-quick-reply-voice-guidelines": {
+    "src": "/images/blog/covers/instagram-quick-reply-voice-guidelines.webp",
+    "alt": "Make Saved Instagram Replies Sound Like Your Brand: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-quick-reply-placeholder-check": {
+    "src": "/images/blog/covers/instagram-quick-reply-placeholder-check.webp",
+    "alt": "Prevent Placeholder Mistakes in Saved Instagram Replies: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-quick-reply-multilingual-review": {
+    "src": "/images/blog/covers/instagram-quick-reply-multilingual-review.webp",
+    "alt": "Review Multilingual Quick Replies for Meaning: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-quick-reply-library-ownership": {
+    "src": "/images/blog/covers/instagram-quick-reply-library-ownership.webp",
+    "alt": "Keep a Team's Quick Reply Library Accurate: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-autoresponder-response-boundaries": {
+    "src": "/images/blog/covers/instagram-autoresponder-response-boundaries.webp",
+    "alt": "Define What Your Instagram Autoresponder Should Not Answer: Classify question risk; Approve routine facts; Route exceptions. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-autoresponder-out-of-hours": {
+    "src": "/images/blog/covers/instagram-autoresponder-out-of-hours.webp",
+    "alt": "Set Honest Expectations for Out-of-Hours Instagram Replies: Explain the reply; Offer self-service; Set review times. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-autoresponder-knowledge-pruning": {
+    "src": "/images/blog/covers/instagram-autoresponder-knowledge-pruning.webp",
+    "alt": "Remove Conflicting Facts From Your Instagram AI Knowledge: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-autoresponder-confidence-fallback": {
+    "src": "/images/blog/covers/instagram-autoresponder-confidence-fallback.webp",
+    "alt": "Write a Useful Fallback for Unanswered Instagram Questions: Know the boundaries; Name a support route; Test unknown questions. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-autoresponder-answer-evaluation": {
+    "src": "/images/blog/covers/instagram-autoresponder-answer-evaluation.webp",
+    "alt": "Evaluate Instagram AI Answers Before Enabling Them Widely: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-autoresponder-repeated-question-diagnosis": {
+    "src": "/images/blog/covers/instagram-autoresponder-repeated-question-diagnosis.webp",
+    "alt": "Why People Repeat Questions After an Automated Reply: Check the conversation; Compare the question; Revise or escalate. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-autoresponder-tone-by-intent": {
+    "src": "/images/blog/covers/instagram-autoresponder-tone-by-intent.webp",
+    "alt": "Choose Autoresponder Tone by Customer Intent: Identify the intent; Write a clear answer; Remove sales pressure. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-autoresponder-human-review-sampling": {
+    "src": "/images/blog/covers/instagram-autoresponder-human-review-sampling.webp",
+    "alt": "Create a Human Review Routine for Automated Instagram Replies: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-autoresponder-launch-scope": {
+    "src": "/images/blog/covers/instagram-autoresponder-launch-scope.webp",
+    "alt": "Launch an Instagram Autoresponder With a Narrow Scope: Choose one question; Prepare a fallback; Test before expanding. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-autoresponder-product-change-release": {
+    "src": "/images/blog/covers/instagram-autoresponder-product-change-release.webp",
+    "alt": "Update Automated Replies When Your Product Changes: List changed facts; Update instructions; Retest existing flows. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-lead-ad-form-vs-message-goal": {
+    "src": "/images/blog/covers/instagram-lead-ad-form-vs-message-goal.webp",
+    "alt": "Choose Between an Instagram Lead Form and a Conversation: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-lead-ad-question-design": {
+    "src": "/images/blog/covers/instagram-lead-ad-question-design.webp",
+    "alt": "Write Lead-Ad Questions Your Team Will Actually Use: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-lead-ad-thank-you-page": {
+    "src": "/images/blog/covers/instagram-lead-ad-thank-you-page.webp",
+    "alt": "Make the Lead-Ad Confirmation Explain What Happens Next: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-lead-ad-sales-handoff": {
+    "src": "/images/blog/covers/instagram-lead-ad-sales-handoff.webp",
+    "alt": "Build a Reliable Handoff From Instagram Leads to Sales: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-lead-ad-quality-scorecard": {
+    "src": "/images/blog/covers/instagram-lead-ad-quality-scorecard.webp",
+    "alt": "Measure Instagram Lead Quality Beyond Cost per Lead: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-lead-ad-organic-offer-consistency": {
+    "src": "/images/blog/covers/instagram-lead-ad-organic-offer-consistency.webp",
+    "alt": "Keep Paid and Organic Instagram Offers Consistent: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-lead-ad-budget-readiness": {
+    "src": "/images/blog/covers/instagram-lead-ad-budget-readiness.webp",
+    "alt": "Check Follow-Up Capacity Before Scaling Instagram Lead Ads: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-lead-ad-creative-prequalification": {
+    "src": "/images/blog/covers/instagram-lead-ad-creative-prequalification.webp",
+    "alt": "Use Instagram Ad Creative to Set Lead Expectations: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-lead-ad-duplicate-source-records": {
+    "src": "/images/blog/covers/instagram-lead-ad-duplicate-source-records.webp",
+    "alt": "Avoid Double-Counting Instagram Leads Across Channels: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-lead-ad-experiment-brief": {
+    "src": "/images/blog/covers/instagram-lead-ad-experiment-brief.webp",
+    "alt": "Design a Lead-Ad Experiment Your Team Can Interpret: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-leads-first-question": {
+    "src": "/images/blog/covers/instagram-leads-first-question.webp",
+    "alt": "Ask One Useful Question After an Instagram Inquiry: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-lead-magnet-intent-ladder": {
+    "src": "/images/blog/covers/instagram-lead-magnet-intent-ladder.webp",
+    "alt": "Match Instagram Lead Magnets to Buying Readiness: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-lead-qualification-service-area": {
+    "src": "/images/blog/covers/instagram-lead-qualification-service-area.webp",
+    "alt": "Qualify Service-Area Inquiries Without Wasting Time: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-lead-qualification-budget-context": {
+    "src": "/images/blog/covers/instagram-lead-qualification-budget-context.webp",
+    "alt": "Discuss Budget in Instagram Conversations Without Pressure: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-leads-contact-vs-opportunity": {
+    "src": "/images/blog/covers/instagram-leads-contact-vs-opportunity.webp",
+    "alt": "Separate an Instagram Contact From a Sales Opportunity: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-leads-self-selection-page": {
+    "src": "/images/blog/covers/instagram-leads-self-selection-page.webp",
+    "alt": "Build a Destination That Helps Instagram Leads Self-Select: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-leads-consultation-preparation": {
+    "src": "/images/blog/covers/instagram-leads-consultation-preparation.webp",
+    "alt": "Prepare Instagram Leads for a Better Consultation: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-leads-objection-notes": {
+    "src": "/images/blog/covers/instagram-leads-objection-notes.webp",
+    "alt": "Turn Repeated Instagram Objections Into Better Content: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-leads-no-response-interpretation": {
+    "src": "/images/blog/covers/instagram-leads-no-response-interpretation.webp",
+    "alt": "Interpret Silence After an Instagram Resource Request: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-leads-offer-retirement": {
+    "src": "/images/blog/covers/instagram-leads-offer-retirement.webp",
+    "alt": "Retire an Instagram Lead Offer Without Breaking Its Promise: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-event-dictionary": {
+    "src": "/images/blog/covers/instagram-automation-event-dictionary.webp",
+    "alt": "Define Instagram Automation Metrics Before Reporting Them: List the metrics; Define each count; Identify data sources. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-cohort-reporting": {
+    "src": "/images/blog/covers/instagram-automation-cohort-reporting.webp",
+    "alt": "Compare Instagram Campaigns With Consistent Cohorts: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-dm-link-attribution-naming": {
+    "src": "/images/blog/covers/instagram-dm-link-attribution-naming.webp",
+    "alt": "Create Consistent Campaign Names for Instagram DM Links: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-delivery-vs-business-report": {
+    "src": "/images/blog/covers/instagram-automation-delivery-vs-business-report.webp",
+    "alt": "Separate Delivery Health From Business Performance: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-small-sample-results": {
+    "src": "/images/blog/covers/instagram-automation-small-sample-results.webp",
+    "alt": "Read Small Instagram Campaign Results Without Overclaiming: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-reply-cost-model": {
+    "src": "/images/blog/covers/instagram-automation-reply-cost-model.webp",
+    "alt": "Estimate Automated Action Usage Before a Campaign: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-dashboard-date-ranges": {
+    "src": "/images/blog/covers/instagram-automation-dashboard-date-ranges.webp",
+    "alt": "Avoid Date-Range Errors in Instagram Automation Reports: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-test-traffic-labeling": {
+    "src": "/images/blog/covers/instagram-automation-test-traffic-labeling.webp",
+    "alt": "Keep Internal Tests Out of Campaign Performance Claims: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-lead-source-reconciliation": {
+    "src": "/images/blog/covers/instagram-lead-source-reconciliation.webp",
+    "alt": "Reconcile Instagram Leads With Booking Records: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-weekly-decision-report": {
+    "src": "/images/blog/covers/instagram-automation-weekly-decision-report.webp",
+    "alt": "Write a Weekly Instagram Report That Leads to Decisions: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-tool-requirements-sheet": {
+    "src": "/images/blog/covers/instagram-automation-tool-requirements-sheet.webp",
+    "alt": "Write Requirements Before Choosing an Instagram Automation Tool: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-tool-permission-review": {
+    "src": "/images/blog/covers/instagram-automation-tool-permission-review.webp",
+    "alt": "Review Account Access Before Connecting an Automation Tool: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-tool-account-separation": {
+    "src": "/images/blog/covers/instagram-automation-tool-account-separation.webp",
+    "alt": "Evaluate Multi-Account Separation in an Instagram Tool: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-tool-delivery-observability": {
+    "src": "/images/blog/covers/instagram-automation-tool-delivery-observability.webp",
+    "alt": "Check Whether an Instagram Tool Explains Failed Delivery: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-tool-ai-vs-rules": {
+    "src": "/images/blog/covers/instagram-automation-tool-ai-vs-rules.webp",
+    "alt": "Decide When You Need AI and When a Saved Rule Is Enough: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-tool-pricing-workload": {
+    "src": "/images/blog/covers/instagram-automation-tool-pricing-workload.webp",
+    "alt": "Compare Automation Pricing Using Your Actual Workload: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-tool-exit-checklist": {
+    "src": "/images/blog/covers/instagram-automation-tool-exit-checklist.webp",
+    "alt": "Check Your Exit Options Before Adopting an Automation Tool: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-tool-support-evaluation": {
+    "src": "/images/blog/covers/instagram-automation-tool-support-evaluation.webp",
+    "alt": "Evaluate Support Using a Real Automation Question: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-tool-accessibility-review": {
+    "src": "/images/blog/covers/instagram-automation-tool-accessibility-review.webp",
+    "alt": "Check the Accessibility of an Instagram Automation Workflow: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-tool-pilot-scorecard": {
+    "src": "/images/blog/covers/instagram-automation-tool-pilot-scorecard.webp",
+    "alt": "Run a Fair Pilot Before Switching Instagram Tools: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "manychat-alternative-migration-inventory": {
+    "src": "/images/blog/covers/manychat-alternative-migration-inventory.webp",
+    "alt": "Inventory Your Instagram Workflows Before Leaving ManyChat: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "manychat-alternative-cutover-plan": {
+    "src": "/images/blog/covers/manychat-alternative-cutover-plan.webp",
+    "alt": "Plan an Instagram Automation Cutover Without Duplicate Replies: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "manychat-alternative-message-copy-audit": {
+    "src": "/images/blog/covers/manychat-alternative-message-copy-audit.webp",
+    "alt": "Audit Message Copy When Moving to a ManyChat Alternative: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "manychat-alternative-trigger-mapping": {
+    "src": "/images/blog/covers/manychat-alternative-trigger-mapping.webp",
+    "alt": "Map Trigger Meaning When Rebuilding Instagram Automations: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "manychat-alternative-history-preservation": {
+    "src": "/images/blog/covers/manychat-alternative-history-preservation.webp",
+    "alt": "Preserve Useful Context During an Instagram Tool Migration: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "manychat-alternative-comparison-worksheet": {
+    "src": "/images/blog/covers/manychat-alternative-comparison-worksheet.webp",
+    "alt": "Compare ManyChat Alternatives by Workflow Fit: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "manychat-alternative-pilot-acceptance": {
+    "src": "/images/blog/covers/manychat-alternative-pilot-acceptance.webp",
+    "alt": "Define Acceptance Criteria for a ManyChat Alternative Pilot: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "manychat-alternative-rollback-checklist": {
+    "src": "/images/blog/covers/manychat-alternative-rollback-checklist.webp",
+    "alt": "Prepare a Rollback Before Replacing an Instagram Automation: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "manychat-alternative-team-training": {
+    "src": "/images/blog/covers/manychat-alternative-team-training.webp",
+    "alt": "Train Your Team on the New Instagram Workflow: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "manychat-alternative-post-migration-review": {
+    "src": "/images/blog/covers/manychat-alternative-post-migration-review.webp",
+    "alt": "Review the First Week After an Instagram Tool Migration: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-dm-automation-wedding-vendors": {
+    "src": "/images/blog/covers/instagram-dm-automation-wedding-vendors.webp",
+    "alt": "Route Wedding Inquiries From Instagram to a Useful Brief: Offer a planning guide; Share the inquiry page; Verify the event. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-dm-automation-home-renovation": {
+    "src": "/images/blog/covers/instagram-dm-automation-home-renovation.webp",
+    "alt": "Turn Renovation Interest Into a Clear Project Inquiry: Name the resource; Deliver the portfolio; Collect project scope. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-dm-automation-language-schools": {
+    "src": "/images/blog/covers/instagram-dm-automation-language-schools.webp",
+    "alt": "Help Instagram Learners Choose the Right Course Information: Offer a sample lesson; Share course details; Route open questions. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-dm-automation-b2b-consulting": {
+    "src": "/images/blog/covers/instagram-dm-automation-b2b-consulting.webp",
+    "alt": "Qualify B2B Consulting Interest Without a Long DM Interrogation: Offer a framework; Explain the problem; Invite a consultation. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-dm-automation-workshop-hosts": {
+    "src": "/images/blog/covers/instagram-dm-automation-workshop-hosts.webp",
+    "alt": "Deliver Workshop Details Without Creating Booking Confusion: Maintain event details; Share registration; Recheck capacity. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-dm-automation-membership-communities": {
+    "src": "/images/blog/covers/instagram-dm-automation-membership-communities.webp",
+    "alt": "Explain a Membership Before Asking Instagram Leads to Join: Explain the community; Deliver an overview; Offer membership info. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-dm-automation-digital-template-shops": {
+    "src": "/images/blog/covers/instagram-dm-automation-digital-template-shops.webp",
+    "alt": "Deliver Template Previews That Match the Product: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-dm-automation-fitness-studios": {
+    "src": "/images/blog/covers/instagram-dm-automation-fitness-studios.webp",
+    "alt": "Route Fitness Studio Inquiries to Accurate Class Information: Explain the class; Share the schedule; Route suitability. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-dm-automation-local-retail": {
+    "src": "/images/blog/covers/instagram-dm-automation-local-retail.webp",
+    "alt": "Answer Local Retail Questions With a Maintained Destination: Name the information; Share the store page; Check availability. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-dm-automation-professional-portfolios": {
+    "src": "/images/blog/covers/instagram-dm-automation-professional-portfolios.webp",
+    "alt": "Use Instagram DMs to Share a Relevant Portfolio: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-campaign-naming": {
+    "src": "/images/blog/covers/instagram-automation-campaign-naming.webp",
+    "alt": "Name Instagram Automations So the Team Can Find Them: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-change-log": {
+    "src": "/images/blog/covers/instagram-automation-change-log.webp",
+    "alt": "Keep a Practical Change Log for Instagram Campaigns: Describe the change; Record the test; Review the history. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-destination-owner": {
+    "src": "/images/blog/covers/instagram-automation-destination-owner.webp",
+    "alt": "Assign an Owner to Every Instagram DM Destination: List destinations; Assign each owner; Coordinate changes. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-incident-triage": {
+    "src": "/images/blog/covers/instagram-automation-incident-triage.webp",
+    "alt": "Triage an Instagram Automation Incident by Failed Stage: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-pause-resume-procedure": {
+    "src": "/images/blog/covers/instagram-automation-pause-resume-procedure.webp",
+    "alt": "Pause and Resume an Instagram Campaign Deliberately: Record the pause; Correct the issue; Resume and test. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-multi-account-launch-check": {
+    "src": "/images/blog/covers/instagram-automation-multi-account-launch-check.webp",
+    "alt": "Check the Active Instagram Account Before Every Launch: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-team-handoff-checklist": {
+    "src": "/images/blog/covers/instagram-automation-team-handoff-checklist.webp",
+    "alt": "Hand Over an Instagram Campaign With Enough Context: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-resource-versioning": {
+    "src": "/images/blog/covers/instagram-automation-resource-versioning.webp",
+    "alt": "Version Resources Without Breaking Instagram Campaigns: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-launch-retrospective": {
+    "src": "/images/blog/covers/instagram-automation-launch-retrospective.webp",
+    "alt": "Run a Useful Retrospective After an Instagram Campaign: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-sunset-unused-campaigns": {
+    "src": "/images/blog/covers/instagram-automation-sunset-unused-campaigns.webp",
+    "alt": "Clean Up Unused Instagram Automations Without Losing Context: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-one-post-vs-all-posts": {
+    "src": "/images/blog/covers/comment-to-dm-one-post-vs-all-posts.webp",
+    "alt": "Comment-to-DM Scope: One Post or Every Post?: Use one post for a specific promise; Use Any post for a genuinely shared destination; Run a scope comparison. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "reels-comment-to-dm-cta-placement": {
+    "src": "/images/blog/covers/reels-comment-to-dm-cta-placement.webp",
+    "alt": "Where to Put a Comment-to-DM CTA in Instagram Reels: Show the resource before asking for a comment; Keep the keyword identical across surfaces; Separate the media check from the message check. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "carousel-comment-to-dm-resource-delivery": {
+    "src": "/images/blog/covers/carousel-comment-to-dm-resource-delivery.webp",
+    "alt": "Build a Carousel That Delivers a Resource by Instagram DM: Give the carousel a complete mini-lesson; Make the last slide self-contained; Build the corresponding delivery path. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-keyword-test-cases": {
+    "src": "/images/blog/covers/comment-to-dm-keyword-test-cases.webp",
+    "alt": "Test Instagram Comment Keywords Before You Launch: Write the expected results first; Use words with a clear boundary of meaning; Execute tests without changing several variables. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-keyword-collisions": {
+    "src": "/images/blog/covers/comment-to-dm-keyword-collisions.webp",
+    "alt": "Avoid Keyword Collisions Across Instagram DM Campaigns: Inventory active rules; Separate the offers; Retire outdated rules. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-multilingual-keywords": {
+    "src": "/images/blog/covers/comment-to-dm-multilingual-keywords.webp",
+    "alt": "Plan Comment Keywords for a Multilingual Instagram Audience: Choose natural words; Test expected forms; Separate the journeys. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-launch-test-plan": {
+    "src": "/images/blog/covers/comment-to-dm-launch-test-plan.webp",
+    "alt": "A Launch Test Plan for Instagram Comment-to-DM Automation: Prepare a small test record; Check both positive and negative cases; Complete optional steps and the final destination. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "collaboration-post-comment-to-dm-checklist": {
+    "src": "/images/blog/covers/collaboration-post-comment-to-dm-checklist.webp",
+    "alt": "Comment-to-DM Automation on Instagram Collaboration Posts: Identify the account that owns the setup; Treat support as something to verify; Agree on the public promise before publishing. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-old-posts": {
+    "src": "/images/blog/covers/comment-to-dm-old-posts.webp",
+    "alt": "Using Comment-to-DM Automation on Older Instagram Posts: Audit the old promise; Test a new comment; Refresh the resource. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-caption-templates": {
+    "src": "/images/blog/covers/comment-to-dm-caption-templates.webp",
+    "alt": "Instagram Comment-to-DM Caption Templates That Set Clear Expectations: Lead with a concrete benefit; Explain conditions without hiding them; Match the configured response to the wording. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-public-reply-templates": {
+    "src": "/images/blog/covers/comment-to-dm-public-reply-templates.webp",
+    "alt": "Public Reply Templates for Instagram Comment-to-DM Campaigns: Keep the acknowledgement useful and modest; Make variations consistent in meaning; Do not force a resource reply onto every comment. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-opening-message-decision": {
+    "src": "/images/blog/covers/comment-to-dm-opening-message-decision.webp",
+    "alt": "Do You Need an Opening DM Before Sending the Link?: Start with the shortest understandable journey; Use an honest continuation label; Inspect the sequence rather than each message alone. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-final-message-templates": {
+    "src": "/images/blog/covers/comment-to-dm-final-message-templates.webp",
+    "alt": "Final DM Templates for Instagram Resource Requests: Name the requested item immediately; Keep any second sentence relevant; Use examples as copy, not as invented results. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-button-labels": {
+    "src": "/images/blog/covers/comment-to-dm-button-labels.webp",
+    "alt": "Write Clear Link Buttons for Instagram Automated DMs: Describe the immediate destination; Make the message and label work as a pair; Check length and mixed-language text. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-three-link-buttons": {
+    "src": "/images/blog/covers/comment-to-dm-three-link-buttons.webp",
+    "alt": "When to Use One, Two, or Three Links in an Instagram DM: One resource; Two choices; Three destinations. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-follow-request-friction": {
+    "src": "/images/blog/covers/comment-to-dm-follow-request-friction.webp",
+    "alt": "Should You Add a Follow Request Before the Instagram DM Link?: Disclose the condition; Assess the extra step; Test follower states. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-accessible-messages": {
+    "src": "/images/blog/covers/comment-to-dm-accessible-messages.webp",
+    "alt": "Make Instagram Automated DMs Easier to Read and Use: Use ordinary words; Label links clearly; Inspect the resource. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-bilingual-campaigns": {
+    "src": "/images/blog/covers/comment-to-dm-bilingual-campaigns.webp",
+    "alt": "Design a Bilingual Instagram Comment-to-DM Campaign: Separate posts when the offers need different…; Use explicit language selection for a shared post; Translate the task rather than individual words. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-human-handoff": {
+    "src": "/images/blog/covers/comment-to-dm-human-handoff.webp",
+    "alt": "Hand Off Instagram Automated Conversations to a Human: Define the boundary; Explain the next step; Read the conversation. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-pdf-delivery": {
+    "src": "/images/blog/covers/comment-to-dm-pdf-delivery.webp",
+    "alt": "Send a PDF Guide After an Instagram Comment: Choose a stable access page or direct file; Make the request and delivery specific; Test the document as a reader. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-checklist-delivery": {
+    "src": "/images/blog/covers/comment-to-dm-checklist-delivery.webp",
+    "alt": "Deliver an Instagram Checklist People Can Actually Use: Choose a task with a visible finish; Choose a usable format; Connect the post to the first checklist item. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-webinar-registration": {
+    "src": "/images/blog/covers/comment-to-dm-webinar-registration.webp",
+    "alt": "Use Instagram Comments to Share a Webinar Registration Link: Put the essential event details on the destination; Use a keyword tied to the session; Test beyond the first link. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-course-preview": {
+    "src": "/images/blog/covers/comment-to-dm-course-preview.webp",
+    "alt": "Share a Course Preview Through Instagram Comment Automation: Choose a preview that demonstrates the teaching; State exactly what the comment requests; Keep enrollment separate from resource delivery. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-coaching-bookings": {
+    "src": "/images/blog/covers/comment-to-dm-coaching-bookings.webp",
+    "alt": "Turn an Instagram Comment Into a Clear Booking Journey: Describe the session; Make a precise offer; Confirm in booking. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-product-pages": {
+    "src": "/images/blog/covers/comment-to-dm-product-pages.webp",
+    "alt": "Send the Right Product Page From an Instagram Comment: Identify the product; Write a clear request; Test product options. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-discount-codes": {
+    "src": "/images/blog/covers/comment-to-dm-discount-codes.webp",
+    "alt": "Deliver a Discount Code by Instagram DM Without Confusing Buyers: Define the promotion; Disclose conditions; Test the code. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-restock-requests": {
+    "src": "/images/blog/covers/comment-to-dm-restock-requests.webp",
+    "alt": "Use Instagram Comments to Collect Restock Requests: State current stock; Explain the signup; Test confirmation. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-restaurant-menu": {
+    "src": "/images/blog/covers/comment-to-dm-restaurant-menu.webp",
+    "alt": "Send a Restaurant Menu Through Instagram Comment Automation: Choose the right menu; Name the request; Check readability. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-property-brochure": {
+    "src": "/images/blog/covers/comment-to-dm-property-brochure.webp",
+    "alt": "Share a Property Brochure After an Instagram Comment: Identify the listing; Deliver the brochure; Separate viewings. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-saas-demo": {
+    "src": "/images/blog/covers/comment-to-dm-saas-demo.webp",
+    "alt": "Send a SaaS Demo From an Instagram Comment: Name the demo type; Show a real task; Test on mobile. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-agency-account-management": {
+    "src": "/images/blog/covers/comment-to-dm-agency-account-management.webp",
+    "alt": "Manage Comment-to-DM Campaigns Across Agency Clients: Check the account; Record the campaign; Test in context. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-affiliate-resource-links": {
+    "src": "/images/blog/covers/comment-to-dm-affiliate-resource-links.webp",
+    "alt": "Share Affiliate Product Resources Through Instagram DMs: Make the resource more useful than a list of links; Keep the commercial relationship visible; Test the complete redirect chain. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-job-application-links": {
+    "src": "/images/blog/covers/comment-to-dm-job-application-links.webp",
+    "alt": "Share a Job Application Link Through Instagram Comments: Publish the vacancy; Use a simple keyword; Link to recruitment. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-event-registration": {
+    "src": "/images/blog/covers/comment-to-dm-event-registration.webp",
+    "alt": "Create an Instagram Comment-to-DM Event Registration Journey: Maintain event details; Describe registration; Test the form. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-nonprofit-resources": {
+    "src": "/images/blog/covers/comment-to-dm-nonprofit-resources.webp",
+    "alt": "Deliver Nonprofit Resources Through Instagram Comment Requests: Choose information suitable for a public request; Keep scope and availability accurate; Provide a human and urgent-support route. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-music-release": {
+    "src": "/images/blog/covers/comment-to-dm-music-release.webp",
+    "alt": "Share a Music Release Link After an Instagram Comment: Identify the track; Offer listening links; Test the handoff. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-commission-enquiries": {
+    "src": "/images/blog/covers/comment-to-dm-commission-enquiries.webp",
+    "alt": "Use Instagram Comment Automation for Creative Commission Enquiries: Explain commissions; Match the service; Collect the brief. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-survey-feedback": {
+    "src": "/images/blog/covers/comment-to-dm-survey-feedback.webp",
+    "alt": "Invite Instagram Commenters to a Useful Feedback Survey: Define the decision; Explain participation; Test the survey. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-product-launch": {
+    "src": "/images/blog/covers/comment-to-dm-product-launch.webp",
+    "alt": "Plan an Instagram Comment-to-DM Campaign for Launch Day: Freeze the offer before final testing; Audit every campaign that can match launch comments; Run a complete customer test. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-public-reply-no-dm": {
+    "src": "/images/blog/covers/comment-to-dm-public-reply-no-dm.webp",
+    "alt": "Instagram Automation Replies Publicly but Sends No DM: What to Check: Check enabled actions; Inspect waiting steps; Review permissions. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-message-requests": {
+    "src": "/images/blog/covers/comment-to-dm-message-requests.webp",
+    "alt": "A Comment-to-DM Message Is Missing: Check Instagram Message Requests: Locate the missing step; Compare activity; Set expectations. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-wrong-link": {
+    "src": "/images/blog/covers/comment-to-dm-wrong-link.webp",
+    "alt": "Fix an Instagram Automated DM That Opens the Wrong Link: Identify the campaign; Inspect the saved URL; Test as a recipient. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-keyword-not-triggering": {
+    "src": "/images/blog/covers/comment-to-dm-keyword-not-triggering.webp",
+    "alt": "An Instagram Comment Keyword Is Not Triggering: A Focused Checklist: Confirm the rule can hear this post; Compare the displayed and configured keyword; Use one controlled comment and inspect activity. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-duplicate-messages": {
+    "src": "/images/blog/covers/comment-to-dm-duplicate-messages.webp",
+    "alt": "Why an Instagram Comment May Lead to Duplicate-Looking DMs: Read the timestamps; Audit overlapping rules; Simplify the test. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-missing-instagram-post": {
+    "src": "/images/blog/covers/comment-to-dm-missing-instagram-post.webp",
+    "alt": "Your Instagram Post Is Missing From the Automation Builder: Confirm the account and publication state; Refresh the available media and inspect more results; Check connection readiness before reconnecting. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-utm-tracking": {
+    "src": "/images/blog/covers/comment-to-dm-utm-tracking.webp",
+    "alt": "Track Instagram Comment-to-DM Links With UTM Parameters: Name links consistently; Exclude personal data; Test attribution. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-conversion-funnel": {
+    "src": "/images/blog/covers/comment-to-dm-conversion-funnel.webp",
+    "alt": "Measure the Instagram Comment-to-DM Funnel Without Inflating Results: Name the funnel stages; Choose a counting unit; Check the calculations. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-ab-testing": {
+    "src": "/images/blog/covers/comment-to-dm-ab-testing.webp",
+    "alt": "Test Instagram Comment-to-DM Messages Without Fooling Yourself: Choose one hypothesis; Keep comparisons fair; Check delivery first. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "comment-to-dm-weekly-maintenance": {
+    "src": "/images/blog/covers/comment-to-dm-weekly-maintenance.webp",
+    "alt": "A Weekly Maintenance Checklist for Instagram Comment Automations: Check account readiness; Open active links; Review exceptions. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "automatic-instagram-links-and-replies": {
+    "src": "/images/blog/covers/automatic-instagram-links-and-replies.webp",
+    "alt": "How to Send Automatic Links and Replies on Instagram: Choose the resource; Write the response; Test a real request. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "manage-instagram-dms-and-comments-faster": {
+    "src": "/images/blog/covers/manage-instagram-dms-and-comments-faster.webp",
+    "alt": "How to Manage Instagram DMs and Comments Faster: Group repeat questions; Respond to incoming DMs; Avoid duplicate flows. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-dm-sales-funnel": {
+    "src": "/images/blog/covers/instagram-dm-sales-funnel.webp",
+    "alt": "Build an Instagram DM Sales Funnel That Helps Buyers: Match the offer; Build the DM sequence; Answer the buyer. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "ai-instagram-dm-autoresponder": {
+    "src": "/images/blog/covers/ai-instagram-dm-autoresponder.webp",
+    "alt": "Build an AI Instagram DM Autoresponder With Reliable Answers: Add approved facts; Test difficult questions; Enable selected flows. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "compare-instagram-dm-automation-tools": {
+    "src": "/images/blog/covers/compare-instagram-dm-automation-tools.webp",
+    "alt": "Compare the workflow, not the promises: TRIGGERS; ACTIONS; LIMITS. Verify current capabilities and limits before choosing a tool."
+  },
+  "is-instagram-dm-automation-safe": {
+    "src": "/images/blog/covers/is-instagram-dm-automation-safe.webp",
+    "alt": "Is Instagram DM Automation Safe? API Rules and Risks: Review authorization; Respect message rules; Assess risks carefully. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "automate-instagram-dms-from-comments": {
+    "src": "/images/blog/covers/automate-instagram-dms-from-comments.webp",
+    "alt": "How to Automate Instagram DMs From Comments: Start with a comment; Choose the trigger; Configure the action. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-comment-automation-keyword-vs-any-comment": {
+    "src": "/images/blog/covers/instagram-comment-automation-keyword-vs-any-comment.webp",
+    "alt": "Instagram Comment Automation: Keyword vs Any Comment: Use a keyword when intent matters; Use Any Comment when every response deserves…; Avoid overlapping campaigns. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-comment-reply-vs-dm": {
+    "src": "/images/blog/covers/instagram-comment-reply-vs-dm.webp",
+    "alt": "Instagram Comment Reply vs DM: Which Should You Automate?: What a Comment reply is; What a DM is; When to use both. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "turn-instagram-comments-into-leads": {
+    "src": "/images/blog/covers/turn-instagram-comments-into-leads.webp",
+    "alt": "How to Turn Instagram Comments Into Leads: Offer a useful resource; Make the CTA specific; Fulfill the promise. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-automation-business-creator-accounts": {
+    "src": "/images/blog/covers/instagram-automation-business-creator-accounts.webp",
+    "alt": "Instagram Automation for Business and Creator Accounts: Use a professional account; Authorize through Instagram; Choose real content. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "how-ap3k-works-step-by-step": {
+    "src": "/images/blog/covers/how-ap3k-works-step-by-step.webp",
+    "alt": "How AP3K Works: A Step-by-Step Instagram Automation Tutorial: Select the post; Choose the trigger; Write the response. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "create-instagram-keyword-campaign": {
+    "src": "/images/blog/covers/create-instagram-keyword-campaign.webp",
+    "alt": "How to Create an Instagram Keyword Automation Campaign: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "automate-every-instagram-comment": {
+    "src": "/images/blog/covers/automate-every-instagram-comment.webp",
+    "alt": "How to Automate Every Instagram Comment With Any Comment: Choose a specific post; Use Any Comment; Pick the response. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "send-link-instagram-dm-after-comment": {
+    "src": "/images/blog/covers/send-link-instagram-dm-after-comment.webp",
+    "alt": "How to Send a Link in an Instagram DM After a Comment: Choose the trigger; Write the promised DM; Label the button. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-comment-automation-not-working": {
+    "src": "/images/blog/covers/instagram-comment-automation-not-working.webp",
+    "alt": "Instagram Comment Automation Not Working? A Step-by-Step Checklist: Confirm the Instagram connection; Check the campaign status and post scope; Reproduce the trigger exactly. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-post-scheduler-vs-instagram-automation": {
+    "src": "/images/blog/covers/instagram-post-scheduler-vs-instagram-automation.webp",
+    "alt": "Publishing and responding are different jobs: SCHEDULER; LIVE POST; DM AUTOMATION. AP3K handles supported interactions after publication."
+  },
+  "instagram-auto-responder-quick-reply-guide": {
+    "src": "/images/blog/covers/instagram-auto-responder-quick-reply-guide.webp",
+    "alt": "Instagram Auto Responder and Quick Reply Messages: A Practical Guide: Quick reply, saved reply and auto responder; Write a useful quick reply message for Instagram; Choose the right trigger. Article workflow · Read the guide for the full steps and limitations."
+  },
+  "instagram-lead-generation-comments-dms-vs-lead-ads": {
+    "src": "/images/blog/covers/instagram-lead-generation-comments-dms-vs-lead-ads.webp",
+    "alt": "Instagram Lead Generation: Comments and DMs vs Lead Ads: PREPARE; CONFIGURE; VERIFY. Article workflow · Read the guide for the full steps and limitations."
+  }
+}

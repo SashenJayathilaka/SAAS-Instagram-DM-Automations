@@ -1,0 +1,7 @@
+# Editorial archive and reading layout
+Targets: app/(website)/blog/page.tsx, app/(website)/blog/[slug]/page.tsx, components/website/blog-editorial.module.css, lib/blog-archive.ts.
+Static layout, GET search form, link pagination, anchor contents. Preserve normal scrolling and reduced motion. No autoplay.
+Archive: max1120, gutter20 mobile/32 desktop; hero top64/bottom48, title clamp32–48. Featured grid2 columns gap32; latest3 gap28. Single-column <=600, two <=960. Cover16:9 radius16. Category small violet uppercase, headline22 featured/19 latest, byline12. Search full width max560, type16, submit44px. Page navigation max7 tokens with ellipses and accessible current/previous/next labels.
+Article: centered max900 header, original title/description/metadata, wide image. Reading body max740 with 240px sticky contents sidebar at >=1100. Body17px/1.85, section32px headings, sidebar13px. Mobile contents disclosure full-width44px summary. Related3 cards. Existing real screenshots stay in tutorial bodies; no fake product screenshots. Remove generic all-guides index injected into every English post.
+Appearance: existing --paper/--ink/--muted/--accent theme tokens; ensure visible focus and contrast in both themes; no global style changes outside blog.
+Assets: original cover design per topic. Generated artwork only where available; article-specific diagrams remain distinct and accurately labeled.

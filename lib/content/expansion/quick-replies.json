@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "instagram-quick-reply-price-request",
+    "title": "Write an Instagram Quick Reply for a Price Request",
+    "intro": "A person asking the price is trying to decide whether to continue. A vague reply that forces another conversation adds work for both sides. Give the most useful pricing information you can support, then explain what changes the final quote.",
+    "decision": "Use a fixed price when the offer is genuinely fixed. For custom work, provide a range only if it is current and explain which inputs are needed. Never let a saved response invent a quote or promise an unavailable discount.",
+    "steps": [
+      "Identify the exact product or service being discussed.",
+      "State the price basis and what is included.",
+      "Ask one relevant question or link to the current pricing page."
+    ],
+    "example": "Try: “The package starts at [verified price] and includes [scope]. Custom installation is separate. Which option are you considering?” Replace every placeholder before saving.",
+    "pitfall": "Do not send the same starting price for unrelated offers. A cheap headline followed by hidden extras damages trust and increases follow-up work.",
+    "measure": "Review how often recipients still ask what is included. Repeated confusion means the reply needs a clearer scope, not more promotional language."
+  },
+  {
+    "slug": "instagram-quick-reply-availability",
+    "title": "Answer Availability Questions Without Inventing Stock",
+    "intro": "Availability can change between the time a reply is written and the time it is sent. A saved Instagram response should help someone check the current situation without confidently promising stock, seats or appointment times that have not been verified.",
+    "decision": "Separate stable instructions from live inventory. A reply can explain where to check availability and how to reserve, while the destination or human team confirms the actual item. AP3K sending a link does not itself synchronize an inventory system.",
+    "steps": [
+      "Name the requested item or service.",
+      "Direct the person to a current availability source.",
+      "Explain when a team member must confirm the request."
+    ],
+    "example": "Try: “You can check current sizes on this product page. If your size is unavailable, reply with the item name and we can check the next restock.” Use this only if the team actually offers that check.",
+    "pitfall": "Avoid “Yes, available” as an evergreen response when the team cannot verify the stock at send time.",
+    "measure": "Track conversations where an availability promise needed correction. Move volatile facts out of reusable copy when they repeatedly become stale."
+  },
+  {
+    "slug": "instagram-quick-reply-delivery-question",
+    "title": "Create a Clear Instagram Reply About Delivery",
+    "intro": "Delivery questions often contain two separate concerns: where an order can be sent and when it will arrive. A good quick reply distinguishes coverage, processing time and transit estimates instead of treating one number as a guarantee for every destination.",
+    "decision": "Use verified delivery information from the business's current policy. If timing depends on location or product, request the minimum relevant detail privately. Route existing-order issues to a human process rather than making the person restart a generic sales conversation.",
+    "steps": [
+      "Clarify whether this is a pre-purchase question or an existing order.",
+      "Share the current delivery-information page.",
+      "Request order details only through the appropriate private support channel."
+    ],
+    "example": "Try: “Delivery options depend on your location and item. This page lists the current options. If this concerns an existing order, use the support link so we can check it.”",
+    "pitfall": "Do not ask for an address or order number in a public comment. Do not invent guaranteed arrival dates in automation copy.",
+    "measure": "Review delivery-related follow-up questions by category. If people repeatedly ask the same missing detail, improve the policy page as well as the reply."
+  },
+  {
+    "slug": "instagram-quick-reply-booking-question",
+    "title": "Answer Booking Questions With One Useful Next Step",
+    "intro": "A booking reply works best when it tells the person what kind of appointment they are opening and what happens next. Sending an unexplained calendar link can create unsuitable bookings or unnecessary questions about price, duration and location.",
+    "decision": "Include the information needed to choose a slot: service type, session format and any verified prerequisites. Let the booking system display live availability. Keep an alternative support route for people whose question cannot be answered by selecting a time.",
+    "steps": [
+      "Confirm the service the person wants.",
+      "Describe what the linked appointment covers.",
+      "Point to current availability and explain any confirmation step."
+    ],
+    "example": "Try: “This calendar is for a 20-minute introductory call about [service]. Choose a suitable slot, then check the confirmation email for joining details.” Use the actual duration and process.",
+    "pitfall": "Avoid sending a consultation calendar to someone who only requested a resource. Match the next step to the person's request.",
+    "measure": "Measure completed suitable bookings rather than calendar opens alone. Review cancellations caused by misunderstood appointment scope."
+  },
+  {
+    "slug": "instagram-quick-reply-complaint-acknowledgment",
+    "title": "Write a Complaint Acknowledgment That Does Not Sound Dismissive",
+    "intro": "A complaint needs recognition and a clear route to help. A cheerful marketing response can make the situation worse, especially when the customer has already explained the problem. A reusable acknowledgment should support a human response without pretending the issue is resolved.",
+    "decision": "Acknowledge the specific type of problem and explain the next action the team can actually take. Avoid automatic promises of refunds, compensation or fixed resolution times unless those promises are authorized and consistently supported.",
+    "steps": [
+      "Remove sales language from complaint responses.",
+      "Request only the information needed to locate the issue privately.",
+      "Assign the conversation to a responsible human process."
+    ],
+    "example": "Try: “I’m sorry this did not work as expected. Please send the order reference through our support form so the team can investigate. Do not post payment details here.”",
+    "pitfall": "Do not state “resolved” merely because an acknowledgment was sent. Avoid asking customers to repeat information already available to the support team.",
+    "measure": "Measure time to meaningful human response and unresolved repeat contacts. An instant acknowledgment is not a completed support outcome."
+  },
+  {
+    "slug": "instagram-quick-reply-partnership-request",
+    "title": "Qualify Instagram Partnership Requests Politely",
+    "intro": "Partnership messages range from relevant proposals to generic outreach. A useful quick reply gives serious partners a clear submission route without implying that every request will be accepted. It should collect the details needed for review and set an honest expectation.",
+    "decision": "Choose a small set of decision inputs such as audience fit, proposed activity and timeline. Keep payment negotiation and contracts with the appropriate team. If there is no active partnership program, say so instead of collecting proposals nobody will review.",
+    "steps": [
+      "Describe the collaboration types the business considers.",
+      "Provide a proposal form or contact route.",
+      "Explain the review process without guaranteeing acceptance."
+    ],
+    "example": "Try: “Please send your audience focus, proposed deliverables and target dates through this form. Our team reviews proposals that fit the current campaign priorities.”",
+    "pitfall": "Do not request passwords, access tokens or unnecessary personal documents in a partnership DM. A saved reply should not authorize someone to represent the brand.",
+    "measure": "Track relevant proposals received and reviewed, not the total number of people sent a form. Remove fields that do not help the actual decision."
+  },
+  {
+    "slug": "instagram-quick-reply-voice-guidelines",
+    "title": "Make Saved Instagram Replies Sound Like Your Brand",
+    "intro": "A library of saved replies becomes inconsistent when each teammate writes in a different voice. One answer may be casual and another sound like a legal notice. A short voice guide helps the team remain recognizable while still adapting to the conversation.",
+    "decision": "Define three practical rules: preferred greeting style, normal sentence length and phrases to avoid. Separate the tone of a promotional reply from support or complaint handling. Consistency does not require copying the exact same opening into every message.",
+    "steps": [
+      "Collect examples of replies that customers understood.",
+      "Write voice rules with one approved and one unsuitable example.",
+      "Review saved replies against those rules before sharing the library."
+    ],
+    "example": "A friendly brand might use “Here’s the guide you asked for” rather than “Your requested informational asset has been dispatched.” A complaint still deserves a calm, specific acknowledgment.",
+    "pitfall": "Do not mistake emojis for a voice strategy. Too many decorations can obscure the next step or feel inappropriate in a serious conversation.",
+    "measure": "Review replies for clarity and follow-up confusion. Ask whether a teammate could apply the guide without guessing what “friendly” means."
+  },
+  {
+    "slug": "instagram-quick-reply-placeholder-check",
+    "title": "Prevent Placeholder Mistakes in Saved Instagram Replies",
+    "intro": "A message that reaches a customer with “[name]” or “[insert link]” looks unfinished and can send them nowhere. Templates need an explicit distinction between text that must be edited and values a tool actually substitutes automatically.",
+    "decision": "Treat bracketed text as an editing instruction unless the application documents support for that exact variable. Do not assume a token works because another platform uses it. Keep a clean final copy separate from the drafting template.",
+    "steps": [
+      "Search draft replies for brackets, sample URLs and example names.",
+      "Replace or remove every placeholder not supported by the selected tool.",
+      "Send a test and read the received message rather than just the editor preview."
+    ],
+    "example": "A template saying “Hi [first name], here is [resource]” should become a complete message before launch. If reliable personalization is unavailable, a natural greeting without a name is better.",
+    "pitfall": "Do not publish sample customer details as though they belong to the recipient. Avoid relying on an untested variable to carry the only destination link.",
+    "measure": "Count template defects caught during review. Add common placeholder patterns to the team's pre-launch checklist."
+  },
+  {
+    "slug": "instagram-quick-reply-multilingual-review",
+    "title": "Review Multilingual Quick Replies for Meaning",
+    "intro": "A literal translation may preserve words while changing the promise. “Lead,” “booking” and “free” can mean different things depending on context. Review multilingual saved replies as customer messages rather than isolated translated strings.",
+    "decision": "Use a fluent reviewer to check the whole path: caption, reply, destination and support language. Confirm whether a resource is actually available in the language promised. A translated DM that opens an unexplained English-only page can frustrate the recipient.",
+    "steps": [
+      "State the intended meaning before translation.",
+      "Review product terms and button labels in context.",
+      "Test the destination and layout using the target language."
+    ],
+    "example": "If the DM promises a French checklist but the only download is English, either provide the French resource or state its language before the click. Do not imply a translation exists.",
+    "pitfall": "Do not use an audience's language as a promise of support availability the team cannot deliver. Keep separate reviewed copies for supported languages.",
+    "measure": "Track language-related questions and correction requests. Prioritize misunderstood commercial terms over purely stylistic preferences."
+  },
+  {
+    "slug": "instagram-quick-reply-library-ownership",
+    "title": "Keep a Team's Quick Reply Library Accurate",
+    "intro": "Saved replies become risky when nobody owns them. Prices change, forms move and a teammate keeps using a copy from an old document. A lightweight library with owners and review dates reduces this drift without requiring a complex content system.",
+    "decision": "Organize replies by customer intent and assign one maintained version to each purpose. Keep retired copies clearly separate. Updates that change a business promise should be reviewed by the person responsible for that offer.",
+    "steps": [
+      "Give each reply a purpose, owner and last-reviewed date.",
+      "Keep links to the current source of volatile information.",
+      "Notify the team when an approved reply is replaced."
+    ],
+    "example": "The delivery-policy reply belongs to operations, while a partnership reply belongs to the partnership owner. A shared editor can maintain formatting without independently changing those commitments.",
+    "pitfall": "Avoid multiple unofficial copies named “final.” A reply that is easy to find but inaccurate is worse than a slightly slower human answer.",
+    "measure": "Review stale replies found in real conversations. Use that evidence to set a sensible review cadence rather than rewriting the entire library every week."
+  }
+]

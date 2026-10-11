@@ -1,34 +1,34 @@
 import { getAllAutomation, getAutomationInfo } from "@/actions/automation";
 import { onUserInfo } from "@/actions/user";
-import { QueryClient, QueryFunction } from "@tanstack/react-query";
+import { currentUser } from "@clerk/nextjs/server";
+import { QueryClient } from "@tanstack/react-query";
 
-const prefetch = async (
-  client: QueryClient,
-  action: QueryFunction,
-  key: string
-) => {
+export const PrefetchUserProfile = async (client: QueryClient) => {
+  const user = await currentUser();
   return await client.prefetchQuery({
-    queryKey: [key],
-    queryFn: action,
-    staleTime: 60000,
+    queryKey: ["user-profile", user?.id],
+    queryFn: onUserInfo,
+    staleTime: 0,
   });
 };
 
-export const PrefetchUserProfile = async (client: QueryClient) => {
-  return await prefetch(client, onUserInfo, "user-profile");
-};
-
 export const PrefetchUserAutomation = async (client: QueryClient) => {
-  return await prefetch(client, getAllAutomation, "user-automation");
+  const user = await currentUser();
+  return await client.prefetchQuery({
+    queryKey: ["user-automation", user?.id],
+    queryFn: getAllAutomation,
+    staleTime: 0,
+  });
 };
 
 export const PrefetchUserAutomations = async (
   client: QueryClient,
   automationId: string
 ) => {
-  return await prefetch(
-    client,
-    () => getAutomationInfo(automationId),
-    "automation-info"
-  );
+  const user = await currentUser();
+  return await client.prefetchQuery({
+    queryKey: ["automation-info", user?.id, automationId],
+    queryFn: () => getAutomationInfo(automationId),
+    staleTime: 0,
+  });
 };

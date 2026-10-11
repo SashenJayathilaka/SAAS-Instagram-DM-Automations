@@ -1,0 +1,28 @@
+name: Marketing emails
+on:
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+permissions:
+  id-token: write
+concurrency:
+  group: marketing-emails
+  cancel-in-progress: false
+jobs:
+  deliver:
+    if: github.repository == 'Boudofski/SAAS-Instagram-DM-Automations' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Process confirmed subscribers with a short-lived identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          audience='https://ap3k.com/api/cron/marketing'
+          encoded_audience=$(printf '%s' "$audience" | jq -sRr @uri)
+          identity=$(curl --fail --silent --show-error --max-time 15 \
+            -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=$encoded_audience" | jq -er '.value')
+          echo "::add-mask::$identity"
+          curl --fail --silent --show-error --max-time 70 \
+            -H "Authorization: Bearer $identity" "$audience"

@@ -1,0 +1,23 @@
+id: ap3k-config-exposure
+info:
+  name: AP3K exposed configuration signature
+  author: ap3k-security-review
+  severity: high
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/.env'
+      - '{{BaseURL}}/.env.local'
+      - '{{BaseURL}}/.env.production'
+      - '{{BaseURL}}/.git/config'
+      - '{{BaseURL}}/.git/HEAD'
+    matchers-condition: and
+    matchers:
+      - type: status
+        status: [200]
+      - type: regex
+        part: body
+        regex:
+          - '(?m)^(DATABASE_URL|CLERK_SECRET_KEY|STRIPE_SECRET_KEY|META_APP_SECRET|GROQ_API_KEY)\s*='
+          - '(?m)^\[core\]'
+          - '(?m)^ref: refs/heads/'

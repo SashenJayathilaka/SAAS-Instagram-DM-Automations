@@ -4,7 +4,7 @@ import React from "react";
 type Props = {};
 
 function Page({}: Props) {
-  return <SignUp />;
+  return <SignUp forceRedirectUrl="/onboarding" />;
 }
 
 export default Page;

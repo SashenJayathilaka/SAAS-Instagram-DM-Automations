@@ -1,0 +1,20 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ap3k-signal" x1="64" y1="48" x2="448" y2="464" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6D28D9"/>
+      <stop offset="0.48" stop-color="#8B5CF6"/>
+      <stop offset="0.76" stop-color="#EC4899"/>
+      <stop offset="1" stop-color="#FF6B35"/>
+    </linearGradient>
+    <filter id="shadow" x="24" y="28" width="464" height="472" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="20" stdDeviation="22" flood-color="#351078" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <rect x="48" y="44" width="416" height="416" rx="128" fill="url(#ap3k-signal)"/>
+    <rect x="49.5" y="45.5" width="413" height="413" rx="126.5" stroke="white" stroke-opacity="0.18" stroke-width="3"/>
+  </g>
+  <path d="M142 352L230.5 157.5C240.5 135.5 271.5 135.5 281.5 157.5L370 352" stroke="white" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M182 290H323" stroke="white" stroke-width="38" stroke-linecap="round"/>
+  <path d="M304 263L339 290L304 317" stroke="white" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

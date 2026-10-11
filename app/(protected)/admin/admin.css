@@ -1,0 +1,78 @@
+.admin-shell,
+.admin-dialog {
+  --background: 220 30% 97%;
+  --input: 215 20% 78%;
+}
+.dark .admin-shell,
+.dark .admin-dialog {
+  --background: 225 30% 6%;
+  --foreground: 210 40% 96%;
+  --card: 224 26% 9%;
+  --card-foreground: 210 40% 96%;
+  --popover: 224 26% 9%;
+  --popover-foreground: 210 40% 96%;
+  --primary: 263 82% 63%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 223 22% 15%;
+  --secondary-foreground: 210 40% 96%;
+  --muted: 223 22% 15%;
+  --muted-foreground: 215 20% 68%;
+  --accent: 223 22% 18%;
+  --accent-foreground: 210 40% 96%;
+  --border: 223 22% 20%;
+  --input: 223 22% 22%;
+  --ring: 263 82% 70%;
+  color-scheme: dark;
+}
+.admin-panel {
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+  background: hsl(var(--card));
+  box-shadow: var(--shadow-surface);
+  padding: 24px;
+  min-width: 0;
+}
+.admin-input {
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 12px;
+  border: 1px solid hsl(var(--input));
+  border-radius: 8px;
+  background: hsl(var(--card));
+  color: hsl(var(--foreground));
+  font-size: 14px;
+}
+.admin-input::placeholder {
+  color: hsl(var(--muted-foreground));
+}
+.admin-input:disabled {
+  background: hsl(var(--muted));
+  cursor: not-allowed;
+}
+.admin-input:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+.admin-shell :is(input, textarea, select) {
+  max-width: 100%;
+}
+.admin-shell :is(a, button, summary):focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 3px;
+}
+@media (min-width: 1024px) {
+  .admin-shell[data-collapsed="true"] .admin-main {
+    padding-left: 76px;
+  }
+  .admin-shell[data-collapsed="true"] .admin-topbar {
+    margin-left: 76px;
+  }
+}
+@media (max-width: 639px) {
+  .admin-panel {
+    padding: 16px;
+  }
+  .admin-shell :is(input, textarea, select) {
+    font-size: 16px;
+  }
+}

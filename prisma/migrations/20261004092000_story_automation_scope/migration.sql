@@ -1,0 +1,1 @@
+ALTER TABLE "Automation" ADD COLUMN IF NOT EXISTS "storyConfig" JSONB;

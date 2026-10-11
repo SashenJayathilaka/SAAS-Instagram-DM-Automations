@@ -1,3 +1,4 @@
+import { UiText } from "@/components/i18n/localized-copy";
 import { Button } from "@/components/ui/button";
 import { ClerkLoading, SignedOut, SignInButton } from "@clerk/nextjs";
 import Loader from "../loader";
@@ -17,9 +18,7 @@ function ClerkAuthState({}: Props) {
       <SignedOut>
         <SignInButton>
           <Button className="rounded-xl bg-[#252525] text-white hover:bg-[#252525]">
-            <User />
-            Login
-          </Button>
+            <User /><UiText>{" Login "}</UiText></Button>
         </SignInButton>
       </SignedOut>
       <SignedIn>

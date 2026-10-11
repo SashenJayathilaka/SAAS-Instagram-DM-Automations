@@ -1,4 +1,6 @@
 "use client";
+import { UiText } from "@/components/i18n/localized-copy";
+
 
 import Loader from "@/components/global/loader";
 import { Button } from "@/components/ui/button";
@@ -47,9 +49,7 @@ function Trigger({ id }: Props) {
         {data.data.trigger.length > 1 && (
           <>
             <div className="relative w-6/12">
-              <p className="absolute transform bg-background-90 px-2 -translate-y-1/2 top-1/2 -translate-x-1/2 left-1/2">
-                or
-              </p>
+              <p className="absolute transform bg-background-90 px-2 -translate-y-1/2 top-1/2 -translate-x-1/2 left-1/2"><UiText>{" or "}</UiText></p>
               <Separator
                 orientation="horizontal"
                 className="border-muted border-[1px]"
@@ -94,7 +94,7 @@ function Trigger({ id }: Props) {
           disabled={types?.length === 0}
           className="bg-gradient-to-br from-[#3352CC] font-medium text-white to-[#1C2D70]"
         >
-          <Loader state={isPending}>Create Trigger</Loader>
+          <Loader state={isPending}><UiText>{"Create Trigger"}</UiText></Loader>
         </Button>
       </div>
     </TriggerButton>

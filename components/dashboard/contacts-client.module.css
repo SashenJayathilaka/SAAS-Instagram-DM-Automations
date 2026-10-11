@@ -1,0 +1,55 @@
+.page { width:100%; min-width:0; padding:24px 0; color:#252934; }
+.header { display:flex; align-items:center; justify-content:space-between; gap:24px; margin-bottom:28px; }
+.header h1 { font-size:24px; font-weight:600; }
+.headerActions { display:flex; align-items:center; gap:14px; }
+.search { display:flex; align-items:center; gap:9px; border:1px solid #e3e6ec; border-radius:8px; background:white; padding:0 12px; color:#8c96a5; min-height:42px; }
+.search input { background:transparent; color:#252934; outline:none; min-width:0; width:220px; font-size:14px; }
+.download { display:flex; align-items:center; justify-content:center; gap:8px; min-height:42px; border-radius:8px; padding:10px 15px; background:linear-gradient(110deg,#008ebe,#12459f); color:white; font-size:14px; font-weight:600; white-space:nowrap; }
+.download:disabled { opacity:.65; cursor:wait; }
+.toolbar { display:flex; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px; }
+.allContacts,.filterButton { display:flex; align-items:center; gap:8px; border:1px solid #dfe3ea; border-radius:8px; padding:9px 12px; font-size:14px; background:white; }
+.allContacts span,.filterButton b { background:#edf2fc; color:#3363a8; border-radius:6px; padding:0 6px; font-size:12px; }
+.clear { display:flex; align-items:center; gap:5px; color:#526985; font-size:13px; min-height:44px; }
+.tableWrap { border:1px solid #e7e9ef; border-radius:10px; overflow:hidden; background:white; }
+.table { width:100%; border-collapse:collapse; font-size:14px; table-layout:fixed; text-align:start; }
+.table th { background:#f8f9fb; font-weight:500; color:#5e6676; text-align:start; padding:10px 16px; }
+.table th:first-child { width:25%; }
+.table th button { display:flex; align-items:center; gap:7px; min-height:30px; text-align:start; }
+.table th svg { flex-shrink:0; opacity:.6; }
+.table td { border-top:1px solid #edf0f4; padding:16px; color:#535e70; overflow-wrap:anywhere; }
+.username { display:flex; align-items:center; justify-content:space-between; gap:8px; min-width:0; }
+.username > a:first-child { color:#263850; font-weight:500; }
+.chat { display:flex; align-items:center; justify-content:center; min-width:36px; min-height:36px; color:#6b7b92; border-radius:6px; }
+.chat:hover { background:#edf2fc; }
+.filterPanel { width:min(380px,calc(100vw - 24px)); padding:18px; background:white; color:#263244; border:1px solid #e3e6ed; border-radius:12px; max-height:80dvh; overflow-y:auto; z-index:70; }
+.filterHeading { display:flex; align-items:center; justify-content:space-between; gap:10px; font-size:14px; margin-bottom:14px; }
+.filterHeading button { font-size:12px; color:#2563eb; }
+.filterField { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; font-size:14px; }
+.filterPanel select,.filterPanel input,.mobileSort select { border:1px solid #dce1e8; border-radius:6px; padding:8px; background:white; color:#263244; min-height:40px; min-width:0; }
+.filterPanel fieldset { border-top:1px solid #e7eaf0; margin-top:18px; }
+.filterPanel legend { font-size:13px; font-weight:600; margin-bottom:8px; }
+.dateRange { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px; }
+.dateRange label { display:flex; flex-direction:column; gap:5px; font-size:12px; color:#697489; min-width:0; }
+.dateRange input { width:100%; font-size:13px; }
+.mobileSort { display:none; }
+.empty { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; text-align:center; min-height:240px; padding:24px; color:#7b8698; }
+.empty h2 { font-weight:600; color:#384457; }
+.empty p { font-size:14px; }
+.pagination { display:flex; align-items:center; justify-content:space-between; margin-top:16px; font-size:13px; }
+.pagination button { display:flex; gap:7px; align-items:center; min-height:44px; padding:8px 12px; }
+.pagination button:disabled { opacity:.4; }
+.error { padding:12px; margin-bottom:16px; color:#b42318; background:#fff0ef; border-radius:8px; font-size:14px; }
+.page button:focus-visible,.page a:focus-visible,.filterPanel button:focus-visible { outline:2px solid #2563eb; outline-offset:3px; }
+.search:focus-within { outline:2px solid #2563eb; outline-offset:2px; }
+:global(.dark) .page { color:#edf1f9; }
+:global(.dark) .search,:global(.dark) .allContacts,:global(.dark) .filterButton,:global(.dark) .tableWrap,:global(.dark) .filterPanel { background:#131723; border-color:#313747; }
+:global(.dark) .search input,:global(.dark) .username > a:first-child,:global(.dark) .empty h2,:global(.dark) .filterPanel { color:#e2e8f4; }
+:global(.dark) .table th { background:#1c2130; color:#c3cbd9; }
+:global(.dark) .table td { border-color:#2c3241; color:#bec8da; }
+:global(.dark) .filterPanel select,:global(.dark) .filterPanel input,:global(.dark) .mobileSort select { background:#1c2130; color:#e2e8f4; border-color:#3b4455; color-scheme:dark; }
+:global(.dark) .filterPanel fieldset { border-color:#3b4455; }
+:global(.dark) .filterHeading button { color:#8dbaff; }
+:global(.dark) .dateRange label,:global(.dark) .clear,:global(.dark) .chat { color:#aebbd0; }
+:global(.dark) .chat:hover { background:#26334b; }
+@media(max-width:1023px) { .header { align-items:flex-start; flex-direction:column; gap:16px; } .headerActions { width:100%; } .search { flex:1; } .search input { width:100%; } .table th,.table td { padding:12px 10px; } }
+@media(max-width:767px) { .page { padding:16px 0; } .headerActions { flex-wrap:wrap; } .search { flex-basis:100%; } .download { min-height:44px; } .tableWrap { background:transparent; border:0; overflow:visible; } .table,.table tbody { display:block; } .table thead { display:none; } .table tr { display:block; background:white; border:1px solid #e1e6ef; border-radius:12px; margin-bottom:12px; padding:10px 14px; } .table td { display:grid; grid-template-columns:minmax(105px,.8fr) minmax(0,1.2fr); gap:12px; padding:10px 0; border:0; font-size:13px; } .table td::before { content:attr(data-label); color:#7e8899; font-size:12px; } .table td:first-child { align-items:center; } .table td:first-child .username { font-size:14px; } .mobileSort { display:flex; align-items:center; gap:8px; width:100%; font-size:13px; } .mobileSort select { flex:1; } .mobileSort button { padding:10px; min-width:40px; min-height:44px; } :global(.dark) .table tr { background:#131723; border-color:#313747; } :global(.dark) .tableWrap { background:transparent; } }

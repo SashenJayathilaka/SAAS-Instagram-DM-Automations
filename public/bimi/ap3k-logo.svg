@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     version="1.2"
+     baseProfile="tiny-ps"
+     width="512"
+     height="512"
+     viewBox="0 0 512 512">
+  <title>AP3K</title>
+  <desc>AP3K brand mark: a white letter A and signal arrow on a purple square.</desc>
+  <rect x="0" y="0" width="512" height="512" rx="128" fill="#7C3AED"/>
+  <path d="M142 352L230.5 157.5C240.5 135.5 271.5 135.5 281.5 157.5L370 352"
+        fill="none" stroke="#FFFFFF" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M182 290H323"
+        fill="none" stroke="#FFFFFF" stroke-width="38" stroke-linecap="round"/>
+  <path d="M304 263L339 290L304 317"
+        fill="none" stroke="#FFFFFF" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,73 +1,97 @@
 "use client";
 
-import { Separator } from "@/components/ui/separator";
+
+import ThemeToggle from "@/components/global/theme-toggle";
 import { PAGE_BREAD_CRUMBS } from "@/constants/pages";
 import { usePath } from "@/hooks/user-nav";
-import { HelpDuoToneWhite } from "@/icons";
-import { LogoSmall } from "@/svgs/logo-small";
-import { Menu } from "lucide-react";
-import MainBreadCrumbs from "../bread-crumb/main-bread-crumbs";
-import ClerkAuthState from "../clerk-auth-state";
+import { Menu, PanelLeft } from "lucide-react";
+import Link from "next/link";
+import AP3KLogo from "../ap3k-logo";
 import CreateAutomation from "../create-automation";
 import Sheet from "../sheet";
 import Items from "../sidebar/items";
-import UpgradeCard from "../sidebar/upgrade";
-import SubscriptionPlan from "../subscription-plan";
+import InstagramAccountSwitcher from "@/components/dashboard/instagram-account-switcher";
+import HelpHub from "@/components/help/help-hub";
 import Notification from "./notification";
 import Search from "./search";
+import { useClerk } from "@clerk/nextjs";
+import { useQueryClient } from "@tanstack/react-query";
+import LanguageSwitcher from "@/components/global/language-switcher";
+import { useI18n } from "@/providers/i18n-provider";
 
 type Props = {
   slug: string;
 };
 
 function NavBar({ slug }: Props) {
-  const { page } = usePath();
+  const { t, locale } = useI18n();
+  const { page, pathname } = usePath();
+  const { signOut } = useClerk();
+  const queryClient = useQueryClient();
   const currentPage = PAGE_BREAD_CRUMBS.includes(page) || page == slug;
+  const isCampaignList = pathname === `/dashboard/${slug}/automation`;
+  const isAutomationAnalytics = /^\/dashboard\/[^/]+\/automation\/[^/]+\/analytics\/?$/.test(pathname);
+  const showGlobalSearch = currentPage && !isCampaignList;
+
+  const handleSignOut = () => {
+    queryClient.clear();
+    void signOut({ redirectUrl: "/" });
+  };
 
   return (
-    currentPage && (
-      <div className="flex flex-col">
-        <div className="flex gap-x-3 lg:gap-x-5 justify-end">
-          <span className="lg:hidden flex items-center flex-1 gap-x-2">
-            <Sheet trigger={<Menu />} className="lg:hidden" side="left">
-              <div className="flex flex-col gap-y-5 w-full h-full p-3 bg-[#0e0e0e] bg-opacity-90 bg-clip-padding backdrop-filter backdrop--blur__safari backdrop-blur-3xl">
-                <div className="flex gap-x-2 items-center p-5 justify-center">
-                  <LogoSmall />
+      <div data-dashboard-toolbar className={`${isAutomationAnalytics ? "aa-toolbar" : "sticky top-3 rounded-2xl border border-slate-200 light:border-slate-300 p-2 shadow-sm backdrop-blur-xl"} z-30 flex flex-wrap items-center gap-2 bg-white/95 text-slate-950 dark:border-white/10 dark:bg-[#111320]/95 dark:text-slate-50 sm:flex-nowrap lg:justify-end`}>
+        <span className={`flex ${isAutomationAnalytics ? "shrink-0" : "flex-1"} items-center gap-x-2 lg:hidden`}>
+          <Sheet
+            trigger={<Menu aria-hidden="true" />}
+            triggerLabel={t("openNavigation")}
+            className="lg:hidden"
+            contentClassName="h-[100dvh] max-h-[100dvh]"
+            side="left"
+            closeOnNavigation
+          >
+            <div className="flex h-full min-h-0 w-full flex-col bg-white text-slate-950 backdrop-blur-3xl dark:bg-[#0b1020] dark:text-white">
+              <div className="shrink-0 px-3 pb-2 pt-[max(0.75rem,env(safe-area-inset-top))]">
+                <div className="flex items-center justify-center gap-x-2 p-5">
+                  <AP3KLogo className="text-slate-950 dark:text-white" />
                 </div>
+              </div>
+
+              <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-3 pb-4">
+        <InstagramAccountSwitcher slug={slug} />
                 <div className="flex flex-col py-3">
                   <Items page={page} slug={slug} />
                 </div>
-                <div className="px-16">
-                  <Separator
-                    orientation="horizontal"
-                    className="bg-[#333336]"
-                  />
-                </div>
-                <div className="px-3 flex flex-col gap-y-5">
-                  <div className="flex gap-x-2">
-                    <ClerkAuthState />
-                    <p className="text-[#9B9CA0]">Profile</p>
-                  </div>
-                  <div className="flex gap-x-3">
-                    <HelpDuoToneWhite />
-                    <p className="text-[#9B9CA0]">Help</p>
-                  </div>
-                </div>
-                <SubscriptionPlan type="FREE">
-                  <div className="flex-1 flex flex-col justify-end">
-                    <UpgradeCard />
-                  </div>
-                </SubscriptionPlan>
+                <div className="px-1 pb-3"><LanguageSwitcher /></div>
+                <div className="mt-3 border-t border-slate-200 light:border-slate-300 pt-3 dark:border-white/10"><HelpHub slug={slug} mobile /></div>
               </div>
-            </Sheet>
-          </span>
+
+              <div className="shrink-0 border-t border-slate-200 light:border-slate-300 px-3 pt-3 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] dark:border-white/10">
+                <button
+                  type="button"
+                  onClick={handleSignOut}
+                  className="flex w-full items-center justify-center rounded-xl border border-slate-200 light:border-slate-300 px-3 py-3 text-sm font-bold text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rf-pink dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/[0.06] dark:hover:text-white"
+                >
+                  {t("signOut")}
+                </button>
+              </div>
+            </div>
+          </Sheet>
+        </span>
+        {isAutomationAnalytics && <nav aria-label="Breadcrumb" className="flex min-w-0 flex-1 items-center gap-3 text-sm font-semibold sm:text-base">
+          <PanelLeft className="hidden h-[18px] w-[18px] text-slate-400 light:text-slate-600 lg:block" aria-hidden="true" />
+          <Link href={`/dashboard/${slug}/automation`} className="hover:text-violet-600">Automations</Link>
+          <span aria-hidden="true">/</span><span aria-current="page">Analytics</span>
+        </nav>}
+        {showGlobalSearch && <div className="order-3 w-full sm:order-none sm:w-auto sm:flex-1 lg:max-w-sm">
           <Search />
-          <CreateAutomation />
-          <Notification />
+        </div>}
+        <div className="ms-auto flex shrink-0 items-center gap-2">
+          {currentPage && !isCampaignList && <CreateAutomation slug={slug} />}
+          {!isAutomationAnalytics && <LanguageSwitcher compact />}
+          <ThemeToggle compact />
+          {!isAutomationAnalytics && <Notification slug={slug} />}
         </div>
-        <MainBreadCrumbs page={page === slug ? "Home" : page} slug={slug} />
       </div>
-    )
   );
 }
 

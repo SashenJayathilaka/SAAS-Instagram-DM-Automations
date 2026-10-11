@@ -1,0 +1,266 @@
+[
+  {
+    "slug": "automatic-instagram-links-and-replies",
+    "title": "Comment envoyer automatiquement des liens et des réponses sur Instagram",
+    "description": "Configurez l’envoi de liens par DM et les réponses automatiques sur Instagram avec un mot-clé clair, un message utile et un parcours testé.",
+    "publishedAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
+    "readingTime": "5 min de lecture",
+    "category": "Développer son activité sur Instagram",
+    "keywords": [
+      "envoyer automatiquement des liens sur Instagram",
+      "répondre automatiquement aux commentaires Instagram",
+      "automatiser les DM Instagram"
+    ],
+    "visual": "dm-link",
+    "visualAlt": "Illustration AP3K du parcours d’automatisation sur Instagram",
+    "visualCaption": "Illustration du parcours. Consultez l’exemple ci-dessous et testez votre configuration avant de publier.",
+    "intro": "Les créateurs et vendeurs de formations promettent souvent un guide dans une publication, puis passent la soirée à copier des liens. Une automatisation peut envoyer la ressource promise après un nouveau commentaire éligible. Commencez par une publication et une destination pour vérifier le parcours avant de l’étendre.",
+    "sections": [
+      {
+        "heading": "Choisir la ressource et le mot-clé",
+        "paragraphs": [
+          "Publiez un contenu qui présente la ressource et demande un mot précis en commentaire, par exemple GUIDE. Dans AP3K, connectez un compte Instagram professionnel, créez une automatisation de commentaires, sélectionnez la publication ou le Reel et saisissez le mot-clé. Choisissez « N’importe quel commentaire » uniquement si chaque commentaire éligible doit recevoir le même suivi."
+        ]
+      },
+      {
+        "heading": "Rédiger la réponse et ajouter le lien automatique",
+        "paragraphs": [
+          "Activez une réponse publique pour accuser réception sous la publication. Activez le DM et ajoutez un message court, un libellé de bouton explicite et l’adresse HTTPS complète. Le message d’ouverture et la demande d’abonnement sont facultatifs. Vérifiez les aperçus de la publication, des commentaires et du DM avant de publier."
+        ]
+      },
+      {
+        "heading": "Tester gratuitement avec une vraie demande",
+        "paragraphs": [
+          "L’offre Free d’AP3K comprend 500 actions automatisées par mois, un compte Instagram et jusqu’à cinq automatisations actives. Une réponse publique envoyée et un DM envoyé comptent pour deux actions : 500 actions peuvent donc couvrir 250 paires de ce type. Les réponses IA ne sont pas incluses. Consultez la facturation pour connaître votre quota restant."
+        ]
+      },
+      {
+        "heading": "Vérifier la réception avant de développer le parcours",
+        "paragraphs": [
+          "Après l’activation, commentez depuis un autre compte Instagram. Vérifiez la réponse publique et la boîte de réception du destinataire, puis ouvrez le lien sur un téléphone. Si rien n’arrive, contrôlez la publication, le mot-clé, la connexion et le quota. Utilisez un nouveau commentaire éligible pour refaire le test."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "manage-instagram-dms-and-comments-faster",
+    "title": "Gérer plus vite les DM et commentaires Instagram",
+    "description": "Réduisez les réponses répétitives, gérez les pics de messages et analysez une baisse d’engagement sans confondre rapidité et portée garantie.",
+    "publishedAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
+    "readingTime": "5 min de lecture",
+    "category": "Développer son activité sur Instagram",
+    "keywords": [
+      "gérer un afflux de DM Instagram",
+      "gérer de nombreux messages Instagram",
+      "pourquoi l’engagement Instagram baisse"
+    ],
+    "visual": "troubleshoot",
+    "visualAlt": "Illustration AP3K du parcours d’automatisation sur Instagram",
+    "visualCaption": "Illustration du parcours. Consultez l’exemple ci-dessous et testez votre configuration avant de publier.",
+    "intro": "Lors d’un lancement, créateurs, agences et boutiques peuvent répondre aux mêmes questions pendant des heures. Automatisez les tâches répétitives tout en confiant les demandes inhabituelles ou sensibles à une personne. Le volume de messages et la portée des publications sont deux problèmes distincts : répondre plus vite ne garantit pas une meilleure diffusion.",
+    "sections": [
+      {
+        "heading": "Séparer les questions récurrentes du support personnel",
+        "paragraphs": [
+          "Classez les questions récentes par prix, livraison, réservation et demande de ressource. Préparez une réponse validée pour chaque sujet récurrent. Réservez les remboursements, réclamations, commandes incertaines et données personnelles à un examen humain. Ne copiez pas de données privées dans les connaissances de l’IA."
+        ]
+      },
+      {
+        "heading": "Traiter les DM entrants sans envois massifs non sollicités",
+        "paragraphs": [
+          "Une automatisation par mot-clé peut répondre à un nouveau DM correspondant. Une automatisation de commentaires peut répondre à une demande éligible et envoyer le lien promis. Cela ne revient pas à diffuser des messages à des utilisateurs collectés sans accord. Utilisez la boîte de réception pour lire le contexte et répondre manuellement si nécessaire."
+        ]
+      },
+      {
+        "heading": "Répondre rapidement sans doublons",
+        "paragraphs": [
+          "Utilisez des mots-clés précis pour chaque offre et évitez les campagnes qui se chevauchent sur la même publication. Testez un commentaire correspondant et un commentaire sans rapport. Consultez l’activité avant de dupliquer une campagne. En agence, vérifiez le compte et la destination de chaque client au lieu de réutiliser un lien sans contrôle."
+        ]
+      },
+      {
+        "heading": "Analyser séparément la baisse d’engagement",
+        "paragraphs": [
+          "Comparez des publications similaires sur des périodes comparables dans les statistiques Instagram. Examinez la portée, les vues, les enregistrements et les partages ainsi que le sujet, le format et l’appel à l’action. Consultez le statut du compte et son éligibilité aux recommandations. Des réponses rapides ne corrigent pas une offre floue : testez un changement de contenu à la fois."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "instagram-dm-sales-funnel",
+    "title": "Créer un tunnel de vente Instagram par DM utile aux acheteurs",
+    "description": "Transformez les commentaires Instagram en conversations commerciales utiles grâce à une offre ciblée, des liens pertinents et des étapes mesurables.",
+    "publishedAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
+    "readingTime": "5 min de lecture",
+    "category": "Développer son activité sur Instagram",
+    "keywords": [
+      "créer un tunnel de vente Instagram",
+      "stratégies de génération de prospects Instagram",
+      "augmenter les ventes par DM Instagram"
+    ],
+    "visual": "analytics",
+    "visualAlt": "Illustration AP3K du parcours d’automatisation sur Instagram",
+    "visualCaption": "Illustration du parcours. Consultez l’exemple ci-dessous et testez votre configuration avant de publier.",
+    "intro": "Un bon tunnel de vente relie une promesse claire à une conversation demandée, puis à une prochaine étape pertinente. Un créateur peut proposer une checklist, un formateur une leçon, une agence une consultation et une boutique des informations produit. Partez d’un besoin précis au lieu d’envoyer le même argumentaire à tout le monde.",
+    "sections": [
+      {
+        "heading": "Adapter l’offre au public",
+        "paragraphs": [
+          "Choisissez une ressource ou un produit et expliquez sa valeur dans la publication. Un coach peut proposer une routine de départ et un formateur un extrait de cours. Une boutique peut répondre à une question de taille avec la bonne page produit. Demandez un mot-clé qui rend le suivi attendu évident."
+        ]
+      },
+      {
+        "heading": "Construire la séquence commentaire vers DM",
+        "paragraphs": [
+          "Sélectionnez la publication, définissez le mot-clé et rédigez un bref accusé de réception ainsi que le DM promis. Donnez au bouton un libellé clair, comme « Voir le guide des tailles ». Envoyez directement la ressource, sauf si une étape d’ouverture a une utilité précise. La page de destination doit reprendre la promesse de la publication."
+        ]
+      },
+      {
+        "heading": "Garder la conversation commerciale utile",
+        "paragraphs": [
+          "Après l’envoi de la ressource, répondez à la question réelle de l’acheteur dans le respect des règles de messagerie applicables. Présentez des informations à jour sur le prix, la livraison et les étapes suivantes. Confiez les réponses incertaines à une personne. Les relances répétées et les demandes d’abonnement imposées peuvent freiner l’achat ; davantage de messages ne signifie pas davantage de ventes."
+        ]
+      },
+      {
+        "heading": "Mesurer les étapes sans supposer le chiffre d’affaires",
+        "paragraphs": [
+          "Consultez les commentaires correspondants, les actions réussies et les prospects enregistrés dans AP3K. Ajoutez des paramètres de campagne aux liens et utilisez les statistiques du site ou du paiement pour mesurer visites et achats. Divisez les achats par les visites mesurées pour comparer la conversion. Un prospect n’est pas une vente confirmée et l’attribution peut rester incomplète."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "ai-instagram-dm-autoresponder",
+    "title": "Créer un répondeur IA Instagram avec des réponses fiables",
+    "description": "Préparez les connaissances, le ton, les protections et les tests de vos réponses Instagram, et distinguez service IA et intégration ChatGPT.",
+    "publishedAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
+    "readingTime": "5 min de lecture",
+    "category": "Développer son activité sur Instagram",
+    "keywords": [
+      "créer un chatbot Instagram avec l’IA",
+      "IA pour répondre aux messages Instagram",
+      "automatisation Instagram et intégration ChatGPT"
+    ],
+    "visual": "workflow",
+    "visualAlt": "Illustration AP3K du parcours d’automatisation sur Instagram",
+    "visualCaption": "Illustration du parcours. Consultez l’exemple ci-dessous et testez votre configuration avant de publier.",
+    "intro": "Un répondeur IA est utile lorsque les questions varient mais que les informations restent stables. Il lui faut des connaissances exactes et des limites claires, pas seulement un ton sympathique. Commencez par quelques questions et vérifiez les réponses avant d’activer l’IA dans une automatisation en production.",
+    "sections": [
+      {
+        "heading": "Transmettre uniquement des faits validés",
+        "paragraphs": [
+          "Ajoutez des notes ciblées sur les produits, prix, horaires, livraisons et réservations. Donnez un sujet précis à chaque note. N’y placez ni dossiers clients, ni mots de passe, ni informations de paiement. Actualisez les offres et précisez comment l’IA doit réagir lorsqu’une information manque."
+        ]
+      },
+      {
+        "heading": "Définir le comportement et tester les questions difficiles",
+        "paragraphs": [
+          "Choisissez le ton et les protections disponibles. Dans l’espace de test, essayez des questions habituelles, ambiguës ou absentes des connaissances. Vérifiez que l’IA n’invente ni prix, ni promesses, ni disponibilité. Une conversation de test enregistrée ne devient pas automatiquement une connaissance : enregistrez explicitement les faits utiles."
+        ]
+      },
+      {
+        "heading": "Activer l’IA uniquement là où elle est utile",
+        "paragraphs": [
+          "AP3K propose l’IA dans ses offres payantes avec un quota distinct. Activez le réglage de l’espace de travail et l’action IA de l’automatisation choisie. Gardez une réponse fixe par mot-clé pour les ressources prédéfinies. Suivez l’usage et examinez des réponses : les statistiques montrent l’activité, mais la qualité nécessite encore un contrôle humain."
+        ]
+      },
+      {
+        "heading": "Distinguer fonction IA et intégration ChatGPT",
+        "paragraphs": [
+          "Une fonction IA ne se connecte pas nécessairement à votre compte ChatGPT personnel et n’accepte pas forcément votre clé API. AP3K fournit son service IA configuré ; ne supposez pas qu’un modèle précis ou une intégration avec votre propre clé soit inclus. Comparez les modèles, langues, contrôles des connaissances, quotas et possibilités de reprise humaine réellement disponibles."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "compare-instagram-dm-automation-tools",
+    "title": "Comparer les outils de DM Instagram : AP3K et alternatives",
+    "description": "Comparez AP3K, ManyChat, Chatfuel, LinkDM et respond.io selon le parcours, l’IA, les statistiques, les limites et le coût avant de choisir votre outil.",
+    "publishedAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
+    "readingTime": "5 min de lecture",
+    "category": "Développer son activité sur Instagram",
+    "keywords": [
+      "meilleure alternative à Manychat",
+      "alternatives gratuites à Manychat",
+      "Manychat ou Chatfuel"
+    ],
+    "visual": "keyword",
+    "visualAlt": "Illustration AP3K du parcours d’automatisation sur Instagram",
+    "visualCaption": "Illustration du parcours. Consultez l’exemple ci-dessous et testez votre configuration avant de publier.",
+    "intro": "Le meilleur outil dépend de votre parcours et de son mode de facturation. Ce guide est publié par AP3K : ce n’est pas un classement indépendant fondé sur un test complet des concurrents. Comparez la configuration, la réception et le coût avec une même campagne, puis consultez les documentations actuelles des fournisseurs.",
+    "sections": [
+      {
+        "heading": "ManyChat, Chatfuel, LinkDM et respond.io : les points à comparer",
+        "paragraphs": [
+          "ManyChat présente des automatisations sur Instagram et d’autres canaux. Chatfuel présente des conversations commerciales avec IA et des réponses aux questions fréquentes, notamment sur Instagram. LinkDM se concentre sur les interactions liées aux commentaires, Reels et stories Instagram, tandis que respond.io associe Instagram à une boîte de réception d’équipe et à des parcours multicanaux. Vérifiez la disponibilité et les offres directement. AP3K se concentre sur les commentaires, stories et DM Instagram : comparez ce périmètre à vos besoins réels."
+        ]
+      },
+      {
+        "heading": "Évaluer les fonctions sur une vraie campagne",
+        "paragraphs": [
+          "Testez un mot-clé sous une publication, un commentaire sans rapport, un DM entrant et le lien final. Vérifiez les messages d’ouverture, demandes d’abonnement, connaissances IA et boîte de réception manuelle. En e-commerce, contrôlez l’actualisation des produits. En agence, vérifiez le nombre de comptes et la séparation des clients ; un intitulé commercial ne suffit pas."
+        ]
+      },
+      {
+        "heading": "Comparer les offres gratuites et le coût total",
+        "paragraphs": [
+          "AP3K Free inclut 500 actions automatisées mensuelles, un compte Instagram et cinq automatisations actives, sans réponses IA. D’autres outils facturent les contacts actifs, messages, utilisateurs ou options. Comparez un même volume prévisionnel en incluant l’IA et les comptes supplémentaires. Un essai n’est pas une offre gratuite permanente : vérifiez renouvellement et tarifs avant de souscrire."
+        ]
+      },
+      {
+        "heading": "Choisir sur des preuves plutôt que sur un classement",
+        "paragraphs": [
+          "Notez le temps de configuration, les envois réussis, la qualité des réponses, les limites et le coût prévu. Vérifiez si les statistiques distinguent commentaires reçus, déclencheurs correspondants et actions envoyées. Testez AP3K si votre priorité est Instagram. Choisissez une plateforme plus large si des canaux ou intégrations indispensables manquent ; aucun outil ne convient à toutes les équipes."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "is-instagram-dm-automation-safe",
+    "title": "L’automatisation des DM Instagram est-elle sûre ? Règles et risques",
+    "description": "Comprenez les risques, l’accès à l’API officielle, les limites de messagerie et les déclarations d’approbation avant de connecter votre compte.",
+    "publishedAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
+    "readingTime": "5 min de lecture",
+    "category": "Développer son activité sur Instagram",
+    "keywords": [
+      "risques de shadowban et automatisation Instagram",
+      "outils Instagram approuvés par Meta",
+      "choisir un répondeur automatique Instagram"
+    ],
+    "visual": "connect",
+    "visualAlt": "Illustration AP3K du parcours d’automatisation sur Instagram",
+    "visualCaption": "Illustration du parcours. Consultez l’exemple ci-dessous et testez votre configuration avant de publier.",
+    "intro": "Aucun fournisseur ne peut garantir qu’un compte Instagram ne sera jamais restreint. Examinez la connexion, les déclencheurs et la gestion des limites. L’accès à l’API officielle est une distinction technique importante, mais il ne protège pas de toutes les sanctions et ne garantit pas la portée.",
+    "sections": [
+      {
+        "heading": "Vérifier la connexion et la déclaration d’approbation",
+        "paragraphs": [
+          "Utilisez le parcours d’autorisation prévu pour un compte Instagram professionnel et examinez les permissions. Évitez les outils qui demandent votre mot de passe Instagram pour simuler une activité dans le navigateur. L’accès à l’API, l’examen d’une application et le statut Meta Business Partner sont distincts : demandez une preuve précise au lieu de vous fier à un logo."
+        ]
+      },
+      {
+        "heading": "Respecter les règles des réponses privées",
+        "paragraphs": [
+          "Meta documente les conditions et délais des réponses privées aux commentaires. Une réponse privée n’autorise pas un nombre illimité de messages supplémentaires. Respectez les règles applicables à l’interaction et au compte. Consultez les documents officiels ci-dessous, car les permissions et règles de messagerie peuvent évoluer."
+        ]
+      },
+      {
+        "heading": "Comprendre les risques de shadowban et de spam",
+        "paragraphs": [
+          "Une baisse de portée ne prouve ni un shadowban ni un lien avec l’automatisation. Vérifiez le statut du compte, l’éligibilité aux recommandations et les performances de contenus comparables. Évitez les destinataires collectés sans accord, les messages non sollicités répétitifs et le contournement des restrictions. Suspendez une campagne problématique et analysez les échecs au lieu d’augmenter les tentatives."
+        ]
+      },
+      {
+        "heading": "Tester avant d’élargir",
+        "paragraphs": [
+          "Commencez par une publication et une ressource clairement demandée. Testez depuis un autre compte, vérifiez la réception et consultez l’usage. Assurez-vous de pouvoir déconnecter l’intégration et trouver les informations de confidentialité et de suppression. Comparez les offres et leurs limites : aucun tarif spécial ne garantit une approbation Meta ou une protection contre les blocages."
+        ]
+      }
+    ]
+  }
+]

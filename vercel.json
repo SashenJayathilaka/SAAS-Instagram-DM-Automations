@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "crons": [
+    {
+      "path": "/api/cron/instagram-token-refresh",
+      "schedule": "27 4 * * *"
+    },
+    {
+      "path": "/api/cron/owner-alerts",
+      "schedule": "47 4 * * *"
+    }
+  ]
+}

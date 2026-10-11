@@ -1,3 +1,4 @@
+import { UiText } from "@/components/i18n/localized-copy";
 import { Input } from "@/components/ui/input";
 import { useKeywords } from "@/hooks/use-automation";
 import { useMutationDataState } from "@/hooks/use-mutation-data";
@@ -17,9 +18,7 @@ function Keywords({ id }: Props) {
 
   return (
     <div className="bg-background-80 flex flex-col gap-y-3 p-3 rounded-xl">
-      <p className="text-sm text-text-secondary">
-        Add words that trigger automation
-      </p>
+      <p className="text-sm text-text-secondary"><UiText>{"Add words that trigger automation"}</UiText></p>
       <div className="flex flex-wrap justify-start gap-2 items-center">
         {data?.data?.keywords &&
           data.data.keywords.length > 0 &&

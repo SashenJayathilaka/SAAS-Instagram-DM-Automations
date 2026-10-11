@@ -74,6 +74,7 @@ function PricingPlan({}: Props) {
                 {plan.features.map((feature, index) => (
                   <div key={index} className={index > 0 ? "mt-4" : ""}>
                     <div className="flex gap-4 items-start w-full max-md:max-w-full">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         loading="lazy"
                         src={feature.icon}

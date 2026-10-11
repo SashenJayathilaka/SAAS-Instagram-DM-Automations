@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "instagram-automation-campaign-naming",
+    "title": "Name Instagram Automations So the Team Can Find Them",
+    "intro": "Names such as “Untitled automation copy” make a growing workspace difficult to manage. A useful campaign name identifies its account, offer and purpose without exposing customer details. Establish a convention before the list becomes too large to understand.",
+    "decision": "Choose a concise structure that matches how the team searches. Include the offer or post context and a meaningful version only when needed. Keep operational status in the actual status control rather than relying on a name that can become stale.",
+    "steps": [
+      "Review the current campaign list for ambiguous names.",
+      "Agree on a short naming pattern.",
+      "Rename active workflows and document the convention."
+    ],
+    "example": "“Guide — lighting checklist — September” is more useful than “New campaign 7.” For multiple accounts, include enough context to avoid choosing the wrong client's workflow.",
+    "pitfall": "Do not put private customer details, credentials or unnecessary identifiers in campaign names. Avoid changing names so often that reports become hard to reconcile.",
+    "measure": "Measure how quickly a teammate can find and explain an active campaign. Search friction often reveals missing or inconsistent naming information."
+  },
+  {
+    "slug": "instagram-automation-change-log",
+    "title": "Keep a Practical Change Log for Instagram Campaigns",
+    "intro": "When a campaign's results change, the team needs to know what was edited. A short change log connects message revisions, destination updates and trigger changes with the observed period. It is more useful than relying on memory during troubleshooting.",
+    "decision": "Record the change, reason, owner and time. Distinguish copy edits from behavior changes. Keep the previous approved configuration available when a rollback may be needed, without copying secrets or private conversations into the log.",
+    "steps": [
+      "Write the intended change before applying it.",
+      "Record the final configuration and test outcome.",
+      "Review the log when investigating later anomalies."
+    ],
+    "example": "If a button destination changes from a guide to a booking page, the log should explain why and whether the caption promise was updated too. Otherwise a conversion shift is hard to interpret.",
+    "pitfall": "Do not infer causation merely because a metric changed after an edit. Use the log to generate a testable explanation.",
+    "measure": "Track incidents where missing change context delayed diagnosis. Keep the log concise enough that the team actually maintains it."
+  },
+  {
+    "slug": "instagram-automation-destination-owner",
+    "title": "Assign an Owner to Every Instagram DM Destination",
+    "intro": "The person who builds an automation may not own the page it links to. Without a destination owner, expired downloads and moved forms can remain unnoticed. Assign responsibility for the resource as part of campaign setup.",
+    "decision": "Record who maintains the page and how changes are communicated. A valid HTTPS link can still lead to an unavailable offer or a form nobody monitors. Destination ownership includes content accuracy and the next operational step.",
+    "steps": [
+      "List every active destination and its purpose.",
+      "Assign a responsible owner and review trigger.",
+      "Notify the campaign owner before changing the offer or URL."
+    ],
+    "example": "A marketing teammate owns the caption, while operations owns the booking page. Both need to know when appointment availability or intake questions change.",
+    "pitfall": "Do not assume an external platform's uptime means the business process works. A live form with no reviewer is still a broken lead path.",
+    "measure": "Review unowned destinations and customer complaints about stale resources. Resolve ownership before adding more campaigns."
+  },
+  {
+    "slug": "instagram-automation-incident-triage",
+    "title": "Triage an Instagram Automation Incident by Failed Stage",
+    "intro": "When someone reports that automation is not working, changing several settings at once destroys useful evidence. Identify the failed stage first: account access, received interaction, trigger match, action send or destination. Each stage suggests a different next check.",
+    "decision": "Collect the minimum context needed to reproduce the issue, including the campaign and approximate interaction time. Avoid posting private message content or credentials in a broad incident channel. Keep successful and failing cases separate.",
+    "steps": [
+      "Confirm the intended account and campaign.",
+      "Inspect the available activity around the reported interaction.",
+      "Change one likely cause and repeat a supported new test."
+    ],
+    "example": "If the DM arrives but the button fails, investigate the destination. Reconnecting Instagram or broadening the keyword would not address that stage.",
+    "pitfall": "Do not assume every missing reply is a provider outage. Check scope, activation timing and the actual configured action before escalating.",
+    "measure": "Record the failed stage, corrective action and verification result. Repeated incidents at one stage deserve a targeted process improvement."
+  },
+  {
+    "slug": "instagram-automation-pause-resume-procedure",
+    "title": "Pause and Resume an Instagram Campaign Deliberately",
+    "intro": "Pausing a campaign can prevent further incorrect replies while an issue is investigated. Resuming should be a controlled action after the underlying problem is resolved. Treat the pause as an operational state with a reason and owner, not a forgotten toggle.",
+    "decision": "Write why the campaign was paused and what must be true before it resumes. Confirm the current offer, connection and message configuration. Do not assume missed interactions will automatically be processed when the campaign is active again.",
+    "steps": [
+      "Record the pause reason and affected workflow.",
+      "Correct the issue and review the current settings.",
+      "Resume and test a new eligible interaction."
+    ],
+    "example": "A campaign paused for an expired registration page should stay paused until the destination and message are accurate. A new link alone may not fix the outdated caption promise.",
+    "pitfall": "Do not promise retroactive delivery for comments received while inactive. Verify the product's actual event behavior.",
+    "measure": "Track paused campaigns awaiting action and their owners. A campaign should not remain indefinitely in an unexplained intermediate state."
+  },
+  {
+    "slug": "instagram-automation-multi-account-launch-check",
+    "title": "Check the Active Instagram Account Before Every Launch",
+    "intro": "In a multi-account workspace, the most damaging setup mistake may be choosing the wrong account rather than writing the wrong message. A brief account check belongs at the start and end of campaign preparation. Visual familiarity is not enough when clients have similar content.",
+    "decision": "Use the account handle, selected post and destination as a three-part identity check. Confirm all three belong to the intended campaign. Keep client-specific links and copy clearly labeled in working documents.",
+    "steps": [
+      "Read the selected account handle before editing.",
+      "Open the intended post and verify its owner.",
+      "Review the final destination and test from another account."
+    ],
+    "example": "An agency preparing two similar promotions should verify the handle again before activation, especially after switching between accounts to copy a workflow pattern.",
+    "pitfall": "Do not copy a client's destination into another client's campaign merely because the template is reusable. Reuse structure, not unreviewed business details.",
+    "measure": "Log misconfiguration near misses and improve labeling where confusion recurs. The launch check should be quick enough to perform consistently."
+  },
+  {
+    "slug": "instagram-automation-team-handoff-checklist",
+    "title": "Hand Over an Instagram Campaign With Enough Context",
+    "intro": "A campaign handoff should enable another person to operate the workflow without reconstructing its purpose. Include what it promises, where it runs, how to inspect activity and who owns the destination. A screenshot of the active toggle is not enough.",
+    "decision": "Keep the handoff focused on the tasks the next owner must perform. Explain known limitations and the conditions for pausing the campaign. Link to maintained instructions rather than copying a large, quickly outdated manual.",
+    "steps": [
+      "Describe the customer request and expected response.",
+      "List the account, post scope, keyword and destination.",
+      "Include a test record and escalation contact."
+    ],
+    "example": "A teammate covering a launch should know how to distinguish a delivery issue from a booking-page issue and who can fix each. That context prevents unnecessary configuration changes.",
+    "pitfall": "Do not distribute privileged credentials in the handoff. Use the authorized access process and document roles without exposing secrets.",
+    "measure": "Ask the receiving owner to explain the workflow and perform a low-risk review. Their questions reveal missing context before a real incident."
+  },
+  {
+    "slug": "instagram-automation-resource-versioning",
+    "title": "Version Resources Without Breaking Instagram Campaigns",
+    "intro": "A resource can improve over time while old posts continue promising it. Versioning helps the team update the material without breaking links or confusing recipients. Decide whether the campaign promises a specific edition or the maintained current resource.",
+    "decision": "Use a stable destination when ongoing updates are part of the offer, and label versions clearly when differences matter. Keep a record of significant changes. Preserve access to an earlier promised edition where appropriate and feasible.",
+    "steps": [
+      "Identify what the original caption promised.",
+      "Choose a stable landing page or version-specific destination.",
+      "Test access after publishing the revision."
+    ],
+    "example": "A checklist page can display its latest revision date and explain meaningful changes. A post promising a named event workbook should not silently receive unrelated material instead.",
+    "pitfall": "Do not change the resource's commercial terms without checking the original promise. A free sample should not become a surprise payment gate.",
+    "measure": "Review broken links and questions about mismatched editions. Keep campaign and resource ownership connected during updates."
+  },
+  {
+    "slug": "instagram-automation-launch-retrospective",
+    "title": "Run a Useful Retrospective After an Instagram Campaign",
+    "intro": "A retrospective should explain what the team learned and what to change next. Separate delivery reliability, offer relevance and operational handling so a strong result in one area does not hide a failure in another. Use actual evidence and keep uncertainty visible.",
+    "decision": "Start with the original goal and test plan. Compare expected and observed behavior, then identify the few changes most likely to improve the next launch. Avoid turning every preference into a process requirement.",
+    "steps": [
+      "Review the campaign's intended outcome.",
+      "List verified successes, failures and unknowns.",
+      "Assign specific improvements with an owner."
+    ],
+    "example": "If delivery worked but the registration page confused visitors, the next action is a destination revision and test. Rebuilding the trigger is unnecessary unless there is evidence it failed.",
+    "pitfall": "Do not generalize one campaign into a universal best practice. Audience, timing and offer differences can limit what transfers.",
+    "measure": "At the next launch, check whether the agreed improvements were implemented and whether the same problem recurred."
+  },
+  {
+    "slug": "instagram-automation-sunset-unused-campaigns",
+    "title": "Clean Up Unused Instagram Automations Without Losing Context",
+    "intro": "An unused campaign can clutter the workspace or accidentally remain active after its offer ends. Cleanup should distinguish active business workflows from experiments, obsolete drafts and temporary pauses. Preserve useful context before removing anything important.",
+    "decision": "Inventory campaigns by purpose, owner and current state. Confirm whether a workflow is still referenced by a live post or internal process. Prefer reversible status changes when investigating uncertainty, and follow the product's actual deletion safeguards.",
+    "steps": [
+      "Identify campaigns with unclear ownership or expired offers.",
+      "Check dependencies and recent relevant activity.",
+      "Pause or retire confirmed obsolete workflows and document the decision."
+    ],
+    "example": "A campaign named “Test copy” may still be attached to a live post. Inspect its scope and destination before assuming it is disposable.",
+    "pitfall": "Do not delete customer records or campaign history merely to make the workspace look cleaner. Keep cleanup proportionate to the task and recovery options.",
+    "measure": "Measure unowned active campaigns and time spent finding current workflows. A smaller, well-documented list is easier to operate reliably."
+  }
+]

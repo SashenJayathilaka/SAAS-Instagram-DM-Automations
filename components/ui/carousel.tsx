@@ -1,4 +1,5 @@
-"use client"
+"use client";
+import { UiText } from "@/components/i18n/localized-copy";
 
 import * as React from "react"
 import useEmblaCarousel, {
@@ -217,7 +218,7 @@ const CarouselPrevious = React.forwardRef<
       {...props}
     >
       <ArrowLeft className="h-4 w-4" />
-      <span className="sr-only">Previous slide</span>
+      <span className="sr-only"><UiText>{"Previous slide"}</UiText></span>
     </Button>
   )
 })
@@ -246,7 +247,7 @@ const CarouselNext = React.forwardRef<
       {...props}
     >
       <ArrowRight className="h-4 w-4" />
-      <span className="sr-only">Next slide</span>
+      <span className="sr-only"><UiText>{"Next slide"}</UiText></span>
     </Button>
   )
 })

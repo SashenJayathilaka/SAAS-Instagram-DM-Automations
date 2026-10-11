@@ -1,0 +1,14 @@
+import type { Locale } from "./i18n/config";
+
+type ArchiveCopy = { title: string; description: string; heading: string; intro: string; pageLabel: string };
+export const BLOG_ARCHIVE_COPY: Record<Locale, ArchiveCopy> = {
+  en: { title: "Instagram Automation Guides & DM Marketing | AP3K", description: "Learn Instagram comment-to-DM automation, replies and lead capture with AP3K tutorials, setup guides and practical troubleshooting.", heading: "Instagram automation guides", intro: "Find practical guides to Instagram comment replies, automatic DMs and lead capture. Start with a setup tutorial or choose the workflow you need.", pageLabel: "Page" },
+  fr: { title: "Guides Instagram : automatisation et messages privés | AP3K", description: "Découvrez les guides AP3K pour automatiser les commentaires et messages privés Instagram, recueillir des contacts et résoudre les problèmes de configuration.", heading: "Guides d’automatisation Instagram", intro: "Apprenez à automatiser les réponses aux commentaires et les messages privés Instagram. Choisissez un tutoriel de configuration adapté à votre objectif.", pageLabel: "Page" },
+  es: { title: "Guías de automatización de Instagram y mensajes | AP3K", description: "Aprende a automatizar comentarios y mensajes de Instagram, captar contactos y resolver problemas con los tutoriales y guías de AP3K.", heading: "Guías de automatización de Instagram", intro: "Aprende a automatizar respuestas a comentarios y mensajes privados de Instagram. Empieza con un tutorial o elige el flujo que necesita tu negocio.", pageLabel: "Página" },
+  de: { title: "Instagram-Automatisierung: Anleitungen und DMs | AP3K", description: "AP3K-Anleitungen für automatische Instagram-Kommentare, Direktnachrichten und Kontaktgewinnung. Mit Einrichtungshilfen und Lösungen für häufige Fehler.", heading: "Anleitungen zur Instagram-Automatisierung", intro: "Lerne, Instagram-Kommentare zu beantworten, Direktnachrichten zu automatisieren und Kontakte zu erfassen. Wähle eine Anleitung passend zu deinem Ziel.", pageLabel: "Seite" },
+  pt: { title: "Guias de automação do Instagram e mensagens | AP3K", description: "Aprenda a automatizar comentários e mensagens do Instagram, captar contactos e resolver problemas com os tutoriais e guias de configuração do AP3K.", heading: "Guias de automação do Instagram", intro: "Aprenda a automatizar respostas a comentários e mensagens privadas do Instagram. Comece por um tutorial ou escolha o fluxo certo para o seu objetivo.", pageLabel: "Página" },
+};
+export function blogArchiveCopy(locale: Locale, page = 1) {
+  const copy = BLOG_ARCHIVE_COPY[locale];
+  return { ...copy, description: page === 1 ? copy.description : `${copy.pageLabel} ${page}. ${copy.description}`, title: page === 1 ? copy.title : `${copy.title.replace(/ \| AP3K$/, "")} — ${copy.pageLabel} ${page} | AP3K` };
+}

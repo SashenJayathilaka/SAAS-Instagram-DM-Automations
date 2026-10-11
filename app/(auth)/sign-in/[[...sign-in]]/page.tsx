@@ -4,7 +4,7 @@ import React from "react";
 type Props = {};
 
 function Page({}: Props) {
-  return <SignIn />;
+  return <SignIn forceRedirectUrl="/dashboard" />;
 }
 
 export default Page;

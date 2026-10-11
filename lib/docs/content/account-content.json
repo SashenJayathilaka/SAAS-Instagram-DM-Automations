@@ -1,0 +1,1362 @@
+[
+  {
+    "slug": "getting-started/what-is-ap3k",
+    "group": "getting-started",
+    "title": "What is AP3K?",
+    "description": "AP3K turns Instagram comments, story interactions, and incoming DMs into automated conversations. Create a trigger, write the response, and deliver the right next step while keeping the account’s activity in one…",
+    "html": "<p>AP3K turns Instagram comments, story interactions, and incoming DMs into automated conversations. Create a trigger, write the response, and deliver the right next step while keeping the account’s activity in one workspace.</p><h2 id=\"what-you-can-automate\">What you can automate</h2><ul><li>Send a DM after an eligible comment matches a keyword or Any Comment trigger.</li><li>Write public comment replies or use AI to draft variations.</li><li>Respond to story interactions and incoming DM triggers.</li><li>Add an opener, a resource link, or a request to follow.</li><li>Collect email addresses and phone numbers in the conversation.</li><li>Build branches, delays, tags, fields, and external requests in the flow builder.</li></ul><h2 id=\"who-it-is-for\">Who it is for</h2><p>Creators, shops, coaches, and service businesses can use AP3K to answer repeated questions and deliver resources after a person interacts on Instagram. You choose the message and link rather than sending unsolicited messages to an arbitrary list.</p><h2 id=\"example-campaigns\">Example campaigns</h2><ul><li>A creator asks viewers to comment GUIDE and sends a downloadable resource.</li><li>A shop sends product details after a matching post comment.</li><li>A coach collects an email before delivering an opted-in resource. These are campaign examples, not customer case studies.</li></ul><h2 id=\"set-up-your-first-automation\">Set up your first automation</h2><ol><li>Create an AP3K account and connect an Instagram Business or Creator account.</li><li>Choose a Post, Story, Chat, or Flow automation.</li><li>Configure the trigger and response, then review and publish.</li><li>Test the complete path from another Instagram account.</li></ol><h2 id=\"know-the-boundaries\">Know the boundaries</h2><p>AP3K uses Instagram’s official API and must respect its permissions and messaging eligibility. It does not automatically message every new follower. Eligible comments from the previous seven days can be processed with the separate Backtrack comments action. Facebook Messenger and native external MCP account connectors are not supported.</p><h2 id=\"start-here\">Start here</h2><p><a href=\"/docs/getting-started/connect-instagram-account\">Connect your Instagram account</a>, then <a href=\"/docs/post-automation/create-instagram-comment-to-dm-automation\">create an instagram comment-to-dm automation</a>. Review <a href=\"/pricing\">plans and pricing</a> for the allowance that fits your campaign.</p>",
+    "headings": [
+      {
+        "id": "what-you-can-automate",
+        "text": "What you can automate",
+        "level": 2
+      },
+      {
+        "id": "who-it-is-for",
+        "text": "Who it is for",
+        "level": 2
+      },
+      {
+        "id": "example-campaigns",
+        "text": "Example campaigns",
+        "level": 2
+      },
+      {
+        "id": "set-up-your-first-automation",
+        "text": "Set up your first automation",
+        "level": 2
+      },
+      {
+        "id": "know-the-boundaries",
+        "text": "Know the boundaries",
+        "level": 2
+      },
+      {
+        "id": "start-here",
+        "text": "Start here",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-06"
+  },
+  {
+    "slug": "getting-started/connect-instagram-account",
+    "group": "getting-started",
+    "title": "Connect your Instagram account",
+    "description": "Connect your Instagram professional account to AP3K through Instagram Login. You approve access on Instagram; your Instagram password is not entered into AP3K.",
+    "html": "<p>Connect your Instagram professional account to AP3K through Instagram Login. You approve access on Instagram; your Instagram password is not entered into AP3K.</p><h2 id=\"before-you-begin\">Before you begin</h2><ul><li>Use a Business or Creator account. Personal accounts cannot use the required messaging API.</li><li>Sign in to your AP3K account. New accounts begin at onboarding.</li><li>If you are moving from another automation tool, review its active automations and messaging connection before switching.</li></ul><h2 id=\"1-open-your-ap3k-workspace\">1. Open your AP3K workspace</h2><p>Create an account or sign in at <a href=\"/sign-in\">AP3K</a>. In onboarding, choose to connect Instagram. In an existing workspace, use <strong>Add Instagram account</strong>.</p><h2 id=\"2-connect-instagram\">2. Connect Instagram</h2><p>Choose <strong>Connect Instagram</strong>. Sign in to the Instagram account you want to automate and approve the requested account, comment, and messaging access. A Facebook Page is not required for this direct Instagram Login flow.</p><h2 id=\"3-check-the-connected-account\">3. Check the connected account</h2><p>After a successful connection, AP3K returns you to the dashboard. Confirm the displayed @username is the account you intended to connect. Open its Instagram connection details to review comment and DM readiness.</p><h2 id=\"4-run-a-real-test\">4. Run a real test</h2><p>Create and publish a simple automation, then comment from a second Instagram account. Check both the public reply and the DM, including Message requests. <a href=\"/docs/post-automation/create-instagram-comment-to-dm-automation\">Create an Instagram comment-to-DM automation</a>.</p><h2 id=\"if-the-connection-does-not-finish\">If the connection does not finish</h2><p>Read the error shown in AP3K before trying again. A different connected workspace, missing permissions, or an ineligible account requires a different fix. <a href=\"/docs/troubleshoot/fix-instagram-automation-not-working\">Check your Instagram permissions</a>.</p>",
+    "headings": [
+      {
+        "id": "before-you-begin",
+        "text": "Before you begin",
+        "level": 2
+      },
+      {
+        "id": "1-open-your-ap3k-workspace",
+        "text": "1. Open your AP3K workspace",
+        "level": 2
+      },
+      {
+        "id": "2-connect-instagram",
+        "text": "2. Connect Instagram",
+        "level": 2
+      },
+      {
+        "id": "3-check-the-connected-account",
+        "text": "3. Check the connected account",
+        "level": 2
+      },
+      {
+        "id": "4-run-a-real-test",
+        "text": "4. Run a real test",
+        "level": 2
+      },
+      {
+        "id": "if-the-connection-does-not-finish",
+        "text": "If the connection does not finish",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "getting-started/connect-facebook-account",
+    "group": "getting-started",
+    "title": "Connect your Facebook account",
+    "description": "AP3K currently automates Instagram accounts. Facebook Page comment automation and Messenger automation are not available in AP3K.",
+    "html": "<p>AP3K currently automates Instagram accounts. Facebook Page comment automation and Messenger automation are not available in AP3K.</p><h2 id=\"use-instagram-login\">Use Instagram Login</h2><p>Connect a professional Instagram account directly from AP3K. This connection does not require a Facebook Page. <a href=\"/docs/getting-started/connect-instagram-account\">Connect your Instagram account</a>.</p><h2 id=\"existing-facebook-based-instagram-connections\">Existing Facebook-based Instagram connections</h2><p>Some older Instagram connections used Facebook Login. If your account already has such a connection, follow the connection status and reconnect guidance shown in AP3K. This does not enable Facebook Page or Messenger automations.</p><h2 id=\"moving-from-another-tool\">Moving from another tool</h2><p>If another tool still controls your Instagram conversations through a Meta business connection, remove that connection as part of the migration. <a href=\"/docs/migrating-from-manychat/disconnect-manychat-from-facebook\">Review existing Meta connections</a>.</p>",
+    "headings": [
+      {
+        "id": "use-instagram-login",
+        "text": "Use Instagram Login",
+        "level": 2
+      },
+      {
+        "id": "existing-facebook-based-instagram-connections",
+        "text": "Existing Facebook-based Instagram connections",
+        "level": 2
+      },
+      {
+        "id": "moving-from-another-tool",
+        "text": "Moving from another tool",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "getting-started/ap3k-plans-and-pricing",
+    "group": "getting-started",
+    "title": "AP3K plans and pricing",
+    "description": "AP3K has Free, Pro, and Business plans. Monthly action and AI allowances are shared across the Instagram accounts connected to your subscription.",
+    "html": "<p>AP3K has Free, Pro, and Business plans. Monthly action and AI allowances are shared across the Instagram accounts connected to your subscription.</p><h2 id=\"compare-the-plans\">Compare the plans</h2><table><thead><tr><th>Plan</th><th>Monthly price</th><th>Automated actions</th><th>AI replies</th><th>Instagram accounts</th><th>Active automations</th></tr></thead><tbody><tr><td>Free</td><td>$0</td><td>500</td><td>0</td><td>1</td><td>5</td></tr><tr><td>Pro</td><td>$9</td><td>5,000</td><td>500</td><td>3</td><td>Unlimited</td></tr><tr><td>Business</td><td>$29</td><td>20,000</td><td>2,000</td><td>10</td><td>Unlimited</td></tr></tbody></table><p>See <a href=\"/pricing\">pricing</a> and your workspace Billing screen for the available billing intervals and checkout total.</p><h2 id=\"what-counts-as-an-automated-action\">What counts as an automated action</h2><p>Each successful automated public comment reply and each successful DM counts as an action. A campaign that sends both can consume more than one action per person.</p><h2 id=\"ai-previews-and-publishing\">AI previews and publishing</h2><p>Free users can generate bounded AI reply previews and samples. Publishing an automation with AI replies requires a paid plan. Turn AI off and write manual replies to publish within the Free plan limits.</p><h2 id=\"choosing-a-plan\">Choosing a plan</h2><ul><li>Free: test and run a small campaign on one Instagram account.</li><li>Pro: more actions, AI replies, up to three Instagram accounts, and lead export.</li><li>Business: higher shared allowances and up to ten Instagram accounts.</li></ul><h2 id=\"check-usage-before-a-campaign\">Check usage before a campaign</h2><p>Open Billing in your workspace to review your subscription and usage. An unlimited automation count does not mean unlimited message sending: action allowances and Instagram delivery requirements still apply.</p>",
+    "headings": [
+      {
+        "id": "compare-the-plans",
+        "text": "Compare the plans",
+        "level": 2
+      },
+      {
+        "id": "what-counts-as-an-automated-action",
+        "text": "What counts as an automated action",
+        "level": 2
+      },
+      {
+        "id": "ai-previews-and-publishing",
+        "text": "AI previews and publishing",
+        "level": 2
+      },
+      {
+        "id": "choosing-a-plan",
+        "text": "Choosing a plan",
+        "level": 2
+      },
+      {
+        "id": "check-usage-before-a-campaign",
+        "text": "Check usage before a campaign",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "how-tos/add-another-instagram-account",
+    "group": "how-tos",
+    "title": "Add another Instagram account",
+    "description": "Connect each Instagram account you manage to AP3K separately, then select the right account before building or reviewing an automation.",
+    "html": "<p>Connect each Instagram account you manage to AP3K separately, then select the right account before building or reviewing an automation.</p><h2 id=\"before-you-begin\">Before you begin</h2><ul><li>Have access to the Instagram professional account you want to add.</li><li>Check your account allowance: Free supports one connected Instagram account, Pro supports three, and Business supports ten.</li></ul><h2 id=\"add-the-account\">Add the account</h2><ol><li>Sign in to your existing AP3K workspace.</li><li>Choose <strong>Add Instagram account</strong> from the account controls.</li><li>Sign in to the Instagram account you are adding and approve the requested access.</li><li>After returning to the dashboard, confirm the @username and connection status.</li></ol><h2 id=\"switch-between-accounts\">Switch between accounts</h2><p>Use the account switcher to select a connected Instagram account. Check the selected username before editing automations, contacts, or analytics. Monthly action and AI allowances remain shared across the subscription.</p><h2 id=\"already-connected-to-another-workspace\">Already connected to another workspace</h2><p>An Instagram account already attached to a different AP3K workspace must be removed there before it can be added here. Use that workspace’s Instagram connection settings, or contact support if you cannot access it.</p><h2 id=\"check-messaging-control\">Check messaging control</h2><p>A successful account connection does not remove a competing app’s messaging permissions. <a href=\"/docs/troubleshoot/fix-another-app-controlling-instagram-conversations\">Resolve another app controlling conversations</a> if replies fail with a thread ownership error.</p>",
+    "headings": [
+      {
+        "id": "before-you-begin",
+        "text": "Before you begin",
+        "level": 2
+      },
+      {
+        "id": "add-the-account",
+        "text": "Add the account",
+        "level": 2
+      },
+      {
+        "id": "switch-between-accounts",
+        "text": "Switch between accounts",
+        "level": 2
+      },
+      {
+        "id": "already-connected-to-another-workspace",
+        "text": "Already connected to another workspace",
+        "level": 2
+      },
+      {
+        "id": "check-messaging-control",
+        "text": "Check messaging control",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "how-tos/limit-public-replies-on-instagram-automation",
+    "group": "how-tos",
+    "title": "Limit Public Replies on an Instagram Automation",
+    "description": "Use a public reply limit to control how many automated comments AP3K leaves under a post. The limit applies per post over a rolling seven-day period.",
+    "html": "<p>Use a public reply limit to control how many automated comments AP3K leaves under a post. The limit applies per post over a rolling seven-day period.</p><h2 id=\"set-the-limit\">Set the limit</h2><ol><li>Open the post automation in <strong>Automations</strong>.</li><li>Expand <strong>Public comment reply</strong>.</li><li>Find <strong>Reply limit</strong> and choose the available limit: no configured limit, 100 per post, or 200 per post.</li><li>Review and publish your changes.</li></ol><h2 id=\"what-happens-at-the-limit\">What happens at the limit</h2><p>AP3K stops additional public replies when that post reaches the configured limit. DMs can continue when the trigger and delivery requirements are met. A public reply limit does not increase your monthly plan allowance or override an Instagram restriction.</p><h2 id=\"choose-replies-that-fit-the-conversation\">Choose replies that fit the conversation</h2><p>Write useful variations and keep the actual resource link in the DM. If you use AI public replies, a paid plan is required to publish. <a href=\"/docs/post-automation/write-your-own-public-comment-replies\">Write your own public replies</a>.</p>",
+    "headings": [
+      {
+        "id": "set-the-limit",
+        "text": "Set the limit",
+        "level": 2
+      },
+      {
+        "id": "what-happens-at-the-limit",
+        "text": "What happens at the limit",
+        "level": 2
+      },
+      {
+        "id": "choose-replies-that-fit-the-conversation",
+        "text": "Choose replies that fit the conversation",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "how-tos/backtrack-comments-in-automation",
+    "group": "how-tos",
+    "title": "Backtrack Comments in an Automation",
+    "description": "Reply to eligible Instagram comments from the previous seven days using AP3K Backtrack comments. Review media, quotas and delivery protections before starting.",
+    "html": "<p>Backtrack comments is a separate, deliberate action that processes eligible comments from the previous seven days using the saved automation rule. Publishing alone does not replay the entire comment history.</p><h2 id=\"before-you-start\">Before you start</h2><p>Use a supported automation with selected media. Confirm the Instagram account, post, trigger, messages and destination. Each successful public reply or DM still uses the normal action allowance. Duplicate and Meta delivery protections remain in force.</p><h2 id=\"start-backtracking\">Start backtracking</h2><ol><li>Open Automations and find the intended automation.</li><li>Open its actions menu and use View media to confirm the post.</li><li>Choose Backtrack comments and review the dialog and saved rule.</li><li>Start only when you intend to send real replies to eligible past commenters.</li><li>Review progress and sent, skipped or failed results. Not every older comment is eligible.</li></ol><h2 id=\"allowances\">Allowances and limits</h2><p>Free includes three backtracking attempts. Pro and Business remove this attempt limit. This does not remove monthly action allowances, Instagram rules or technical rate limits. Comments older than seven days are outside the backtracking window.</p><h2 id=\"troubleshoot\">If a comment is skipped</h2><p>Check timestamp, selected media, trigger match, previous delivery and messaging eligibility. Repeatedly starting the same job does not bypass duplicate protections. <a href=\"/docs/troubleshoot/fix-comment-automation-not-working\">Read the delivery troubleshooting guide</a>.</p>",
+    "headings": [
+      {
+        "id": "before-you-start",
+        "text": "Before you start",
+        "level": 2
+      },
+      {
+        "id": "start-backtracking",
+        "text": "Start backtracking",
+        "level": 2
+      },
+      {
+        "id": "allowances",
+        "text": "Allowances and limits",
+        "level": 2
+      },
+      {
+        "id": "troubleshoot",
+        "text": "If a comment is skipped",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-06"
+  },
+  {
+    "slug": "how-tos/delete-ap3k-account",
+    "group": "how-tos",
+    "title": "Delete AP3K Account",
+    "description": "Deleting your AP3K account permanently removes your account and associated workspace data. Review what you need to keep before confirming.",
+    "html": "<p>Deleting your AP3K account permanently removes your account and associated workspace data. Review what you need to keep before confirming.</p><h2 id=\"before-you-delete\">Before you delete</h2><ul><li>Save any campaign text and records you need. Paid plans support lead export.</li><li>Account deletion is different from removing one connected Instagram account. Use that account’s connection settings if you only want to disconnect Instagram.</li><li>Active Stripe subscriptions are canceled immediately during account deletion. Previous payments are not automatically refunded.</li></ul><h2 id=\"delete-your-account\">Delete your account</h2><ol><li>Open <strong>Settings</strong> in your AP3K workspace.</li><li>Choose <strong>Delete account permanently</strong>.</li><li>Read the confirmation explaining which records will be removed.</li><li>Type <strong>DELETE</strong> in the confirmation field and confirm deletion.</li></ol><h2 id=\"what-is-removed\">What is removed</h2><p>The confirmation covers campaigns, connected Instagram accounts, leads, activity, the AP3K billing profile, and the sign-in account. This action cannot be undone. See the <a href=\"/privacy\">privacy policy</a> for information about data handling.</p><h2 id=\"need-help-instead\">Need help instead?</h2><p>If you are deleting because an automation stopped working, <a href=\"/docs/troubleshoot/fix-instagram-automation-not-working\">check your instagram permissions</a>. You can also <a href=\"/contact\">contact support</a> before taking an irreversible action.</p>",
+    "headings": [
+      {
+        "id": "before-you-delete",
+        "text": "Before you delete",
+        "level": 2
+      },
+      {
+        "id": "delete-your-account",
+        "text": "Delete your account",
+        "level": 2
+      },
+      {
+        "id": "what-is-removed",
+        "text": "What is removed",
+        "level": 2
+      },
+      {
+        "id": "need-help-instead",
+        "text": "Need help instead?",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "why/instagram-professional-account-is-required",
+    "group": "why",
+    "title": "Why an Instagram Professional Account Is Required",
+    "description": "AP3K connects to Instagram’s official messaging and comment APIs. The required access is available for Instagram Business and Creator accounts, not personal accounts.",
+    "html": "<p>AP3K connects to Instagram’s official messaging and comment APIs. The required access is available for Instagram Business and Creator accounts, not personal accounts.</p><h2 id=\"automation-runs-through-the-api\">Automation runs through the API</h2><p>AP3K receives eligible interactions and sends configured replies through Meta’s API. It does not log in as you to click around the Instagram app, and you do not give AP3K your Instagram password.</p><h2 id=\"business-or-creator\">Business or Creator</h2><p>Either professional account type can be used for AP3K’s Instagram connection. Choose the type that fits your work in Instagram’s account settings. Keep the account professional after connecting so it retains the required eligibility.</p><h2 id=\"switch-a-personal-account\">Switch a personal account</h2><p>Use Instagram’s account settings to switch to a professional account, then return to AP3K and connect it. Review the settings Instagram presents during the change, including public profile and messaging settings.</p><h2 id=\"a-facebook-page-is-not-required\">A Facebook Page is not required</h2><p>AP3K’s current direct Instagram Login flow does not require a Facebook Page. Legacy Facebook-based connections are a separate case. <a href=\"/docs/why/facebook-page-is-required\">Read about Page requirements</a>.</p><h2 id=\"already-professional-but-still-blocked\">Already professional but still blocked?</h2><p>Account type is only one requirement. Check message access, granted permissions, and the exact error. <a href=\"/docs/troubleshoot/fix-instagram-messaging-api-error\">Fix messaging eligibility errors</a>.</p>",
+    "headings": [
+      {
+        "id": "automation-runs-through-the-api",
+        "text": "Automation runs through the API",
+        "level": 2
+      },
+      {
+        "id": "business-or-creator",
+        "text": "Business or Creator",
+        "level": 2
+      },
+      {
+        "id": "switch-a-personal-account",
+        "text": "Switch a personal account",
+        "level": 2
+      },
+      {
+        "id": "a-facebook-page-is-not-required",
+        "text": "A Facebook Page is not required",
+        "level": 2
+      },
+      {
+        "id": "already-professional-but-still-blocked",
+        "text": "Already professional but still blocked?",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "why/facebook-page-is-required",
+    "group": "why",
+    "title": "Why a Facebook Page Is Required",
+    "description": "A Facebook Page is not required for AP3K’s direct Instagram Login connection. Your Instagram account must be a professional Business or Creator account.",
+    "html": "<p>A Facebook Page is not required for AP3K’s direct Instagram Login connection. Your Instagram account must be a professional Business or Creator account.</p><h2 id=\"the-current-connection-flow\">The current connection flow</h2><p>Choose Add Instagram account in AP3K and approve access through Instagram Login. You do not need to create a Facebook Page or connect Messenger to use this flow. <a href=\"/docs/getting-started/connect-instagram-account\">Connect your Instagram account</a>.</p><h2 id=\"why-older-instructions-mention-a-page\">Why older instructions mention a Page</h2><p>Facebook-based Instagram Login historically used a linked Facebook Page to grant access. If you are maintaining a legacy connection, its Page relationship can still matter. AP3K labels its legacy account selector separately.</p><h2 id=\"facebook-automation-is-different\">Facebook automation is different</h2><p>Connecting Instagram does not create Facebook Page or Messenger automations. Those channels are not supported by AP3K.</p><h2 id=\"if-a-previous-app-still-owns-conversations\">If a previous app still owns conversations</h2><p>An older tool may retain a Meta business integration even after you connect Instagram directly. <a href=\"/docs/troubleshoot/fix-another-app-controlling-instagram-conversations\">Check conversation ownership</a> when Instagram reports a thread ownership error.</p>",
+    "headings": [
+      {
+        "id": "the-current-connection-flow",
+        "text": "The current connection flow",
+        "level": 2
+      },
+      {
+        "id": "why-older-instructions-mention-a-page",
+        "text": "Why older instructions mention a Page",
+        "level": 2
+      },
+      {
+        "id": "facebook-automation-is-different",
+        "text": "Facebook automation is different",
+        "level": 2
+      },
+      {
+        "id": "if-a-previous-app-still-owns-conversations",
+        "text": "If a previous app still owns conversations",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "zapier/ap3k-zapier-integration",
+    "group": "zapier",
+    "title": "The AP3K Zapier Integration",
+    "description": "Learn how AP3K sends Instagram flow data to Zapier through HTTPS webhooks, including requirements, supported behavior, and delivery checks.",
+    "html": "<p>AP3K does not currently offer a native Zapier app with account-wide contact event triggers. You can send data from an AP3K flow using its <strong>External request / Zapier</strong> action.</p><h2 id=\"how-the-connection-works\">How the connection works</h2><p>The flow sends an HTTPS POST request with JSON when execution reaches the webhook node. Zapier can receive that request and pass the data to another app. This is an explicit step in a flow, not a subscription to every contact change in AP3K.</p><h2 id=\"what-you-need\">What you need</h2><ul><li>A flow that collects or sets the required contact fields.</li><li>A public HTTPS webhook endpoint, such as a Zapier Catch Hook.</li><li>Permission to send the selected contact information to that destination.</li></ul><h2 id=\"set-up-the-webhook\">Set up the webhook</h2><ol><li>Create a Catch Hook trigger in Webhooks by Zapier and copy its HTTPS webhook URL. Availability depends on your Zapier plan.</li><li>Open your AP3K flow and add <strong>External request / Zapier</strong> after the step that collects or sets the data.</li><li>Paste the URL into <strong>Webhook URL</strong>. Enter a JSON object in <strong>JSON body</strong>, with contact fields inside string values.</li><li>Connect the node into the flow, save, and review the preview. Preview does not send the external request.</li><li>Publish when ready and trigger the flow with a real test interaction. Check the sample received by Zapier, map the fields to the destination action, and test that action before enabling the Zap.</li></ol><h2 id=\"example-json-body\">Example JSON body</h2><pre><code>{\"email\":\"{{email}}\",\"phone\":\"{{phone}}\",\"source\":\"instagram\"}</code></pre><h2 id=\"check-the-result\">Check the result</h2><p>Use a real interaction after publishing to test delivery. Flow preview deliberately makes no external request. Inspect both AP3K activity and the receiver’s history if the expected data does not arrive.</p>",
+    "headings": [
+      {
+        "id": "how-the-connection-works",
+        "text": "How the connection works",
+        "level": 2
+      },
+      {
+        "id": "what-you-need",
+        "text": "What you need",
+        "level": 2
+      },
+      {
+        "id": "set-up-the-webhook",
+        "text": "Set up the webhook",
+        "level": 2
+      },
+      {
+        "id": "example-json-body",
+        "text": "Example JSON body",
+        "level": 2
+      },
+      {
+        "id": "check-the-result",
+        "text": "Check the result",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "zapier/connect-ap3k-to-zapier",
+    "group": "zapier",
+    "title": "Connect AP3K to Zapier",
+    "description": "Connect an AP3K flow to a Zapier Catch Hook: add the webhook URL, map contact fields in JSON, and test delivery with a real Instagram interaction.",
+    "html": "<p>AP3K does not currently offer a native Zapier app with account-wide contact event triggers. You can send data from an AP3K flow using its <strong>External request / Zapier</strong> action.</p><h2 id=\"create-the-receiving-hook\">Create the receiving hook</h2><p>In Zapier, configure Webhooks by Zapier with a Catch Hook trigger. Copy the generated HTTPS URL. There is no AP3K private-beta invite or native AP3K OAuth connection to accept.</p><h2 id=\"connect-the-flow\">Connect the flow</h2><ol><li>Create a Catch Hook trigger in Webhooks by Zapier and copy its HTTPS webhook URL. Availability depends on your Zapier plan.</li><li>Open your AP3K flow and add <strong>External request / Zapier</strong> after the step that collects or sets the data.</li><li>Paste the URL into <strong>Webhook URL</strong>. Enter a JSON object in <strong>JSON body</strong>, with contact fields inside string values.</li><li>Connect the node into the flow, save, and review the preview. Preview does not send the external request.</li><li>Publish when ready and trigger the flow with a real test interaction. Check the sample received by Zapier, map the fields to the destination action, and test that action before enabling the Zap.</li></ol><h2 id=\"keep-the-payload-deliberate\">Keep the payload deliberate</h2><p>Send only the fields your destination needs. Template values such as <code>{{email}}</code> belong inside JSON string values. Missing fields resolve to empty strings, so place the request after collection or use a condition to check the field.</p><h2 id=\"test-before-using-real-leads\">Test before using real leads</h2><p>Use a test contact and verify the destination record. Treat the webhook URL as a secret: anyone who has it may be able to send data to that receiver.</p>",
+    "headings": [
+      {
+        "id": "create-the-receiving-hook",
+        "text": "Create the receiving hook",
+        "level": 2
+      },
+      {
+        "id": "connect-the-flow",
+        "text": "Connect the flow",
+        "level": 2
+      },
+      {
+        "id": "keep-the-payload-deliberate",
+        "text": "Keep the payload deliberate",
+        "level": 2
+      },
+      {
+        "id": "test-before-using-real-leads",
+        "text": "Test before using real leads",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "zapier/ap3k-trigger-events-in-zapier",
+    "group": "zapier",
+    "title": "AP3K Trigger Events in Zapier",
+    "description": "Understand when AP3K sends a Zapier webhook, how to label flow events, and why contact changes outside the flow do not trigger a request.",
+    "html": "<p>AP3K does not currently offer a native Zapier app with account-wide contact event triggers. You can send data from an AP3K flow using its <strong>External request / Zapier</strong> action.</p><h2 id=\"supported-trigger-behavior\">Supported trigger behavior</h2><p>A request is sent when a published flow reaches the External request / Zapier node. You control where that step sits and which fields it sends.</p><h2 id=\"no-account-wide-event-subscription\">No account-wide event subscription</h2><ul><li>Creating a contact does not automatically fire a native AP3K Zapier event.</li><li>Changing an email, phone number, tag, or custom field does not automatically fire a native event.</li><li>A webhook node in one flow does not observe changes made elsewhere.</li></ul><h2 id=\"build-the-event-into-the-flow\">Build the event into the flow</h2><p>Place the request after collecting a reply, setting a field, or adding a tag. Include an event label in your JSON body if the receiver needs to distinguish different steps.</p><h2 id=\"example-event-payload\">Example event payload</h2><pre><code>{\"event\":\"lead_collected\",\"email\":\"{{email}}\"}</code></pre><p><a href=\"/docs/zapier/build-your-first-ap3k-zap\">Build your first AP3K webhook Zap</a>.</p>",
+    "headings": [
+      {
+        "id": "supported-trigger-behavior",
+        "text": "Supported trigger behavior",
+        "level": 2
+      },
+      {
+        "id": "no-account-wide-event-subscription",
+        "text": "No account-wide event subscription",
+        "level": 2
+      },
+      {
+        "id": "build-the-event-into-the-flow",
+        "text": "Build the event into the flow",
+        "level": 2
+      },
+      {
+        "id": "example-event-payload",
+        "text": "Example event payload",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "zapier/build-your-first-ap3k-zap",
+    "group": "zapier",
+    "title": "Build Your First AP3K Zap",
+    "description": "Start with a working Instagram flow, then send one test contact to Zapier through an explicit webhook step.",
+    "html": "<p>Start with a working Instagram flow, then send one test contact to Zapier through an explicit webhook step.</p><h2 id=\"before-you-begin\">Before you begin</h2><ul><li>Connect Instagram and have a second account available for a real test.</li><li>Create a flow with a trigger and a step that collects an email address.</li><li>Prepare the destination app and a Zapier account with access to Webhooks by Zapier.</li></ul><h2 id=\"wire-up-the-webhook\">Wire up the webhook</h2><ol><li>Create a Catch Hook trigger in Webhooks by Zapier and copy its HTTPS webhook URL. Availability depends on your Zapier plan.</li><li>Open your AP3K flow and add <strong>External request / Zapier</strong> after the step that collects or sets the data.</li><li>Paste the URL into <strong>Webhook URL</strong>. Enter a JSON object in <strong>JSON body</strong>, with contact fields inside string values.</li><li>Connect the node into the flow, save, and review the preview. Preview does not send the external request.</li><li>Publish when ready and trigger the flow with a real test interaction. Check the sample received by Zapier, map the fields to the destination action, and test that action before enabling the Zap.</li></ol><h2 id=\"example-payload\">Example payload</h2><pre><code>{\"email\":\"{{email}}\",\"phone\":\"{{phone}}\",\"source\":\"instagram\"}</code></pre><h2 id=\"verify-the-whole-journey\">Verify the whole journey</h2><ol><li>Trigger the automation from the second Instagram account.</li><li>Answer the email collection question.</li><li>Confirm the email belongs to that contact in AP3K Contacts.</li><li>Confirm Zapier received the matching email and completed the intended destination action.</li></ol><h2 id=\"if-nothing-arrives\">If nothing arrives</h2><p>Check that the real flow reached the webhook node. Preview never sends requests, and a node that is not connected into the path will not run. Check the HTTPS URL, valid JSON, and the receiver’s test or live status.</p>",
+    "headings": [
+      {
+        "id": "before-you-begin",
+        "text": "Before you begin",
+        "level": 2
+      },
+      {
+        "id": "wire-up-the-webhook",
+        "text": "Wire up the webhook",
+        "level": 2
+      },
+      {
+        "id": "example-payload",
+        "text": "Example payload",
+        "level": 2
+      },
+      {
+        "id": "verify-the-whole-journey",
+        "text": "Verify the whole journey",
+        "level": 2
+      },
+      {
+        "id": "if-nothing-arrives",
+        "text": "If nothing arrives",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "zapier/sync-email-and-phone-updates-to-zapier",
+    "group": "zapier",
+    "title": "Sync Email and Phone Updates to Zapier",
+    "description": "Send a email or phone number from a flow to another app at the point where your automation has the value it needs.",
+    "html": "<p>Send a email or phone number from a flow to another app at the point where your automation has the value it needs.</p><h2 id=\"what-ap3k-supports\">What AP3K supports</h2><p>AP3K does not currently offer a native Zapier app with account-wide contact event triggers. You can send data from an AP3K flow using its <strong>External request / Zapier</strong> action. Updating a email or phone number elsewhere does not automatically notify Zapier.</p><h2 id=\"collect-first-send-second\">Collect first, send second</h2><p>Use a collection step to save the person’s email or phone number, then connect the webhook action after the reply is collected. This keeps the outgoing values associated with the person who answered.</p><h2 id=\"example-payload\">Example payload</h2><pre><code>{\"email\":\"{{email}}\",\"phone\":\"{{phone}}\",\"source\":\"instagram\"}</code></pre><h2 id=\"configure-and-test\">Configure and test</h2><p><a href=\"/docs/zapier/connect-ap3k-to-zapier\">Connect the flow to a Zapier Catch Hook</a>. Publish and run a real test interaction, then inspect the receiving record. Preview does not send an external request.</p><h2 id=\"avoid-duplicate-actions\">Avoid duplicate actions</h2><p>A flow can reach an external request on separate runs. Design the receiving workflow to update an existing record when appropriate, and use the One DM per user rule where it fits your campaign.</p>",
+    "headings": [
+      {
+        "id": "what-ap3k-supports",
+        "text": "What AP3K supports",
+        "level": 2
+      },
+      {
+        "id": "collect-first-send-second",
+        "text": "Collect first, send second",
+        "level": 2
+      },
+      {
+        "id": "example-payload",
+        "text": "Example payload",
+        "level": 2
+      },
+      {
+        "id": "configure-and-test",
+        "text": "Configure and test",
+        "level": 2
+      },
+      {
+        "id": "avoid-duplicate-actions",
+        "text": "Avoid duplicate actions",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "zapier/sync-custom-field-changes-to-zapier",
+    "group": "zapier",
+    "title": "Sync Custom Field Changes to Zapier",
+    "description": "Send a custom field from a flow to another app at the point where your automation has the value it needs.",
+    "html": "<p>Send a custom field from a flow to another app at the point where your automation has the value it needs.</p><h2 id=\"what-ap3k-supports\">What AP3K supports</h2><p>AP3K does not currently offer a native Zapier app with account-wide contact event triggers. You can send data from an AP3K flow using its <strong>External request / Zapier</strong> action. Updating a custom field elsewhere does not automatically notify Zapier.</p><h2 id=\"set-the-field-before-the-request\">Set the field before the request</h2><p>Add a Set field action using your field key, then place the webhook action after it. Reference that exact key inside a JSON string.</p><h2 id=\"example-payload\">Example payload</h2><pre><code>{\"event\":\"plan_updated\",\"plan\":\"{{plan}}\"}</code></pre><p>Replace <code>plan</code> with the key your flow actually sets.</p><h2 id=\"configure-and-test\">Configure and test</h2><p><a href=\"/docs/zapier/connect-ap3k-to-zapier\">Connect the flow to a Zapier Catch Hook</a>. Publish and run a real test interaction, then inspect the receiving record. Preview does not send an external request.</p><h2 id=\"avoid-duplicate-actions\">Avoid duplicate actions</h2><p>A flow can reach an external request on separate runs. Design the receiving workflow to update an existing record when appropriate, and use the One DM per user rule where it fits your campaign.</p>",
+    "headings": [
+      {
+        "id": "what-ap3k-supports",
+        "text": "What AP3K supports",
+        "level": 2
+      },
+      {
+        "id": "set-the-field-before-the-request",
+        "text": "Set the field before the request",
+        "level": 2
+      },
+      {
+        "id": "example-payload",
+        "text": "Example payload",
+        "level": 2
+      },
+      {
+        "id": "configure-and-test",
+        "text": "Configure and test",
+        "level": 2
+      },
+      {
+        "id": "avoid-duplicate-actions",
+        "text": "Avoid duplicate actions",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "zapier/trigger-zaps-when-contact-tags-change",
+    "group": "zapier",
+    "title": "Trigger Zaps When Contact Tags Are Added or Removed",
+    "description": "Send a tag from a flow to another app at the point where your automation has the value it needs.",
+    "html": "<p>Send a tag from a flow to another app at the point where your automation has the value it needs.</p><h2 id=\"what-ap3k-supports\">What AP3K supports</h2><p>AP3K does not currently offer a native Zapier app with account-wide contact event triggers. You can send data from an AP3K flow using its <strong>External request / Zapier</strong> action. Updating a tag elsewhere does not automatically notify Zapier.</p><h2 id=\"place-the-request-after-the-tag-action\">Place the request after the tag action</h2><p>Use the flow’s tag action to add or remove a tag. Connect the webhook action after it and include the intended event and tag name in the request. This reports execution of that path, not every tag edit in the account.</p><h2 id=\"example-payload\">Example payload</h2><pre><code>{\"event\":\"tag_added\",\"tag\":\"interested\",\"email\":\"{{email}}\"}</code></pre><h2 id=\"configure-and-test\">Configure and test</h2><p><a href=\"/docs/zapier/connect-ap3k-to-zapier\">Connect the flow to a Zapier Catch Hook</a>. Publish and run a real test interaction, then inspect the receiving record. Preview does not send an external request.</p><h2 id=\"avoid-duplicate-actions\">Avoid duplicate actions</h2><p>A flow can reach an external request on separate runs. Design the receiving workflow to update an existing record when appropriate, and use the One DM per user rule where it fits your campaign.</p>",
+    "headings": [
+      {
+        "id": "what-ap3k-supports",
+        "text": "What AP3K supports",
+        "level": 2
+      },
+      {
+        "id": "place-the-request-after-the-tag-action",
+        "text": "Place the request after the tag action",
+        "level": 2
+      },
+      {
+        "id": "example-payload",
+        "text": "Example payload",
+        "level": 2
+      },
+      {
+        "id": "configure-and-test",
+        "text": "Configure and test",
+        "level": 2
+      },
+      {
+        "id": "avoid-duplicate-actions",
+        "text": "Avoid duplicate actions",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "ai-connectors-mcp/connect-ap3k-to-claude",
+    "group": "ai-connectors-mcp",
+    "title": "Connect AP3K to Claude",
+    "description": "AP3K does not currently provide a hosted MCP server or an account connector for Claude.",
+    "html": "<p>AP3K does not currently provide a hosted MCP server or an account connector for Claude.</p><h2 id=\"connection-availability\">Connection availability</h2><p>There is no AP3K MCP endpoint, OAuth connector, or API key setup to configure in this client. Adding an invented server URL will not connect your automations, contacts, or analytics.</p><h2 id=\"use-ai-inside-ap3k\">Use AI inside AP3K</h2><p>AP3K includes AI public reply drafting and AI-assisted flow creation inside the workspace. Review generated content and the flow before publishing. Free users can preview public reply samples; publishing AI replies requires a paid plan.</p><h2 id=\"prepare-content-with-your-ai-client\">Prepare content with your AI client</h2><p>You can draft captions, keywords, and response text in Claude and paste the approved copy into AP3K. Review links and claims before using the text. This does not grant the client access to your AP3K account.</p><h2 id=\"send-flow-data-to-another-service\">Send flow data to another service</h2><p>If you need an outbound integration, the flow builder supports an explicit HTTPS JSON request. <a href=\"/docs/zapier/ap3k-zapier-integration\">Learn about flow webhooks</a>. This is different from an MCP account connector.</p>",
+    "headings": [
+      {
+        "id": "connection-availability",
+        "text": "Connection availability",
+        "level": 2
+      },
+      {
+        "id": "use-ai-inside-ap3k",
+        "text": "Use AI inside AP3K",
+        "level": 2
+      },
+      {
+        "id": "prepare-content-with-your-ai-client",
+        "text": "Prepare content with your AI client",
+        "level": 2
+      },
+      {
+        "id": "send-flow-data-to-another-service",
+        "text": "Send flow data to another service",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "ai-connectors-mcp/connect-ap3k-to-chatgpt",
+    "group": "ai-connectors-mcp",
+    "title": "Connect AP3K to ChatGPT",
+    "description": "AP3K does not currently provide a hosted MCP server or an account connector for ChatGPT.",
+    "html": "<p>AP3K does not currently provide a hosted MCP server or an account connector for ChatGPT.</p><h2 id=\"connection-availability\">Connection availability</h2><p>There is no AP3K MCP endpoint, OAuth connector, or API key setup to configure in this client. Adding an invented server URL will not connect your automations, contacts, or analytics.</p><h2 id=\"use-ai-inside-ap3k\">Use AI inside AP3K</h2><p>AP3K includes AI public reply drafting and AI-assisted flow creation inside the workspace. Review generated content and the flow before publishing. Free users can preview public reply samples; publishing AI replies requires a paid plan.</p><h2 id=\"prepare-content-with-your-ai-client\">Prepare content with your AI client</h2><p>You can draft captions, keywords, and response text in ChatGPT and paste the approved copy into AP3K. Review links and claims before using the text. This does not grant the client access to your AP3K account.</p><h2 id=\"send-flow-data-to-another-service\">Send flow data to another service</h2><p>If you need an outbound integration, the flow builder supports an explicit HTTPS JSON request. <a href=\"/docs/zapier/ap3k-zapier-integration\">Learn about flow webhooks</a>. This is different from an MCP account connector.</p>",
+    "headings": [
+      {
+        "id": "connection-availability",
+        "text": "Connection availability",
+        "level": 2
+      },
+      {
+        "id": "use-ai-inside-ap3k",
+        "text": "Use AI inside AP3K",
+        "level": 2
+      },
+      {
+        "id": "prepare-content-with-your-ai-client",
+        "text": "Prepare content with your AI client",
+        "level": 2
+      },
+      {
+        "id": "send-flow-data-to-another-service",
+        "text": "Send flow data to another service",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "ai-connectors-mcp/connect-ap3k-to-cursor",
+    "group": "ai-connectors-mcp",
+    "title": "Connect AP3K to Cursor",
+    "description": "AP3K does not currently provide a hosted MCP server or an account connector for Cursor.",
+    "html": "<p>AP3K does not currently provide a hosted MCP server or an account connector for Cursor.</p><h2 id=\"connection-availability\">Connection availability</h2><p>There is no AP3K MCP endpoint, OAuth connector, or API key setup to configure in this client. Adding an invented server URL will not connect your automations, contacts, or analytics.</p><h2 id=\"use-ai-inside-ap3k\">Use AI inside AP3K</h2><p>AP3K includes AI public reply drafting and AI-assisted flow creation inside the workspace. Review generated content and the flow before publishing. Free users can preview public reply samples; publishing AI replies requires a paid plan.</p><h2 id=\"prepare-content-with-your-ai-client\">Prepare content with your AI client</h2><p>You can draft captions, keywords, and response text in Cursor and paste the approved copy into AP3K. Review links and claims before using the text. This does not grant the client access to your AP3K account.</p><h2 id=\"send-flow-data-to-another-service\">Send flow data to another service</h2><p>If you need an outbound integration, the flow builder supports an explicit HTTPS JSON request. <a href=\"/docs/zapier/ap3k-zapier-integration\">Learn about flow webhooks</a>. This is different from an MCP account connector.</p>",
+    "headings": [
+      {
+        "id": "connection-availability",
+        "text": "Connection availability",
+        "level": 2
+      },
+      {
+        "id": "use-ai-inside-ap3k",
+        "text": "Use AI inside AP3K",
+        "level": 2
+      },
+      {
+        "id": "prepare-content-with-your-ai-client",
+        "text": "Prepare content with your AI client",
+        "level": 2
+      },
+      {
+        "id": "send-flow-data-to-another-service",
+        "text": "Send flow data to another service",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "ai-connectors-mcp/connect-ap3k-to-vs-code-and-other-ai-clients",
+    "group": "ai-connectors-mcp",
+    "title": "Connect AP3K to VS Code and other AI clients",
+    "description": "AP3K does not currently provide a hosted MCP server or an account connector for VS Code and other AI clients.",
+    "html": "<p>AP3K does not currently provide a hosted MCP server or an account connector for VS Code and other AI clients.</p><h2 id=\"connection-availability\">Connection availability</h2><p>There is no AP3K MCP endpoint, OAuth connector, or API key setup to configure in this client. Adding an invented server URL will not connect your automations, contacts, or analytics.</p><h2 id=\"use-ai-inside-ap3k\">Use AI inside AP3K</h2><p>AP3K includes AI public reply drafting and AI-assisted flow creation inside the workspace. Review generated content and the flow before publishing. Free users can preview public reply samples; publishing AI replies requires a paid plan.</p><h2 id=\"prepare-content-with-your-ai-client\">Prepare content with your AI client</h2><p>You can draft captions, keywords, and response text in VS Code and other AI clients and paste the approved copy into AP3K. Review links and claims before using the text. This does not grant the client access to your AP3K account.</p><h2 id=\"send-flow-data-to-another-service\">Send flow data to another service</h2><p>If you need an outbound integration, the flow builder supports an explicit HTTPS JSON request. <a href=\"/docs/zapier/ap3k-zapier-integration\">Learn about flow webhooks</a>. This is different from an MCP account connector.</p>",
+    "headings": [
+      {
+        "id": "connection-availability",
+        "text": "Connection availability",
+        "level": 2
+      },
+      {
+        "id": "use-ai-inside-ap3k",
+        "text": "Use AI inside AP3K",
+        "level": 2
+      },
+      {
+        "id": "prepare-content-with-your-ai-client",
+        "text": "Prepare content with your AI client",
+        "level": 2
+      },
+      {
+        "id": "send-flow-data-to-another-service",
+        "text": "Send flow data to another service",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "migrating-from-manychat/disconnect-manychat-from-instagram",
+    "group": "migrating-from-manychat",
+    "title": "Disconnect ManyChat from Your Instagram Account",
+    "description": "Before moving Instagram automation to AP3K, keep a record of your existing campaigns and remove the previous tool’s connection when you are ready to switch.",
+    "html": "<p>Before moving Instagram automation to AP3K, keep a record of your existing campaigns and remove the previous tool’s connection when you are ready to switch.</p><h2 id=\"before-you-begin\">Before you begin</h2><ul><li>Have access to the ManyChat workspace and the Instagram account.</li><li>Save the trigger rules, messages, buttons, and follow-up logic you want to rebuild.</li><li>Review the effect of removing the Instagram channel on existing contacts and active automations.</li></ul><h2 id=\"remove-the-instagram-connection-in-manychat\">Remove the Instagram connection in ManyChat</h2><p>Open the Instagram channel in ManyChat settings. Review its disable or removal controls carefully: temporarily disabling a channel and removing an Instagram account have different effects. Follow the current confirmation shown by ManyChat and keep any needed records first.</p><h2 id=\"review-instagram-apps-and-websites\">Review Instagram Apps and websites</h2><p>In Instagram settings, open Apps and websites and review active connections. Remove the ManyChat connection when you are ready to end its access. Keep the connection you authorized for AP3K. Names and menus may differ across Instagram versions.</p><h2 id=\"review-any-facebook-side-connection\">Review any Facebook-side connection</h2><p>If ManyChat was also connected through a Facebook Page or Meta business portfolio, review those permissions too. <a href=\"/docs/migrating-from-manychat/disconnect-manychat-from-facebook\">Remove the previous Meta connection</a>.</p><h2 id=\"connect-and-test-ap3k\">Connect and test AP3K</h2><p><a href=\"/docs/getting-started/connect-instagram-account\">Connect your Instagram account</a>. Publish a reviewed automation and test from a second account. If Instagram reports a thread ownership error, check whether a previous connection still controls that conversation.</p>",
+    "headings": [
+      {
+        "id": "before-you-begin",
+        "text": "Before you begin",
+        "level": 2
+      },
+      {
+        "id": "remove-the-instagram-connection-in-manychat",
+        "text": "Remove the Instagram connection in ManyChat",
+        "level": 2
+      },
+      {
+        "id": "review-instagram-apps-and-websites",
+        "text": "Review Instagram Apps and websites",
+        "level": 2
+      },
+      {
+        "id": "review-any-facebook-side-connection",
+        "text": "Review any Facebook-side connection",
+        "level": 2
+      },
+      {
+        "id": "connect-and-test-ap3k",
+        "text": "Connect and test AP3K",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "migrating-from-manychat/disconnect-manychat-from-facebook",
+    "group": "migrating-from-manychat",
+    "title": "Disconnect ManyChat from Facebook",
+    "description": "A previous Instagram automation tool can retain access through a Facebook or Meta business connection. Review those permissions if your old setup used them.",
+    "html": "<p>A previous Instagram automation tool can retain access through a Facebook or Meta business connection. Review those permissions if your old setup used them.</p><h2 id=\"before-you-begin\">Before you begin</h2><ul><li>Confirm you can administer the relevant business portfolio and Page.</li><li>Keep a record of the campaigns and contacts you need.</li><li>Coordinate with other users before removing a shared business integration.</li></ul><h2 id=\"review-business-integrations\">Review Business integrations</h2><p>In Facebook settings, find Business integrations and inspect the previous tool’s active access. Remove the ManyChat integration if you are retiring it. Read the confirmation so you understand the affected accounts.</p><h2 id=\"review-connected-apps\">Review Connected apps</h2><p>In Meta Business Suite settings or your Page’s messaging settings, check Connected apps for the old tool. Review any permission allowing it to take control of conversations. Remove or disable the obsolete connection according to the controls Meta presents.</p><h2 id=\"review-instagram-conversation-routing\">Review Instagram conversation routing</h2><p>If your setup exposes a default routing app, confirm it does not still direct Instagram conversations to the old tool. Menu names and routing controls vary by setup. Change only the accounts and permissions involved in your migration.</p><h2 id=\"direct-instagram-login-needs-no-new-page\">Direct Instagram Login needs no new Page</h2><p>These steps clean up an existing connection. You do not need to create a Facebook Page for AP3K’s current direct Instagram Login flow, and AP3K does not automate Facebook Messenger.</p><h2 id=\"verify-the-switch\">Verify the switch</h2><p><a href=\"/docs/migrating-from-manychat/verify-manychat-is-disconnected\">Verify the previous connection is removed</a>, then trigger a published AP3K automation from another Instagram account.</p>",
+    "headings": [
+      {
+        "id": "before-you-begin",
+        "text": "Before you begin",
+        "level": 2
+      },
+      {
+        "id": "review-business-integrations",
+        "text": "Review Business integrations",
+        "level": 2
+      },
+      {
+        "id": "review-connected-apps",
+        "text": "Review Connected apps",
+        "level": 2
+      },
+      {
+        "id": "review-instagram-conversation-routing",
+        "text": "Review Instagram conversation routing",
+        "level": 2
+      },
+      {
+        "id": "direct-instagram-login-needs-no-new-page",
+        "text": "Direct Instagram Login needs no new Page",
+        "level": 2
+      },
+      {
+        "id": "verify-the-switch",
+        "text": "Verify the switch",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "migrating-from-manychat/connect-your-account",
+    "group": "migrating-from-manychat",
+    "title": "Connect Your Instagram Account to AP3K",
+    "description": "After removing the previous tool’s connection, connect the Instagram account to your existing AP3K workspace or finish onboarding.",
+    "html": "<p>After removing the previous tool’s connection, connect the Instagram account to your existing AP3K workspace or finish onboarding.</p><h2 id=\"before-you-begin\">Before you begin</h2><ul><li>Keep a copy of the campaign logic you want to rebuild.</li><li>Review the old tool’s active automations and remove its Instagram messaging access.</li><li>Use an Instagram Business or Creator account.</li></ul><h2 id=\"if-you-are-new-to-ap3k\">If you are new to AP3K</h2><p>Create your AP3K account, continue to onboarding, and connect Instagram when prompted. Approve the requested comment and messaging access. Successful connection returns you to the dashboard.</p><h2 id=\"if-you-already-use-ap3k\">If you already use AP3K</h2><p>Sign in to your existing workspace and choose Add Instagram account. If that same Instagram account is already connected, use Reconnect from its connection details instead. <a href=\"/docs/getting-started/connect-instagram-account\">Connect your Instagram account</a>.</p><h2 id=\"confirm-the-selected-account\">Confirm the selected account</h2><p>Check the @username and comment/DM readiness. Do not rebuild into the wrong selected Instagram account. <a href=\"/docs/migrating-from-manychat/verify-manychat-is-disconnected\">Verify the migration</a>.</p>",
+    "headings": [
+      {
+        "id": "before-you-begin",
+        "text": "Before you begin",
+        "level": 2
+      },
+      {
+        "id": "if-you-are-new-to-ap3k",
+        "text": "If you are new to AP3K",
+        "level": 2
+      },
+      {
+        "id": "if-you-already-use-ap3k",
+        "text": "If you already use AP3K",
+        "level": 2
+      },
+      {
+        "id": "confirm-the-selected-account",
+        "text": "Confirm the selected account",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "migrating-from-manychat/verify-manychat-is-disconnected",
+    "group": "migrating-from-manychat",
+    "title": "Verify the Switch from ManyChat to AP3K",
+    "description": "Confirm the previous tool has released Instagram messaging access before relying on the rebuilt AP3K automations.",
+    "html": "<p>Confirm the previous tool has released Instagram messaging access before relying on the rebuilt AP3K automations.</p><h2 id=\"1-review-the-old-tool\">1. Review the old tool</h2><p>Confirm its Instagram connection and relevant automations are disabled or removed. Preserve any records you still need before deleting anything.</p><h2 id=\"2-check-instagram-apps-and-websites\">2. Check Instagram Apps and websites</h2><p>In Instagram settings, open Apps and websites and review active connections. Remove the previous automation tool if you are migrating away from it. Keep the AP3K connection you just authorized.</p><h2 id=\"3-check-any-meta-business-connection\">3. Check any Meta business connection</h2><p>If the old tool also connected through Facebook or a Meta business portfolio, review its Business integrations and Connected apps permissions. Remove the old tool’s access where present; direct Instagram Login does not require you to create a new Page.</p><h2 id=\"4-check-message-access\">4. Check message access</h2><p>In Instagram’s messaging settings, make sure connected tools are allowed to access messages. <a href=\"/docs/troubleshoot/fix-instagram-dm-access-disabled\">Fix disabled DM access</a>.</p><h2 id=\"5-test-a-new-interaction\">5. Test a new interaction</h2><p>Confirm AP3K shows the intended @username. Trigger a published automation from a second account and check the public reply, DM, and activity. A successful connection alone does not prove the full automation ran.</p>",
+    "headings": [
+      {
+        "id": "1-review-the-old-tool",
+        "text": "1. Review the old tool",
+        "level": 2
+      },
+      {
+        "id": "2-check-instagram-apps-and-websites",
+        "text": "2. Check Instagram Apps and websites",
+        "level": 2
+      },
+      {
+        "id": "3-check-any-meta-business-connection",
+        "text": "3. Check any Meta business connection",
+        "level": 2
+      },
+      {
+        "id": "4-check-message-access",
+        "text": "4. Check message access",
+        "level": 2
+      },
+      {
+        "id": "5-test-a-new-interaction",
+        "text": "5. Test a new interaction",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "migrating-from-manychat/rebuild-your-automations",
+    "group": "migrating-from-manychat",
+    "title": "Rebuild Your ManyChat Automations in AP3K",
+    "description": "Rebuild the logic of your Instagram automations in AP3K. There is no automatic import of a ManyChat flow, and features from other channels do not transfer.",
+    "html": "<p>Rebuild the logic of your Instagram automations in AP3K. There is no automatic import of a ManyChat flow, and features from other channels do not transfer.</p><h2 id=\"map-the-main-steps\">Map the main steps</h2><table><thead><tr><th>Existing automation step</th><th>AP3K equivalent</th></tr></thead><tbody><tr><td>Comment keyword</td><td>Post automation with keywords or Any Comment</td></tr><tr><td>Public comment reply</td><td>Manual reply variations or AI public replies</td></tr><tr><td>Opening DM</td><td>Opener message</td></tr><tr><td>Resource link</td><td>Message with CTA link button</td></tr><tr><td>Email or phone question</td><td>Collect info</td></tr><tr><td>Delay and follow-up</td><td>Delay controls and follow-up settings</td></tr><tr><td>Story response</td><td>Story automation</td></tr><tr><td>Incoming DM keyword</td><td>Chat automation</td></tr><tr><td>Branches, tags, fields</td><td>Flow builder nodes</td></tr></tbody></table><h2 id=\"start-with-one-working-path\">Start with one working path</h2><p><a href=\"/docs/post-automation/create-instagram-comment-to-dm-automation\">Create an Instagram comment-to-DM automation</a>. Begin with a single post, one clear trigger, and one useful DM. Test it before adding collection, follow-ups, or branches.</p><h2 id=\"review-differences\">Review differences</h2><ul><li>AP3K focuses on Instagram; Facebook Messenger, WhatsApp, SMS, and email broadcasts are not equivalent automation channels here.</li><li>Comment triggers use configured keyword matching or Any Comment; do not assume an intent-matching rule was imported.</li><li>Publishing does not replay earlier comments. Use the separate Backtrack comments action for eligible comments from the previous seven days.</li><li>DM button limits and supported layouts are enforced by the AP3K editor.</li><li>Native Zapier contact event subscriptions and external MCP clients are not supported. Explicit flow webhooks are available.</li></ul><h2 id=\"test-from-another-account\">Test from another account</h2><p>Publish the reviewed automation and run each path from a second Instagram account. Confirm collection saves to the correct contact, CTA links open correctly, and only the intended replies are sent.</p>",
+    "headings": [
+      {
+        "id": "map-the-main-steps",
+        "text": "Map the main steps",
+        "level": 2
+      },
+      {
+        "id": "start-with-one-working-path",
+        "text": "Start with one working path",
+        "level": 2
+      },
+      {
+        "id": "review-differences",
+        "text": "Review differences",
+        "level": 2
+      },
+      {
+        "id": "test-from-another-account",
+        "text": "Test from another account",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-06"
+  },
+  {
+    "slug": "migrating-from-manychat/after-migration",
+    "group": "migrating-from-manychat",
+    "title": "After Migrating from ManyChat: Test and Close the Old Account",
+    "description": "A migration is complete when the rebuilt automations have been tested end to end. Check real delivery before retiring the previous workspace.",
+    "html": "<p>A migration is complete when the rebuilt automations have been tested end to end. Check real delivery before retiring the previous workspace.</p><h2 id=\"test-from-a-second-instagram-account\">Test from a second Instagram account</h2><p>Comment the keyword from another account and follow the complete path: public reply, opener, button, DM, collection, and any follow-up. Repeat for every campaign and branch you rebuilt. Check the correct contact receives saved information.</p><h2 id=\"handle-comments-from-the-changeover\">Handle comments from the changeover</h2><p>AP3K does not replay comments received before activation. Review missed conversations manually and activate the new automation before promoting the campaign again. <a href=\"/docs/how-tos/backtrack-comments-in-automation\">Understand older comment handling</a>.</p><h2 id=\"review-the-first-active-day\">Review the first active day</h2><p>Watch automation activity, usage, and connection readiness. A configured delay or waiting collection step can explain later delivery; an error needs investigation. Do not assume every late message is a normal queue delay.</p><h2 id=\"if-something-does-not-fire\">If something does not fire</h2><ul><li><a href=\"/docs/troubleshoot/fix-public-reply-sent-but-no-dm\">Public reply arrives but no DM</a></li><li><a href=\"/docs/troubleshoot/fix-another-app-controlling-instagram-conversations\">Another app controls the conversation</a></li><li><a href=\"/docs/troubleshoot/fix-instagram-messaging-api-error\">Messaging eligibility error</a></li></ul><h2 id=\"review-the-old-subscription-separately\">Review the old subscription separately</h2><p>Disconnecting Instagram does not necessarily cancel billing with another provider. After your AP3K automations work, review the old provider’s subscription and retention options. Export any records you need before deleting an account. Do not delete a shared workspace without coordinating with its other users.</p><h2 id=\"keep-your-campaign-record\">Keep your campaign record</h2><p>Keep the approved trigger, response text, destination links, and testing notes. They make future changes easier to verify.</p>",
+    "headings": [
+      {
+        "id": "test-from-a-second-instagram-account",
+        "text": "Test from a second Instagram account",
+        "level": 2
+      },
+      {
+        "id": "handle-comments-from-the-changeover",
+        "text": "Handle comments from the changeover",
+        "level": 2
+      },
+      {
+        "id": "review-the-first-active-day",
+        "text": "Review the first active day",
+        "level": 2
+      },
+      {
+        "id": "if-something-does-not-fire",
+        "text": "If something does not fire",
+        "level": 2
+      },
+      {
+        "id": "review-the-old-subscription-separately",
+        "text": "Review the old subscription separately",
+        "level": 2
+      },
+      {
+        "id": "keep-your-campaign-record",
+        "text": "Keep your campaign record",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "troubleshoot/fix-instagram-automation-not-working",
+    "group": "troubleshoot",
+    "title": "How to Fix Instagram Automation Not Working",
+    "description": "Start with the selected Instagram account, connection status, and a fresh test interaction. Missing permissions are one possible cause; a draft automation, unmatched trigger, or plan limit can also stop delivery.",
+    "html": "<p>Start with the selected Instagram account, connection status, and a fresh test interaction. Missing permissions are one possible cause; a draft automation, unmatched trigger, or plan limit can also stop delivery.</p><h2 id=\"1-confirm-the-automation-is-active\">1. Confirm the automation is active</h2><ul><li>Check the selected Instagram account and post.</li><li>Publish the automation and confirm it is enabled.</li><li>Use a new matching comment, story interaction, or DM from a second account. Older comments are not replayed.</li></ul><h2 id=\"2-review-instagram-connection-readiness\">2. Review Instagram connection readiness</h2><p>Open the account’s Instagram connection details in AP3K. Check comment and DM readiness and any displayed error. Use Reconnect if the token or required access is missing.</p><h2 id=\"3-review-granted-permissions\">3. Review granted permissions</h2><p>Open Instagram’s Apps and websites settings and find the app you authorized for AP3K. Review its account, comment, and messaging permissions. Instagram’s wording can vary; confirm the permissions requested during connection were approved.</p><h2 id=\"4-reconnect-if-necessary\">4. Reconnect if necessary</h2><p>In AP3K, use <strong>Reconnect</strong> for the affected Instagram account. Approve all requested access and confirm the same username on return. Signing out of AP3K is not required. <a href=\"/docs/getting-started/connect-instagram-account\">Connect your Instagram account</a>.</p><h2 id=\"5-check-delivery-specific-blockers\">5. Check delivery-specific blockers</h2><ul><li>Check monthly usage and whether the automation uses paid AI replies.</li><li>Check message access and competing apps if public comments work but DMs fail.</li><li>Check delays, opener buttons, and collection steps: later messages may be waiting for the person’s response.</li></ul><h2 id=\"test-and-share-useful-details\">Test and share useful details</h2><p>Run a new test from a second Instagram account. If it still fails, contact support with the username, automation name, post link, failure time and timezone, and the exact visible error. Do not send passwords or tokens.</p>",
+    "headings": [
+      {
+        "id": "1-confirm-the-automation-is-active",
+        "text": "1. Confirm the automation is active",
+        "level": 2
+      },
+      {
+        "id": "2-review-instagram-connection-readiness",
+        "text": "2. Review Instagram connection readiness",
+        "level": 2
+      },
+      {
+        "id": "3-review-granted-permissions",
+        "text": "3. Review granted permissions",
+        "level": 2
+      },
+      {
+        "id": "4-reconnect-if-necessary",
+        "text": "4. Reconnect if necessary",
+        "level": 2
+      },
+      {
+        "id": "5-check-delivery-specific-blockers",
+        "text": "5. Check delivery-specific blockers",
+        "level": 2
+      },
+      {
+        "id": "test-and-share-useful-details",
+        "text": "Test and share useful details",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "troubleshoot/fix-comment-automation-not-working",
+    "group": "troubleshoot",
+    "title": "Comment Automation Not Working: The Comment Is Invalid for a Private Reply",
+    "description": "A comment must match an active automation and remain eligible for Instagram’s private reply API. Start with a new comment from a second account.",
+    "html": "<p>A comment must match an active automation and remain eligible for Instagram’s private reply API. Start with a new comment from a second account.</p><h2 id=\"check-the-trigger\">Check the trigger</h2><ul><li>Confirm the automation is published and enabled.</li><li>Confirm the selected post or scope includes the post being tested.</li><li>Check Any Comment or the configured keyword matching.</li><li>Use a comment posted after activation; publishing does not automatically replay older comments. A separate Backtrack comments action can process eligible comments from the previous seven days.</li></ul><h2 id=\"read-the-delivery-error\">Read the delivery error</h2><p>An error saying a comment is invalid for a private reply can indicate a deleted or ineligible comment, an already-sent private reply, or restrictions on reaching the recipient. A successful public reply does not guarantee a DM can be delivered.</p><h2 id=\"check-repeat-protection\">Check repeat protection</h2><p>One DM per user suppresses another DM to someone who already triggered the automation. This is separate from Instagram’s limit on replying privately to the same comment. Do not treat repeated test comments from one person as independent first-contact tests.</p><h2 id=\"if-every-new-comment-fails\">If every new comment fails</h2><p><a href=\"/docs/troubleshoot/fix-instagram-automation-not-working\">Check your Instagram permissions</a>. Confirm DM access and review whether another app controls messaging. Keep the Instagram account professional. A Facebook Page is not required for the direct Instagram Login flow.</p><h2 id=\"get-help-with-a-specific-attempt\">Get help with a specific attempt</h2><p>Contact support with your Instagram username, automation name, post link, comment time and timezone, and exact error. A concrete failed attempt is more useful than repeatedly reconnecting the account.</p>",
+    "headings": [
+      {
+        "id": "check-the-trigger",
+        "text": "Check the trigger",
+        "level": 2
+      },
+      {
+        "id": "read-the-delivery-error",
+        "text": "Read the delivery error",
+        "level": 2
+      },
+      {
+        "id": "check-repeat-protection",
+        "text": "Check repeat protection",
+        "level": 2
+      },
+      {
+        "id": "if-every-new-comment-fails",
+        "text": "If every new comment fails",
+        "level": 2
+      },
+      {
+        "id": "get-help-with-a-specific-attempt",
+        "text": "Get help with a specific attempt",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-06"
+  },
+  {
+    "slug": "troubleshoot/fix-public-reply-sent-but-no-dm",
+    "group": "troubleshoot",
+    "title": "Public Reply Sent but No DM Arrives",
+    "description": "A public reply confirms that part of the automation ran. DM access and delivery rules are separate, so work through the DM path and connection details.",
+    "html": "<p>A public reply confirms that part of the automation ran. DM access and delivery rules are separate, so work through the DM path and connection details.</p><h2 id=\"1-confirm-the-dm-is-enabled\">1. Confirm the DM is enabled</h2><p>Open the automation and check that Disable direct message is off. Review the actual message and any opener, collection, or delay steps before it.</p><h2 id=\"2-check-message-requests\">2. Check Message requests</h2><p>A first message from an account the recipient does not follow can appear in Message requests. Test with another account and check that folder before treating it as a failed send.</p><h2 id=\"3-check-the-recipient-and-repeat-rule\">3. Check the recipient and repeat rule</h2><p>Instagram privacy settings or account restrictions can prevent a private reply. If One DM per user is enabled, another matching comment from the same person does not start another DM delivery. Use a fresh test contact when checking that rule.</p><h2 id=\"4-check-connection-and-activity\">4. Check connection and activity</h2><p>Review DM readiness and the automation activity. A comment permission can work while message access is disabled or another app owns the conversation. <a href=\"/docs/troubleshoot/fix-instagram-dm-access-disabled\">Check message access</a>.</p><h2 id=\"5-review-timing-and-conditions\">5. Review timing and conditions</h2><p>A configured delay, unopened opener, unanswered collection question, or follow-up condition can explain the wait. Later messages also depend on Instagram’s messaging eligibility window. <a href=\"/docs/troubleshoot/fix-slow-dm-delivery\">Investigate delayed delivery</a>.</p><h2 id=\"if-every-test-fails\">If every test fails</h2><p>Share the automation, Instagram username, new test time and timezone, and exact error with support. Avoid repeated publishing or reconnecting until you know which step is failing.</p>",
+    "headings": [
+      {
+        "id": "1-confirm-the-dm-is-enabled",
+        "text": "1. Confirm the DM is enabled",
+        "level": 2
+      },
+      {
+        "id": "2-check-message-requests",
+        "text": "2. Check Message requests",
+        "level": 2
+      },
+      {
+        "id": "3-check-the-recipient-and-repeat-rule",
+        "text": "3. Check the recipient and repeat rule",
+        "level": 2
+      },
+      {
+        "id": "4-check-connection-and-activity",
+        "text": "4. Check connection and activity",
+        "level": 2
+      },
+      {
+        "id": "5-review-timing-and-conditions",
+        "text": "5. Review timing and conditions",
+        "level": 2
+      },
+      {
+        "id": "if-every-test-fails",
+        "text": "If every test fails",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "troubleshoot/fix-auto-reply-not-sending-in-dms",
+    "group": "troubleshoot",
+    "title": "DMs Arrive but the Auto-Reply Doesn't Send",
+    "description": "When an incoming message does not receive the expected reply, check the trigger, publication status, and Instagram messaging access.",
+    "html": "<p>When an incoming message does not receive the expected reply, check the trigger, publication status, and Instagram messaging access.</p><h2 id=\"1-check-keyword-matching\">1. Check keyword matching</h2><p>Open the chat automation and compare the received message with its configured keyword rules. Test the exact keyword first, then a sentence containing it. Exact and contains matching can produce different results; confirm the mode available in your editor.</p><h2 id=\"2-confirm-it-is-published\">2. Confirm it is published</h2><p>Saved changes and an enabled published automation are different states. Confirm the automation is active and belongs to the selected Instagram account. Check other enabled rules if the wrong automation answers.</p><h2 id=\"3-check-message-access\">3. Check message access</h2><p><a href=\"/docs/troubleshoot/fix-instagram-dm-access-disabled\">Enable access to messages</a> in Instagram and check AP3K’s DM readiness.</p><h2 id=\"4-check-conversation-ownership\">4. Check conversation ownership</h2><p>Another messaging tool can retain control of a thread. <a href=\"/docs/troubleshoot/fix-another-app-controlling-instagram-conversations\">Review competing app connections</a>.</p><h2 id=\"5-use-a-new-test-message\">5. Use a new test message</h2><p>Send the trigger from a second Instagram account. Follow-up responses depend on an eligible messaging window and any configured delay or condition. An old conversation is not a reliable substitute for a new trigger.</p><h2 id=\"still-no-reply\">Still no reply?</h2><p><a href=\"/docs/troubleshoot/fix-instagram-automation-not-working\">Check your Instagram permissions</a>. Include the exact message and timestamp when contacting support, without sharing private credentials.</p>",
+    "headings": [
+      {
+        "id": "1-check-keyword-matching",
+        "text": "1. Check keyword matching",
+        "level": 2
+      },
+      {
+        "id": "2-confirm-it-is-published",
+        "text": "2. Confirm it is published",
+        "level": 2
+      },
+      {
+        "id": "3-check-message-access",
+        "text": "3. Check message access",
+        "level": 2
+      },
+      {
+        "id": "4-check-conversation-ownership",
+        "text": "4. Check conversation ownership",
+        "level": 2
+      },
+      {
+        "id": "5-use-a-new-test-message",
+        "text": "5. Use a new test message",
+        "level": 2
+      },
+      {
+        "id": "still-no-reply",
+        "text": "Still no reply?",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "troubleshoot/fix-instagram-messaging-api-error",
+    "group": "troubleshoot",
+    "title": "How to Fix the Instagram Messaging API Error",
+    "description": "An Instagram messaging eligibility error means Meta did not allow the requested account to use the messaging connection. Check the account and access requirements before reconnecting.",
+    "html": "<p>An Instagram messaging eligibility error means Meta did not allow the requested account to use the messaging connection. Check the account and access requirements before reconnecting.</p><h2 id=\"use-a-professional-account\">Use a professional account</h2><p>Instagram Login requires a Business or Creator account. A personal account cannot use the required messaging API. Switch the account type in Instagram’s professional settings if needed.</p><h2 id=\"enable-message-access\">Enable message access</h2><p>Check Instagram’s messaging settings for connected tools and enable Allow access to messages. <a href=\"/docs/troubleshoot/fix-instagram-dm-access-disabled\">Fix disabled DM access</a>.</p><h2 id=\"use-the-direct-instagram-connection\">Use the direct Instagram connection</h2><p>AP3K’s current Instagram Login flow does not require a Facebook Page. Legacy Facebook-based connections may require their existing Page and account relationship; use the reconnect guidance shown in your account.</p><h2 id=\"reconnect-and-review-the-error\">Reconnect and review the error</h2><p>Return to AP3K and reconnect the same Instagram account. Approve the requested permissions. If Meta still refuses eligibility, record the exact error and when it occurred rather than repeatedly changing unrelated settings.</p><h2 id=\"contact-support\">Contact support</h2><p>Share your Instagram username, connection method if known, and the time and wording of the failure through <a href=\"/contact\">AP3K support</a>. Never share login credentials.</p>",
+    "headings": [
+      {
+        "id": "use-a-professional-account",
+        "text": "Use a professional account",
+        "level": 2
+      },
+      {
+        "id": "enable-message-access",
+        "text": "Enable message access",
+        "level": 2
+      },
+      {
+        "id": "use-the-direct-instagram-connection",
+        "text": "Use the direct Instagram connection",
+        "level": 2
+      },
+      {
+        "id": "reconnect-and-review-the-error",
+        "text": "Reconnect and review the error",
+        "level": 2
+      },
+      {
+        "id": "contact-support",
+        "text": "Contact support",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "troubleshoot/fix-instagram-dm-access-disabled",
+    "group": "troubleshoot",
+    "title": "Fix 'The Account Owner Has Disabled Access to Instagram Direct Messages'",
+    "description": "“The account owner has disabled access to Instagram direct messages” is one\nof the tidier Instagram errors, because it names exactly what’s wrong and there’s\na single switch behind it.",
+    "html": "<p><strong>“The account owner has disabled access to Instagram direct messages”</strong> is one\nof the tidier Instagram errors, because it names exactly what’s wrong and there’s\na single switch behind it.</p>\n<p>Your Instagram account has <strong>Allow access to messages</strong> turned off. That switch\ngoverns whether <em>any</em> third-party tool may read or send your DMs. With it off,\nAP3K’s connection is otherwise healthy — permissions granted, account\neligible, automations published — and every message still fails.</p>\n<h2 id=\"turn-message-access-back-on\">Turn message access back on</h2>\n<p>The setting lives in the Instagram mobile app, not on the web.</p>\n<ol>\n<li>Open Instagram and go to <strong>Settings and activity</strong>.</li>\n<li>Tap <strong>Messages and story replies</strong> (on some versions: <strong>Privacy → Messages</strong>).</li>\n<li>Find <strong>Connected tools</strong> and open it.</li>\n<li>Switch <strong>Allow access to messages</strong> on.</li>\n</ol>\n<p>Instagram sometimes takes a little while to propagate the change to connected\napps. If automations are still failing after a few minutes, force the update from\nthe AP3K side:</p>\n<ol>\n<li>Open the Instagram connection details in AP3K.</li>\n<li>Choose Reconnect and approve the requested permissions —\n<a href=\"/docs/getting-started/connect-instagram-account\">Connect your Instagram account</a>\nhas the flow.</li>\n</ol>\n<p>Then comment your trigger word from a second account and confirm the DM arrives.</p>\n<h2 id=\"why-it-switches-itself-off\">Why it switches itself off</h2>\n<p>You probably didn’t turn it off deliberately. Three things flip it:</p>\n<ul>\n<li><strong>A password change or a security checkpoint.</strong> Instagram revokes third-party\nmessage access when it re-secures an account — see\n<a href=\"/docs/troubleshoot/reconnect-instagram-after-password-change\">Reconnect Instagram after a password change</a>.</li>\n<li><strong>Switching the account type</strong> back to Personal and then to Professional again.\nThe switch resets to off.</li>\n<li><strong>Removing and re-adding an app</strong> without approving the messaging permission on\nthe way through.</li>\n</ul>\n<aside><p>Not the same as removing the app</p><p>This switch is separate from the AP3K entry in <strong>Apps and websites</strong>. An\naccount can show AP3K as connected and still have message access off — which\nis why the automation looks fine in the dashboard right up until it tries to\nsend. If you’ve already reconnected once and the error persists, this switch is\nthe thing you haven’t checked.</p></aside>\n<h2 id=\"still-failing-after-switching-it-on\">Still failing after switching it on</h2>\n<p>If the error survives both the setting and a reconnection, the account may be\ncarrying a restriction rather than a setting. Check the\n<a href=\"/docs/troubleshoot/fix-instagram-messaging-api-error\">Messaging API eligibility list</a>,\nthen contact <a href=\"/contact\">support@ap3k.com</a> with your\nusername and the time of a failed send.</p>",
+    "headings": [
+      {
+        "id": "turn-message-access-back-on",
+        "text": "Turn message access back on",
+        "level": 2
+      },
+      {
+        "id": "why-it-switches-itself-off",
+        "text": "Why it switches itself off",
+        "level": 2
+      },
+      {
+        "id": "still-failing-after-switching-it-on",
+        "text": "Still failing after switching it on",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "troubleshoot/fix-another-app-controlling-instagram-conversations",
+    "group": "troubleshoot",
+    "title": "How to Fix Another App Controlling Your Instagram Conversations",
+    "description": "A thread ownership error means another connected app may still control the Instagram conversation. Review the previous tool’s permissions before retrying the same send.",
+    "html": "<p>A thread ownership error means another connected app may still control the Instagram conversation. Review the previous tool’s permissions before retrying the same send.</p><h2 id=\"why-this-happens\">Why this happens</h2><p>An Instagram account can show as connected to AP3K while an earlier messaging integration retains control of a conversation. This can happen after trying another tool or migrating an existing account.</p><h2 id=\"1-review-the-previous-tool\">1. Review the previous tool</h2><p>Check which Instagram account it still manages and disable the old automation when you are ready to switch. Keep any campaign and contact records you need before removing a channel.</p><h2 id=\"2-review-instagram-app-access\">2. Review Instagram app access</h2><p>Open Instagram Apps and websites and inspect active connections. Remove the obsolete messaging tool if you intend to stop using it. Keep the AP3K access you authorized.</p><h2 id=\"3-review-meta-business-access-if-applicable\">3. Review Meta business access if applicable</h2><p>If the earlier tool connected through Facebook or a Meta portfolio, review its Business integrations, Connected apps, and conversation routing settings as well. <a href=\"/docs/migrating-from-manychat/disconnect-manychat-from-facebook\">Review the Facebook-side connection</a>.</p><h2 id=\"4-test-a-new-interaction\">4. Test a new interaction</h2><p>Return to AP3K and review connection status. Ask the second test account to send a new message or trigger a published automation. Check whether the same ownership error appears. Do not assume removing one permission automatically repairs every existing conversation.</p><h2 id=\"if-it-persists\">If it persists</h2><p>Contact support with the connected username, error, test time and timezone, and screenshots of the relevant connected-app settings. Exclude passwords, tokens, and unrelated private conversations.</p>",
+    "headings": [
+      {
+        "id": "why-this-happens",
+        "text": "Why this happens",
+        "level": 2
+      },
+      {
+        "id": "1-review-the-previous-tool",
+        "text": "1. Review the previous tool",
+        "level": 2
+      },
+      {
+        "id": "2-review-instagram-app-access",
+        "text": "2. Review Instagram app access",
+        "level": 2
+      },
+      {
+        "id": "3-review-meta-business-access-if-applicable",
+        "text": "3. Review Meta business access if applicable",
+        "level": 2
+      },
+      {
+        "id": "4-test-a-new-interaction",
+        "text": "4. Test a new interaction",
+        "level": 2
+      },
+      {
+        "id": "if-it-persists",
+        "text": "If it persists",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "troubleshoot/reconnect-instagram-after-password-change",
+    "group": "troubleshoot",
+    "title": "Reconnect Instagram After a Password Change",
+    "description": "A password change or Instagram security checkpoint can invalidate the access token AP3K uses. Your saved automation settings remain, but delivery may need the account reconnected.",
+    "html": "<p>A password change or Instagram security checkpoint can invalidate the access token AP3K uses. Your saved automation settings remain, but delivery may need the account reconnected.</p><h2 id=\"reconnect-the-affected-account\">Reconnect the affected account</h2><ol><li>Sign in to AP3K and select the affected Instagram account.</li><li>Open its Instagram connection details and choose <strong>Reconnect</strong>.</li><li>Approve the requested access on Instagram.</li><li>Confirm the same @username and review comment and DM readiness after returning.</li></ol><h2 id=\"check-message-access\">Check message access</h2><p>If comments work but DMs do not, check Instagram’s Allow access to messages setting. <a href=\"/docs/troubleshoot/fix-instagram-dm-access-disabled\">Fix disabled DM access</a>.</p><h2 id=\"review-delayed-messages\">Review delayed messages</h2><p>Check the relevant automation’s activity and delay or follow-up settings. Do not assume messages that failed or became ineligible during the outage will all be replayed. Contact support if a pending delivery needs investigation.</p><h2 id=\"run-a-new-test\">Run a new test</h2><p>Use a second account to send a new eligible trigger. Confirm the public reply and DM. If you manage several Instagram accounts, reconnect the account whose access changed and check the others separately.</p>",
+    "headings": [
+      {
+        "id": "reconnect-the-affected-account",
+        "text": "Reconnect the affected account",
+        "level": 2
+      },
+      {
+        "id": "check-message-access",
+        "text": "Check message access",
+        "level": 2
+      },
+      {
+        "id": "review-delayed-messages",
+        "text": "Review delayed messages",
+        "level": 2
+      },
+      {
+        "id": "run-a-new-test",
+        "text": "Run a new test",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "troubleshoot/fix-public-reply-temporarily-restricted",
+    "group": "troubleshoot",
+    "title": "Public Comment Replies Temporarily Restricted",
+    "description": "Instagram may temporarily restrict public commenting even when DMs still work. Review the error and reduce automated public replies while the restriction is present.",
+    "html": "<p>Instagram may temporarily restrict public commenting even when DMs still work. Review the error and reduce automated public replies while the restriction is present.</p><h2 id=\"what-to-check\">What to check</h2><ul><li>A large burst of replies on one post.</li><li>Repeated identical text or links under many comments.</li><li>Other tools or manual activity using the same account.</li><li>Instagram account status and any restriction notice.</li></ul><h2 id=\"pause-public-replies\">Pause public replies</h2><p>Turn off the public reply section or pause the automation while you investigate. If DM access remains healthy, a DM-only automation may still be eligible. Follow Instagram’s displayed guidance; AP3K cannot promise when a restriction will be removed.</p><h2 id=\"control-future-reply-volume\">Control future reply volume</h2><p>Set a per-post Reply limit in the editor. Write useful manual variations or use AI public replies on a paid plan, then review the output. Variation does not guarantee exemption from Instagram limits.</p><h2 id=\"keep-resource-links-in-the-dm\">Keep resource links in the DM</h2><p>Use a short relevant comment reply and put the resource in the DM with a clear CTA button. Avoid repeating the same promotional link under every comment.</p><h2 id=\"different-from-delayed-dms\">Different from delayed DMs</h2><p>Comment restrictions and DM delivery are separate. <a href=\"/docs/troubleshoot/fix-slow-dm-delivery\">Investigate slow DM delivery</a> if the private response is also affected.</p>",
+    "headings": [
+      {
+        "id": "what-to-check",
+        "text": "What to check",
+        "level": 2
+      },
+      {
+        "id": "pause-public-replies",
+        "text": "Pause public replies",
+        "level": 2
+      },
+      {
+        "id": "control-future-reply-volume",
+        "text": "Control future reply volume",
+        "level": 2
+      },
+      {
+        "id": "keep-resource-links-in-the-dm",
+        "text": "Keep resource links in the DM",
+        "level": 2
+      },
+      {
+        "id": "different-from-delayed-dms",
+        "text": "Different from delayed DMs",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "troubleshoot/fix-slow-dm-delivery",
+    "group": "troubleshoot",
+    "title": "DMs Are Very Slow to Arrive",
+    "description": "A slow DM may be waiting on an automation step, a scheduled delay, a recipient action, or Instagram delivery access. Check the specific automation before assuming a sending queue is the cause.",
+    "html": "<p>A slow DM may be waiting on an automation step, a scheduled delay, a recipient action, or Instagram delivery access. Check the specific automation before assuming a sending queue is the cause.</p><h2 id=\"1-check-the-automation-path\">1. Check the automation path</h2><ul><li>An enabled delay intentionally waits before the next step.</li><li>An opener can wait for the person to tap its button.</li><li>Collect info can wait for the person’s answer.</li><li>Follow-ups can wait for the configured time and conditions.</li></ul><h2 id=\"2-check-message-requests\">2. Check Message requests</h2><p>Ask the test recipient to check Instagram Message requests as well as the main inbox. The message may have arrived before it was noticed.</p><h2 id=\"3-review-activity-and-connection-status\">3. Review activity and connection status</h2><p>Open the automation’s activity and Instagram connection details. Record any delivery error. A lost token, missing message access, or another app controlling the conversation needs a connection fix, not a shorter delay.</p><h2 id=\"4-check-delivery-scheduling\">4. Check delivery scheduling</h2><p>AP3K schedules eligible delayed and follow-up steps. If a step remains overdue, contact support with the automation and trigger time so its delivery status can be checked. Use the automation activity and connection status to investigate the affected delivery.</p><h2 id=\"5-respect-eligibility-and-limits\">5. Respect eligibility and limits</h2><p>Instagram can restrict or rate-limit delivery, and later messages must remain within the applicable messaging eligibility window. A paid AP3K plan does not override Instagram restrictions. <a href=\"/docs/troubleshoot/fix-instagram-automation-not-working\">Check your Instagram permissions</a>.</p>",
+    "headings": [
+      {
+        "id": "1-check-the-automation-path",
+        "text": "1. Check the automation path",
+        "level": 2
+      },
+      {
+        "id": "2-check-message-requests",
+        "text": "2. Check Message requests",
+        "level": 2
+      },
+      {
+        "id": "3-review-activity-and-connection-status",
+        "text": "3. Review activity and connection status",
+        "level": 2
+      },
+      {
+        "id": "4-check-delivery-scheduling",
+        "text": "4. Check delivery scheduling",
+        "level": 2
+      },
+      {
+        "id": "5-respect-eligibility-and-limits",
+        "text": "5. Respect eligibility and limits",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "troubleshoot/fix-links-not-clickable-in-dm",
+    "group": "troubleshoot",
+    "title": "Links Aren't Clickable in an Automated DM",
+    "description": "If a delivered URL is not tappable, check the message format, the URL itself, and whether the recipient has accepted the message request.",
+    "html": "<p>If a delivered URL is not tappable, check the message format, the URL itself, and whether the recipient has accepted the message request.</p><h2 id=\"use-a-cta-button\">Use a CTA button</h2><p>Add a button to your message, give it a clear label such as Get the Link, and enter the complete HTTPS destination. Check the label and URL limits shown in the editor. <a href=\"/docs/post-automation/dm-message-layouts-text-buttons-attachments\">Choose a DM message layout</a>.</p><h2 id=\"check-a-plain-text-link\">Check a plain-text link</h2><ul><li>Include the full protocol, such as <code>https://example.com</code>.</li><li>Put the link on its own line instead of surrounding it with punctuation.</li><li>Open the same URL in a browser to confirm it works.</li><li>Check any redirect or shortener you control.</li></ul><h2 id=\"check-message-requests\">Check Message requests</h2><p>Instagram can present messages differently before a request is accepted. Test from a second account and inspect the actual message on the device where the problem happens. An opener can invite the person to interact before you deliver the resource.</p><h2 id=\"if-messages-containing-links-fail\">If messages containing links fail</h2><p>Compare a simple text-only test with the link message and read the delivery error. Account restrictions or an invalid destination need a different fix from plain-text rendering. Contact support with the exact failure time and URL if needed.</p>",
+    "headings": [
+      {
+        "id": "use-a-cta-button",
+        "text": "Use a CTA button",
+        "level": 2
+      },
+      {
+        "id": "check-a-plain-text-link",
+        "text": "Check a plain-text link",
+        "level": 2
+      },
+      {
+        "id": "check-message-requests",
+        "text": "Check Message requests",
+        "level": 2
+      },
+      {
+        "id": "if-messages-containing-links-fail",
+        "text": "If messages containing links fail",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "troubleshoot/fix-media-not-sending-in-dm",
+    "group": "troubleshoot",
+    "title": "Media Won't Send in an Automated DM",
+    "description": "Check both the uploaded file and the automation’s delivery status when an attachment fails. Saving the automation and delivering a message are separate steps.",
+    "html": "<p>Check both the uploaded file and the automation’s delivery status when an attachment fails. Saving the automation and delivering a message are separate steps.</p><h2 id=\"1-check-format-and-size\">1. Check format and size</h2><table><thead><tr><th>Type</th><th>Formats</th><th>Maximum upload size</th></tr></thead><tbody><tr><td>Image</td><td>PNG, JPG, GIF</td><td>8 MB</td></tr><tr><td>Video</td><td>MP4, MOV</td><td>25 MB</td></tr><tr><td>Audio</td><td>AAC, M4A, WAV</td><td>25 MB</td></tr><tr><td>Document</td><td>PDF</td><td>25 MB</td></tr></tbody></table><p>Audio recorded in the browser uses the recorder’s supported format. Use the upload and recording controls in AP3K rather than renaming a file extension.</p><h2 id=\"2-finish-the-upload\">2. Finish the upload</h2><p>Wait for the attachment to finish uploading. For a recording, stop, review it, and choose Upload. A local recording preview alone is not a saved attachment.</p><h2 id=\"3-save-and-reopen\">3. Save and reopen</h2><p>Save the automation and reopen it to confirm the attachment is retained. If saving fails, keep the error text and contact support; do not assume a preview means the file was saved.</p><h2 id=\"4-test-from-another-account\">4. Test from another account</h2><p>Publish a reviewed automation and trigger it from a second Instagram account. Check the actual attachment and any delivery error. For cards, confirm required images, titles, and buttons are complete.</p><h2 id=\"5-use-a-smaller-valid-file\">5. Use a smaller valid file</h2><p>Compress a large video or image and upload it again. If only media messages fail, share the file type, size, automation name, and failure time with support.</p>",
+    "headings": [
+      {
+        "id": "1-check-format-and-size",
+        "text": "1. Check format and size",
+        "level": 2
+      },
+      {
+        "id": "2-finish-the-upload",
+        "text": "2. Finish the upload",
+        "level": 2
+      },
+      {
+        "id": "3-save-and-reopen",
+        "text": "3. Save and reopen",
+        "level": 2
+      },
+      {
+        "id": "4-test-from-another-account",
+        "text": "4. Test from another account",
+        "level": 2
+      },
+      {
+        "id": "5-use-a-smaller-valid-file",
+        "text": "5. Use a smaller valid file",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "troubleshoot/fix-post-thumbnail-not-loading",
+    "group": "troubleshoot",
+    "title": "A Post Thumbnail Won't Load",
+    "description": "The post picker or the automation’s preview shows a grey box where the image\nshould be. The good news first: this is almost always cosmetic . The\nautomation is bound to the post’s ID, not its picture, so a missing…",
+    "html": "\n<p>The post picker or the automation’s preview shows a grey box where the image\nshould be. The good news first: <strong>this is almost always cosmetic</strong>. The\nautomation is bound to the post’s ID, not its picture, so a missing thumbnail\ndoesn’t stop anything from triggering.</p>\n<h2 id=\"why-thumbnails-go-blank\">Why thumbnails go blank</h2>\n<p>Instagram serves media through CDN URLs that <strong>expire after a period</strong>. AP3K\ndisplays the URL Instagram gave it when the post was fetched; once that link\nlapses, the image stops loading while everything else about the post stays valid.</p>\n<p>That’s why older automations lose their previews first, and why the picker often\nlooks fine for recent posts and patchy further down.</p>\n<h2 id=\"get-the-previews-back\">Get the previews back</h2>\n<p><strong>Refresh the page.</strong> AP3K re-fetches the post list, Instagram issues fresh\nURLs, and the images return. This fixes most cases.</p>\n<p><strong>Check the post still exists.</strong> A post that was deleted or archived on Instagram\nhas no thumbnail to serve — and unlike an expired URL, this one <em>does</em> matter:\nthe automation attached to it can no longer trigger. Open the post on Instagram\nto confirm, and <a href=\"/docs/post-automation/choose-which-post-or-reel-to-automate\">repoint the automation</a>\nif it’s gone.</p>\n<p><strong>Reconnect if every thumbnail is blank.</strong> All previews missing across every\naccount usually means the connection can’t read your media at all — refresh\npermissions via\n<a href=\"/docs/troubleshoot/fix-instagram-automation-not-working\">Instagram automation not working</a>.</p>\n<p><strong>Try another browser.</strong> An ad blocker or strict tracking protection blocking\nInstagram’s CDN domain will hide thumbnails and nothing else. An incognito window\ntells you in seconds.</p>\n<h2 id=\"the-one-case-that-isnt-cosmetic\">The one case that isn’t cosmetic</h2>\n<p>In a <a href=\"/docs/story-automation/create-instagram-story-automation\">story automation</a>,\nthe story picker showing <strong>“No story · Add a story and try again”</strong> is not a\nloading failure — it means no story is currently live on the account. Instagram\nstories expire after 24 hours, and the picker only reads live ones. Post a story\nand reopen the picker, or point the automation at <strong>all stories</strong> or <strong>next\nstory</strong> instead.</p>\n<aside><p>Check the trigger, not the picture</p><p>If an automation stopped working <em>and</em> its thumbnail is missing, the thumbnail\nisn’t the cause. Start at\n<a href=\"/docs/troubleshoot/fix-comment-automation-not-working\">comment automation not working</a>\ninstead.</p></aside>",
+    "headings": [
+      {
+        "id": "why-thumbnails-go-blank",
+        "text": "Why thumbnails go blank",
+        "level": 2
+      },
+      {
+        "id": "get-the-previews-back",
+        "text": "Get the previews back",
+        "level": 2
+      },
+      {
+        "id": "the-one-case-that-isnt-cosmetic",
+        "text": "The one case that isn’t cosmetic",
+        "level": 2
+      }
+    ],
+    "updated": "2026-10-02"
+  },
+  {
+    "slug": "how-tos/ai-meta-policy-safety-check",
+    "group": "how-tos",
+    "title": "AI Meta Policy Safety Check",
+    "description": "Review automation messages for risk patterns before publishing in AP3K. Understand the Free scan allowance, paid access and limits of AI guidance.",
+    "updated": "2026-10-06",
+    "html": "<p>AI Meta Policy Safety Check reviews the configured automation for risk patterns before publishing. It is an advisory review, not approval from Meta and not a guarantee that messages will be delivered.</p><h2 id=\"run-the-check\">Run the check before publishing</h2><ol><li>Complete the trigger, reply and DM settings.</li><li>Choose Publish to open the safety review. AP3K scans the configured automation before the final publication confirmation.</li><li>Read each finding and any suggested rewrite.</li><li>Review and deliberately apply changes that fit the actual offer.</li><li>Publish only after checking the complete customer journey, then test from another account.</li></ol><h2 id=\"scan-allowances\">Scan allowances</h2><p>Free includes three policy scans. Pro and Business have unlimited scans subject to technical rate limits. Policy scans have a separate allowance from backtracking attempts and automated sends.</p><h2 id=\"what-it-cannot-do\">What the check cannot do</h2><p>A clean scan does not override Instagram permissions, messaging rules, duplicate protection or monthly usage limits. The scan does not publish an automation. Keep business claims accurate, respect the recipient’s request and inspect real delivery after publishing.</p>",
+    "headings": [
+      {
+        "id": "run-the-check",
+        "text": "Run the check before publishing",
+        "level": 2
+      },
+      {
+        "id": "scan-allowances",
+        "text": "Scan allowances",
+        "level": 2
+      },
+      {
+        "id": "what-it-cannot-do",
+        "text": "What the check cannot do",
+        "level": 2
+      }
+    ]
+  }
+]

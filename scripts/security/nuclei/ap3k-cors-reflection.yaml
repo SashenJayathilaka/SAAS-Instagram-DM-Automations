@@ -1,0 +1,16 @@
+id: ap3k-cors-reflection
+info:
+  name: AP3K credentialed untrusted origin reflection
+  author: ap3k-security-review
+  severity: medium
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/api/attachments'
+      - '{{BaseURL}}/api/dashboard/search?q=security-audit'
+    headers:
+      Origin: https://security-audit.invalid
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(to_lower(all_headers), "access-control-allow-origin: https://security-audit.invalid") && contains(to_lower(all_headers), "access-control-allow-credentials: true")'

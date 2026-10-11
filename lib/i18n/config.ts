@@ -5,6 +5,8 @@ import commercialSlugs from "../content/expansion/commercial-slugs.json";
 import englishArticleSlugs from "../content/comment-dm/slugs.json";
 
 const englishArticles = new Set([
+  "/blog/instagram-next-post-automation",
+  "/blog/instagram-automation-link-tracking",
   "/blog/manychat-vs-ap3k-pricing-for-instagram",
   ...importedArticleSlugs.map(slug => `/blog/${slug}`),
   ...editorialSlugs.map((slug) => `/blog/${slug}`),

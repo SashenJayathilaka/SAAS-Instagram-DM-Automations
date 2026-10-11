@@ -12,7 +12,7 @@ it("redirects a human with no caching or referrer leakage and edge-provided coun
   const response = await GET(request({ "x-vercel-ip-country": "MA" }), context);
   expect(response.status).toBe(302); expect(response.headers.get("location")).toBe("https://example.com/guide");
   expect(response.headers.get("cache-control")).toContain("no-store"); expect(response.headers.get("x-robots-tag")).toBe("noindex, nofollow"); expect(response.headers.get("referrer-policy")).toBe("no-referrer");
-  expect(mocks.click).toHaveBeenCalledWith({ automationId: "automation", recipientIgId: "contact" }, "MA");
+  expect(mocks.click).toHaveBeenCalledWith({ id: "00000000-0000-0000-0000-000000000001", automationId: "automation", recipientIgId: "contact" }, "MA");
 });
 it("redirects HEAD, preview bots, and prefetch without counting a click", async () => {
   expect((await HEAD(request(), context)).status).toBe(302);

@@ -204,17 +204,12 @@ export function isHumanLinkRequest(headers: Headers) {
 }
 
 export async function recordAutomationClick(
-  link: { automationId: string; recipientIgId: string },
+  link: { automationId: string; recipientIgId: string; id?: string },
   country?: string | null,
 ) {
-  await client.automationEngagementJob.updateMany({
-    where: {
-      automationId: link.automationId,
-      recipientIgId: link.recipientIgId,
-      kind: "FOLLOW_UP",
-      status: { in: ["PENDING", "PROCESSING"] },
-    },
-    data: { clickedAt: new Date() },
+  if (link.id) await client.automationTrackedLink.updateMany({
+    where: { id: link.id, automationId: link.automationId, recipientIgId: link.recipientIgId, firstClickedAt: null },
+    data: { firstClickedAt: new Date() },
   });
   const code = country?.toUpperCase();
   await client.automationClick.upsert({
@@ -224,7 +219,17 @@ export async function recordAutomationClick(
         recipientIgId: link.recipientIgId,
       },
     },
-    create: { ...link, country: code && /^[A-Z]{2}$/.test(code) ? code : null },
+    create: { automationId: link.automationId, recipientIgId: link.recipientIgId, country: code && /^[A-Z]{2}$/.test(code) ? code : null },
     update: {},
   });
+  await client.automationEngagementJob.updateMany({
+    where: {
+      automationId: link.automationId,
+      recipientIgId: link.recipientIgId,
+      kind: "FOLLOW_UP",
+      status: { in: ["PENDING", "PROCESSING"] },
+    },
+    data: { clickedAt: new Date() },
+  });
+
 }

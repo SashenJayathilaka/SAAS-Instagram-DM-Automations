@@ -17,6 +17,7 @@ beforeEach(() => {
     if (sql.includes('AS "uniqueHitRecipients"')) return [{ hits: BigInt(9), uniqueHitRecipients: BigInt(4), clicks: BigInt(3), eligibleNonFollowers: BigInt(2), newFollowers: BigInt(1), trackingStartedAt: createdAt }];
     if (sql.includes("SUM(hits)")) return [{ date: "2026-09-26", hits: BigInt(9), clicks: BigInt(3) }];
     if (sql.includes("GROUP BY c.country")) return [{ country: "MA", clicks: BigInt(3) }];
+    if (sql.includes("GROUP BY c.destination")) return [{ destination: "https://example.com/guide", recipients: BigInt(4), clicks: BigInt(2) }];
     return [{ id: "click-1", recipientIgId: "1234567890", country: "MA", createdAt }];
   });
   mocks.hits.mockResolvedValue([{ id: "hit-1", recipientIgId: "1234567890", source: "COMMENT", createdAt }]);
@@ -57,8 +58,8 @@ describe("account-scoped automation analytics", () => {
     expect(mocks.hits.mock.calls[0][0]).toMatchObject({ where: { automationId }, take: 50 });
     expect(mocks.follows.mock.calls[0][0]).toMatchObject({ where: { automationId, integrationId, firstFollowing: false, followedAt: { not: null } }, take: 50 });
     for (const call of mocks.query.mock.calls) {
-      expect(sqlText(call)).toContain('h."recipientIgId" = c."recipientIgId"');
-      expect(sqlText(call)).toContain('h."automationId" = c."automationId"');
+      expect(sqlText(call)).toMatch(/h\."recipientIgId" = [cl]\."recipientIgId"/);
+      expect(sqlText(call)).toMatch(/h\."automationId" = [cl]\."automationId"/);
       expect(call).toContain(automationId);
     }
     expect(sqlText(mocks.query.mock.calls[2])).toContain("LIMIT 10");

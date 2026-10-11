@@ -1,3 +1,4 @@
+import { readNextPost } from "./next-post";
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { readFlowTriggers, matchFlowTrigger } from "@/lib/automation-flow/triggers";
 import { resolveCommentTriggerMatch } from "@/lib/matching";
@@ -8,10 +9,10 @@ export function eligibleCommentTimestamp(timestamp: unknown, now = Date.now()): 
   const time = Date.parse(timestamp);
   return Number.isFinite(time) && time <= now && time > now - BACKTRACK_WINDOW_MS;
 }
-export type BacktrackAutomation = { source: string; matchingMode: MATCHING_MODE; triggerMode: string; keywords: {word:string}[]; posts:{postid:string}[]; listener: {flowTriggers:unknown}|null };
+export type BacktrackAutomation = { source: string; postConfig?: unknown; matchingMode: MATCHING_MODE; triggerMode: string; keywords: {word:string}[]; posts:{postid:string}[]; listener: {flowTriggers:unknown}|null };
 export function backtrackMediaIds(a: BacktrackAutomation) {
   const triggers = readFlowTriggers(a.listener?.flowTriggers);
-  const ids = triggers === null ? a.source === "COMMENT" ? a.posts.map(p=>p.postid) : [] : triggers.filter(t=>t.source === "COMMENT").map(t=>t.postScope === "next" ? t.boundPostId : t.post?.postid);
+  const ids = triggers === null ? a.source === "COMMENT" ? a.posts.map(p=>p.postid === "NEXT" ? readNextPost(a.postConfig)?.boundPostId : p.postid) : [] : triggers.filter(t=>t.source === "COMMENT").map(t=>t.postScope === "next" ? t.boundPostId : t.post?.postid);
   return Array.from(new Set(ids.filter((id): id is string => typeof id === "string" && /^\d+$/.test(id))));
 }
 export function backtrackMatches(a: BacktrackAutomation, text: string, mediaId:string) {

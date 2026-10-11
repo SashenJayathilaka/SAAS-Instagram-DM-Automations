@@ -122,3 +122,28 @@
 @media (prefers-reduced-motion: reduce) { .aa-switch, .aa-switch span { transition: none; } }
 
 html:not(.dark) .aa-switch:not(.aa-switch-on) { background:#64748b; }
+.aa-page-heading { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:4px 0 10px; }
+.aa-page-heading h1 { font-size:clamp(22px,3vw,30px); font-weight:700; letter-spacing:-.7px; line-height:1.2; }
+.automation-analytics-page .aa-eyebrow { font-size:10px; letter-spacing:1.7px; color:var(--aa-icon); font-weight:700; margin-bottom:8px; }
+.aa-heading-actions { display:flex; flex-wrap:wrap; gap:8px; }
+.aa-heading-actions button { display:flex; align-items:center; justify-content:center; gap:7px; min-height:44px; border:1px solid var(--aa-border); border-radius:11px; padding:9px 13px; background:var(--aa-panel); font-size:12px; font-weight:600; }
+.aa-heading-actions button:disabled { opacity:.6; }
+.aa-summary { background-image:radial-gradient(ellipse at 100% 0%,rgb(139 92 246 / .08),transparent 70%); }
+.aa-title-row h2 { font-size:18px; overflow-wrap:anywhere; }
+.aa-links { padding:24px; }
+.aa-link-list { margin:16px 0; }
+.aa-link-row { display:grid; grid-template-columns:minmax(0,1fr) 95px 120px; align-items:center; gap:18px; padding:16px 0; border-top:1px solid var(--aa-border); }
+.aa-link-row a { display:flex; gap:8px; align-items:center; overflow-wrap:anywhere; color:var(--aa-icon); font-size:13px; }
+.aa-link-row a svg { flex-shrink:0; }
+.aa-link-row > div { display:flex; flex-direction:column; gap:3px; }
+.aa-link-row strong { font-size:20px; font-variant-numeric:tabular-nums; }
+.aa-link-row span { font-size:10px; color:var(--aa-muted); }
+.aa-link-empty { display:flex; align-items:center; gap:15px; padding:24px 0; color:var(--aa-muted); }
+.aa-link-empty svg { flex-shrink:0; color:var(--aa-icon); }
+.aa-link-empty strong { font-size:13px; color:var(--aa-text); }
+.aa-link-empty p { font-size:12px; line-height:1.6; margin-top:4px; }
+.aa-methodology { padding:16px 22px; font-size:12px; color:var(--aa-muted); line-height:1.7; }
+.aa-methodology summary { cursor:pointer; font-weight:600; color:var(--aa-text); min-height:28px; }
+.automation-analytics-page .aa-methodology p { margin-top:12px; }
+@media (prefers-reduced-motion:no-preference) { .aa-metric { animation:aa-appear .3s ease-out; } @keyframes aa-appear { from { opacity:.5; transform:translateY(4px) } to { opacity:1; transform:none } } }
+@media (max-width:767px) { .aa-page-heading { align-items:flex-start; flex-direction:column; gap:14px; } .aa-heading-actions { width:100%; } .aa-heading-actions button { flex:1; } .aa-metric { min-height:148px; } .aa-links { padding:20px; } .aa-link-row { grid-template-columns:1fr 1fr; gap:12px; } .aa-link-row a { grid-column:1/-1; } }

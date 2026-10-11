@@ -39,6 +39,9 @@ export async function POST(_request: Request) {
   if (!clerkUser) {
     return errorResponse(401, "not_authenticated", "Sign in to manage billing.");
   }
+  const body = await _request.json().catch(() => ({}));
+  const intent = body?.intent;
+  if (intent !== undefined && !["update", "cancel", "payment"].includes(intent)) return errorResponse(400, "portal_session_failed", "Choose a valid billing action.");
 
   const user = await client.user.findUnique({
     where: { clerkId: clerkUser.id },
@@ -124,9 +127,16 @@ export async function POST(_request: Request) {
       );
     }
 
+    const subscriptionId = billingLookup.snapshot.subscriptionId;
+    const returnUrl = `${getApplicationUrl()}${dashboardPath(user.clerkId)}/billing`;
+    const flow = intent === "payment" ? { type: "payment_method_update" as const }
+      : subscriptionId && intent === "cancel" ? { type: "subscription_cancel" as const, subscription_cancel: { subscription: subscriptionId } }
+      : subscriptionId && intent === "update" ? { type: "subscription_update" as const, subscription_update: { subscription: subscriptionId } }
+      : undefined;
     const session = await stripe.billingPortal.sessions.create({
       customer: customerId,
-      return_url: `${getApplicationUrl()}${dashboardPath(user.clerkId)}/billing`,
+      return_url: returnUrl,
+      ...(flow ? { flow_data: { ...flow, after_completion: { type: "redirect" as const, redirect: { return_url: returnUrl } } } } : {}),
     });
 
     if (!session.url) {

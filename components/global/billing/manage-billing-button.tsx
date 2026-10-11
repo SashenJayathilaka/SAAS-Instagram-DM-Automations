@@ -2,7 +2,7 @@
 
 import { UiText } from "@/components/i18n/localized-copy";
 import { Button } from "@/components/ui/button";
-import { CreditCard, Loader2 } from "lucide-react";
+import { CreditCard, Loader2, ArrowUpRight, CirclePause } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -14,9 +14,11 @@ type PortalResponse = {
 export function ManageBillingButton({
   activeSubscription = true,
   label,
+  intent,
 }: {
   activeSubscription?: boolean;
   label?: string;
+  intent?: "update" | "cancel" | "payment";
 }) {
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -31,6 +33,8 @@ export function ManageBillingButton({
       const response = await fetch("/api/billing/portal", {
         method: "POST",
         cache: "no-store",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(intent ? { intent } : {}),
       });
       const payload = (await response
         .json()
@@ -55,18 +59,18 @@ export function ManageBillingButton({
   }
 
   return (
-    <div className="flex flex-col items-start gap-1.5 md:items-end">
+    <div className="flex min-w-0 flex-col items-stretch gap-1.5">
       <Button
         type="button"
         variant="outline"
         disabled={isPending}
         onClick={openBillingPortal}
-        className="h-11 rounded-xl border-slate-200 light:border-slate-300 bg-white/80 px-4 font-bold text-slate-700 hover:bg-white dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-100 dark:hover:bg-white/[0.10]"
+        className="h-auto min-h-11 whitespace-normal rounded-xl border-slate-200 light:border-slate-300 bg-white/80 px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-violet-50 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-100 dark:hover:bg-white/[0.10]"
       >
         {isPending ? (
           <Loader2 aria-hidden="true" className="animate-spin" />
         ) : (
-          <CreditCard aria-hidden="true" />
+          intent === "cancel" ? <CirclePause aria-hidden="true" /> : intent === "update" ? <ArrowUpRight aria-hidden="true" /> : <CreditCard aria-hidden="true" />
         )}
         <UiText>
           {isPending

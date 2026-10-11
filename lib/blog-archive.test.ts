@@ -53,10 +53,10 @@ describe("editorial archive", () => {
   it("features maintained setup, message, comparison and troubleshooting guides", () => {
     const { featured } = getEditorialArchive(BLOG_POSTS);
     expect(featured.map(post => post.slug)).toEqual([
+      "instagram-next-post-automation",
+      "instagram-automation-link-tracking",
       "instagram-comment-to-dm-automation",
       "comment-to-dm-final-message-templates",
-      "manychat-vs-ap3k-pricing-for-instagram",
-      "comment-to-dm-wrong-link",
     ]);
     expect(featured.every(post => !post.importedArchive && !post.noIndex)).toBe(true);
     const excluded = featured.map(post => ({ ...post, noIndex: true }));

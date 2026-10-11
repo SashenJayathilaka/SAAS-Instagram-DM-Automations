@@ -1,3 +1,4 @@
+import { bindNextCommentPost } from "@/lib/next-post-runtime";
 import { readStoryConfig, storyScopeMatches } from "@/lib/story-automation";
 import { bindNextStoryAutomation } from "@/lib/story-automation-runtime";
 import { storyIntentMatches } from "@/lib/story-intent";
@@ -350,6 +351,12 @@ export const findAutomationForCommentWithReason = async (
   );
 
   await Promise.all(accountAutomationsByIntegration.flatMap(item=>item.automations.filter(a=>a.active).map(bindNextPostTriggers)));
+  await Promise.all(accountAutomationsByIntegration.flatMap(item => item.automations.filter(a => a.active && a.posts.some(p => p.postid === "NEXT")).map(async automation => {
+    const owner = automation.User?.integrations.find(i => i.id === automation.integrationId);
+    const next = owner ? await bindNextCommentPost(automation, owner).catch(() => null) : null;
+    // Only the verified bound post can enter existing keyword/priority routing.
+    automation.posts = next?.boundPostId ? automation.posts.map(p => p.postid === "NEXT" ? { ...p, postid: next.boundPostId! } : p) : [];
+  })));
   const accountAutomations = accountAutomationsByIntegration.flatMap((item) =>
     item.automations.map((automation) => ({ automation, integration: item.integration }))
   );

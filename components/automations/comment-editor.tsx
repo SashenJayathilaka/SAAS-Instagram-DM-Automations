@@ -161,6 +161,7 @@ export default function CommentEditor(p: CommentEditorProps) {
     setKeyword("");
   };
   const selectedAny = data.post?.postid === "ANY";
+  const selectedNext = data.post?.postid === "NEXT";
   const replies =
     data.commentReplies ??
     [data.publicReply, data.publicReply2, data.publicReply3].filter(Boolean);
@@ -281,7 +282,7 @@ export default function CommentEditor(p: CommentEditorProps) {
         <EditorRow
           title={data.adAutomation ? "Ad post" : "Post"}
           summary={tr(
-            selectedAny
+            selectedNext ? "Next published post" : selectedAny
               ? "Any post"
               : data.post
                 ? "1 post selected"
@@ -293,15 +294,15 @@ export default function CommentEditor(p: CommentEditorProps) {
           controls={
             <EditorSelect
               label="Post scope"
-              value={selectedAny ? "ANY" : "SPECIFIC"}
+              value={selectedNext ? "NEXT" : selectedAny ? "ANY" : "SPECIFIC"}
               onChange={(value) => {
                 update({
                   post:
-                    value === "ANY"
+                    (value === "ANY" || value === "NEXT")
                       ? {
-                          postid: "ANY",
+                          postid: value,
                           caption: tr(
-                            "Any post - triggers on all Instagram posts",
+                            value === "NEXT" ? "Your next published Instagram post or Reel" : "Any post - triggers on all Instagram posts",
                           ),
                           media: "",
                           mediaType: "IMAGE",
@@ -314,6 +315,7 @@ export default function CommentEditor(p: CommentEditorProps) {
               }}
               options={[
                 { value: "SPECIFIC", label: "a specific post or reel" },
+                { value: "NEXT", label: "Next published post", disabled: Boolean(data.adAutomation) },
                 {
                   value: "ANY",
                   label: "Any post",
@@ -323,7 +325,7 @@ export default function CommentEditor(p: CommentEditorProps) {
             />
           }
         >
-          {p.accountLoading || p.postsLoading ? (
+          {selectedNext ? <div className={s.hint}><strong>{tr("Ready for your next post")}</strong><p>{tr("Publish this automation before your Instagram post or Reel. It will use the first post published afterward, then stay attached to that post. Editing or pausing does not reset it. Create a new automation for a later launch.")}</p></div> : p.accountLoading || p.postsLoading ? (
             <div className="flex justify-center py-16">
               <Loader2
                 className="animate-spin"

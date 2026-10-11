@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 const mocks = vi.hoisted(() => ({
   hit: vi.fn(),
   link: vi.fn(),
+  linkClick: vi.fn(),
   click: vi.fn(),
   transaction: vi.fn(),
   lock: vi.fn(),
@@ -13,7 +14,7 @@ vi.mock("@/lib/prisma", () => ({
   client: {
     automationEngagementJob: { updateMany: vi.fn() },
     automationHit: { upsert: mocks.hit },
-    automationTrackedLink: { upsert: mocks.link },
+    automationTrackedLink: { upsert: mocks.link, updateMany: mocks.linkClick },
     automationClick: { upsert: mocks.click },
     $transaction: mocks.transaction,
   },
@@ -164,6 +165,11 @@ describe("verified follower attribution", () => {
 });
 
 describe("delivery and click tracking", () => {
+  it("records a destination once without overwriting its first-click timestamp", async () => {
+    await recordAutomationClick({ id:"link-id", automationId, recipientIgId });
+    expect(mocks.linkClick).toHaveBeenCalledWith({ where:{ id:"link-id", automationId, recipientIgId, firstClickedAt:null }, data:{ firstClickedAt:expect.any(Date) } });
+    expect(mocks.click.mock.calls[0][0].create).not.toHaveProperty("id");
+  });
   it("deduplicates callback hits on automation/event key with an empty update", async () => {
     const hit = {
       automationId,

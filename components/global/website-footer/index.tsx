@@ -46,7 +46,7 @@ export default function WebsiteFooter() {
   return (
     <footer className="relative z-10 border-t border-slate-200 bg-white/60 px-4 py-10 backdrop-blur dark:border-white/10 dark:bg-[#080911] sm:px-8 lg:px-12">
       <div className="mx-auto max-w-[1320px]">
-        <div className="grid gap-10 lg:grid-cols-[200px_minmax(0,1fr)] xl:grid-cols-[240px_minmax(0,1fr)] xl:gap-14">
+        <div className="grid gap-10 lg:grid-cols-[240px_minmax(0,1fr)] xl:grid-cols-[240px_minmax(0,1fr)] xl:gap-14">
           <div className="flex min-w-0 flex-col items-start gap-3">
             <AP3KLogo
               className="text-lg text-slate-950 dark:text-white"
@@ -56,7 +56,7 @@ export default function WebsiteFooter() {
               {t("footerDescription")}
             </p>
             <div
-              className="mt-2 flex flex-wrap gap-2"
+              className="mt-2 flex max-w-full items-center gap-1"
               aria-label="AP3K social media"
             >
               {SOCIAL_LINKS.map(({ label, href: socialHref, Icon }) => (
@@ -66,9 +66,9 @@ export default function WebsiteFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`AP3K on ${label}`}
-                  className="grid h-11 w-11 place-items-center rounded-xl border border-slate-200 bg-white text-slate-500 transition hover:-translate-y-0.5 hover:border-violet-300 hover:text-violet-700 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-300 dark:hover:border-violet-400/40 dark:hover:text-violet-300"
+                  className="grid h-11 w-11 shrink-0 place-items-center rounded-full text-slate-500 transition-colors hover:bg-violet-50 hover:text-violet-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-slate-400 dark:hover:bg-violet-400/10 dark:hover:text-violet-300"
                 >
-                  <Icon className="h-5 w-5" aria-hidden="true" />
+                  <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
                 </a>
               ))}
             </div>

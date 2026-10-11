@@ -151,6 +151,12 @@ describe("updateAutomation — ownership check before update", () => {
     expect(findCall.where.User.clerkId).toBe(USER_A_CLERK_ID);
   });
 
+  it("does not overwrite an armed Next Post binding when activation is retried", async () => {
+    mockAutomationFindFirst.mockResolvedValue({ id: AUTOMATION_A_ID, posts: [{ postid: "NEXT" }], postConfig: { scope: "NEXT", armedAt: "2026-10-11T10:00:00Z" } });
+    await updateAutomation(AUTOMATION_A_ID, USER_A_CLERK_ID, { active: true });
+    expect(mockAutomationUpdate.mock.calls[0][0].data).not.toHaveProperty("postConfig");
+  });
+
   it("returns null and skips the update when ownership check fails", async () => {
     mockAutomationFindFirst.mockResolvedValue(null); // ownership denied
 
@@ -227,9 +233,10 @@ describe("updateCompleteAutomation — ownership check before transaction", () =
         where: { id: AUTOMATION_A_ID },
         data: expect.objectContaining({
           sendPrivateDm: true,
-          listener: {
+          listener: { upsert: {
             create: expect.objectContaining({ prompt }),
-          },
+            update: expect.objectContaining({ prompt }),
+          } },
         }),
       })
     );

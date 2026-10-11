@@ -578,6 +578,7 @@ export async function getInstagramRecipientProfile(params: {
     const response = await axios.get(`${INSTAGRAM_GRAPH_API_BASE_URL}/${params.recipientId}`, {
       params: { fields: "username,name,profile_pic,is_user_follow_business,is_business_follow_user,is_verified_user,follower_count" },
       headers: { Authorization: `Bearer ${params.token}` },
+      timeout: 2500,
     });
     return {
       username: typeof response.data?.username === "string" ? response.data.username : undefined,
@@ -596,6 +597,7 @@ export async function getInstagramRecipientProfile(params: {
       const followResponse = await axios.get(`${INSTAGRAM_GRAPH_API_BASE_URL}/${params.recipientId}`, {
         params: { fields: "is_user_follow_business" },
         headers: { Authorization: `Bearer ${params.token}` },
+      timeout: 2500,
       });
       return {
         username: undefined,

@@ -11,7 +11,7 @@ import styles from "./home-features.module.css";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 const ART = ["story-automation", "next-post", "universal-automation", "backtrack", "story-mention", "link-tracking", "boosted-posts", "team-access"] as const;
 const HIDDEN_FEATURES = new Set<string>(["boosted-posts", "team-access"]);
-const PREVIEW_ONLY = new Set<string>(["next-post", "link-tracking"]);
+const PREVIEW_ONLY = new Set<string>();
 
 function FeatureVideo({ name, label, width, height }: { name: string; label: string; width: number; height: number }) {
   const ref = useRef<HTMLVideoElement>(null);

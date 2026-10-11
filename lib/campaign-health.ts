@@ -105,7 +105,7 @@ export function selectedPostHealth(input: {
   selectedPostOwner?: CampaignHealthInput["selectedPostOwner"];
 }): CampaignHealthResult["selectedPostStatus"] {
   if (!input.postId) return "missing";
-  if (input.postId === "ANY") return "any";
+  if (["ANY", "NEXT"].includes(input.postId ?? "")) return "any";
   if (!input.selectedPostOwner) return "unknown";
   if (
     input.selectedPostOwner.integrationId &&
@@ -140,7 +140,7 @@ export function planReconnectCampaignImpact(input: {
       reason: null as string | null,
     };
   }
-  const affectedCampaigns = input.campaigns.filter((campaign) => campaign.posts?.[0]?.postid !== "ANY");
+  const affectedCampaigns = input.campaigns.filter((campaign) => !["ANY", "NEXT"].includes(campaign.posts?.[0]?.postid ?? ""));
   const affectedCampaignIds = affectedCampaigns.map((campaign) => campaign.id);
   return {
     changed,

@@ -332,7 +332,7 @@ export function validateNormalizedCampaignPayload(
   if (payload.sendPrivateDm && payload.listener.followUpEnabled && stepDelay(payload,"MESSAGE") + (payload.listener.followUpDelayMinutes || 0) * 60 >= 86400) return "Shorten the message delay or follow-up so both fit inside Instagram’s 24-hour messaging window.";
   if (
     payload.adAutomation &&
-    (!payload.post.postid || payload.post.postid === "ANY")
+    (!payload.post.postid || ["ANY", "NEXT"].includes(payload.post.postid))
   )
     return "Select the Instagram post used by your ad.";
   if (!payload.post.postid) {

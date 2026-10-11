@@ -1,3 +1,4 @@
+import { refreshPendingFollowers } from "@/lib/follower-monitor";
 import { bindPendingNextStories } from "@/lib/story-automation-runtime";
 import { processAutomationDeliveries } from "@/lib/automation-delivery";
 import { authorizeAutomationScheduler } from "@/lib/automation-scheduler-auth";
@@ -18,8 +19,8 @@ export async function POST(request: Request) {
 }
 async function processQueues() {
   try {
-    const [followUps, flows, delayed, stories] = await Promise.all([processAutomationFollowUps(), processScheduledAutomationFlows(), processAutomationDeliveries(), bindPendingNextStories().catch(()=>({storyMonitorUnavailable:true}))]);
-    return NextResponse.json({ ok: true, ...followUps, ...flows, ...delayed, ...stories });
+    const [followUps, flows, delayed, stories, followers] = await Promise.all([processAutomationFollowUps(), processScheduledAutomationFlows(), processAutomationDeliveries(), bindPendingNextStories().catch(()=>({storyMonitorUnavailable:true})), refreshPendingFollowers().catch(() => ({ followerMonitorUnavailable: true }))]);
+    return NextResponse.json({ ok: true, ...followUps, ...flows, ...delayed, ...stories, ...followers });
   }
   catch { return NextResponse.json({ error: "Follow-up queue unavailable" }, { status: 503 }); }
 }

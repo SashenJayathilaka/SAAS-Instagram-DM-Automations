@@ -11,7 +11,7 @@ async function redirect(request: NextRequest, token: string, count: boolean) {
   if (count && isHumanLinkRequest(request.headers)) {
     // Vercel supplies this header at the edge. Never accept a query-string country.
     const country = process.env.VERCEL ? request.headers.get("x-vercel-ip-country") : null;
-    try { await recordAutomationClick({ automationId: link.automationId, recipientIgId: link.recipientIgId }, country); }
+    try { await recordAutomationClick({ id: token, automationId: link.automationId, recipientIgId: link.recipientIgId }, country); }
     catch { console.warn("[automation-analytics] click persistence unavailable"); }
   }
   return NextResponse.redirect(link.destination, { status: 302, headers });

@@ -49,6 +49,20 @@ function portalRequest(body?: Record<string, unknown>) {
 }
 
 describe("Stripe Customer Portal route", () => {
+  it.each(["update", "cancel"])("opens the %s confirmation flow only for the server-owned subscription", async intent => {
+    mockBillingLookup.mockResolvedValue({ state: "subscription", snapshot: { status: "active", subscriptionId: "sub_owned" } });
+    const response = await POST(portalRequest({ intent, subscriptionId: "sub_attacker", customerId: "cus_attacker", return_url: "https://evil.test" }));
+    expect(response.status).toBe(200);
+    const input=mockPortalCreate.mock.calls[0][0];
+    const type=intent === "cancel" ? "subscription_cancel" : "subscription_update";
+    expect(input.customer).toBe("cus_owned_by_a");
+    expect(input.flow_data).toMatchObject({ type, [type]: { subscription: "sub_owned" }, after_completion: { type: "redirect", redirect: { return_url: "https://preview.ap3k.test/dashboard/clerk-user-a/billing" } } });
+    expect(JSON.stringify(input)).not.toContain("attacker");
+  });
+  it("rejects unsupported portal actions without calling Stripe", async () => {
+    const response=await POST(portalRequest({ intent:"delete_account" }));
+    expect(response.status).toBe(400); expect(mockPortalCreate).not.toHaveBeenCalled();
+  });
   beforeEach(() => {
     vi.clearAllMocks();
     vi.stubEnv("STRIPE_SECRET_KEY", "sk_test_configured");

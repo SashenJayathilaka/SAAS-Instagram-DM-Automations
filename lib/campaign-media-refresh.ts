@@ -44,7 +44,7 @@ export function getInstagramCdnExpiryMs(mediaUrl?: string | null) {
 }
 
 export function campaignMediaNeedsRefresh(post?: CampaignPost | null, now = Date.now()) {
-  if (!post?.postid || post.postid === "ANY") return false;
+  if (!post?.postid || ["ANY", "NEXT"].includes(post.postid)) return false;
   if (!post.media) return true;
 
   const expiry = getInstagramCdnExpiryMs(post.media);
@@ -138,7 +138,7 @@ async function refreshCampaignMediaForClerkUser(clerkId: string, campaigns: Camp
   const mediaIds = new Set(
     stalePosts
       .map((post) => String(post.postid ?? ""))
-      .filter((id) => id && id !== "ANY")
+      .filter((id) => id && !["ANY", "NEXT"].includes(id))
   );
 
   if (mediaIds.size === 0) return campaigns;

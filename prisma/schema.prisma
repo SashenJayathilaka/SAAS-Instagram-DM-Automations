@@ -291,6 +291,7 @@ model Automation {
   source               String            @default("COMMENT")
   storyTriggerType     String?
   storyConfig          Json?
+  postConfig           Json?
   followGateRequired   Boolean           @default(false)
   typingIndicator      Boolean           @default(false)
   stepDelays           Json?
@@ -898,6 +899,7 @@ model AutomationTrackedLink {
   destination   String
   key           String     @unique
   createdAt     DateTime   @default(now())
+  firstClickedAt DateTime?
   @@index([automationId])
 }
 
@@ -923,6 +925,7 @@ model AutomationFollowerState {
   firstSeenAt    DateTime     @default(now())
   lastNotFollowingAt DateTime?
   followedAt     DateTime?
+  lastCheckedAt  DateTime?
   @@unique([integrationId, recipientIgId])
   @@index([automationId, followedAt])
 }

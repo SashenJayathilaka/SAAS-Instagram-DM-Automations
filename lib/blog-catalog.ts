@@ -1,3 +1,4 @@
+import { LAUNCH_MEASUREMENT_GUIDES } from "./content/launch-measurement-guides";
 import { SEO_COMPARISON_POSTS } from "./content/seo-comparisons";
 import importedPosts from "./content/imported-blog/index.json";
 import { OCTOBER_EDITORIAL } from "./content/editorial-october";
@@ -44,6 +45,7 @@ export type BlogPost = {
 };
 
 export const LEGACY_BLOG_POSTS: BlogPost[] = [
+  ...LAUNCH_MEASUREMENT_GUIDES,
   COMMENT_DM_POSTS[0],
   ...OCTOBER_EDITORIAL,
   ...EXPANSION_POSTS,

@@ -197,7 +197,7 @@ export default function EditorPreview({
                     <div className={styles.placeholder}>
                       {postPlaceholder ||
                         tr(
-                          data.post?.postid === "ANY"
+                          data.post?.postid === "NEXT" ? tr("Your next post") : data.post?.postid === "ANY"
                             ? "Any post or Reel"
                             : "You haven’t picked a post",
                         )}

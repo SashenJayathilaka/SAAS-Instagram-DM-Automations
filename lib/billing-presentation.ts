@@ -41,6 +41,7 @@ const MANAGEABLE_SUBSCRIPTION_STATUSES = new Set([
   "past_due",
   "unpaid",
   "paused",
+  "incomplete",
 ]);
 
 export function isManageableSubscriptionStatus(status?: string | null) {

@@ -76,6 +76,7 @@ describe("billing subscription lookup", () => {
     expect(isManageableSubscriptionStatus("active")).toBe(true);
     expect(isManageableSubscriptionStatus("trialing")).toBe(true);
     expect(isManageableSubscriptionStatus("past_due")).toBe(true);
+    expect(isManageableSubscriptionStatus("incomplete")).toBe(true);
     expect(isManageableSubscriptionStatus("canceled")).toBe(false);
   });
 });

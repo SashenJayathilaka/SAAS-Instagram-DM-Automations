@@ -1,3 +1,4 @@
+import { LAUNCH_DOCS } from "./launch-docs";
 import core from './content/core-content.json';
 import flow from './content/flow-content.json';
 import accounts from './content/account-content.json';
@@ -5,7 +6,7 @@ import type { DocsArticle } from './types';
 import { DOCS_GROUPS } from './groups';
 import { reviseProductDocs } from './product-revisions';
 export { DOCS_GROUPS } from './groups';
-export const DOCS_ARTICLES = ([...core,...flow,...accounts] as DocsArticle[]).map(reviseProductDocs).sort((a,b)=>DOCS_GROUPS.findIndex(g=>g.id===a.group)-DOCS_GROUPS.findIndex(g=>g.id===b.group));
+export const DOCS_ARTICLES = ([...core,...flow,...accounts,...LAUNCH_DOCS] as DocsArticle[]).map(reviseProductDocs).sort((a,b)=>DOCS_GROUPS.findIndex(g=>g.id===a.group)-DOCS_GROUPS.findIndex(g=>g.id===b.group));
 export const docsPath=(slug:string)=>`/docs/${slug}`;
 export const getDocsArticle=(slug:string)=>DOCS_ARTICLES.find(a=>a.slug===slug);
 export const DOCS_SEARCH = DOCS_ARTICLES.map(({slug,group,title,description,html,headings})=>({slug,group,title,description,headings,text:html.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ')}));

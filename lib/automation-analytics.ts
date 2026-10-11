@@ -11,6 +11,7 @@ export type AutomationAnalytics = {
   daily: Array<{ date: string; hits: number; clicks: number }>;
   countries: Array<{ country: string | null; clicks: number }>;
   recent: { hits: AutomationActivity[]; clicks: AutomationActivity[]; follows: AutomationActivity[] };
+  links?: Array<{ destination: string; recipients: number; clicks: number }>;
   trackingStartedAt: string | null;
 };
 type Count = number | bigint;
@@ -33,7 +34,7 @@ export async function getAutomationAnalytics(automationId: string, clerkId: stri
   const end = new Date(today.getTime() + DAY);
   // All aggregation happens in Postgres; no unbounded contact/history arrays are loaded.
   // EXISTS excludes forwarded/unmatched link recipients from the conversion denominator.
-  const [totalsRows, dailyRows, countries, hits, clicks, follows] = await Promise.all([
+  const [totalsRows, dailyRows, countries, hits, clicks, follows, links] = await Promise.all([
     client.$queryRaw<Totals[]>`
       SELECT
         (SELECT COUNT(*) FROM "AutomationHit" WHERE "automationId" = ${automationId}::uuid) AS hits,
@@ -62,6 +63,11 @@ export async function getAutomationAnalytics(automationId: string, clerkId: stri
         AND EXISTS (SELECT 1 FROM "AutomationHit" h WHERE h."automationId" = c."automationId" AND h."recipientIgId" = c."recipientIgId")
         ORDER BY c."createdAt" DESC, c.id DESC LIMIT ${ANALYTICS_RECENT_LIMIT}`,
     client.automationFollowerState.findMany({ where: { automationId, integrationId, firstFollowing: false, followedAt: { not: null } }, orderBy: [{ followedAt: "desc" }, { id: "desc" }], take: ANALYTICS_RECENT_LIMIT, select: { id: true, recipientIgId: true, followedAt: true } }),
+    client.$queryRaw<Array<{ destination: string; recipients: Count; clicks: Count }>>`
+      SELECT c.destination, COUNT(*) AS recipients, COUNT(c."firstClickedAt") AS clicks
+      FROM "AutomationTrackedLink" c WHERE c."automationId" = ${automationId}::uuid
+      AND EXISTS (SELECT 1 FROM "AutomationHit" h WHERE h."automationId" = c."automationId" AND h."recipientIgId" = c."recipientIgId")
+      GROUP BY c.destination ORDER BY clicks DESC, recipients DESC, c.destination ASC LIMIT 25`,
   ]);
   const recipients = Array.from(new Set([...hits, ...clicks, ...follows].map(row => row.recipientIgId)));
   const [contacts, conversations] = recipients.length ? await Promise.all([
@@ -91,6 +97,7 @@ export async function getAutomationAnalytics(automationId: string, clerkId: stri
     daily: Array.from({ length: 7 }, (_, index) => { const date = new Date(start.getTime() + index * DAY).toISOString().slice(0, 10); const day = dayMap.get(date); return { date, hits: Number(day?.hits ?? 0), clicks: Number(day?.clicks ?? 0) }; }),
     countries: countries.map(row => ({ country: row.country, clicks: Number(row.clicks) })),
     recent: { hits: hits.map(activity), clicks: clicks.map(activity), follows: follows.map(row => activity({ id: row.id, recipientIgId: row.recipientIgId, createdAt: row.followedAt! })) },
+    links: links.map(row => ({ destination: row.destination, recipients: Number(row.recipients), clicks: Number(row.clicks) })),
     trackingStartedAt: raw.trackingStartedAt?.toISOString() ?? null,
   };
 }

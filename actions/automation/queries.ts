@@ -1,3 +1,4 @@
+import { prepareNextPost, readNextPost } from "@/lib/next-post";
 import "server-only";
 import { normalizeStepDelays } from "@/lib/automation-step-delays";
 import { normalizeStoryConfig, readStoryConfig } from "@/lib/story-automation";
@@ -105,6 +106,7 @@ export const createCompleteAutomation = async (
           deliveryDelaySeconds: payload.deliveryDelaySeconds,
           stepDelays: payload.stepDelays ?? Prisma.DbNull,
           ...("triggerOnShares" in payload ? { triggerOnShares: payload.triggerOnShares, oneDmPerUser: payload.oneDmPerUser } : {}),
+          postConfig: prepareNextPost(payload.post.postid, payload.active, null) ?? Prisma.DbNull,
           posts: {
             create: payload.post,
           },
@@ -354,6 +356,8 @@ export const updateAutomation = async (
     },
     select: {
       id: true,
+      posts: { select: { postid: true } },
+      postConfig: true,
       userId: true,
       needsReview: true,
       reviewReason: true,
@@ -397,6 +401,7 @@ export const updateAutomation = async (
   return await client.automation.update({
     where: { id: automation.id },
     data: {
+      ...(update.active === true && automation.posts?.[0]?.postid === "NEXT" && !readNextPost(automation.postConfig)?.armedAt ? { postConfig: prepareNextPost("NEXT", true, automation.postConfig)! } : {}),
       name: update.name,
       active: update.active,
       ...(update.active === true
@@ -419,7 +424,7 @@ export const updateCompleteAutomation = async (
       User: { clerkId },
       integrationId: await currentInstagramAccountId(clerkId),
     },
-    select: { id: true },
+    select: { id: true, postConfig: true },
   });
 
   if (!automation) return null;
@@ -428,7 +433,6 @@ export const updateCompleteAutomation = async (
     await tx.keyword.deleteMany({ where: { automationId } });
     await tx.post.deleteMany({ where: { automationId } });
     await tx.trigger.deleteMany({ where: { automationId } });
-    await tx.listener.deleteMany({ where: { automationId } });
 
     return tx.automation.update({
       where: { id: automationId },
@@ -448,6 +452,7 @@ export const updateCompleteAutomation = async (
         deliveryDelaySeconds: payload.deliveryDelaySeconds,
           stepDelays: payload.stepDelays ?? Prisma.DbNull,
           ...("triggerOnShares" in payload ? { triggerOnShares: payload.triggerOnShares, oneDmPerUser: payload.oneDmPerUser } : {}),
+        ...(payload.post.postid === "NEXT" && readNextPost(automation.postConfig)?.armedAt ? {} : { postConfig: prepareNextPost(payload.post.postid, payload.active, automation.postConfig) ?? Prisma.DbNull }),
         posts: { create: payload.post },
         ...(payload.keywords.length > 0 && {
           keywords: {
@@ -458,7 +463,7 @@ export const updateCompleteAutomation = async (
           },
         }),
         trigger: { create: { type: "COMMENT" } },
-        listener: { create: payload.listener },
+        listener: { upsert: { create: payload.listener, update: { ...payload.listener, ...Object.fromEntries(["commentReply", "commentReply2", "commentReply3", "aiReplyInstructions", "ctaLink", "ctaButtonTitle", "mediaUrl", "mediaType", "cardSubtitle", "openingDmText", "openingDmButtonText", "followRequestDmText", "followRequestButtonText", "phoneCapturePrompt", "phoneCaptureRetryMessage", "emailCapturePrompt", "emailCaptureRetryMessage", "followUpMessage"].map(key => [key, (payload.listener as Record<string, unknown>)[key] ?? null])), flowDefinition: Prisma.DbNull, flowDraft: Prisma.DbNull, flowTriggers: Prisma.DbNull } } },
       },
       select: { id: true },
     });

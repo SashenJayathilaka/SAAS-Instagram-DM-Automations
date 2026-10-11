@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { ManageBillingButton } from "./manage-billing-button";
 import Link from "next/link";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight, Check, Zap, Sparkles, Building2 } from "lucide-react";
 import { UiText } from "@/components/i18n/localized-copy";
 import { useI18n } from "@/providers/i18n-provider";
 import {
@@ -78,6 +79,7 @@ export default function BillingPlans({
           const limits = getPlanLimits(plan.id);
           const selected = plan.id === current;
           const free = plan.id === "FREE";
+          const Icon = free ? Zap : plan.id === "PRO" ? Sparkles : Building2;
           const price =
             interval === "year"
               ? (plan.annualPrice ?? 0) / 12
@@ -86,11 +88,11 @@ export default function BillingPlans({
             <article
               key={plan.id}
               aria-label={`${plan.name} plan`}
-              className={`flex min-w-0 flex-col rounded-2xl border p-5 ${selected ? "border-violet-400 bg-violet-50/60 ring-1 ring-violet-400/20 dark:border-violet-400/50 dark:bg-violet-400/[0.07]" : "border-slate-200 light:border-slate-300 bg-white dark:border-white/10 dark:bg-[#151b28]"}`}
+              className={`billing-plan flex min-w-0 flex-col rounded-2xl border p-5 ${selected ? "border-violet-400 bg-violet-50/60 ring-1 ring-violet-400/20 dark:border-violet-400/50 dark:bg-violet-400/[0.07]" : "border-slate-200 light:border-slate-300 bg-white dark:border-white/10 dark:bg-[#151b28]"}`}
             >
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <h3 className="text-base font-semibold text-slate-950 dark:text-white">
-                  {plan.name}
+                  <span className="flex items-center gap-2"><Icon size={18} className="text-violet-500" aria-hidden="true"/>{plan.name}</span>
                 </h3>
                 {selected && (
                   <span className="rounded-full bg-violet-100 px-2.5 py-1 text-[10px] font-semibold text-violet-700 dark:bg-violet-400/15 dark:text-violet-200">
@@ -164,6 +166,7 @@ export default function BillingPlans({
                   <UiText>Lead capture, follow-ups and custom flows</UiText>
                 </p>
               )}
+              {existingPaid && !free && !disabled && <div className="mt-auto"><ManageBillingButton intent="update" label={selected ? "Manage billing frequency" : "Compare and change plan"} /></div>}
               {!existingPaid &&
                 !internalAccess &&
                 !selected &&

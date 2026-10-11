@@ -55,10 +55,10 @@ describe('evidence-based SEO remediation', () => {
   });
   it('updates collection freshness without changing unrelated article dates', () => {
     const pages = buildSitemap();
-    expect(pages.find(p => p.url === 'https://ap3k.com/blog')?.lastModified).toEqual(new Date('2026-10-09T00:00:00Z'));
+    expect(pages.find(p => p.url === 'https://ap3k.com/blog')?.lastModified).toEqual(new Date('2026-10-11T00:00:00Z'));
     expect(pages.find(p => p.url === 'https://ap3k.com/blog/comment-to-dm-one-post-vs-all-posts')?.lastModified).toEqual(new Date('2026-09-21T00:00:00Z'));
-    const changed = BLOG_POSTS.map(p => p.slug === 'instagram-comment-to-dm-automation' ? { ...p, updatedAt: '2026-10-10' } : p);
-    expect(buildSitemap(changed).find(p => p.url === 'https://ap3k.com/blog?page=2')?.lastModified).toEqual(new Date('2026-10-10T00:00:00Z'));
+    const changed = BLOG_POSTS.map(p => p.slug === 'instagram-comment-to-dm-automation' ? { ...p, updatedAt: '2026-10-12' } : p);
+    expect(buildSitemap(changed).find(p => p.url === 'https://ap3k.com/blog?page=2')?.lastModified).toEqual(new Date('2026-10-12T00:00:00Z'));
   });
   it('keeps backtracking and Business capacity accurate in all homepage languages', () => {
     for (const locale of SUPPORTED_LOCALES) {

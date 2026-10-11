@@ -1,6 +1,7 @@
 import { stripe } from "@/lib/stripe";
 
 export type BillingSnapshot = {
+  subscriptionId?: string;
   status: string;
   interval: "month" | "year" | null;
   renewsAt: string | null;
@@ -39,6 +40,7 @@ export async function getBillingLookup(
     return {
       state: "subscription",
       snapshot: {
+        subscriptionId: subscription.id,
         status: subscription.status,
         interval:
           interval === "year" ? "year" : interval === "month" ? "month" : null,

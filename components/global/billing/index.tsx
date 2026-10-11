@@ -14,6 +14,7 @@ import {
 import { isUnlimited, type UsageSummary } from "@/lib/plan-limits";
 import {
   CalendarDays,
+  ShieldCheck,
   CreditCard,
   Instagram,
   MessageCircle,
@@ -23,6 +24,7 @@ import {
 } from "lucide-react";
 import { ManageBillingButton } from "./manage-billing-button";
 import BillingPlans from "./plans";
+import "./billing.css";
 
 type Props = {
   current?: CustomerPlan;
@@ -91,7 +93,7 @@ export default function Billing({
           : status;
 
   return (
-    <div className="flex min-w-0 flex-col gap-6 sm:gap-8">
+    <div className="ap3k-billing flex min-w-0 flex-col gap-6 sm:gap-8">
       <header
         id="manage-billing"
         className="flex scroll-mt-24 flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
@@ -140,7 +142,7 @@ export default function Billing({
 
       <section
         aria-labelledby="current-plan-title"
-        className="overflow-hidden rounded-2xl border border-slate-200 light:border-slate-300 bg-white shadow-sm dark:border-white/10 dark:bg-[#151b28]"
+        className="billing-overview overflow-hidden rounded-2xl border border-slate-200 light:border-slate-300 bg-white shadow-sm dark:border-white/10 dark:bg-[#151b28]"
       >
         <div className="flex flex-col gap-5 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
           <div className="flex items-center gap-4">
@@ -207,6 +209,14 @@ export default function Billing({
           </p>
         )}
       </section>
+
+      {hasStripeSubscription && <section aria-label="Billing actions" className="grid gap-3 sm:grid-cols-3">
+        {activeStripeSubscription && <ManageBillingButton intent="update" label="Change plan" />}
+        <ManageBillingButton intent="payment" label="Payment method" />
+        {activeStripeSubscription && !billing?.cancelAtPeriodEnd && <ManageBillingButton intent="cancel" label="Cancel subscription" />}
+        {billing?.cancelAtPeriodEnd && <ManageBillingButton label="Keep subscription" />}
+      </section>}
+      {hasStripeSubscription && <p className="flex items-start gap-2 text-xs leading-5 text-slate-500 dark:text-slate-400"><ShieldCheck size={16} className="mt-0.5 shrink-0"/><UiText>Review changes in Stripe before confirming. Cancellation stops renewal; access continues until the end of your paid period. Invoices remain available in Manage subscription.</UiText></p>}
 
       <section aria-labelledby="billing-usage-title">
         <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">

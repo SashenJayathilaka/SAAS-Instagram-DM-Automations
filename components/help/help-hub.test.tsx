@@ -49,3 +49,19 @@ it("suggestions send immediately once, then reveal the reply after a short cue",
   expect(suggestion().props.disabled).toBe(false);
   expect(mocks.sound).toHaveBeenCalledOnce();
 });
+it("scrolls only the conversation viewport to the latest reply in long histories", async () => {
+  const scrollTo = vi.fn();
+  const scrollIntoView = vi.fn();
+  mocks.history.mockResolvedValue({ status: 200, messages: [{ id: "q", role: "user", content: "Help" }, { id: "a", role: "assistant", content: "Latest answer" }] });
+  await act(async () => {
+    tree = create(<SupportAssistant workspace="owner" onClose={() => {}} onRestoreFocus={() => {}} />, {
+      createNodeMock: element => {
+        if (element.props.className?.includes("overflow-y-auto overscroll-contain px-4 py-5")) return { scrollTop: 200, scrollHeight: 4000, getBoundingClientRect: () => ({ top: 100 }), scrollTo, scrollIntoView };
+        if (element.props.dir === "auto") return { getBoundingClientRect: () => ({ top: 300 }), scrollIntoView };
+        return null;
+      },
+    });
+  });
+  expect(scrollTo).toHaveBeenLastCalledWith({ top: 384, behavior: "smooth" });
+  expect(scrollIntoView).not.toHaveBeenCalled();
+});

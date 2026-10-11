@@ -94,7 +94,8 @@ export function SupportAssistant({ workspace, onClose, onRestoreFocus }: { works
   const completeReply = useCallback(() => { setRevealingId(null); soundRef.current.complete(); }, []);
   const lastQuestion = [...messages].reverse().find(message => message.role === "user")?.content ?? "";
   const busy = loading || pending || clearing || Boolean(revealingId);
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const messagesRef = useRef<HTMLDivElement>(null);
+  const latestReplyRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const [viewport, setViewport] = useState({ height: "100dvh", top: "0px" });
 
@@ -116,7 +117,17 @@ export function SupportAssistant({ workspace, onClose, onRestoreFocus }: { works
       visualViewport.removeEventListener("scroll", update);
     };
   }, []);
-  useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); }, [messages, pending, revealingId]);
+  useEffect(() => {
+    const scroller = messagesRef.current;
+    if (!scroller) return;
+    const reply = latestReplyRef.current;
+    // scrollIntoView also scrolls overflow-hidden modal ancestors, which can
+    // move the header and composer off screen in a long conversation.
+    const top = reply && !pending
+      ? scroller.scrollTop + reply.getBoundingClientRect().top - scroller.getBoundingClientRect().top - 16
+      : scroller.scrollHeight;
+    scroller.scrollTo({ top, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  }, [messages, pending, revealingId]);
 
   const send = async (question = draft) => {
     const value = question.trim();
@@ -180,7 +191,7 @@ export function SupportAssistant({ workspace, onClose, onRestoreFocus }: { works
           <button type="button" onClick={sound.toggle} aria-pressed={sound.enabled} aria-label={sound.enabled ? "Mute response sound" : "Enable response sound"} title={sound.enabled ? "Response sound on (suppressed with reduced motion)" : "Response sound off"} className="grid h-10 w-10 shrink-0 place-items-center rounded-xl text-slate-500 dark:text-slate-400">{sound.enabled ? <Volume2 size={17} /> : <VolumeX size={17} />}</button>
           <button ref={closeButtonRef} type="button" onClick={onClose} aria-label={tr("Close support")} className="grid h-10 w-10 shrink-0 place-items-center rounded-xl text-slate-500 light:text-slate-600 transition hover:bg-slate-100 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-white/[0.06] dark:hover:text-white"><X className="h-5 w-5" /></button>
         </header>
-        <div className="min-h-0 flex-1 space-y-3 overflow-y-auto overscroll-contain px-4 py-5">
+        <div ref={messagesRef} className="min-h-0 flex-1 space-y-3 overflow-y-auto overscroll-contain px-4 py-5">
           <div className="max-w-[92%] rounded-2xl rounded-bl-md bg-slate-100 px-4 py-3 text-sm leading-6 dark:bg-white/[0.07]"><UiText>{"Hi! Ask me how to connect Instagram, build an automation, use AP3K AI, manage billing, or troubleshoot your workspace."}</UiText></div>
           <p className="px-1 text-[10px] font-bold uppercase tracking-[0.13em] text-slate-400"><UiText>{"Support Assistant · AI agent"}</UiText></p>
           {loading ? <div className="grid place-items-center py-10"><Loader2 className="h-5 w-5 animate-spin text-violet-500" /></div> : null}
@@ -188,7 +199,7 @@ export function SupportAssistant({ workspace, onClose, onRestoreFocus }: { works
             const assistant = message.role === "assistant";
             const revealing = revealingId === message.id;
             const question = messages.slice(0, index).reverse().find(item => item.role === "user")?.content ?? "";
-            return <div dir="auto" key={message.id} className={cn("whitespace-pre-wrap break-words rounded-2xl px-4 py-3 text-sm leading-6", !assistant ? "ms-auto max-w-[85%] rounded-br-md bg-violet-600 text-white" : "max-w-[96%] rounded-bl-md bg-slate-100 dark:bg-white/[0.07]")}>
+            return <div ref={assistant && index === messages.length - 1 ? latestReplyRef : undefined} dir="auto" key={message.id} className={cn("whitespace-pre-wrap break-words rounded-2xl px-4 py-3 text-sm leading-6", !assistant ? "ms-auto max-w-[85%] rounded-br-md bg-violet-600 text-white" : "max-w-[96%] rounded-bl-md bg-slate-100 dark:bg-white/[0.07]")}>
               {assistant ? <SupportReply text={message.content} animate={revealing} onComplete={completeReply} /> : message.content}
               {assistant && !revealing && message.resources?.length ? <SupportResources resources={message.resources} workspace={workspace} /> : null}
               {assistant && !revealing && index === messages.length - 1 ? <SupportActions key={message.id} actions={supportActionsFor(question)} workspace={workspace} /> : null}
@@ -202,7 +213,6 @@ export function SupportAssistant({ workspace, onClose, onRestoreFocus }: { works
             <div className="grid gap-2">{supportQuestionsFor(lastQuestion).map(question => <button key={question} type="button" disabled={busy} onClick={() => void send(tr(question))} className="min-h-11 rounded-xl border border-violet-200 bg-white px-3 py-2.5 text-start text-xs font-medium leading-5 text-violet-800 transition-colors hover:bg-violet-50 focus-visible:outline-violet-500 disabled:opacity-50 dark:border-violet-400/20 dark:bg-violet-500/5 dark:text-violet-200 dark:hover:bg-violet-500/15"><UiText>{question}</UiText></button>)}</div>
           </div>}
           {notice ? <p className="rounded-xl border border-amber-300/40 bg-amber-500/10 px-3 py-2 text-xs text-amber-700 dark:text-amber-200"><UiText>{notice}</UiText></p> : null}
-          <div ref={bottomRef} />
         </div>
         <footer className="shrink-0 border-t border-slate-200 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] dark:border-white/10 sm:p-4">
           <div className="flex items-end gap-2 rounded-2xl border border-slate-200 bg-slate-50 p-2 shadow-sm focus-within:border-violet-400 focus-within:ring-2 focus-within:ring-violet-500/10 dark:border-white/10 dark:bg-white/[0.04]">

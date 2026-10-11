@@ -50,13 +50,13 @@ describe("editorial archive", () => {
     expect([...result.posts, ...result.featured].some(p => p.slug === hidden)).toBe(false);
     expect(result.featured).toHaveLength(4);
   });
-  it("features maintained setup, message, comparison and troubleshooting guides", () => {
+  it("features current original product guides", () => {
     const { featured } = getEditorialArchive(BLOG_POSTS);
     expect(featured.map(post => post.slug)).toEqual([
+      "ap3k-ai-offers-policies-faq-template",
+      "ap3k-free-vs-pro-vs-business",
       "instagram-next-post-automation",
       "instagram-automation-link-tracking",
-      "instagram-comment-to-dm-automation",
-      "comment-to-dm-final-message-templates",
     ]);
     expect(featured.every(post => !post.importedArchive && !post.noIndex)).toBe(true);
     const excluded = featured.map(post => ({ ...post, noIndex: true }));

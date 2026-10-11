@@ -10,6 +10,8 @@ export const REFERENCE_GUIDE_SLUGS = new Set([
 ]);
 // Curate maintained AP3K guides independently of the imported source archive.
 export const FEATURED_BLOG_SLUGS = [
+  "ap3k-ai-offers-policies-faq-template",
+  "ap3k-free-vs-pro-vs-business",
   "instagram-next-post-automation",
   "instagram-automation-link-tracking",
   "instagram-comment-to-dm-automation",

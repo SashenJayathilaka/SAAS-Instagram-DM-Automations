@@ -19,13 +19,12 @@ export default function BlogCover({
           src={image.src}
           alt={image.alt}
           fill
-          sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 960px) 50vw, 800px"
+          sizes={credit ? "(max-width: 940px) calc(100vw - 40px), 900px" : "(max-width: 900px) calc(100vw - 40px), 420px"}
           priority={priority}
-          className={post.cover ? "!object-contain" : undefined}
         />
       </div>
-      {credit && image.src.startsWith("/images/blog/editorial/") && (
-        <figcaption className={s.credit}>Original AP3K editorial illustration</figcaption>
+      {credit && image.src.startsWith("/images/blog/original/") && (
+        <figcaption className={s.credit}>Original AI-generated AP3K editorial image</figcaption>
       )}
       {credit && image.credit && (
         <figcaption className={s.credit}>

@@ -34,7 +34,8 @@ describe('evidence-based SEO remediation', () => {
     expect(post.sections.some(s => s.heading.includes('real delivery test'))).toBe(true);
     expect(getEditorialArchive(BLOG_POSTS).posts.filter(p => p.slug === post.slug)).toHaveLength(1);
     const image = getArticleImage(post);
-    expect(image.src).toBe('/images/docs/automations.webp');
+    expect(image.src).toBe('/images/blog/original/ap3k-laptop.webp');
+    expect(post.sections.some(section => section.screenshot)).toBe(true);
     expect(existsSync(`public${image.src}`)).toBe(true);
   });
   it('uses actual public routes for the revised guide, not invented destinations', () => {

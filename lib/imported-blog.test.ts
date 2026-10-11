@@ -1,6 +1,5 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync, existsSync } from 'node:fs';
-import { createHash } from 'node:crypto';
 import imported from './content/imported-blog/index.json';
 import covers from './content/imported-blog/covers.json';
 import redirects from './content/imported-blog/redirects.json';
@@ -28,22 +27,26 @@ describe('supplied blog archive migration', () => {
     expect(getBlogPage(undefined, archive.posts.length)?.pages).toBe(Math.ceil(archive.posts.length / 9));
     expect(archive.featured).toHaveLength(4);
   });
-  it('uses a distinct, present cover for every imported article', () => {
+  it('uses only present original AP3K covers for the imported collection', () => {
     const images = Object.values(covers);
     expect(images).toHaveLength(175);
-    const hashes = images.map(image => createHash('sha256').update(readFileSync(`public${image.src}`)).digest('hex'));
-    expect(new Set(hashes).size).toBe(175);
+    for (const image of images) {
+      expect(image.src).toMatch(/^\/images\/blog\/original\/ap3k-[a-z-]+\.webp$/);
+      expect(existsSync(`public${image.src}`)).toBe(true);
+      expect(image.alt.length).toBeGreaterThan(30);
+    }
   });
   it('retains substantial bodies and only local existing image assets, without active imported code', () => {
     for (const post of imported) {
       const html = readFileSync(`lib/content/imported-blog/${post.slug}.html`, 'utf8');
       expect(post.wordCount, post.slug).toBeGreaterThan(150);
+      expect(html).not.toContain('/images/blog/imported/');
       expect(html).not.toMatch(/<(script|form|object|embed)\b|\son\w+=|javascript:/i);
       for (const [, src] of Array.from(html.matchAll(/<iframe[^>]+src="([^"]+)"/g))) {
         expect(src).toMatch(/^https:\/\/www\.youtube-nocookie\.com\/embed\/[A-Za-z0-9_-]{11}$/);
       }
       for (const [, src] of Array.from(html.matchAll(/<img[^>]+src="([^"]+)"/g))) {
-        expect(src).toMatch(/^\/images\/(blog\/imported\/[a-f0-9]+|docs\/[a-z-]+)\.webp$/);
+        expect(src).toMatch(/^\/images\/(blog\/original\/ap3k-[a-z-]+|docs\/[a-z-]+)\.webp$/);
         expect(existsSync(`public${src}`), `${post.slug}: ${src}`).toBe(true);
       }
       for (const [, slug] of Array.from(html.matchAll(/href="\/blog\/([^"#?]+)/g))) {

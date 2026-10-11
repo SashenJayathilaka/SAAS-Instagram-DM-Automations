@@ -73,13 +73,13 @@ describe("public site discovery and billing", () => {
         title: "Content calendar",
         visual: "workflow",
       }).src,
-    ).toContain("/api/blog-cover?title=Content%20calendar");
+    ).toContain("/images/blog/original/ap3k-planning.webp");
     expect(
       getArticleImage({
         slug: "instagram-ecommerce",
         title: "Ecommerce",
         visual: "workflow",
       }).src,
-    ).toContain("/api/blog-cover?title=Ecommerce");
+    ).toContain("/images/blog/original/ap3k-commerce.webp");
   });
 });

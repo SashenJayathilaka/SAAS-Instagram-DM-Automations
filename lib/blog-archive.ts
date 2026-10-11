@@ -45,13 +45,26 @@ export function blogPaginationItems(page: number, pages: number): (number | "gap
   return result;
 }
 
+/** Navigation groups do not alter article metadata, dates or URLs. */
+export function blogDirectoryTopic(category: string) {
+  if (/troubleshoot|delivery|policy|safety|permissions/i.test(category)) return "Troubleshooting and safety";
+  if (/measurement|analytics|attribution/i.test(category)) return "Analytics and measurement";
+  if (/tool|compar|alternative/i.test(category)) return "Choosing a tool";
+  if (/\bAI\b|autoresponder|support/i.test(category)) return "AI and customer support";
+  if (/lead|qualif|email|ecommerce|business|sales|offer/i.test(category)) return "Leads and sales";
+  if (/message|repl|DM|experience/i.test(category)) return "Messages and DMs";
+  if (/growth|campaign|publish|handoff|content/i.test(category)) return "Campaigns and growth";
+  return "Getting started and automations";
+}
+
 /** A server-rendered directory gives every published guide a direct archive link. */
 export function getBlogDirectory(posts: BlogPost[]) {
   const groups = new Map<string, BlogPost[]>();
   for (const post of getEditorialArchive(posts).posts) {
-    const group = groups.get(post.category) ?? [];
+    const topic = blogDirectoryTopic(post.category);
+    const group = groups.get(topic) ?? [];
     group.push(post);
-    groups.set(post.category, group);
+    groups.set(topic, group);
   }
   return Array.from(groups, ([category, articles]) => ({
     category,

@@ -86,7 +86,7 @@ export default function PricingCard({
   return (
     <div className="relative overflow-visible">
       {featured && (
-        <div className="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-ap3k-gradient px-4 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-ap3k-glow"><UiText>{"Most popular"}</UiText></div>
+        <div className="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-ap3k-gradient px-4 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-ap3k-glow"><UiText>{"Recommended"}</UiText></div>
       )}
       {card}
     </div>

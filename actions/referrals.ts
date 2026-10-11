@@ -50,6 +50,7 @@ export async function refreshReferralEligibility() {
   return result(async () => {
     const user = await owner();
     const eligibility = await referralEligibility(user.id, true);
+    if (eligibility.billingState === "unavailable") throw new ReferralError("Billing could not be verified. Please retry from Billing. Your existing referral settings have not been changed.");
     await client.referralPartner.updateMany({
       where: { userId: user.id },
       data: {

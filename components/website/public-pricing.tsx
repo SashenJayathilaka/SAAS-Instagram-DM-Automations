@@ -182,7 +182,7 @@ export default function PublicPricing({
                   <div className={s.name}>
                     <h2>{plan.name}</h2>
                     {plan.featured ? (
-                      <span className={s.popular}>Most popular</span>
+                      <span className={s.popular}>Recommended</span>
                     ) : index === 2 ? (
                       <span className={s.advanced}>Advanced</span>
                     ) : null}
@@ -328,8 +328,8 @@ export default function PublicPricing({
           })}
         </div>
         <p className={s.usage}>
-          One successful public reply or DM is one automated action. Usage
-          resets monthly on every billing interval.
+          One successful public reply or DM is one automated action. A public reply
+          followed by a DM uses two actions. Usage resets monthly on every billing interval.
         </p>
         {!paidOnly && (
           <section

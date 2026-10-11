@@ -93,6 +93,7 @@ export default async function BlogPage(props: Props) {
           ...allPosts.filter((p) => p.contentLocale),
         ]
   ).slice(pagination.start, pagination.end);
+  const featuredOnPage = featured.filter(item => !posts.some(post => post.slug === item.slug)).slice(0, 2);
   const collection = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -101,7 +102,7 @@ export default async function BlogPage(props: Props) {
     url: `https://ap3k.com${localizePublicPath(blogPagePath(pagination.page), locale)}`,
     mainEntity: {
       "@type": "ItemList",
-      itemListElement: Array.from(new Map([...(!query && pagination.page === 1 ? featured : []), ...posts].map(post => [post.slug, post])).values()).map((post, index) => ({
+      itemListElement: Array.from(new Map([...(!query && pagination.page === 1 ? featuredOnPage : []), ...posts].map(post => [post.slug, post])).values()).map((post, index) => ({
         "@type": "ListItem",
         position: index + 1,
         url: `https://ap3k.com${localizePublicPath(`/blog/${post.slug}`, post.contentLocale ?? locale)}`,
@@ -169,13 +170,13 @@ export default async function BlogPage(props: Props) {
               {copy.intro}
             </p>
           </header>
-          {!query && pagination.page === 1 && featured.length > 0 && (
+          {!query && pagination.page === 1 && featuredOnPage.length > 0 && (
             <section>
               <h2>Featured Posts</h2>
               <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                 Read from our top picks
               </p>
-              <div className={e.featuredGrid}>{featured.map(card)}</div>
+              <div className={e.featuredGrid}>{featuredOnPage.map(card)}</div>
             </section>
           )}
           <form

@@ -1,3 +1,5 @@
+import ProductVideo from "@/components/website/product-video";
+import { QUICK_DEMO_POSTS } from "@/lib/product-videos";
 import { TutorialVideo } from "@/components/docs/tutorial-video";
 import { ArticleSummary, ArticleShare } from "@/components/website/article-tools";
 import { blogSans, blogSerif } from "@/components/website/blog-fonts";
@@ -277,7 +279,7 @@ export default async function BlogPostPage(props: Props) {
                   </ul>
                 )}
                 {section.table && <div className="my-6 overflow-x-auto rounded-xl border border-slate-200 dark:border-white/15" role="region" tabIndex={0} aria-label={section.heading}><table className="w-full min-w-[640px] text-left text-sm"><thead><tr>{section.table.headers.map(h => <th key={h} scope="col" className="min-w-[140px] bg-violet-50 p-4 dark:bg-violet-500/10">{h}</th>)}</tr></thead><tbody>{section.table.rows.map((row,i) => <tr key={i}>{row.map((cell,j) => j === 0 ? <th key={j} scope="row" className="min-w-[140px] border-t border-slate-200 p-4 dark:border-white/10">{cell}</th> : <td key={j} className="min-w-[140px] border-t border-slate-200 p-4 dark:border-white/10">{cell}</td>)}</tr>)}</tbody></table></div>}
-                {section.video && <TutorialVideo />}
+                {section.video && <TutorialVideo />}{index === 0 && QUICK_DEMO_POSTS.has(post.slug) && <ProductVideo />}
                 <GrowthSectionSources slug={post.slug} index={index} />
                 {section.screenshot && (
                   <TutorialScreenshot id={section.screenshot} />

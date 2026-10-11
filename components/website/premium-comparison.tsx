@@ -564,7 +564,7 @@ export default function PremiumComparison({ page }: { page: Comparison }) {
             </h2>
           </div>
           <div className={s.relatedGrid}>
-            {COMPARISONS.filter((item) => item.slug !== page.slug).map(
+            {COMPARISONS.filter((item) => item.slug !== page.slug).slice(0, 3).map(
               (item) => (
                 <Link
                   className={s.relatedCard}
@@ -580,6 +580,7 @@ export default function PremiumComparison({ page }: { page: Comparison }) {
               ),
             )}
           </div>
+          <Link className={s.secondary} href="/compare">View all comparisons <ArrowRight size={17} aria-hidden="true" /></Link>
         </section>
         <aside className={s.methodology}>
           <h2>Sources & methodology</h2>

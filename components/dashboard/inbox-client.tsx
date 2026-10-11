@@ -36,6 +36,7 @@ export default function InboxClient({ initialConversationId }: { initialConversa
   const [selectedId, setSelectedId] = useState<string | null>(initialConversationId ?? null);
   const [messages, setMessages] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [listError, setListError] = useState<string | null>(null);
   const [loadingMessages, setLoadingMessages] = useState(false);
   const [draft, setDraft] = useState("");
   const [sending, setSending] = useState(false);
@@ -45,13 +46,13 @@ export default function InboxClient({ initialConversationId }: { initialConversa
   const [sort, setSort] = useState<ConversationSort>("newest");
   const [refreshing, setRefreshing] = useState(false);
   const [emojiOpen, setEmojiOpen] = useState(false);
-  const [foldersExpanded, setFoldersExpanded] = useState(true);
+  const [foldersExpanded, setFoldersExpanded] = useState(false);
   const messagesViewportRef = useRef<HTMLDivElement>(null);
   const lastConversationRef = useRef<string | null>(null);
   const lastMessageRef = useRef<string | null>(null);
 
   const selected = useMemo(() => conversations.find((item) => item.id === selectedId), [conversations, selectedId]);
-  const unreadTotal = useMemo(() => conversations.reduce((total, item) => total + Number(item.unreadCount || 0), 0), [conversations]);
+  const unreadTotal = useMemo(() => conversations.filter((item) => Number(item.unreadCount || 0) > 0).length, [conversations]);
   const filteredConversations = useMemo(() => {
     const needle = query.trim().toLowerCase();
     const rows = conversations.filter((conversation) => {
@@ -68,31 +69,38 @@ export default function InboxClient({ initialConversationId }: { initialConversa
 
   const loadConversations = useCallback(async () => {
     setLoading(true);
-    const result = await getInboxConversations();
-    const rows = result.status === 200 && Array.isArray(result.data) ? result.data : [];
-    setConversations(rows);
-    setSelectedId((current) => {
-      if (current && rows.some((row) => row.id === current)) return current;
-      if (initialConversationId && rows.some((row) => row.id === initialConversationId)) return initialConversationId;
-      return window.matchMedia("(min-width: 768px)").matches ? rows[0]?.id ?? null : null;
-    });
-    setLoading(false);
+    try {
+      const result = await getInboxConversations();
+      if (result.status !== 200 || !Array.isArray(result.data)) throw new Error("Unavailable");
+      const rows = result.data;
+      setConversations(rows);
+      setListError(null);
+      setSelectedId((current) => {
+        if (current && rows.some((row) => row.id === current)) return current;
+        if (initialConversationId && rows.some((row) => row.id === initialConversationId)) return initialConversationId;
+        return window.matchMedia("(min-width: 768px)").matches ? rows[0]?.id ?? null : null;
+      });
+    } catch { setListError("Could not load conversations. Please refresh to try again."); }
+    finally { setLoading(false); }
   }, [initialConversationId]);
 
   const refreshAll = useCallback(async (showProgress = false) => {
     if (showProgress) setRefreshing(true);
+    try {
     const [conversationResult, messageResult] = await Promise.all([
       getInboxConversations(),
       selectedId ? getInboxMessages(selectedId) : Promise.resolve(null),
     ]);
     if (conversationResult.status === 200 && Array.isArray(conversationResult.data)) {
       setConversations(conversationResult.data);
+      setListError(null);
     }
     if (messageResult?.status === 200 && Array.isArray(messageResult.data)) {
       setMessages(messageResult.data);
       setConversations((current) => current.map((conversation) => conversation.id === selectedId ? { ...conversation, unreadCount: 0 } : conversation));
     }
-    if (showProgress) setRefreshing(false);
+    } catch { if (showProgress) setListError("Could not refresh conversations. Please try again."); }
+    finally { if (showProgress) setRefreshing(false); }
   }, [selectedId]);
 
   useEffect(() => { void loadConversations(); }, [loadConversations]);
@@ -176,6 +184,8 @@ export default function InboxClient({ initialConversationId }: { initialConversa
             </label>
             <button type="button" onClick={() => setSort((value) => value === "newest" ? "oldest" : "newest")} className="ms-auto inline-flex items-center gap-1 rounded-lg px-2 py-2 text-xs font-bold text-slate-400 light:text-slate-600 transition hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-white/10 dark:hover:text-white"><ArrowDownUp className="h-3.5 w-3.5" /> <UiText>{sort === "newest" ? "Newest" : "Oldest"}</UiText></button>
           </div>
+          {listError && <p role="alert" className="px-4 py-3 text-xs text-amber-700 dark:text-amber-300"><UiText>{listError}</UiText></p>}
+          {conversations.length >= 100 && <p className="px-4 py-2 text-xs text-slate-500 dark:text-slate-400"><UiText>Showing your 100 most recent conversations.</UiText></p>}
           {loading ? <div className="grid flex-1 place-items-center"><Loader2 className="h-5 w-5 animate-spin text-rf-purple" /></div> : filteredConversations.length === 0 ? <EmptyInbox filtered={Boolean(query || filter === "unread")} /> : <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">{filteredConversations.map((conversation) => <ConversationRow key={conversation.id} conversation={conversation} selected={selectedId === conversation.id} onClick={() => setSelectedId(conversation.id)} />)}</div>}
         </aside>
 
@@ -184,14 +194,14 @@ export default function InboxClient({ initialConversationId }: { initialConversa
             <>
               <header className="flex h-16 shrink-0 items-center gap-3 border-b border-slate-200 light:border-slate-300 px-3 dark:border-white/10 sm:h-[72px] sm:px-4">
                 <button type="button" aria-label={translateUi("Back", locale)} onClick={() => setSelectedId(null)} className="ap3k-control grid h-11 w-11 place-items-center rounded-lg border border-slate-200 light:border-slate-300 md:hidden dark:border-white/10"><ArrowLeft aria-hidden="true" className="h-4 w-4 rtl:rotate-180" /></button>
-                <Avatar src={selected.profilePictureUrl} name={selected.recipientUsername || selected.recipientIgId} size="lg" />
-                <div className="min-w-0"><p className="truncate text-sm font-black">{displayName(selected)}</p><p className="flex items-center gap-1.5 text-xs text-slate-500 light:text-slate-600 dark:text-slate-400"><Instagram className="h-3.5 w-3.5 text-pink-500" /><UiText>{" Instagram · "}</UiText><UiText>{isReplyWindowOpen(selected.lastInboundAt) ? "Active now" : "Reply window closed"}</UiText></p></div>
+                <Avatar src={selected.profilePictureUrl} name={selected.recipientUsername || "IG"} size="lg" />
+                <div className="min-w-0"><p className="truncate text-sm font-black">{displayName(selected)}</p><p className="flex items-center gap-1.5 text-xs text-slate-500 light:text-slate-600 dark:text-slate-400"><Instagram className="h-3.5 w-3.5 text-pink-500" /><UiText>{" Instagram · "}</UiText><UiText>{isReplyWindowOpen(selected.lastInboundAt) ? "Reply window open" : "Reply window closed"}</UiText></p></div>
                 <span className="ms-auto hidden rounded-full bg-rf-purple/10 px-3 py-1.5 text-xs font-black uppercase tracking-wider text-rf-purple sm:inline-flex">{selected.automation?.source ?? "manual"}</span>
               </header>
 
               <div ref={messagesViewportRef} className="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain bg-[radial-gradient(circle_at_top,#faf5ff_0,transparent_42%)] px-4 py-6 dark:bg-[radial-gradient(circle_at_top,rgba(109,40,217,0.12)_0,transparent_42%)] sm:px-7">
-                <div className="mx-auto mb-7 flex max-w-sm flex-col items-center text-center"><Avatar src={selected.profilePictureUrl} name={selected.recipientUsername || selected.recipientIgId} size="xl" /><p className="mt-3 text-sm font-black">{displayName(selected)}</p><p className="text-xs text-slate-400 light:text-slate-600"><UiText>{"Instagram conversation"}</UiText></p>{selected.automation?.name ? <span className="mt-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-500 light:text-slate-600 dark:bg-white/10 dark:text-slate-300"><UiText>{"Started by "}</UiText>{selected.automation.name}</span> : null}</div>
-                {loadingMessages ? <Loader2 className="m-auto h-5 w-5 animate-spin text-rf-purple" /> : <MessageTimeline messages={messages} avatarUrl={selected.profilePictureUrl} name={selected.recipientUsername || selected.recipientIgId} />}
+                <div className="mx-auto mb-7 flex max-w-sm flex-col items-center text-center"><Avatar src={selected.profilePictureUrl} name={selected.recipientUsername || "IG"} size="xl" /><p className="mt-3 text-sm font-black">{displayName(selected)}</p><p className="text-xs text-slate-400 light:text-slate-600"><UiText>{"Instagram conversation"}</UiText></p>{selected.automation?.name ? <span className="mt-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-500 light:text-slate-600 dark:bg-white/10 dark:text-slate-300"><UiText>{"Started by "}</UiText>{selected.automation.name}</span> : null}</div>
+                {loadingMessages ? <Loader2 className="m-auto h-5 w-5 animate-spin text-rf-purple" /> : <MessageTimeline messages={messages} avatarUrl={selected.profilePictureUrl} name={selected.recipientUsername || "IG"} />}
               </div>
 
               <footer className="border-t border-slate-200 light:border-slate-300 bg-white p-3 dark:border-white/10 dark:bg-[#0d1220] sm:p-4">
@@ -217,7 +227,7 @@ function ConversationRow({ conversation, selected, onClick }: { conversation: an
   const latest = conversation.messages?.[0];
   const { locale } = useI18n();
   const preview = latest?.mediaUrl ? mediaLabel(latest.messageType) : latest?.content ?? "New conversation";
-  return <button type="button" onClick={onClick} className={["flex w-full items-start gap-3 border-b border-slate-100 light:border-slate-200 p-4 text-start transition dark:border-white/[0.07]", selected ? "bg-violet-50 dark:bg-violet-500/10" : "hover:bg-slate-50 dark:hover:bg-white/[0.04]"].join(" ")}><Avatar src={conversation.profilePictureUrl} name={conversation.recipientUsername || conversation.recipientIgId} size="lg" /><span className="min-w-0 flex-1"><span className="flex items-center gap-2"><span className="truncate text-sm font-black">{displayName(conversation)}</span><span className="ms-auto shrink-0 text-xs text-slate-400 light:text-slate-600">{relativeTime(conversation.lastMessageAt, locale)}</span></span><span className={conversation.unreadCount ? "mt-1 block truncate text-xs font-bold text-slate-800 dark:text-white" : "mt-1 block truncate text-xs text-slate-500 light:text-slate-600 dark:text-slate-400"}>{preview}</span><span className="mt-2 flex items-center gap-2"><span className="rounded-full bg-slate-100 px-2 py-1 text-xs font-black uppercase tracking-wider text-slate-500 light:text-slate-600 dark:bg-white/[0.07] dark:text-slate-400">{conversation.automation?.source ?? "manual"}</span>{conversation.unreadCount > 0 ? <span className="ms-auto grid h-5 min-w-5 place-items-center rounded-full bg-rf-purple px-1 text-xs font-black text-white">{conversation.unreadCount}</span> : <CheckCheck className="ms-auto h-3.5 w-3.5 text-rf-purple/70" />}</span></span></button>;
+  return <button type="button" onClick={onClick} className={["flex w-full items-start gap-3 border-b border-slate-100 light:border-slate-200 p-4 text-start transition dark:border-white/[0.07]", selected ? "bg-violet-50 dark:bg-violet-500/10" : "hover:bg-slate-50 dark:hover:bg-white/[0.04]"].join(" ")}><Avatar src={conversation.profilePictureUrl} name={conversation.recipientUsername || "IG"} size="lg" /><span className="min-w-0 flex-1"><span className="flex items-center gap-2"><span className="truncate text-sm font-black">{displayName(conversation)}</span><span className="ms-auto shrink-0 text-xs text-slate-400 light:text-slate-600">{relativeTime(conversation.lastMessageAt, locale)}</span></span><span className={conversation.unreadCount ? "mt-1 block truncate text-xs font-bold text-slate-800 dark:text-white" : "mt-1 block truncate text-xs text-slate-500 light:text-slate-600 dark:text-slate-400"}>{preview}</span><span className="mt-2 flex items-center gap-2"><span className="rounded-full bg-slate-100 px-2 py-1 text-xs font-black uppercase tracking-wider text-slate-500 light:text-slate-600 dark:bg-white/[0.07] dark:text-slate-400">{conversation.automation?.source ?? "manual"}</span>{conversation.unreadCount > 0 ? <span className="ms-auto grid h-5 min-w-5 place-items-center rounded-full bg-rf-purple px-1 text-xs font-black text-white">{conversation.unreadCount}</span> : <CheckCheck className="ms-auto h-3.5 w-3.5 text-rf-purple/70" />}</span></span></button>;
 }
 
 function MessageTimeline({ messages, avatarUrl, name }: { messages: any[]; avatarUrl?: string | null; name: string }) {

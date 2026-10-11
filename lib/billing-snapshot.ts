@@ -11,7 +11,7 @@ export type BillingSnapshot = {
 export type BillingLookup =
   | { state: "none"; snapshot: null }
   | { state: "subscription"; snapshot: BillingSnapshot }
-  | { state: "unavailable"; snapshot: null };
+  | { state: "unavailable"; snapshot: null; reason?: "customer_missing" };
 
 import { isManageableSubscriptionStatus } from "./billing-presentation";
 export { isManageableSubscriptionStatus } from "./billing-presentation";
@@ -51,11 +51,14 @@ export async function getBillingLookup(
       },
     };
   } catch (error) {
+    const failure = error as { code?: string; param?: string };
+    const missingCustomer = failure?.code === "resource_missing" && failure?.param === "customer";
     console.error("[billing] could not load Stripe subscription snapshot", {
       customerIdPresent: Boolean(customerId),
-      message: error instanceof Error ? error.message : String(error),
+      code: failure?.code ?? "unknown",
+      customerMissing: missingCustomer,
     });
-    return { state: "unavailable", snapshot: null };
+    return { state: "unavailable", snapshot: null, ...(missingCustomer ? { reason: "customer_missing" as const } : {}) };
   }
 }
 

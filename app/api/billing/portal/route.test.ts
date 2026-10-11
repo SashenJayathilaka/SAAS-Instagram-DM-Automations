@@ -3,6 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 const mockCurrentUser = vi.fn();
 const mockUserFindUnique = vi.fn();
 const mockSubscriptionUpsert = vi.fn();
+const mockSubscriptionUpdateMany = vi.fn();
 const mockPortalCreate = vi.fn();
 const mockCustomerList = vi.fn();
 const mockSubscriptionList = vi.fn();
@@ -16,7 +17,7 @@ vi.mock("@clerk/nextjs/server", () => ({
 vi.mock("@/lib/prisma", () => ({
   client: {
     user: { findUnique: (...args: unknown[]) => mockUserFindUnique(...args) },
-    subscription: { upsert: (...args: unknown[]) => mockSubscriptionUpsert(...args) },
+    subscription: { updateMany: (...args: unknown[]) => mockSubscriptionUpdateMany(...args), upsert: (...args: unknown[]) => mockSubscriptionUpsert(...args) },
   },
 }));
 
@@ -66,6 +67,7 @@ describe("Stripe Customer Portal route", () => {
     mockSubscriptionList.mockResolvedValue({ data: [] });
     mockCheckoutSessionList.mockResolvedValue({ data: [] });
     mockSubscriptionUpsert.mockResolvedValue({});
+    mockSubscriptionUpdateMany.mockResolvedValue({ count: 1 });
     mockBillingLookup.mockResolvedValue({
       state: "subscription",
       snapshot: { status: "active" },
@@ -123,6 +125,33 @@ describe("Stripe Customer Portal route", () => {
     await expect(response.json()).resolves.toMatchObject({
       error: { code: "subscription_not_found" },
     });
+    expect(mockPortalCreate).not.toHaveBeenCalled();
+  });
+
+  it("does not clear an unresolved stale billing link or start another subscription", async () => {
+    mockBillingLookup.mockResolvedValue({ state: "unavailable", snapshot: null, reason: "customer_missing" });
+    const response = await POST(portalRequest());
+    expect(response.status).toBe(409);
+    expect(mockSubscriptionUpdateMany).not.toHaveBeenCalled();
+    expect(mockPortalCreate).not.toHaveBeenCalled();
+  });
+
+  it("recovers a missing customer only with Stripe ownership proof and a verified subscription", async () => {
+    mockBillingLookup.mockResolvedValueOnce({ state: "unavailable", snapshot: null, reason: "customer_missing" });
+    mockCustomerList.mockResolvedValue({ data: [{ id: "cus_recovered", created: 1 }] });
+    mockSubscriptionList.mockResolvedValue({ data: [{ status: "active", metadata: { clerkId: "clerk-user-a" } }] });
+    const response = await POST(portalRequest());
+    expect(response.status).toBe(200);
+    expect(mockSubscriptionUpdateMany).toHaveBeenCalledWith({ where: { userId: "user-a", customerId: "cus_owned_by_a" }, data: { customerId: "cus_recovered" } });
+    expect(mockPortalCreate).toHaveBeenCalledWith(expect.objectContaining({ customer: "cus_recovered" }));
+  });
+
+  it("does not overwrite a billing link changed by a concurrent webhook", async () => {
+    mockBillingLookup.mockResolvedValueOnce({ state: "unavailable", snapshot: null, reason: "customer_missing" });
+    mockCustomerList.mockResolvedValue({ data: [{ id: "cus_recovered", created: 1 }] });
+    mockSubscriptionList.mockResolvedValue({ data: [{ status: "active", metadata: { clerkId: "clerk-user-a" } }] });
+    mockSubscriptionUpdateMany.mockResolvedValue({ count: 0 });
+    expect((await POST(portalRequest())).status).toBe(409);
     expect(mockPortalCreate).not.toHaveBeenCalled();
   });
 

@@ -91,12 +91,29 @@ export async function POST(_request: Request) {
       );
     }
 
-    const billingLookup = await getBillingLookup(customerId);
+    let billingLookup = await getBillingLookup(customerId);
+    if (billingLookup.state === "unavailable" && billingLookup.reason === "customer_missing") {
+      const recovered = await recoverOwnedStripeCustomerId(stripe, { clerkId: user.clerkId, email: user.email });
+      if (!recovered || recovered === customerId) {
+        return errorResponse(409, "customer_not_linked", "The saved billing account could not be found. Contact support@ap3k.com with your billing email so we can reconcile it before another subscription is started. Your AP3K plan has not been changed.");
+      }
+      const recoveryLookup = await getBillingLookup(recovered);
+      if (recoveryLookup.state !== "subscription") {
+        return errorResponse(503, "stripe_unavailable", "We could not verify a subscription for the recovered billing account. Please contact support@ap3k.com.");
+      }
+      const linked = await client.subscription.updateMany({
+        where: { userId: user.id, customerId },
+        data: { customerId: recovered },
+      });
+      if (linked.count !== 1) return errorResponse(409, "customer_not_linked", "Your billing link changed during this check. Refresh and try again.");
+      customerId = recovered;
+      billingLookup = recoveryLookup;
+    }
     if (billingLookup.state === "none") {
       return errorResponse(
         409,
         "subscription_not_found",
-        "This workspace has internal AP3K access and no Stripe subscription or invoices to manage."
+        "No Stripe subscription was found for this billing account. If you were charged, contact support@ap3k.com with your billing email."
       );
     }
     if (billingLookup.state === "unavailable") {

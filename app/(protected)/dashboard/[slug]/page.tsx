@@ -1,3 +1,4 @@
+import { planDisplayName } from "@/lib/billing-plans";
 import { recentAutomations } from "@/lib/recent-automations";
 import QuickStart from "@/components/dashboard/quick-start";
 import { waitUntil } from "@vercel/functions";
@@ -16,7 +17,7 @@ import {
   getDashboardGreeting,
   parseDashboardPeriod,
 } from "@/lib/dashboard-metrics";
-import { getInstagramSnapshotComparisonWithRefresh, getProfileSnapshotStatus } from "@/lib/instagram-profile-snapshot";
+import { getInstagramSnapshotComparisonWithRefresh } from "@/lib/instagram-profile-snapshot";
 import { getDashboardProfileStats } from "@/lib/instagram-account-ux";
 import { getUserFacingStats } from "@/lib/user-facing-metrics";
 import { getCanonicalInstagramIntegration, isCanonicalInstagramConnected } from "@/lib/instagram-integration-status";
@@ -67,10 +68,9 @@ export default async function DashboardPage(props: Props) {
 
   const snapshotComparison = snapshotState.comparison;
   const profileSnapshot = snapshotComparison?.current;
-  const profileSnapshotStatus = getProfileSnapshotStatus(profileSnapshot);
   const displayInstagramUsername = profileSnapshot?.username ?? instagram?.instagramUsername;
   const displayProfilePictureUrl = profileSnapshot?.profilePictureUrl ?? instagram?.profilePictureUrl;
-  const planLabel = usage?.planLabel ?? (userResult.data?.subscription?.plan === "PRO" ? "Creator" : "Free");
+  const planLabel = usage?.planLabel ?? planDisplayName(userResult.data?.subscription?.plan ?? "FREE");
   const metrics = dashboardStats?.current ?? null;
   const changes = dashboardStats?.changes ?? null;
 
@@ -86,7 +86,7 @@ export default async function DashboardPage(props: Props) {
     <div className="relative mx-auto flex w-full max-w-7xl flex-col gap-4 px-1 py-2 sm:gap-6 sm:py-4 text-slate-950 dark:text-slate-50 sm:px-2 lg:py-8">
       <div className="ap3k-content-enter">
         <p className="hidden text-xs font-black uppercase tracking-[0.18em] text-rf-pink sm:block"><UiText>{"AP3K"}</UiText></p>
-        <h1 className="mt-1 text-xl font-black tracking-tight text-slate-950 dark:text-white sm:text-3xl"><UiText>{"Welcome back, "}</UiText><bdi dir="auto">{displayName}</bdi></h1>
+        <h1 className="mt-1 text-xl font-black tracking-tight text-slate-950 dark:text-white sm:text-xl"><UiText>{"Welcome back, "}</UiText><bdi dir="auto">{displayName}</bdi></h1>
         <p className="mt-1 hidden max-w-2xl text-sm sm:block text-slate-600 dark:text-slate-400">
           <UiText>{"See performance, manage automations, and keep Instagram conversations moving."}</UiText>
         </p>
@@ -94,7 +94,7 @@ export default async function DashboardPage(props: Props) {
 
       {instagramConnected && instagram && (
         <div className={[
-          "group ap3k-content-enter overflow-hidden rounded-2xl border p-3 sm:p-5 shadow-surface  dark:bg-white/[0.04]",
+          "group ap3k-content-enter overflow-hidden rounded-2xl border p-3 sm:p-4 shadow-surface  dark:bg-white/[0.04]",
           tokenExpired
             ? "border-amber-200 bg-amber-50/80 dark:border-amber-500/35 dark:bg-amber-500/10"
             : "border-slate-200 light:border-slate-300 bg-white dark:bg-gradient-to-br dark:border-emerald-500/25 dark:from-emerald-500/[0.12] dark:via-white/[0.04] dark:to-rf-pink/[0.08]",
@@ -104,7 +104,7 @@ export default async function DashboardPage(props: Props) {
               <InstagramAvatar src={displayProfilePictureUrl} username={displayInstagramUsername} label={instagram.pageName} size="lg" />
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-2">
-                  <p className="truncate text-lg font-black tracking-tight text-slate-950 dark:text-white sm:text-3xl">
+                  <p className="truncate text-lg font-black tracking-tight text-slate-950 dark:text-white sm:text-xl">
                     {displayInstagramUsername ? <bdi dir="ltr">@{displayInstagramUsername}</bdi> : <UiText>{"Instagram connected"}</UiText>}
                   </p>
                   <span className={tokenExpired ? "ap3k-badge ap3k-badge-amber" : "ap3k-badge ap3k-badge-green"}><UiText>{tokenExpired ? "Reconnect" : "Connected"}</UiText></span>
@@ -120,8 +120,6 @@ export default async function DashboardPage(props: Props) {
             </div>
             <div className="flex flex-wrap items-center gap-2 sm:justify-end">
               <span className="ap3k-badge ap3k-badge-slate hidden sm:inline-flex"><UiText>{planLabel}</UiText></span>
-              {profileSnapshotStatus.label === "Fresh" && <span className="ap3k-badge ap3k-badge-green hidden sm:inline-flex"><UiText>{"Fresh"}</UiText></span>}
-              {typeof profileSnapshot?.followersCount === "number" && <span className="ap3k-badge ap3k-badge-slate gap-1 hidden sm:inline-flex"><MetricValue value={profileSnapshot.followersCount} /> <UiText>{"followers"}</UiText></span>}
               <Link href={`/dashboard/${params.slug}/account`} className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-xl border border-violet-200 bg-violet-50 px-3 py-1.5 text-xs font-bold text-violet-800 dark:border-rf-pink/20 dark:bg-rf-pink/10 dark:text-rf-pink transition-colors hover:bg-violet-100 dark:hover:bg-rf-pink/15 sm:min-h-0">
                 {!tokenExpired && <Settings2 aria-hidden="true" className="h-4 w-4 sm:hidden" />}
                 <span className={tokenExpired ? "" : "sr-only sm:not-sr-only"}><UiText>{tokenExpired ? "Reconnect Instagram" : "Manage account"}</UiText></span>
@@ -172,7 +170,6 @@ export default async function DashboardPage(props: Props) {
               change={!instagramConnected ? undefined :
                 stat.label === "Comments" ? changes?.commentsReceived :
                 stat.label === "Leads" ? changes?.leadsCaptured :
-                stat.label === "Replies" ? changes?.staticRepliesUsed :
                 stat.change
               }
               subtitle={stat.label === "Followers" ? <FollowerSubtitle fallback={stat.subtitle} count={snapshotComparison?.previous?.followersCount != null ? snapshotComparison?.followerChange : null} percent={snapshotComparison?.followerChangePercent} /> : <UiText>{stat.subtitle}</UiText>}

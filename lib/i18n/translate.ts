@@ -1,3 +1,4 @@
+import { PRODUCT_AUDIT_COPY } from "./product-audit-copy";
 import { SEO_PUBLIC_COPY } from "./seo-public-copy";
 import { MARKETING_PRIVACY_COPY } from "./marketing-privacy-copy";
 import { ENGAGEMENT_COPY } from "./engagement-copy";
@@ -48,6 +49,7 @@ const catalogs = Object.fromEntries(
       ...AUTOMATION_EDITOR_COPY[locale as Locale],
       ...ENGAGEMENT_COPY[locale as Locale],
       ...AUTOMATION_COPY_CONTROLS[locale as Locale],
+      ...PRODUCT_AUDIT_COPY[locale as Locale],
       // Reviewed wording overrides legacy machine translations and older phrase catalogs.
       ...(EDITORIAL_COPY as Partial<Record<Locale, Record<string, string>>>)[
         locale as Locale

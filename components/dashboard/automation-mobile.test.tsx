@@ -21,7 +21,7 @@ describe("mobile automation management", () => {
     expect(html).toContain('aria-checked="true"');
     expect(html).toContain('aria-label="Pause automation"');
     expect(html).toContain('aria-label="More automation actions"');
-    expect(html).toContain("Live");
+    expect(html).toContain("Enabled");
     expect(html).toContain("40");
     expect(html).toContain("32");
     expect(html).toContain('/dashboard/owner/automation/example/analytics');

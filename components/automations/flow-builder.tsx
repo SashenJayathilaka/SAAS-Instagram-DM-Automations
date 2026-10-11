@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import PolicyScanDialog from "./policy-scan-dialog";
-import SavedAutomationTools, { showPublishedTools } from "./saved-automation-tools";
 import { mapFlowPolicy, applyFlowPolicy } from "@/lib/automation-policy-input";
 import type { PolicyScanInput } from "@/lib/automation-policy";
 import BasicFlowEditor from "./basic-flow-editor";
@@ -15,7 +14,7 @@ import {
 } from "@/components/ui/sheet";
 import { createPortal } from "react-dom";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import {
   ArrowUp,
   Check,
@@ -100,6 +99,7 @@ export default function FlowBuilder({
   avatar,
 }: Props) {
   const search = useSearchParams();
+  const router = useRouter();
   const [basic, setBasic] = useState(search.get("editor") === "basic");
   const [upgradeOpen, setUpgradeOpen] = useState(false);
   const [navigationOpen, setNavigationOpen] = useState(false);
@@ -196,7 +196,6 @@ export default function FlowBuilder({
   const [busy, setBusy] = useState(false);
   const busyRef = useRef(false);
   const [scanInput,setScanInput]=useState<PolicyScanInput|null>(null);
-  const [publishedId,setPublishedId]=useState<string|null>(null);
   const [savedAt, setSavedAt] = useState("");
   const [error, setError] = useState("");
   const [live, setLive] = useState(Boolean(automation?.active));
@@ -311,8 +310,12 @@ export default function FlowBuilder({
           minute: "2-digit",
         }),
       );
-      if (publish) { setLive(true); if(showPublishedTools(slug))setPublishedId(result.id); }
+      if (publish) setLive(true);
       await refreshSavedAutomation(queryClient, result.id);
+      if (publish) {
+        router.push(`/dashboard/${slug}/automation?published=${encodeURIComponent(result.id)}`);
+        router.refresh();
+      }
     } catch {
       setError("Could not save your changes. Please try again.");
     } finally {
@@ -440,7 +443,6 @@ export default function FlowBuilder({
     "grid h-11 w-11 shrink-0 place-items-center rounded-lg text-slate-500 light:text-slate-600 transition hover:bg-slate-100 disabled:opacity-30 dark:text-slate-400 dark:hover:bg-white/5";
   const toolDialogs=<>
     {scanInput && <PolicyScanDialog open onOpenChange={open=>{if(!open)setScanInput(null);}} input={scanInput} slug={slug} onPublish={()=>{setScanInput(null);void save(true,true);}} onApply={findings=>{change(applyFlowPolicy(doc,findings));setScanInput(null);}}/>}
-    {publishedId && <SavedAutomationTools automationId={publishedId} slug={slug} tool="published" onClose={()=>setPublishedId(null)}/>}
   </>;
   if (basic) return <>
     {toolDialogs}

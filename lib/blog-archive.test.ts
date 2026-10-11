@@ -9,6 +9,7 @@ describe("editorial archive", () => {
     const supplied = BLOG_POSTS.slice(1).concat({ ...BLOG_POSTS[0], slug: "noindex-test", noIndex: true });
     const listed = getBlogDirectory(supplied).flatMap(group => group.articles.map(post => post.slug));
     expect(new Set(listed).size).toBe(listed.length);
+    expect(getBlogDirectory(supplied).length).toBeLessThanOrEqual(8);
     expect(new Set(listed)).toEqual(new Set(supplied.filter(post => !post.noIndex).map(post => post.slug)));
     expect(listed).not.toContain(BLOG_POSTS[0].slug);
     expect(listed).not.toContain("noindex-test");

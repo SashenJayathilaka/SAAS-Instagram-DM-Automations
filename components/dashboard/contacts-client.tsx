@@ -31,11 +31,11 @@ export default function ContactsClient({slug,contacts,canExport=false}:{slug:str
   return <div className={css.page}>
     <header className={css.header}><h1>{tr('Contacts')}</h1><div className={css.headerActions}>
       <label className={css.search}><Search size={17}/><span className="sr-only">{tr('Search contacts')}</span><input value={filters.query||''} onChange={e=>update({query:e.target.value})} placeholder={tr('Search contacts')}/></label>
-      <button type="button" className={css.download} onClick={download} disabled={exporting} aria-label={tr('Download CSV')}>{exporting?<Loader2 size={17} className="animate-spin"/>:<Download size={17}/>} {tr('Download CSV')} {!canExport&&<ProBadge/>}</button>
+      <button type="button" className={css.download} onClick={download} disabled={exporting} aria-label={tr('Download CSV')} title={tr('Exports all contacts matching your filters, across every page.')}>{exporting?<Loader2 size={17} className="animate-spin"/>:<Download size={17}/>} {tr('Download CSV')} {!canExport&&<ProBadge/>}</button>
     </div></header>
     {error&&<p role="alert" className={css.error}>{error}</p>}
     <div className={css.toolbar}>
-      <span className={css.allContacts}>{tr('All contacts')} <span>{filtered.length}</span></span>
+      <span className={css.allContacts}>{tr(filters.query||activeFilters?'Matching contacts':'All contacts')} <span>{filtered.length}</span></span>
       <Popover><PopoverTrigger asChild><button className={css.filterButton}><Filter size={16}/>{tr('Filter')}{activeFilters>0&&<b>{activeFilters}</b>}</button></PopoverTrigger>
         <PopoverContent align="start" className={css.filterPanel}>
           <div className={css.filterHeading}><strong>{tr('Filter contacts')}</strong><button type="button" onClick={()=>update({email:'all',phone:'all',createdFrom:'',createdTo:'',interactedFrom:'',interactedTo:''})}>{tr('Clear filters')}</button></div>

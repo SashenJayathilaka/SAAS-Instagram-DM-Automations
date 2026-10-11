@@ -19,7 +19,7 @@ const profile = { aiRepliesEnabled: false, aiCommentsEnabled: false, role: "", b
 
 describe("AI localization without changing business knowledge", () => {
   it("renders every AI panel in all supported languages", () => {
-    const labels = { Overview: "Your AI readiness", Knowledge: "No knowledge yet", Behavior: "Default tone", Playground: "Your conversation is saved. Tests count toward the monthly AI limit." };
+    const labels = { Overview: "AI reply setup", Knowledge: "No knowledge yet", Behavior: "Default tone", Playground: "Your conversation is saved. Tests count toward the monthly AI limit." };
     for (const [tab, label] of Object.entries(labels)) {
       state.tab = tab;
       for (const locale of SUPPORTED_LOCALES) {

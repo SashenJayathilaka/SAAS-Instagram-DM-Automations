@@ -67,6 +67,11 @@ describe("billing subscription lookup", () => {
     });
   });
 
+  it("distinguishes a missing customer from a transient failure without treating it as Free", async () => {
+    mockSubscriptionList.mockRejectedValue(Object.assign(new Error("No such customer"), { code: "resource_missing", param: "customer" }));
+    await expect(getBillingLookup("cus_missing")).resolves.toEqual({ state: "unavailable", snapshot: null, reason: "customer_missing" });
+  });
+
   it("recognizes subscription states that remain manageable", () => {
     expect(isManageableSubscriptionStatus("active")).toBe(true);
     expect(isManageableSubscriptionStatus("trialing")).toBe(true);

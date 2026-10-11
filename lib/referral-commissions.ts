@@ -428,6 +428,8 @@ export async function referralEligibility(userId: string, force = false) {
   return {
     followers,
     paidPlan,
+    plan: user?.subscription?.plan ?? "FREE",
+    billingState: billing?.state ?? "none",
     eligible: paidPlan && followers >= REFERRAL_FOLLOWERS,
     username: best?.instagramUsername ?? null,
   };
@@ -439,6 +441,7 @@ export async function ensureReferralPromo(userId: string) {
     where: { userId },
   });
   if (!partner) throw new ReferralError("Open your referral page first.");
+  if (eligibility.billingState === "unavailable") throw new ReferralError("Billing could not be verified. Please retry from Billing. Your existing referral settings have not been changed.");
   if (!eligibility.eligible) {
     await client.referralPartner.update({
       where: { id: partner.id },

@@ -146,10 +146,10 @@ export function getDashboardProfileStats(input: {
       subtitle: "Leads captured",
     },
     {
-      label: "Replies",
+      label: "Monthly usage",
       value: input.usage ? formatUsageMetricValue(input.usage.staticReplies) : "0",
       change: undefined,
-      subtitle: "Comment replies + DMs sent",
+      subtitle: "All accounts · replies + DMs this month",
     },
   ];
 

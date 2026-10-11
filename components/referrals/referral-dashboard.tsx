@@ -1,5 +1,6 @@
 "use client";
 
+import { UiText } from "@/components/i18n/localized-copy";
 import { useState, useTransition } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
@@ -51,6 +52,7 @@ export default function ReferralDashboard({ dashboard, inviteUrl }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const r = dashboard.recurring;
+  const billingUnknown = r.billingState === "unavailable";
   const [price, setPrice] = useState(AP3K_PRICING.PRO_MONTHLY * 100);
   const [signups, setSignups] = useState(1);
   const [pending, startTransition] = useTransition();
@@ -186,7 +188,7 @@ export default function ReferralDashboard({ dashboard, inviteUrl }: Props) {
               href={pathname.replace(/\/referrals\/?$/, "/billing")}
               className={button}
             >
-              {c.upgrade}
+              {billingUnknown || r.plan !== "FREE" ? <UiText>Review billing</UiText> : c.upgrade}
             </Link>
           ) : !r.promoCode && r.eligible ? (
             <button
@@ -226,7 +228,7 @@ export default function ReferralDashboard({ dashboard, inviteUrl }: Props) {
             <div className="min-w-0 flex-1">
               <p className="text-sm font-semibold">{c.paidRequirement}</p>
               <p className={`mt-1 text-xs ${muted}`}>
-                {r.paidPlan ? c.paidPlan : c.freePlan}
+                {billingUnknown ? <UiText>Billing could not be verified. Your AP3K plan has not changed.</UiText> : r.paidPlan ? c.paidPlan : r.plan === "FREE" ? c.freePlan : <UiText>An active paid Stripe subscription is required; plan access alone does not qualify.</UiText>}
               </p>
             </div>
             <span className={`hidden text-xs font-semibold sm:block ${muted}`}>

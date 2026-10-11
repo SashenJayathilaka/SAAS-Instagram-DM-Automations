@@ -22,7 +22,7 @@ export function formatDashboardPeriod(period: string, start: Date | undefined, e
   if (period === "month" && start && end) {
     const formatter = new Intl.DateTimeFormat(locale, { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
     // Month ranges are [start, end): show the final included day.
-    return formatter.formatRange(new Date(start), new Date(new Date(end).getTime() - 1));
+    return formatter.formatRange(new Date(start), new Date(Math.max(new Date(start).getTime(), new Date(end).getTime() - 1)));
   }
   return translateUi(({ "24h": "Last 24h", "7d": "Last 7d", "30d": "Last 30d" } as Record<string, string>)[period] ?? "This month", locale);
 }

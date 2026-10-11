@@ -5,6 +5,7 @@ import BillingPlans from "./plans";
 import { makeUsageMetric, type UsageSummary } from "@/lib/plan-limits";
 import type { BillingSnapshot } from "@/lib/billing-snapshot";
 
+vi.mock("next/navigation", () => ({ useRouter: () => ({ refresh: vi.fn() }) }));
 vi.mock("@/providers/i18n-provider", () => ({
   useI18n: () => ({ locale: "en" }),
 }));

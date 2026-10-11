@@ -44,7 +44,7 @@ describe("dashboard screenshot regressions", () => {
       expect(markup).not.toContain("Private user DM");
       expect(markup).toContain(translateUi("Comment reply + DM active", locale));
       expect(markup).toContain(translateUi("Both", locale));
-      expect(markup).toContain(translateUi("Live", locale));
+      expect(markup).toContain(translateUi("Enabled", locale));
       if (locale !== "en") expect(markup).not.toContain("Comment reply + DM active");
       if (locale === "en") {
         if (english) expect(markup).toBe(english);
@@ -68,6 +68,7 @@ describe("dashboard screenshot regressions", () => {
       expect(range).not.toContain("day:");
       expect(range).toBe(new Intl.DateTimeFormat(locale, { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" }).formatRange(start, new Date("2026-09-30T00:00:00Z")));
     }
+    expect(() => formatDashboardPeriod("month", new Date("2026-11-01T00:00:00Z"), new Date("2026-11-01T00:00:00Z"), "en")).not.toThrow();
     expect(formatDashboardPeriod("7d", undefined, undefined, "fr")).toBe("7 derniers jours");
   });
   it("translates growth sentences while isolating numeric substitutions", () => {

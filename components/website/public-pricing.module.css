@@ -319,6 +319,7 @@
   margin-top: 140px;
 }
 .tableWrap {
+  position: relative;
   width: 100%;
   overflow-x: auto;
   overscroll-behavior-x: contain;

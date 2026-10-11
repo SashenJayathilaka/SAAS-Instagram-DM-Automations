@@ -108,7 +108,7 @@ export default function PricingExperience({
             >
               {plan.featured && (
                 <div className={`absolute left-1/2 top-0 flex -translate-x-1/2 -translate-y-1/2 items-center gap-1 rounded-full bg-violet-700 font-black text-white shadow-lg ${dashboardCompact ? "px-3 py-1 text-[10px]" : "px-4 py-1.5 text-xs"}`}>
-                  <Sparkles className="h-3.5 w-3.5" /><UiText>{" Most popular "}</UiText></div>
+                  <Sparkles className="h-3.5 w-3.5" /><UiText>{" Recommended "}</UiText></div>
               )}
               {isCurrent && (
                 <span className="absolute end-3 top-3 rounded-full bg-emerald-500/15 px-2.5 py-1 text-[10px] font-black uppercase tracking-wide text-emerald-700 dark:text-emerald-300"><UiText>{" Current "}</UiText></span>

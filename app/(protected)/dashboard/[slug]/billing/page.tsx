@@ -17,7 +17,7 @@ export default async function BillingPage() {
     user?.id ? getUserMonthlyUsage(user.id) : undefined,
     stripeConfigured && customerId
       ? getBillingLookup(customerId)
-      : Promise.resolve({ state: "none" as const, snapshot: null }),
+      : Promise.resolve({ state: customerId ? "unavailable" as const : "none" as const, snapshot: null }),
   ]);
 
   return (
@@ -27,6 +27,7 @@ export default async function BillingPage() {
         usage={usage}
         billingState={billingLookup.state}
         billing={billingLookup.snapshot}
+        billingReason={"reason" in billingLookup ? billingLookup.reason : undefined}
       />
     </div>
   );

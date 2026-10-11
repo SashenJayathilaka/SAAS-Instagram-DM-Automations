@@ -338,7 +338,7 @@ function CampaignMobileCard({
 
       <div className="mt-1 flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1">
         <span className="inline-flex min-w-0 items-center gap-1.5 text-[11px] font-semibold text-slate-600 dark:text-slate-300">
-          <span aria-hidden="true" className={`h-1.5 w-1.5 shrink-0 rounded-full ${status === "Live" ? "bg-emerald-500" : status === "Needs review" ? "bg-red-500" : status === "Draft" ? "bg-blue-500" : "bg-amber-500"}`} />
+          <span aria-hidden="true" className={`h-1.5 w-1.5 shrink-0 rounded-full ${status === "Enabled" ? "bg-emerald-500" : status === "Needs review" ? "bg-red-500" : status === "Draft" ? "bg-blue-500" : "bg-amber-500"}`} />
           <UiText>{status}</UiText>
         </span>
         <span className="min-w-0 flex-1 text-[11px] text-slate-500 dark:text-slate-400">
@@ -690,7 +690,7 @@ function campaignStatus(automation: any) {
     (automationSource(automation) === "COMMENT" && !automation.posts?.length)
   )
     return "Draft";
-  return automation.active ? "Live" : "Paused";
+  return automation.active ? "Enabled" : "Paused";
 }
 
 function automationSource(automation: any) {
@@ -716,7 +716,7 @@ function automationEditHref(slug: string, automation: any) {
 
 function StatusPill({ status }: { status: string }) {
   const classes =
-    status === "Live"
+    status === "Enabled"
       ? "ap3k-badge-green"
       : status === "Needs review"
         ? "ap3k-badge-red"

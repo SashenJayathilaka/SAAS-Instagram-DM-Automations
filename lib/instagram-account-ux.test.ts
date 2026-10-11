@@ -101,7 +101,7 @@ describe("instagram account UX helpers", () => {
       ["Comments", 22],
       ["Reply Rate", "75%"],
       ["Leads", 3],
-      ["Replies", "10 / 5,000"],
+      ["Monthly usage", "10 / 5,000"],
     ]);
   });
 });

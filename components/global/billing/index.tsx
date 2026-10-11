@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+import { useTransition } from "react";
 import { UiText } from "@/components/i18n/localized-copy";
 import { useI18n } from "@/providers/i18n-provider";
 import { planDisplayName, type CustomerPlan } from "@/lib/billing-plans";
@@ -27,6 +29,7 @@ type Props = {
   usage?: UsageSummary;
   billingState?: "none" | "subscription" | "unavailable";
   billing?: BillingSnapshot | null;
+  billingReason?: "customer_missing";
 };
 
 export default function Billing({
@@ -34,8 +37,11 @@ export default function Billing({
   usage,
   billingState = "none",
   billing,
+  billingReason,
 }: Props) {
   const { locale } = useI18n();
+  const router = useRouter();
+  const [refreshing, startRefresh] = useTransition();
   const hasStripeSubscription =
     billingState === "subscription" && Boolean(billing);
   const activeStripeSubscription =
@@ -107,15 +113,18 @@ export default function Billing({
       </header>
 
       {billingState === "unavailable" && (
-        <p
+        <div
           role="status"
           className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-400/20 dark:bg-amber-500/10 dark:text-amber-100"
         >
-          <UiText>
-            Stripe billing status is temporarily unavailable. Refresh this page
-            before starting another checkout.
-          </UiText>
-        </p>
+          <p><UiText>{billingReason === "customer_missing"
+            ? "Your saved billing account could not be found in Stripe. Check the billing link before starting another subscription. Your AP3K plan has not been changed."
+            : "Stripe billing status is temporarily unavailable. Refresh this page before starting another checkout."}</UiText></p>
+          <div className="mt-3 flex flex-wrap items-center gap-3">
+            {billingReason === "customer_missing" ? <ManageBillingButton label="Check billing link" /> : <button type="button" disabled={refreshing} onClick={() => startRefresh(() => router.refresh())} className="min-h-11 rounded-lg border border-current px-4 font-semibold disabled:opacity-50"><UiText>{refreshing ? "Checking billing…" : "Retry"}</UiText></button>}
+            <a href="mailto:support@ap3k.com" className="inline-flex min-h-11 items-center underline underline-offset-4"><UiText>Contact billing support</UiText></a>
+          </div>
+        </div>
       )}
       {needsAttention && (
         <p

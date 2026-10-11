@@ -8,7 +8,12 @@ import { useI18n } from "@/providers/i18n-provider";
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import Link from "next/link";
 
+function TikTokIcon({ className }: { className?: string }) {
+  return <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true"><path d="M16.6 1h-3.7v14.8a3.2 3.2 0 1 1-2.8-3.2V8.9a7 7 0 1 0 6.5 7V8.4a9 9 0 0 0 5.2 1.7V6.4A5.3 5.3 0 0 1 16.6 1Z" /></svg>;
+}
+
 const SOCIAL_LINKS = [
+  { label: "TikTok", href: "https://www.tiktok.com/@ap3kautomation", Icon: TikTokIcon },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/company/ap3kautomation",

@@ -25,12 +25,14 @@
 .searchButton {padding:6px 10px;font-size:12px}
 .searchWide kbd,.searchButton kbd {margin-left:auto;border:1px solid var(--docs-border);border-radius:4px;font-size:11px;white-space:nowrap;padding:0 4px}
 .searchButton span {display:none}
-.homeSection {margin-top:72px;max-width:1160px}
+.startHere {margin-top:32px;max-width:1160px}
+.startHere h2 {font-size:22px;font-weight:650;line-height:1.3}
+.homeSection {margin-top:48px;max-width:1160px}
 .homeSection h2,.related h2 {font-size:24px;line-height:1.3;font-weight:600;margin:0 0 24px;letter-spacing:-.35px}
 .topics {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .topic {border:1px solid var(--docs-border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .18s ease,box-shadow .18s ease}
 .topic:hover {border-color:var(--docs-accent);box-shadow:0 3px 12px #00000008}
-.topicArt {height:110px;background:var(--docs-soft);padding:20px;color:var(--docs-accent);display:flex;align-items:flex-start}
+.topicArt {height:64px;background:var(--docs-soft);padding:20px;color:var(--docs-accent);display:flex;align-items:flex-start}
 .topicCopy {padding:20px;flex:1;display:flex;flex-direction:column}
 .topicCopy h3 {font-size:20px;line-height:26px;font-weight:600;margin:0 0 8px;letter-spacing:-.25px}
 .topicCopy p {font-size:14px;line-height:22.4px;color:var(--docs-muted);margin:0 0 22px}

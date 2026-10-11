@@ -7,11 +7,18 @@ const REVISIONS: Record<Locale, { accounts: string; backtrack: string }> = {
   de: { accounts: "Free umfasst ein Instagram-Konto, Pro bis zu drei und Business bis zu 6. Jedes Konto hat eigene Automatisierungen, Kontakte und einen Posteingang.", backtrack: "Ja. Verarbeite frühere Kommentare separat, um geeignete Kommentare der letzten sieben Tage für unterstützte ausgewählte Beiträge zu beantworten. Free enthält drei Versuche; Pro und Business haben kein Versuchslimit. Berechtigungen, Nutzungslimits und Zustellschutz gelten weiterhin." },
   pt: { accounts: "Free inclui uma conta Instagram, Pro suporta até três e Business até 6. Cada conta tem as suas próprias automatizações, contactos e caixa de entrada.", backtrack: "Sim. Use separadamente a função de comentários anteriores para processar comentários elegíveis dos últimos sete dias em publicações selecionadas suportadas. Free inclui três tentativas; Pro e Business não têm limite de tentativas. Continuam a aplicar-se permissões, limites de utilização e proteções de envio." },
 };
+const CSV_COPY: Record<Locale, string> = {
+  en: "Pro and Business include CSV export. Open Contacts, apply any filters you need, then choose Download CSV to export the matching contacts. Free users can review contacts in their workspace.",
+  fr: "Pro et Business incluent l’export CSV. Ouvrez Contacts, appliquez vos filtres, puis choisissez Télécharger CSV pour exporter les contacts correspondants. Les utilisateurs Free peuvent consulter leurs contacts.",
+  es: "Pro y Business incluyen la exportación CSV. Abre Contactos, aplica los filtros y elige Descargar CSV para exportar los contactos coincidentes. En Free puedes consultar tus contactos.",
+  de: "Pro und Business enthalten den CSV-Export. Öffne Kontakte, wende Filter an und wähle CSV herunterladen, um passende Kontakte zu exportieren. Mit Free kannst du deine Kontakte ansehen.",
+  pt: "Pro e Business incluem exportação CSV. Abra Contactos, aplique os filtros e escolha Transferir CSV para exportar os contactos correspondentes. No Free pode consultar os seus contactos.",
+};
 function revisedFaq(locale: Locale) {
   const copy = SOURCE_FAQ[locale];
   const revision = REVISIONS[locale];
   return { ...copy, items: copy.items.map(([question, answer], index) => [
-    question, index === 2 ? revision.accounts : index === 8 ? revision.backtrack : answer,
+    question, index === 2 ? revision.accounts : index === 8 ? revision.backtrack : index === 14 ? CSV_COPY[locale] : answer,
   ] as const) };
 }
 export const HOME_FAQ = {

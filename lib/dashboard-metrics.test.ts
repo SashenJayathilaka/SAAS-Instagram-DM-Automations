@@ -68,6 +68,13 @@ beforeEach(() => {
 });
 
 describe("dashboard metrics", () => {
+  it("caps month-to-date comparison at the end of a shorter previous month", () => {
+    const range = getPeriodRange("month", new Date("2026-03-31T12:00:00Z"));
+    expect(range.previousStart.toISOString()).toBe("2026-02-01T00:00:00.000Z");
+    expect(range.previousEnd.toISOString()).toBe("2026-03-01T00:00:00.000Z");
+    expect(range.currentEnd.toISOString()).toBe("2026-03-31T12:00:00.000Z");
+  });
+
   it("counts KEYWORD_MATCHED as comments matched", async () => {
     mockAutomationEventCount.mockResolvedValueOnce(9);
 
@@ -161,13 +168,13 @@ describe("dashboard metrics", () => {
     expect(range.previousEnd.toISOString()).toBe("2026-05-17T12:00:00.000Z");
   });
 
-  it("builds a calendar month period with the previous month window", () => {
+  it("compares month to date with the same elapsed time in the previous month", () => {
     const range = getPeriodRange("month", new Date("2026-05-24T12:00:00Z"));
 
     expect(range.currentStart.toISOString()).toBe("2026-05-01T00:00:00.000Z");
-    expect(range.currentEnd.toISOString()).toBe("2026-06-01T00:00:00.000Z");
+    expect(range.currentEnd.toISOString()).toBe("2026-05-24T12:00:00.000Z");
     expect(range.previousStart.toISOString()).toBe("2026-04-01T00:00:00.000Z");
-    expect(range.previousEnd.toISOString()).toBe("2026-05-01T00:00:00.000Z");
+    expect(range.previousEnd.toISOString()).toBe("2026-04-24T12:00:00.000Z");
   });
 
   it("formats percent changes for positive, negative, and zero previous values", () => {

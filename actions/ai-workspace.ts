@@ -35,6 +35,7 @@ export async function getAiWorkspace() {
   return {
     integrationId: profile.integrationId,
     profile: normalizeAiWorkspace(workspace),
+    lastConfiguredAt: workspace?.updatedAt ?? null,
     plan: profile.subscription?.plan ?? "FREE",
     playgroundMessages: playgroundMessages.reverse(),
   };
@@ -181,7 +182,7 @@ export async function savePlaygroundMessageAsKnowledgeAction(messageId: string, 
     }]);
     await client.instagramAiConfig.upsert({ where: { integrationId: profile.integrationId }, create: { userId: profile.id, integrationId: profile.integrationId, knowledge }, update: { knowledge } });
     revalidatePath(`/dashboard/${profile.clerkId}/ai`);
-    return { status: 200 as const, data: "Saved to Knowledge. Review it there before using AI live." };
+    return { status: 200 as const, data: "Saved to Knowledge. Review it there before using AI live.", knowledge };
   } catch {
     return { status: 400 as const, data: "Could not save this message to Knowledge." };
   }

@@ -358,6 +358,14 @@ describe("withdrawal ledger", () => {
   });
 });
 describe("promo eligibility", () => {
+  it("preserves existing promotion settings when billing cannot be verified", async () => {
+    db.user.findUnique.mockResolvedValue({ clerkId: "clerk", subscription: { plan: "BUSINESS", customerId: "cus_stale" } });
+    db.integrations.findMany.mockResolvedValue([]);
+    vi.mocked(getBillingLookup).mockResolvedValue({ state: "unavailable", snapshot: null });
+    await expect(ensureReferralPromo("owner")).rejects.toThrow("Billing could not be verified");
+    expect(db.referralPartner.update).not.toHaveBeenCalled();
+    expect(stripe.coupons.create).not.toHaveBeenCalled();
+  });
   it("annualcheckoutneverappliesfirstmonthdiscount", async () => {
     expect(await referralCheckoutDiscount("friend", "year")).toBeNull();
     expect(db.referralAttribution.findUnique).not.toHaveBeenCalled();

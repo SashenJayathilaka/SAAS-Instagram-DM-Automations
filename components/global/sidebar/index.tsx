@@ -32,7 +32,7 @@ export default function Sidebar({ slug, drawer = false, onNavigate }: Props) {
   useEffect(() => {
     const saved = window.localStorage.getItem("ap3k-sidebar-expanded");
     if (!drawer && saved !== null) setExpanded(saved !== "false");
-  }, []);
+  }, [drawer]);
 
   const toggleExpanded = () => {
     setExpanded((value) => {
@@ -126,7 +126,7 @@ export default function Sidebar({ slug, drawer = false, onNavigate }: Props) {
       </TooltipProvider>
 
       <div className="shrink-0 px-3 pb-1">
-        <HelpHub slug={slug} expanded={expanded} />
+        <HelpHub slug={slug} expanded={expanded} mobile={drawer} />
       </div>
       <div className={`shrink-0 px-3 pb-2 ${drawer ? "hidden" : ""}`}>
         <LocalizedButton

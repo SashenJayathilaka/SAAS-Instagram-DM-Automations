@@ -6,6 +6,8 @@ import { generateAiSupportReply } from "@/lib/ai-reply";
 import { selectSupportResources } from "@/lib/support-resources";
 import { reserveSupportRequest } from "@/lib/support-quota";
 import { client } from "@/lib/prisma";
+import { getUserMonthlyUsage } from "@/actions/usage/queries";
+import { supportActionsFor, type SupportAccountContext } from "@/lib/support-assistance";
 
 async function supportProfile() {
   const clerk = await onCurrentUser();
@@ -48,8 +50,18 @@ export async function askSupportAssistantAction(message: string) {
       data: { userId: profile.id, context: "SUPPORT", role: "user", content: prompt },
       select: { id: true, role: true, content: true, createdAt: true },
     });
+    const account: SupportAccountContext = { plan: profile.subscription?.plan ?? "FREE" };
+    if (supportActionsFor(prompt).length) {
+      // These aggregate counts belong only to the authenticated owner. Never pass
+      // the profile, integration tokens, email, or Stripe identifiers to a model.
+      try {
+        const usage = await getUserMonthlyUsage(profile.id);
+        account.usage = { period: usage.periodLabel, actions: usage.staticReplies.used, aiReplies: usage.aiReplies.used, activeAutomations: usage.activeCampaigns.used, connectedAccounts: usage.connectedAccounts.used };
+      } catch { /* Advice can still use configured limits; never invent live usage. */ }
+    }
     const result = await generateAiSupportReply({
       message: prompt,
+      account,
       history: history.reverse().map((item) => ({ role: item.role === "assistant" ? "assistant" : "user", content: item.content })),
     });
     if (!result.ok) return { status: 503 as const, data: "The support assistant is unavailable. Please use the Documentation or email support@ap3k.com.", userMessage };

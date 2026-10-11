@@ -73,7 +73,7 @@ async function Layout(props: Props) {
       <div className="ap3k-page overflow-x-hidden">
         <Sidebar slug={params.slug} />
         <MobileNavigation slug={params.slug} />
-        <div className="ap3k-app-shell [--app-sidebar-offset:0px] lg:[--app-sidebar-offset:76px] lg:peer-data-[expanded=true]:[--app-sidebar-offset:232px] relative z-10 flex min-w-0 flex-col px-3 py-3 transition-[margin] duration-base ease-ui-out lg:ml-[76px] lg:px-6 lg:py-5 lg:peer-data-[expanded=true]:ml-[232px]">
+        <div className="ap3k-app-shell [--app-sidebar-offset:0px] lg:[--app-sidebar-offset:76px] lg:peer-data-[expanded=true]:[--app-sidebar-offset:232px] relative z-10 flex min-w-0 flex-col px-3 pb-20 pt-3 transition-[margin] duration-base ease-ui-out lg:ml-[76px] lg:px-6 lg:py-5 lg:peer-data-[expanded=true]:ml-[232px]">
           {children}
         </div>
       </div>

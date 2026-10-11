@@ -2,6 +2,7 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
 import AutomationTable from "./automation-table";
+import { PLAN_PAUSE_MESSAGES } from "@/lib/automation-plan-policy";
 
 vi.mock("@/providers/i18n-provider", () => ({ useI18n: () => ({ locale: "en" }) }));
 vi.mock("next/navigation", () => ({ useRouter: () => ({ refresh: vi.fn() }) }));
@@ -15,6 +16,15 @@ function mobile(active: boolean, showControls: boolean) {
   return html.match(/<article\b[\s\S]*?<\/article>/)?.[0] ?? "";
 }
 describe("mobile automation management", () => {
+  it("explains plan pauses and keeps the recovery control available on mobile", () => {
+    const html = renderToStaticMarkup(<AutomationTable slug="owner" automations={[{ ...automation, active: false, reviewReason: PLAN_PAUSE_MESSAGES.limit }]} showControls={false} />);
+    expect(html).toContain("Some automations were paused after your plan changed");
+    expect(html).toContain('/dashboard/owner/billing');
+    const card = html.match(/<article\b[\s\S]*?<\/article>/)?.[0] ?? "";
+    expect(card).toContain("Plan paused");
+    expect(card).toContain("your active automation allowance was exceeded");
+    expect(card).toContain('aria-label="Start automation"');
+  });
   it.each([true, false])("keeps management controls when table search is %s", showControls => {
     const html = mobile(true, showControls);
     expect(html).toContain('role="switch"');

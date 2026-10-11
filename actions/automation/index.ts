@@ -1,4 +1,5 @@
 "use server";
+import { AutomationPlanError } from "@/lib/automation-plan-entitlements";
 
 import { publicAutomation } from "@/lib/automation-public";
 import { prepareStoryPublication } from "@/lib/story-automation-runtime";
@@ -234,7 +235,7 @@ export const saveCampaign = async (
       if (!activation.ok) {
         return {
           status: 403,
-          data: "Your plan allows 1 active automation. Pause another automation or upgrade.",
+          data: "Your plan's active automation limit has been reached. Pause another automation or upgrade.",
         };
       }
     }
@@ -263,6 +264,7 @@ export const saveCampaign = async (
 
     return { status: 404, data: "Automation not found" };
   } catch (error) {
+    if (error instanceof AutomationPlanError) return { status: 403, data: error.message };
     const message = campaignSaveErrorMessage(error);
     console.error("[campaign-save] save failed", {
       action: "saveCampaign",
@@ -411,6 +413,7 @@ export const saveMessageAutomation = async (
     }
     return { status: 200, data: { id: saved.id } };
   } catch (error) {
+    if (error instanceof AutomationPlanError) return { status: 403, data: error.message };
     console.error("[message-automation-save] save failed", {
       automationId,
       userId: user.id,
@@ -595,7 +598,7 @@ export const updateAutomationName = async (
       if (!activation.ok) {
         return {
           status: 403,
-          data: "Your plan allows 1 active automation. Pause another automation or upgrade.",
+          data: "Your plan's active automation limit has been reached. Pause another automation or upgrade.",
         };
       }
     }
@@ -605,6 +608,7 @@ export const updateAutomationName = async (
     if (update) return { status: 200, data: "Automation updated" };
     return { status: 404, data: "Failed to update automation" };
   } catch (error) {
+    if (error instanceof AutomationPlanError) return { status: 403, data: error.message };
     return { status: 500, data: "Failed to update automation" };
   }
 };
@@ -631,6 +635,7 @@ export const saveListener = async (
     if (create) return { status: 200, data: "Listener created" };
     return { status: 404, data: "Failed to create listener" };
   } catch (error) {
+    if (error instanceof AutomationPlanError) return { status: 403, data: error.message };
     return { status: 500, data: "Failed to save listener" };
   }
 };
@@ -744,6 +749,7 @@ export const savePosts = async (
     if (create) return { status: 200, data: "Posts created" };
     return { status: 404, data: "Failed to create posts" };
   } catch (error) {
+    if (error instanceof AutomationPlanError) return { status: 403, data: error.message };
     return { status: 500, data: "Failed to save posts" };
   }
 };
@@ -873,7 +879,7 @@ export const activateAutomation = async (id: string, status: boolean) => {
       if (!activation.ok) {
         return {
           status: 403,
-          data: "Your plan allows 1 active automation. Pause another automation or upgrade.",
+          data: "Your plan's active automation limit has been reached. Pause another automation or upgrade.",
         };
       }
     }
@@ -893,6 +899,7 @@ export const activateAutomation = async (id: string, status: boolean) => {
     }
     return { status: 404, data: "Failed to activate automation" };
   } catch (error) {
+    if (error instanceof AutomationPlanError) return { status: 403, data: error.message };
     return { status: 500, data: "Failed to activate automation" };
   }
 };

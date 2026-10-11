@@ -1,3 +1,4 @@
+import { withAutomationPlanWrite } from "@/lib/automation-plan-entitlements";
 import { prepareNextPost, readNextPost } from "@/lib/next-post";
 import "server-only";
 import { normalizeStepDelays } from "@/lib/automation-step-delays";
@@ -85,11 +86,13 @@ export const createCompleteAutomation = async (
   clerkId: string,
   payload: CampaignPayload,
 ) => {
-  return await client.user.update({
+  const automationId = crypto.randomUUID();
+  return withAutomationPlanWrite(clerkId, async (tx) => tx.user.update({
     where: { clerkId },
     data: {
       automations: {
         create: {
+          id: automationId,
           integrationId: await currentInstagramAccountId(clerkId),
           name: payload.name,
           adAutomation: payload.adAutomation ?? false,
@@ -129,12 +132,11 @@ export const createCompleteAutomation = async (
     },
     select: {
       automations: {
-        orderBy: { createdAt: "desc" },
-        take: 1,
+        where: { id: automationId },
         select: { id: true },
       },
     },
-  });
+  }), () => automationId);
 };
 
 function messageTriggers(payload: NormalizedMessageAutomationPayload) {
@@ -152,7 +154,7 @@ export const createCompleteMessageAutomation = async (
   });
   if (!user) return null;
 
-  return client.automation.create({
+  return withAutomationPlanWrite(clerkId, async (tx) => tx.automation.create({
     data: {
       userId: user.id,
       integrationId: await currentInstagramAccountId(clerkId),
@@ -205,7 +207,7 @@ export const createCompleteMessageAutomation = async (
       },
     },
     select: { id: true },
-  });
+  }), result => result.id);
 };
 
 export const updateCompleteMessageAutomation = async (
@@ -224,7 +226,7 @@ export const updateCompleteMessageAutomation = async (
   });
   if (!automation) return null;
 
-  return client.$transaction(async (tx) => {
+  return withAutomationPlanWrite(clerkId, async (tx) => {
     await tx.keyword.deleteMany({ where: { automationId } });
     await tx.trigger.deleteMany({ where: { automationId } });
     await tx.listener.deleteMany({ where: { automationId } });
@@ -282,7 +284,7 @@ export const updateCompleteMessageAutomation = async (
       },
       select: { id: true },
     });
-  });
+  }, result => result.id);
 };
 
 export const getAutomation = async (clerkId: string) => {
@@ -398,7 +400,7 @@ export const updateAutomation = async (
     }
   }
 
-  return await client.automation.update({
+  return withAutomationPlanWrite(clerkId, async (tx) => tx.automation.update({
     where: { id: automation.id },
     data: {
       ...(update.active === true && automation.posts?.[0]?.postid === "NEXT" && !readNextPost(automation.postConfig)?.armedAt ? { postConfig: prepareNextPost("NEXT", true, automation.postConfig)! } : {}),
@@ -409,7 +411,7 @@ export const updateAutomation = async (
         : {}),
       matchingMode: update.matchingMode,
     },
-  });
+  }), result => result.id);
 };
 
 export const updateCompleteAutomation = async (
@@ -429,7 +431,7 @@ export const updateCompleteAutomation = async (
 
   if (!automation) return null;
 
-  return await client.$transaction(async (tx) => {
+  return withAutomationPlanWrite(clerkId, async (tx) => {
     await tx.keyword.deleteMany({ where: { automationId } });
     await tx.post.deleteMany({ where: { automationId } });
     await tx.trigger.deleteMany({ where: { automationId } });
@@ -467,7 +469,7 @@ export const updateCompleteAutomation = async (
       },
       select: { id: true },
     });
-  });
+  }, result => result.id);
 };
 
 function duplicateBaseName(value?: string | null) {
@@ -788,7 +790,7 @@ export const addListener = async (
     return null;
   }
 
-  return await client.automation.update({
+  return withAutomationPlanWrite(clerkId, async (tx) => tx.automation.update({
     where: {
       id: automation.id,
     },
@@ -802,7 +804,7 @@ export const addListener = async (
         },
       },
     },
-  });
+  }), result => result.id);
 };
 
 export const addTrigger = async (
@@ -957,7 +959,7 @@ export const addPosts = async (
     return null;
   }
 
-  return await client.automation.update({
+  return withAutomationPlanWrite(clerkId, async (tx) => tx.automation.update({
     where: {
       id: automation.id,
     },
@@ -968,7 +970,7 @@ export const addPosts = async (
         },
       },
     },
-  });
+  }), result => result.id);
 };
 
 export const getAutomationAnalytics = async (

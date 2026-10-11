@@ -6,6 +6,12 @@ import { AP3K_HELP_ARTICLES } from "./ap3k-help";
 import { BLOG_POSTS } from "./blog";
 
 describe("grounded support", () => {
+  it("grounds downgrade answers in preservation, eligibility and manual restart", () => {
+    const knowledge = supportKnowledgeFor("What happens to my 60 automations if I downgrade to Free?");
+    expect(knowledge).toContain("saved automations and contacts remain");
+    expect(knowledge).toContain("upgrading never automatically restarts");
+    expect(knowledge).toContain("Monthly usage is not reset");
+  });
   it("tells the model about the tutorial and screenshot cards attached to its answer", () => {
     const knowledge = supportKnowledgeFor("How do I add link buttons and watch the tutorial?");
     expect(knowledge).toContain("a current example product screenshot");

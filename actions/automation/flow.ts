@@ -1,4 +1,5 @@
 "use server";
+import { withAutomationPlanWrite, AutomationPlanError } from "@/lib/automation-plan-entitlements";
 import { z } from "zod";
 import { Prisma } from "@prisma/client";
 import { onCurrentUser } from "@/actions/user";
@@ -128,7 +129,7 @@ export async function saveAutomationFlow(raw: SaveFlowInput) {
     return trigger.postScope === "next" ? {...clean,publishedAt:old?.publishedAt ?? new Date().toISOString(),...(old?.boundPostId ? {boundPostId:old.boundPostId} : {})} : clean;
   });
   try {
-    const saved = await client.$transaction(async (tx) => {
+    const saved = await withAutomationPlanWrite(current.id, async (tx) => {
       const draftOnly = Boolean(existing?.active && !input.active);
       if (input.id && existing?.listener) {
         const draft = existing.listener.flowDraft as {revision?:number} | null;
@@ -196,13 +197,14 @@ export async function saveAutomationFlow(raw: SaveFlowInput) {
         },
         select: { id: true },
       });
-    });
+    }, result => result.id);
     return {
       status: 200,
       id: saved.id,
       revision: input.id ? input.revision + 1 : 1,
     };
   } catch (error) {
+    if (error instanceof AutomationPlanError) return { status: 403, error: error.message };
     if (error instanceof Error && error.message === "FLOW_CONFLICT")
       return {
         status: 409,

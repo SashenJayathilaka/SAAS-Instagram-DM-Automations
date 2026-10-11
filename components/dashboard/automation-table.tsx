@@ -1,4 +1,5 @@
 "use client";
+import { planPauseMessage } from "@/lib/automation-plan-policy";
 
 import { useI18n } from "@/providers/i18n-provider";
 import { translateUi } from "@/lib/i18n/translate";
@@ -135,6 +136,11 @@ export default function AutomationTable({
 
   return (
     <>
+    {automations.some(a => planPauseMessage(a)) && <div role="status" className="mb-3 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-950 dark:border-amber-500/25 dark:bg-amber-500/10 dark:text-amber-100">
+      <p className="font-semibold">Some automations were paused after your plan changed</p>
+      <p className="mt-1 leading-relaxed">Your automations and contacts are saved. To change which automations run, pause an active automation and activate an eligible saved one. Paid features require a paid plan. Upgrading does not restart paused automations automatically.</p>
+      <Link href={`/dashboard/${encodeURIComponent(slug)}/billing`} className="mt-3 inline-flex min-h-10 items-center rounded-lg bg-amber-950 px-3 font-semibold text-white dark:bg-amber-100 dark:text-amber-950">Review your plan</Link>
+    </div>}
     {publishedId && <SavedAutomationTools automationId={publishedId} slug={slug} tool="published" onClose={()=>setPublishedId(null)}/>}
     <div className="min-w-0 overflow-hidden rounded-2xl border border-slate-200 light:border-slate-300 bg-white shadow-sm transition-colors duration-fast dark:border-white/[0.12] dark:bg-[#111827] dark:shadow-ap3k-card sm:rounded-2xl">
       {showControls && (
@@ -298,6 +304,7 @@ function CampaignMobileCard({
               <UiText>{"Untitled automation"}</UiText>
             )}
           </Link>
+          {planPauseMessage(automation) && <p className="mt-1 text-xs leading-relaxed text-amber-800 dark:text-amber-200">{planPauseMessage(automation)}</p>}
           <p
             title={translateUi(mode.full, locale)}
             className="mt-0.5 truncate text-[11px] leading-4 text-slate-500 light:text-slate-600 dark:text-slate-400 sm:text-xs"
@@ -405,6 +412,7 @@ function CampaignDesktopRow({
             >
               {automation.name ? <bdi dir="auto">{automation.name}</bdi> : <UiText>{"Untitled automation"}</UiText>}
             </Link>
+            {planPauseMessage(automation) && <p className="mt-1 text-xs leading-relaxed text-amber-800 dark:text-amber-200">{planPauseMessage(automation)}</p>}
             <div className="mt-1 flex min-w-0 items-center gap-1.5 text-xs text-slate-500 light:text-slate-600 dark:text-slate-400">
               <span className="min-w-0 break-words"><UiText>{modeLabel}</UiText>{source === "STORY" && <> · <UiText>{storyTriggerLabel(automation.storyTriggerType)}</UiText></>}</span>
               {automation.currentAccountLabel && (
@@ -685,6 +693,7 @@ function EmptyRows() {
 function campaignStatus(automation: any) {
   if (automation.archivedAt) return "Archived";
   if (automation.needsReview) return "Needs review";
+  if (planPauseMessage(automation)) return "Plan paused";
   if (
     !automation.listener ||
     (automationSource(automation) === "COMMENT" && !automation.posts?.length)

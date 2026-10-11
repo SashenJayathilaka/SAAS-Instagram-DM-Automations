@@ -137,7 +137,14 @@ describe("findAutomationForUser — ownership check on detail read", () => {
 // ---------------------------------------------------------------------------
 
 describe("updateAutomation — ownership check before update", () => {
-  beforeEach(() => vi.clearAllMocks());
+  beforeEach(() => {
+    vi.clearAllMocks();
+    mockAutomationUpdate.mockResolvedValue({ id: AUTOMATION_A_ID });
+    mockTransactionFn.mockImplementation(async callback => callback({
+      $queryRaw: vi.fn().mockResolvedValue([{ id: "owner" }]),
+      automation: { update: mockAutomationUpdate, findFirst: vi.fn().mockResolvedValue({ active: false }) },
+    }));
+  });
 
   it("reads ownership first with id + User.clerkId before updating", async () => {
     mockAutomationFindFirst.mockResolvedValue({ id: AUTOMATION_A_ID });
@@ -196,11 +203,12 @@ describe("updateCompleteAutomation — ownership check before transaction", () =
       .fn()
       .mockResolvedValue({ id: AUTOMATION_A_ID });
     const transactionClient = {
+      $queryRaw: vi.fn().mockResolvedValue([{ id: "owner" }]),
       keyword: { deleteMany: vi.fn() },
       post: { deleteMany: vi.fn() },
       trigger: { deleteMany: vi.fn() },
       listener: { deleteMany: vi.fn() },
-      automation: { update: transactionAutomationUpdate },
+      automation: { update: transactionAutomationUpdate, findFirst: vi.fn().mockResolvedValue({ active: false }) },
     };
     mockTransactionFn.mockImplementation(
       async (callback: (tx: typeof transactionClient) => unknown) =>

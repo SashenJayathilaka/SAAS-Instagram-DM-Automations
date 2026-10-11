@@ -169,7 +169,7 @@ export const syncSubscriptionForUser = async (
     });
     await syncInstagramAccountEntitlements(transaction, userId, subscription.plan);
     return subscription;
-  }, { isolationLevel: "ReadCommitted" });
+  }, { isolationLevel: "ReadCommitted", timeout: 15000 });
 };
 
 export const updateSubscription = async (

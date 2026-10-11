@@ -61,8 +61,9 @@ beforeEach(() => {
   m.update.mockResolvedValue({ id });
   m.transaction.mockImplementation(async (callback) =>
     callback({
+      $queryRaw: vi.fn().mockResolvedValue([{ id: "owner" }]),
       listener: { updateMany: m.revision },
-      automation: { upsert: m.upsert, update: m.update },
+      automation: { upsert: m.upsert, update: m.update, findFirst: vi.fn().mockImplementation(async () => ({ active: false })), updateMany: vi.fn() },
       keyword: { deleteMany: m.clear },
       post: { deleteMany: m.clear },
       trigger: { deleteMany: m.clear },

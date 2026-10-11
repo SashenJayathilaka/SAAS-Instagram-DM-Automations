@@ -1,3 +1,4 @@
+import { syncAutomationPlanEntitlements } from "@/lib/automation-plan-entitlements";
 import type { Prisma } from "@prisma/client";
 import { getPlanLimits, isUnlimited, type ProductPlan } from "@/lib/plan-limits";
 
@@ -12,4 +13,5 @@ export async function syncInstagramAccountEntitlements(tx: Prisma.TransactionCli
   const allowed = accounts.slice(0, isUnlimited(limit) ? accounts.length : limit).map(({ id }) => id);
   await tx.integrations.updateMany({ where: { userId, name: "INSTAGRAM", status: { not: "DISCONNECTED" } }, data: { planLocked: true } });
   await tx.integrations.updateMany({ where: { userId, id: { in: allowed } }, data: { planLocked: false } });
+  await syncAutomationPlanEntitlements(tx, userId, plan);
 }

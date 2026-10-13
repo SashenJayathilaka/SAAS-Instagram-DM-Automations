@@ -1,3 +1,5 @@
+import assignedPhotos from "./content/blog-photo-assignments.json";
+
 /** Original AI-generated AP3K editorial scenes, not customer endorsements or product screenshots. */
 export const EDITORIAL_PHOTOS = {
   commerce: "Shop owner packing products beside an AP3K-branded laptop in a sunlit studio",
@@ -18,6 +20,9 @@ export function editorialPhoto(theme: EditorialPhotoTheme) {
   return { src: `/images/blog/original/ap3k-${theme}.webp`, alt: EDITORIAL_PHOTOS[theme], width: 1600, height: 900 };
 }
 export function getEditorialPhoto(post: { slug: string; title: string; visual?: string }) {
+  if (Object.prototype.hasOwnProperty.call(assignedPhotos, post.slug)) {
+    return assignedPhotos[post.slug as keyof typeof assignedPhotos];
+  }
   const topic = `${post.slug} ${post.title}`.toLowerCase();
   let theme: EditorialPhotoTheme = "conversation";
   if (/photograph|portrait|camera/.test(topic)) theme = "photography";

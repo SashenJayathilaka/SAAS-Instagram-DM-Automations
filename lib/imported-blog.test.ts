@@ -31,7 +31,7 @@ describe('supplied blog archive migration', () => {
     const images = Object.values(covers);
     expect(images).toHaveLength(175);
     for (const image of images) {
-      expect(image.src).toMatch(/^\/images\/blog\/original\/ap3k-[a-z-]+\.webp$/);
+      expect(image.src).toMatch(/^\/images\/blog\/original\/ap3k-[a-z0-9-]+\.webp$/);
       expect(existsSync(`public${image.src}`)).toBe(true);
       expect(image.alt.length).toBeGreaterThan(30);
     }
@@ -46,7 +46,7 @@ describe('supplied blog archive migration', () => {
         expect(src).toMatch(/^https:\/\/www\.youtube-nocookie\.com\/embed\/[A-Za-z0-9_-]{11}$/);
       }
       for (const [, src] of Array.from(html.matchAll(/<img[^>]+src="([^"]+)"/g))) {
-        expect(src).toMatch(/^\/images\/(blog\/original\/ap3k-[a-z-]+|docs\/[a-z-]+)\.webp$/);
+        expect(src).toMatch(/^\/images\/(blog\/original\/ap3k-[a-z0-9-]+|docs\/[a-z-]+)\.webp$/);
         expect(existsSync(`public${src}`), `${post.slug}: ${src}`).toBe(true);
       }
       for (const [, slug] of Array.from(html.matchAll(/href="\/blog\/([^"#?]+)/g))) {

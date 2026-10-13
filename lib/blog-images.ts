@@ -9,7 +9,7 @@ export type ArticleImage = {
   credit?: string;
   source?: string;
 };
-/** Covers share a maintained original photo collection. Instructional screenshots stay in article sections. */
+/** Assigned articles use a dedicated original cover; pending articles use the existing collection. Instructional screenshots stay in article sections. */
 export function getArticleImage(post: Pick<BlogPost, 'slug' | 'title' | 'visual' | 'cover'>): ArticleImage {
   return getEditorialPhoto(post);
 }

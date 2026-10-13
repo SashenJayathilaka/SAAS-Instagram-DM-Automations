@@ -10,7 +10,7 @@ describe('original AP3K blog photography', () => {
   it('replaces every catalog cover and metadata image with a local original scene', () => {
     for (const post of BLOG_POSTS) {
       const image = getArticleImage(post);
-      expect(image.src).toMatch(/^\/images\/blog\/original\/ap3k-[a-z-]+\.webp$/);
+      expect(image.src).toMatch(/^\/images\/blog\/original\/ap3k-[a-z0-9-]+\.webp$/);
       expect(image.alt.length).toBeGreaterThan(30);
       expect(articleImageUrl(image)).toBe(`https://ap3k.com${image.src}`);
     }

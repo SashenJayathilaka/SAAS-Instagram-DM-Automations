@@ -287,6 +287,29 @@ export const HOME_FAQ = {
       ]
     ]
   },
+  "nl": {
+    "eyebrow": "Veelgestelde vragen",
+    "title": "Alles wat je moet weten",
+    "trust": "AP3K maakt verbinding via de officiële Instagram API. Jij bepaalt welke automatiseringen actief zijn.",
+    "items": [
+      ["Wat is AP3K?", "AP3K automatiseert Instagram-reacties, DM’s en story-interacties, zodat creators en bedrijven sneller kunnen antwoorden en leads kunnen verzamelen."],
+      ["Hoe werkt AP3K?", "Koppel je Instagram-account, kies een trigger en schrijf je antwoord. AP3K voert de automatisering uit bij een nieuwe geschikte reactie, story-interactie of DM."],
+      ["Hoeveel Instagram-accounts kan ik koppelen?", "Free bevat één Instagram-account, Pro ondersteunt er maximaal drie en Business maximaal 6. Elk account heeft eigen automatiseringen, contacten en een inbox."],
+      ["Wat is de functie Reactie naar DM?", "AP3K verstuurt een privébericht wanneer iemand op een bericht of Reel reageert. Je kunt trefwoorden of elke geschikte reactie gebruiken, openbaar antwoorden en een link of aanbod versturen."],
+      ["Is AP3K veilig te gebruiken?", "AP3K gebruikt de officiële autorisatie en API van Instagram. Jij beheert de machtigingen en kunt de verbinding altijd verbreken. Automatiseringen moeten aan de beleidsregels en berichtlimieten van Instagram blijven voldoen."],
+      ["Wat doet Vragen om te volgen?", "Vraag mensen je account te volgen voordat zij je link of bestand ontvangen. AP3K controleert de volgstatus wanneer Instagram die beschikbaar stelt en verstuurt daarna het bericht."],
+      ["Kan ik reacties op Instagram Stories automatiseren?", "Ja. Story-automatiseringen reageren op geschikte antwoorden, reacties en vermeldingen met de triggers en berichten die jij instelt."],
+      ["Wat is universele automatisering?", "Een regel voor alle berichten past één reactieautomatisering toe op je berichten in plaats van op één geselecteerd bericht. Story- en DM-automatiseringen gebruiken hun eigen triggers."],
+      ["Kan AP3K gemiste reacties alsnog beantwoorden?", "Ja. Met Eerdere reacties kun je geschikte reacties van de afgelopen zeven dagen op ondersteunde geselecteerde berichten verwerken. Free bevat drie pogingen; Pro en Business hebben geen poginglimiet."],
+      ["Is AP3K gratis?", "Ja. Free bevat 500 geautomatiseerde acties per maand, één Instagram-account en maximaal vijf actieve automatiseringen. Pro en Business bieden hogere limieten en AI-functies."],
+      ["Hoe stel ik AP3K in?", "Maak een account, koppel een Instagram Business- of Creator-account en kies een automatisering voor berichten, stories of DM’s. Stel de trigger en het antwoord in, activeer de automatisering en test met een ander Instagram-account."],
+      ["Werkt AP3K met elk Instagram-account?", "AP3K ondersteunt Instagram Business- en Creator-accounts. Zet een persoonlijk account eerst om naar een professioneel account."],
+      ["Bewaart AP3K mijn Instagram-wachtwoord?", "AP3K vraagt niet om je Instagram-wachtwoord en bewaart het niet. Je geeft toestemming via Instagram; AP3K bewaart alleen de toegangsgegevens die nodig zijn voor de functies die je toestaat."],
+      ["Hoe stel ik een DM-automatisering in?", "Kies DM-automatisering in het dashboard. Stel een trefwoord of elk bericht als trigger in, schrijf het antwoord en activeer de automatisering. Test met een DM vanaf een ander Instagram-account."],
+      ["Hoe exporteer ik verzamelde contacten?", "Pro en Business bevatten CSV-export. Open Contacten, pas filters toe en kies CSV downloaden om de overeenkomende contacten te exporteren. Met Free kun je contacten in de werkruimte bekijken."],
+      ["Hoe neem ik contact op met AP3K-support?", "Mail naar support@ap3k.com of open het helpcentrum voor installatiehandleidingen en probleemoplossing."]
+    ]
+  },
   "pt": {
     "eyebrow": "Perguntas frequentes",
     "title": "Tudo o que precisa de saber",

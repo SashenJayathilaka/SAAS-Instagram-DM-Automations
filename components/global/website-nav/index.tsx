@@ -6,7 +6,6 @@ import { Inter } from "next/font/google";
 import Link from "next/link";
 import AP3KLogo from "@/components/global/ap3k-logo";
 import LanguageSwitcher from "@/components/global/language-switcher";
-import ThemeToggle from "@/components/global/theme-toggle";
 import { localizePublicPath } from "@/lib/i18n/config";
 import { useI18n } from "@/providers/i18n-provider";
 import { HOME_SHOWCASE_COPY } from "@/lib/i18n/home-showcase";
@@ -44,7 +43,6 @@ export default function WebsiteNav({ current }: Props) {
     <Link href={href("/sign-in")} onClick={() => setOpen(false)}>{copy.login}</Link>
     <div className={styles.actions}>
       <Link href={href("/sign-up")} className={styles.join} onClick={() => setOpen(false)}>{copy.join}</Link>
-      <ThemeToggle compact className={styles.theme} />
     </div>
   </>;
 

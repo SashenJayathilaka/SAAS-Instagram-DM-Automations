@@ -13,10 +13,10 @@ import { translateUi } from './i18n/translate';
 import { DOCS_ARTICLES } from './docs';
 
 describe('evidence-based SEO remediation', () => {
-  it('uses unique, native archive metadata for all five languages', () => {
+  it('uses unique, native archive metadata for every supported language', () => {
     const copies = SUPPORTED_LOCALES.map(locale => blogArchiveCopy(locale));
-    expect(new Set(copies.map(c => c.title)).size).toBe(5);
-    expect(new Set(copies.map(c => c.description)).size).toBe(5);
+    expect(new Set(copies.map(c => c.title)).size).toBe(SUPPORTED_LOCALES.length);
+    expect(new Set(copies.map(c => c.description)).size).toBe(SUPPORTED_LOCALES.length);
     for (const locale of SUPPORTED_LOCALES) {
       expect(blogArchiveCopy(locale, 2).title).toContain('2');
       expect(blogArchiveCopy(locale, 2).description).not.toBe(blogArchiveCopy(locale).description);

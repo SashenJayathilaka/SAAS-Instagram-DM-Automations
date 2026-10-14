@@ -4,6 +4,7 @@ import { getAuthenticatedHomeRedirect } from "@/lib/authenticated-home-redirect"
 import {
   LOCALE_COOKIE,
   isEnglishOnlyArticle,
+  localizedLocalesForPath,
   browserLocale,
   isLocale,
   localizePublicPath,
@@ -49,6 +50,12 @@ export default clerkMiddleware(async (auth, req) => {
     return NextResponse.redirect(destination, 308);
   }
 
+  if (pathLocale && !localizedLocalesForPath(pathname).includes(pathLocale)) {
+    const destination = req.nextUrl.clone();
+    destination.pathname = pathname;
+    return NextResponse.redirect(destination, 308);
+  }
+
   const savedLocale = req.cookies.get(LOCALE_COOKIE)?.value;
   const browserPreference = browserLocale(req.headers.get("accept-language"));
   const firstVisit = !isEnglishOnlyArticle(pathname) && !isLocale(savedLocale) && !pathLocale
@@ -56,9 +63,10 @@ export default clerkMiddleware(async (auth, req) => {
     && req.method === "GET" && !/^\/(api|callback|payment|media|r)(?:\/|$)/.test(pathname)
     && !/bot|crawler|spider|slurp/i.test(req.headers.get("user-agent") || "")
     && !req.headers.has("next-router-prefetch") && req.headers.get("purpose") !== "prefetch";
-  if (firstVisit && !isProtectedPath(pathname) && browserPreference !== "en") {
+  const browserDestination = localizePublicPath(pathname, browserPreference);
+  if (firstVisit && !isProtectedPath(pathname) && browserPreference !== "en" && browserDestination !== requestedPath) {
     const destination = req.nextUrl.clone();
-    destination.pathname = localizePublicPath(pathname, browserPreference);
+    destination.pathname = browserDestination;
     const response = NextResponse.redirect(destination);
     response.headers.set("Vary", "Accept-Language, Cookie");
     response.headers.set("Cache-Control", "private, no-store");

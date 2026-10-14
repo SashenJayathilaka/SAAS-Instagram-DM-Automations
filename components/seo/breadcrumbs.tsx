@@ -12,7 +12,7 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
     name: translateUi(item.name, locale),
     href: localizePublicPath(item.path, locale),
   }));
-  const label = { en: "Breadcrumb", fr: "Fil d’Ariane", es: "Ruta de navegación", de: "Navigationspfad", pt: "Caminho de navegação" }[locale];
+  const label = { en: "Breadcrumb", fr: "Fil d’Ariane", es: "Ruta de navegación", de: "Navigationspfad", nl: "Kruimelpad", pt: "Caminho de navegação" }[locale];
   const schema = {
     "@context": "https://schema.org", "@type": "BreadcrumbList",
     itemListElement: trail.map((item, index) => ({

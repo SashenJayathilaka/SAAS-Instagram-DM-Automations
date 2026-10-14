@@ -2,10 +2,10 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, expect, it, vi } from 'vitest';
 import { HOME_FAQ } from '@/lib/i18n/home-faq';
-import { SUPPORTED_LOCALES } from '@/lib/i18n/config';
+import { SUPPORTED_LOCALES, type Locale } from '@/lib/i18n/config';
 import HomeFaq from './home-faq';
 
-const state = vi.hoisted(() => ({ locale: 'en' as 'en' | 'fr' | 'es' | 'de' | 'pt' }));
+const state = vi.hoisted(() => ({ locale: 'en' as Locale }));
 vi.mock('next/font/google', () => ({ Inter: () => ({ className: 'font-inter' }) }));
 vi.mock('@/providers/i18n-provider', () => ({ useI18n: () => ({ locale: state.locale }) }));
 

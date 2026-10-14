@@ -5,28 +5,33 @@ export const SITE_METADATA: Record<
   { title: string; description: string }
 > = {
   en: {
-    title: "AP3K — Instagram Comment & DM Automation",
+    title: "AP3K — Instagram DM Automation Tool (Free Plan)",
     description:
-      "Automate Instagram comment replies and DMs with AP3K. Send links, collect leads and track your campaigns. Start free with 500 automated actions per month.",
+      "Turn Instagram comments into automatic DMs with AP3K. Send links, collect leads and track results. Start free with 500 automated actions each month.",
   },
   fr: {
-    title: "AP3K — Automatisation des commentaires et DM Instagram",
+    title: "AP3K — Outil d’automatisation des DM Instagram (gratuit)",
     description:
-      "Répondez automatiquement aux commentaires Instagram, envoyez le lien promis par DM et suivez chaque prospect, sans flux complexes ni code.",
+      "Transformez les commentaires Instagram en DM automatiques avec AP3K. Envoyez des liens, collectez des prospects et commencez gratuitement.",
   },
   es: {
-    title: "AP3K — Automatización de comentarios y DM de Instagram",
+    title: "AP3K — Herramienta de automatización de DM de Instagram (gratis)",
     description:
-      "Responde automáticamente a comentarios de Instagram, envía el enlace prometido por DM y registra cada contacto, sin flujos complejos ni código.",
+      "Convierte comentarios de Instagram en mensajes directos automáticos. Envía enlaces, capta contactos y empieza gratis con AP3K.",
   },
   de: {
-    title: "AP3K — Automatisierung für Instagram-Kommentare und DMs",
+    title: "AP3K — Tool für Instagram-DM-Automatisierung (kostenlos)",
     description:
-      "Beantworte Instagram-Kommentare automatisch, sende den versprochenen Link per DM und erfasse jeden Lead – ohne komplizierte Abläufe oder Code.",
+      "Verwandle Instagram-Kommentare automatisch in DMs. Sende Links, erfasse Leads und starte AP3K kostenlos mit 500 Aktionen pro Monat.",
+  },
+  nl: {
+    title: "AP3K — Tool voor Instagram DM-automatisering (gratis)",
+    description:
+      "Zet Instagram-reacties automatisch om in DM’s. Verstuur links, verzamel leads en start gratis met AP3K en 500 acties per maand.",
   },
   pt: {
-    title: "AP3K — Automação de comentários e DMs do Instagram",
+    title: "AP3K — Ferramenta de automação de DMs do Instagram (grátis)",
     description:
-      "Responda automaticamente a comentários do Instagram, envie o link prometido por DM e acompanhe cada contacto, sem fluxos complexos nem código.",
+      "Transforme comentários do Instagram em DMs automáticas. Envie links, recolha contactos e comece grátis com 500 ações por mês.",
   },
 };

@@ -6,7 +6,7 @@ import LocalizedCopy from "@/components/i18n/server-localized-copy";
 import { HOME_FAQ } from "@/lib/i18n/home-faq";
 import HomeFaq from "@/components/website/home-faq";
 import HomeAutomationChoices from "@/components/website/home-automation-choices";
-import { localizePublicPath } from "@/lib/i18n/config";
+import { LOCALE_DETAILS, localeAlternates, localizePublicPath } from "@/lib/i18n/config";
 import { SITE_METADATA } from "@/lib/i18n/metadata";
 import { COMPANY_SCHEMA } from "@/lib/company";
 import {
@@ -20,13 +20,49 @@ import Link from "next/link";
 import HomeFeatures from "@/components/website/home-features";
 import HomeScrollProgress from "@/components/website/home-scroll-progress";
 import { getServerLocale } from "@/lib/i18n/server";
+import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
+
+export function generateMetadata(): Metadata {
+  const locale = getServerLocale();
+  const site = SITE_METADATA[locale];
+  const path = localizePublicPath("/", locale);
+  return {
+    title: { absolute: site.title },
+    description: site.description,
+    keywords: [
+      "Instagram DM automation",
+      "Instagram comment automation",
+      "Instagram comment to DM",
+      "Instagram autoresponder",
+      "ManyChat alternative",
+      "AP3K",
+    ],
+    alternates: { canonical: path, languages: localeAlternates("/") },
+    openGraph: {
+      title: site.title,
+      description: site.description,
+      url: `https://ap3k.com${path}`,
+      siteName: "AP3K",
+      type: "website",
+      locale: LOCALE_DETAILS[locale].openGraph,
+      images: ["https://ap3k.com/opengraph-image"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: site.title,
+      description: site.description,
+      images: ["https://ap3k.com/opengraph-image"],
+    },
+  };
+}
 
 const softwareSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "AP3K",
+  alternateName: "AP3K Instagram DM Automation",
   publisher: COMPANY_SCHEMA,
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
@@ -76,7 +112,7 @@ export default async function LandingPage() {
     "@id": "https://ap3k.com/#website",
     url: "https://ap3k.com/",
     name: "AP3K",
-    alternateName: "AP3K DM Automation",
+    alternateName: ["AP3K Instagram DM Automation", "AP3K Comment-to-DM"],
     publisher: COMPANY_SCHEMA,
   };
 
@@ -133,13 +169,13 @@ export default async function LandingPage() {
               </p>
               <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
                 <Link
-                  href="/sign-up"
+                  href={localizePublicPath("/sign-up", locale)}
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-black text-[#6128c8] shadow-xl transition motion-safe:hover:-translate-y-px"
                 >
                   GET STARTED <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  href="/pricing"
+                  href={localizePublicPath("/pricing", locale)}
                   className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-8 py-4 text-sm font-black text-white backdrop-blur transition hover:bg-white/15"
                 >
                   View pricing

@@ -112,7 +112,9 @@ export default function HomeHero() {
           <Image src="/media/hero/creator-portraits.webp" alt="" width={123} height={36} sizes="123px" className={styles.portraits} />
         </div>
         <div className={styles.api}>
-          <span>{copy.api}</span>
+          <Image className={styles.lightArt} src="/media/hero/meta-business-partner-light.png" alt="Meta Business Partner" width={324} height={129} />
+          <Image className={styles.darkArt} src="/media/hero/meta-business-partner-dark.png" alt="Meta Business Partner" width={324} height={129} />
+          <span className={styles.techProvider}>{copy.providerStatus}</span>
         </div>
       </div>
     </section>

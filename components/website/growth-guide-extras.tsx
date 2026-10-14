@@ -9,6 +9,7 @@ const copy = {
   fr: ["Sources officielles", "Prêt à automatiser Instagram ?", "Commencez gratuitement, comparez les offres ou consultez le guide de configuration avant de connecter votre compte Instagram professionnel.", "Découvrir l’automatisation des DM Instagram", "Configuration et dépannage", "Comparer les offres"],
   es: ["Fuentes oficiales", "¿Listo para automatizar Instagram?", "Empieza gratis, compara los planes o revisa la guía de configuración antes de conectar tu cuenta profesional de Instagram.", "Explorar la automatización de mensajes de Instagram", "Configuración y solución de problemas", "Comparar planes"],
   de: ["Offizielle Quellen", "Bereit für Instagram-Automatisierung?", "Starte kostenlos, vergleiche die Tarife oder lies die Einrichtungsanleitung, bevor du dein professionelles Instagram-Konto verbindest.", "Instagram-DM-Automatisierung entdecken", "Einrichtung und Fehlerbehebung", "Tarife vergleichen"],
+  nl: ["Officiële bronnen", "Klaar om Instagram te automatiseren?", "Start gratis, vergelijk de abonnementen of bekijk de installatiehandleiding voordat je jouw professionele Instagram-account koppelt.", "Instagram DM-automatisering bekijken", "Instellen en problemen oplossen", "Abonnementen vergelijken"],
   pt: ["Fontes oficiais", "Pronto para automatizar o Instagram?", "Comece gratuitamente, compare os planos ou consulte o guia de configuração antes de ligar a sua conta profissional do Instagram.", "Explorar a automação de DM do Instagram", "Configuração e resolução de problemas", "Comparar planos"],
 };
 

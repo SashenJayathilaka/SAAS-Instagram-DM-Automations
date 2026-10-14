@@ -63,5 +63,6 @@ export const PHRASE_TRANSLATIONS: Record<Locale, Record<string, string>> = {
   fr: { ...fr, ...PRODUCT_PHRASE_TRANSLATIONS.fr },
   es: { ...es, ...PRODUCT_PHRASE_TRANSLATIONS.es },
   de: { ...de, ...PRODUCT_PHRASE_TRANSLATIONS.de },
+  nl: { ...en, ...PRODUCT_PHRASE_TRANSLATIONS.nl },
   pt: { ...pt, ...PRODUCT_PHRASE_TRANSLATIONS.pt },
 };

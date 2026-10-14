@@ -37,4 +37,11 @@ const phrases: Record<string, [string, string, string, string]> = {
   "An active paid Stripe subscription is required; plan access alone does not qualify.": ["Un abonnement Stripe payant actif est requis ; l’accès au forfait seul ne suffit pas.", "Se requiere una suscripción de pago activa en Stripe; el acceso al plan no basta.", "Ein aktives bezahltes Stripe-Abonnement ist erforderlich; der Tarifzugang allein reicht nicht aus.", "É necessária uma assinatura paga ativa no Stripe; apenas o acesso ao plano não basta."],
   "Your saved billing account could not be found in Stripe. Check the billing link before starting another subscription. Your AP3K plan has not been changed.": ["Le compte de facturation enregistré est introuvable dans Stripe. Vérifiez le lien avant de créer un autre abonnement. Votre forfait AP3K n’a pas été modifié.", "No se encontró tu cuenta de facturación guardada en Stripe. Comprueba el vínculo antes de iniciar otra suscripción. Tu plan AP3K no ha cambiado.", "Das gespeicherte Abrechnungskonto wurde in Stripe nicht gefunden. Prüfe die Verknüpfung vor einem weiteren Abonnement. Dein AP3K-Tarif wurde nicht geändert.", "A conta de faturamento salva não foi encontrada no Stripe. Verifique o vínculo antes de iniciar outra assinatura. Seu plano AP3K não foi alterado."],
 };
-export const PRODUCT_AUDIT_COPY = Object.fromEntries((["en", "fr", "es", "de", "pt"] as const).map((locale, index) => [locale, Object.fromEntries(Object.entries(phrases).map(([key, values]) => [key, index ? values[index - 1] : key]))])) as Record<Locale, Record<string, string>>;
+const translated = Object.fromEntries((["en", "fr", "es", "de", "pt"] as const).map((locale, index) => [locale, Object.fromEntries(Object.entries(phrases).map(([key, values]) => [key, index ? values[index - 1] : key]))]));
+
+// Dutch currently uses reviewed English for application-only audit strings.
+// The public homepage, navigation, consent and SEO surfaces have dedicated Dutch copy.
+export const PRODUCT_AUDIT_COPY = {
+  ...translated,
+  nl: translated.en,
+} as Record<Locale, Record<string, string>>;

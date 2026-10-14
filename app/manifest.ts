@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "AP3K — Instagram Comment & DM Automation",
+    name: "AP3K — Instagram DM Automation Tool",
     short_name: "AP3K",
     description: "Turn Instagram comments into instant replies, DMs and trackable leads.",
     start_url: "/",

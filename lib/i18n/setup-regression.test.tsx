@@ -3,7 +3,7 @@ import React from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
-import { SUPPORTED_LOCALES, type Locale } from "./config";
+import { FULLY_TRANSLATED_LOCALES, SUPPORTED_LOCALES, type Locale } from "./config";
 import { SETUP_ROWS } from "./setup-copy";
 import { translateUi } from "./translate";
 import WizardPage from "@/components/automations/automation-setup-page";
@@ -47,7 +47,7 @@ describe("automation setup localization", () => {
     }
   });
   it("renders the accordion editor in every language without translating customer content", () => {
-    for (locale of SUPPORTED_LOCALES) {
+    for (locale of FULLY_TRANSLATED_LOCALES) {
       const html=renderToStaticMarkup(<WizardPage params={{slug:"fixture"}} searchParams={{type:"comment"}}/>);
       const text=plain(html);
       for (const heading of ["Setup Triggers and Public Reply","Setup Direct Message"]) {
@@ -59,7 +59,7 @@ describe("automation setup localization", () => {
     }
   });
   it("renders the actual type picker and both message entry screens without English headings", () => {
-    for (locale of SUPPORTED_LOCALES) {
+    for (locale of FULLY_TRANSLATED_LOCALES) {
       const picker = plain(renderToStaticMarkup(<WizardPage params={{ slug: "fixture" }} />));
       for (const label of ["New automation"]) expect(picker).toContain(translateUi(label, locale));
       expect(picker).not.toContain("Start from scratch");

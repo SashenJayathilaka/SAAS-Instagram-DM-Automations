@@ -85,8 +85,7 @@ export default async function DashboardPage(props: Props) {
   return (
     <div className="relative mx-auto flex w-full max-w-7xl flex-col gap-4 px-1 py-2 sm:gap-6 sm:py-4 text-slate-950 dark:text-slate-50 sm:px-2 lg:py-8">
       <div className="ap3k-content-enter">
-        <p className="hidden text-xs font-black uppercase tracking-[0.18em] text-rf-pink sm:block"><UiText>{"AP3K"}</UiText></p>
-        <h1 className="mt-1 text-xl font-black tracking-tight text-slate-950 dark:text-white sm:text-xl"><UiText>{"Welcome back, "}</UiText><bdi dir="auto">{displayName}</bdi></h1>
+        <h1 className="text-xl font-black tracking-tight text-slate-950 dark:text-white sm:text-xl"><UiText>{"Welcome back, "}</UiText><bdi dir="auto">{displayName}</bdi></h1>
         <p className="mt-1 hidden max-w-2xl text-sm sm:block text-slate-600 dark:text-slate-400">
           <UiText>{"See performance, manage automations, and keep Instagram conversations moving."}</UiText>
         </p>

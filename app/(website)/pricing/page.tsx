@@ -28,6 +28,10 @@ const PRICING_METADATA = {
     "AP3K Preise — Instagram-Tarife Kostenlos, Pro und Business",
     "Vergleiche die AP3K-Tarife Kostenlos, Pro und Business für Antworten, DMs, KI und Instagram-Lead-Erfassung.",
   ],
+  nl: [
+    "AP3K-prijzen — Gratis, Pro en Business",
+    "Vergelijk AP3K Free, Pro en Business voor Instagram-reacties, DM’s, AI, leadbeheer en automatiseringsanalyses.",
+  ],
   pt: [
     "Preços do AP3K — Planos Grátis, Pro e Business",
     "Compare os planos Grátis, Pro e Business do AP3K para respostas, DMs, IA e acompanhamento de contactos do Instagram.",

@@ -157,6 +157,7 @@ export const AUTOMATION_EDITOR_COPY: Record<Locale, Record<string, string>> = {
     "Story interaction": "Story-Interaktion",
     "Could not load automation. Please refresh and try again.": "Die Automatisierung konnte nicht geladen werden. Lade die Seite neu und versuche es erneut."
   },
+  "nl": {},
   "pt": {
     "Setup Triggers and Public Reply": "Configurar gatilhos e respostas públicas",
     "Setup Triggers": "Configurar gatilhos",

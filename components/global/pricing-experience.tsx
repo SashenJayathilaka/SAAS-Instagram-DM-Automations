@@ -23,6 +23,7 @@ const BILLING_LABELS: Record<Locale, { annual: string; monthly: string; equivale
   fr: { annual: "par an, facturé annuellement", monthly: "par mois, facturé mensuellement", equivalent: "Équivalent mensuel" },
   es: { annual: "al año, con facturación anual", monthly: "al mes, con facturación mensual", equivalent: "Equivalente mensual" },
   de: { annual: "pro Jahr, jährlich abgerechnet", monthly: "pro Monat, monatlich abgerechnet", equivalent: "Monatlicher Gegenwert" },
+  nl: { annual: "per jaar, jaarlijks gefactureerd", monthly: "per maand, maandelijks gefactureerd", equivalent: "Maandelijks equivalent" },
   pt: { annual: "por ano, com cobrança anual", monthly: "por mês, com cobrança mensal", equivalent: "Equivalente mensal" },
 };
 

@@ -17,6 +17,7 @@ export type HomeHeroCopy = {
   allowance: string;
   audience: string;
   api: string;
+  providerStatus: string;
   keywordPrefix: string;
   keywordSuffix: string;
   demoLabel: string;
@@ -44,6 +45,7 @@ export const HOME_HERO_COPY: Record<Locale, HomeHeroCopy> = {
     allowance: "500 automated actions every month. No credit card required.",
     audience: "Built for creators on Instagram",
     api: "Official Instagram API",
+    providerStatus: "Verified Tech Provider",
     keywordPrefix: "Comment",
     keywordSuffix: "and let AP3K take it from here.",
     demoLabel: "Example automation",
@@ -73,6 +75,7 @@ export const HOME_HERO_COPY: Record<Locale, HomeHeroCopy> = {
     allowance: "500 actions automatisées chaque mois. Sans carte bancaire.",
     audience: "Pensé pour les créateurs sur Instagram",
     api: "API officielle Instagram",
+    providerStatus: "Fournisseur technologique vérifié",
     keywordPrefix: "Commentez",
     keywordSuffix: "et laissez AP3K prendre le relais.",
     demoLabel: "Exemple d’automatisation",
@@ -102,6 +105,7 @@ export const HOME_HERO_COPY: Record<Locale, HomeHeroCopy> = {
     allowance: "500 acciones automatizadas al mes. Sin tarjeta de crédito.",
     audience: "Para creadores en Instagram",
     api: "API oficial de Instagram",
+    providerStatus: "Proveedor tecnológico verificado",
     keywordPrefix: "Comenta",
     keywordSuffix: "y deja que AP3K se encargue del resto.",
     demoLabel: "Ejemplo de automatización",
@@ -131,6 +135,7 @@ export const HOME_HERO_COPY: Record<Locale, HomeHeroCopy> = {
     allowance: "500 automatisierte Aktionen pro Monat. Keine Kreditkarte erforderlich.",
     audience: "Für Creator auf Instagram",
     api: "Offizielle Instagram-API",
+    providerStatus: "Verifizierter Technologieanbieter",
     keywordPrefix: "Kommentiere",
     keywordSuffix: "und lass AP3K den Rest übernehmen.",
     demoLabel: "Beispiel einer Automatisierung",
@@ -150,6 +155,36 @@ export const HOME_HERO_COPY: Record<Locale, HomeHeroCopy> = {
       { keyword: "ANGEBOT", comment: "ANGEBOT — ich möchte mehr erfahren! 💜", message: "Hier ist das Angebot, das dich interessiert! Schau es dir unten an. 🎁", button: "Angebot ansehen" },
     ],
   },
+  nl: {
+    eyebrow: "Automatiseer Instagram-reacties en DM’s",
+    titleTop: "Beantwoord elke Instagram-reactie",
+    titleBottom: "automatisch met een DM",
+    description: "Automatiseer reacties, DM’s en antwoorden op stories op Instagram.",
+    cta: "Gratis aan de slag",
+    secondary: "Bekijk hoe het werkt",
+    allowance: "500 geautomatiseerde acties per maand. Geen creditcard nodig.",
+    audience: "Gemaakt voor creators op Instagram",
+    api: "Meta Business Partner",
+    providerStatus: "Geverifieerde technologieprovider",
+    keywordPrefix: "Reageer met",
+    keywordSuffix: "en laat AP3K de rest doen.",
+    demoLabel: "Voorbeeld van een automatisering",
+    demoDescription: "Iemand reageert met een trefwoord op je Instagram-bericht. AP3K verstuurt de gevraagde link automatisch via een DM.",
+    reply: "Beantwoorden",
+    sent: "Verstuurd door AP3K",
+    dmTitle: "Je Instagram-inbox",
+    active: "Nu actief",
+    message: "Hier is de beloofde link! ✨",
+    openLink: "Link openen",
+    commentRequest: "Stuur me de link, alsjeblieft!",
+    pause: "Animatie pauzeren",
+    play: "Animatie afspelen",
+    scenes: [
+      { keyword: "GIDS", comment: "GIDS — die ontvang ik graag! 🙌", message: "Je gids staat klaar! Tik hieronder om hem te openen. ✨", button: "Gids openen" },
+      { keyword: "LINK", comment: "LINK — stuur hem maar door! 🔗", message: "Hier is de beloofde link! ✨", button: "Link openen" },
+      { keyword: "AANBOD", comment: "AANBOD — ik wil graag meer weten! 💜", message: "Hier is het aanbod waar je naar vroeg! Bekijk het hieronder. 🎁", button: "Aanbod bekijken" },
+    ],
+  },
   pt: {
     eyebrow: "Automatize comentários e mensagens do Instagram",
     titleTop: "Responda a cada comentário",
@@ -160,6 +195,7 @@ export const HOME_HERO_COPY: Record<Locale, HomeHeroCopy> = {
     allowance: "500 ações automatizadas por mês. Sem cartão de crédito.",
     audience: "Para criadores no Instagram",
     api: "API oficial do Instagram",
+    providerStatus: "Fornecedor de tecnologia verificado",
     keywordPrefix: "Comente",
     keywordSuffix: "e deixe a AP3K tratar do resto.",
     demoLabel: "Exemplo de automatização",

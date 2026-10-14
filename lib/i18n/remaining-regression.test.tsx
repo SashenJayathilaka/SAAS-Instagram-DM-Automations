@@ -5,7 +5,9 @@ import fs from "node:fs";
 import ts from "typescript";
 import {
   SUPPORTED_LOCALES,
+  FULLY_TRANSLATED_LOCALES,
   isEnglishOnlyArticle,
+  localizedLocalesForPath,
   localizePublicPath,
   type Locale,
 } from "./config";
@@ -66,7 +68,7 @@ function prose(value: unknown, field = ""): string[] {
 
 describe("complete public localization and search metadata", () => {
   it("identifies AP3K LLC in terms and privacy in every language with an isolated mailing address", () => {
-    for (const locale of SUPPORTED_LOCALES) {
+    for (const locale of FULLY_TRANSLATED_LOCALES) {
       state.locale = locale;
       for (const Page of [TermsPage, PrivacyPage]) {
         const html = renderToStaticMarkup(<Page />);
@@ -112,7 +114,7 @@ describe("complete public localization and search metadata", () => {
     }
   });
   it("covers every commercial page, help article and blog content field", () => {
-    for (const locale of SUPPORTED_LOCALES.filter((l) => l !== "en")) {
+    for (const locale of FULLY_TRANSLATED_LOCALES.filter((l) => l !== "en")) {
       for (const source of prose([
         COMMERCIAL_PAGES.filter((page) => !page.contentLocale),
         BLOG_POSTS.filter((post) => !post.contentLocale),
@@ -156,7 +158,7 @@ describe("complete public localization and search metadata", () => {
         ts.forEachChild(node, visit);
       };
       visit(ast);
-      for (const locale of SUPPORTED_LOCALES.filter((l) => l !== "en"))
+      for (const locale of FULLY_TRANSLATED_LOCALES.filter((l) => l !== "en"))
         for (const phrase of phrases.filter((p) => !p.includes("@"))) {
           expect(
             hasUiTranslation(phrase, locale),
@@ -191,7 +193,7 @@ describe("complete public localization and search metadata", () => {
           `https://ap3k.com${localizePublicPath(`/${page.slug}`, locale)}`,
         );
         expect(Object.keys(metadata.alternates?.languages ?? {})).toHaveLength(
-          isEnglishOnlyArticle(`/${page.slug}`) ? 2 : 6,
+          localizedLocalesForPath(`/${page.slug}`).length + 1,
         );
         const expectedTitle =
           page.slug === "manychat-alternative"
@@ -201,7 +203,7 @@ describe("complete public localization and search metadata", () => {
                 ? "Instagram Comment-to-DM Automation | AP3K"
                 : `${translateUi(page.title, locale)} | AP3K`));
         expect(metadata.title).toBe(expectedTitle);
-        if (locale !== "en" && !isEnglishOnlyArticle(`/${page.slug}`))
+        if (locale !== "en" && locale !== "nl" && !isEnglishOnlyArticle(`/${page.slug}`))
           expect(metadata.description).not.toBe(page.description);
       }
       expect(privacyMetadata().alternates?.canonical).toBe(
@@ -215,7 +217,7 @@ describe("complete public localization and search metadata", () => {
     for (const page of entries) {
       const alternatives = page.alternates?.languages;
       expect(Object.keys(alternatives ?? {})).toHaveLength(
-        isEnglishOnlyArticle(new URL(page.url).pathname) ? 2 : 6,
+        localizedLocalesForPath(new URL(page.url).pathname).length + 1,
       );
       for (const url of Object.values(alternatives ?? {}))
         expect(entries.some((p) => p.url === url)).toBe(true);

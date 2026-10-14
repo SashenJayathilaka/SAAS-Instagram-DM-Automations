@@ -38,6 +38,7 @@ export const COMPANY_COPY: Record<Locale, typeof en> = {
     privacyIntro: "Zuletzt aktualisiert: 29. September 2026. Diese Richtlinie erläutert, wie AP3K Daten für Instagram-Automation, Abrechnung, Analysen und Kontoverwaltung verarbeitet.",
     termsIntro: "Zuletzt aktualisiert: 16. September 2026. Diese Bedingungen regeln deine Nutzung von AP3K. Mit der Erstellung eines Kontos, der Verbindung mit Instagram oder dem Kauf eines Tarifs stimmst du diesen Bedingungen zu.",
   },
+  nl: en,
   pt: {
     heading: "Dados da empresa", operator: "O AP3K é operado pela AP3K LLC, uma sociedade de responsabilidade limitada constituída no Wyoming, Estados Unidos.",
     registration: "Número de registo no Wyoming", mailing: "Morada postal da empresa", formation: "Data de constituição", support: "Apoio e questões jurídicas", updated: "Última atualização: 16 de setembro de 2026.",

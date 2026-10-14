@@ -1,4 +1,4 @@
-import { SUPPORTED_LOCALES, type Locale } from "./config";
+import { LOCALE_SOURCE_COLUMN, SUPPORTED_LOCALES, type Locale } from "./config";
 type Row = readonly [string, string, string, string, string];
 const rows: Row[] = [
   ["Thanks, @thechefspecial_me! Your link is waiting in your DMs 🙌", "Merci, @thechefspecial_me ! Le lien vous attend en message privé 🙌", "¡Gracias, @thechefspecial_me! Tu enlace te espera en los mensajes directos 🙌", "Danke, @thechefspecial_me! Dein Link wartet in deinen DMs 🙌", "Obrigado, @thechefspecial_me! O link está nas suas mensagens diretas 🙌"],
@@ -378,8 +378,8 @@ const rows: Row[] = [
   ],
 ];
 export const PUBLIC_REDESIGN_COPY = Object.fromEntries(
-  SUPPORTED_LOCALES.map((locale, index) => [
+  SUPPORTED_LOCALES.map((locale) => [
     locale,
-    Object.fromEntries(rows.map((row) => [row[0], row[index]])),
+    Object.fromEntries(rows.map((row) => [row[0], row[LOCALE_SOURCE_COLUMN[locale]]])),
   ]),
 ) as Record<Locale, Record<string, string>>;

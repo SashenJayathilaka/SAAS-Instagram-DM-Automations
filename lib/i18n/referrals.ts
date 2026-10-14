@@ -90,6 +90,7 @@ const en = {
 };
 type Copy = { [K in keyof typeof en]: string };
 const translations: Record<Exclude<Locale, "en">, Partial<Copy>> = {
+  nl: {},
   fr: {
     title: "Parrainer et gagner",
     share: "Partagez votre lien",
@@ -452,7 +453,7 @@ Object.assign(translations.pt, {
     "O seu link gera 30% dos pagamentos de subscrição elegíveis durante até 11 meses. O código personalizado oferece a novos clientes 40% de desconto no primeiro pagamento mensal; ganha 10% desse pagamento e 30% nos 10 meses elegíveis seguintes. Para desbloquear o código, precisa de Pro ou Business e 10 000 seguidores no Instagram. Auto-recomendações, contas duplicadas e pagamentos fraudulentos não são elegíveis. Reembolsos e litígios revertem as comissões relacionadas. Os levantamentos exigem análise manual. As comissões de subscrições anuais são proporcionais aos 11 meses elegíveis.",
 });
 export const REFERRAL_COPY = Object.fromEntries(
-  (["en", "fr", "es", "de", "pt"] as Locale[]).map((locale) => [
+  (["en", "fr", "es", "de", "nl", "pt"] as Locale[]).map((locale) => [
     locale,
     { ...en, ...(locale === "en" ? {} : translations[locale]) },
   ]),

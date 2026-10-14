@@ -45,9 +45,12 @@ export function isEnglishOnlyArticle(pathname: string): boolean {
   );
 }
 
-export const SUPPORTED_LOCALES = ["en", "fr", "es", "de", "pt"] as const;
+export const SUPPORTED_LOCALES = ["en", "fr", "es", "de", "nl", "pt"] as const;
 
 export type Locale = (typeof SUPPORTED_LOCALES)[number];
+
+/** Locales with complete application, article, help and policy catalogs. */
+export const FULLY_TRANSLATED_LOCALES = ["en", "fr", "es", "de", "pt"] as const satisfies readonly Locale[];
 
 export const DEFAULT_LOCALE: Locale = "en";
 export const LOCALE_COOKIE = "ap3k_locale";
@@ -85,6 +88,12 @@ export const LOCALE_DETAILS: Record<
     direction: "ltr",
     openGraph: "de_DE",
   },
+  nl: {
+    nativeName: "Nederlands",
+    htmlLang: "nl",
+    direction: "ltr",
+    openGraph: "nl_NL",
+  },
   pt: {
     nativeName: "Português",
     htmlLang: "pt",
@@ -99,6 +108,9 @@ export const LOCALE_SOURCE_COLUMN: Record<Locale, number> = {
   fr: 1,
   es: 2,
   de: 3,
+  // Large product catalogs fall back to their reviewed English source until a
+  // Dutch entry is supplied. The public homepage has dedicated Dutch copy.
+  nl: 0,
   pt: 4,
 };
 
@@ -152,10 +164,21 @@ export function localizePublicPath(pathname: string, locale: Locale): string {
   if (
     locale === DEFAULT_LOCALE ||
     isProtectedPath(cleanPath) ||
-    isEnglishOnlyArticle(cleanPath)
+    !localizedLocalesForPath(cleanPath).includes(locale)
   )
     return cleanPath + suffix;
   return (cleanPath === "/" ? `/${locale}` : `/${locale}${cleanPath}`) + suffix;
+}
+
+/**
+ * Dutch launches on AP3K's reviewed acquisition pages first. This prevents
+ * search engines from indexing fallback-English articles under Dutch URLs.
+ */
+export function localizedLocalesForPath(pathname: string): readonly Locale[] {
+  const cleanPath = stripLocaleFromPath(stripRetiredLocaleFromPath(pathname.split(/[?#]/)[0])).replace(/\/$/, "") || "/";
+  if (isEnglishOnlyArticle(cleanPath)) return ["en"];
+  if (cleanPath === "/" || cleanPath === "/pricing") return SUPPORTED_LOCALES;
+  return FULLY_TRANSLATED_LOCALES;
 }
 
 export function isProtectedPath(pathname: string): boolean {
@@ -179,13 +202,14 @@ export function resolveRequestLocale(
 }
 
 export function localeAlternates(pathname = "/") {
-  if (isEnglishOnlyArticle(pathname)) {
+  const locales = localizedLocalesForPath(pathname);
+  if (locales.length === 1) {
     const path = localizePublicPath(pathname, "en");
     return { en: path, "x-default": path };
   }
   return {
     ...Object.fromEntries(
-      SUPPORTED_LOCALES.map((locale) => [
+      locales.map((locale) => [
         LOCALE_DETAILS[locale].htmlLang,
         localizePublicPath(pathname, locale),
       ]),

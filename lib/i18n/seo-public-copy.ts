@@ -16,6 +16,11 @@ export const SEO_PUBLIC_COPY: Record<Locale, Record<string, string>> = {
     "About AP3K": "Über AP3K",
     "Video tutorial": "Videoanleitung"
   },
+  "nl": {
+    "Live automations respond to eligible new interactions. Use Backtrack comments separately for supported posts and comments from the previous seven days.": "Actieve automatiseringen reageren op nieuwe geschikte interacties. Gebruik Eerdere reacties afzonderlijk voor ondersteunde berichten en reacties van de afgelopen zeven dagen.",
+    "About AP3K": "Over AP3K",
+    "Video tutorial": "Videohandleiding"
+  },
   "pt": {
     "Live automations respond to eligible new interactions. Use Backtrack comments separately for supported posts and comments from the previous seven days.": "As automatizações ativas respondem a novas interações elegíveis. Use separadamente a função de comentários anteriores para publicações suportadas e comentários dos últimos sete dias.",
     "About AP3K": "Sobre o AP3K",

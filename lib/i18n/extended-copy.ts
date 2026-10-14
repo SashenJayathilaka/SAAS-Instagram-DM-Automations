@@ -6,4 +6,4 @@ import type { Locale } from "./config";
 
 // Repository-owned static copy. Drafted locally; explicit editorial catalogs
 // override these entries. No runtime translation service or customer data.
-export const EXTENDED_COPY: Record<Locale, Record<string, string>> = { en: {}, fr, es, de, pt };
+export const EXTENDED_COPY: Record<Locale, Record<string, string>> = { en: {}, fr, es, de, nl: {}, pt };

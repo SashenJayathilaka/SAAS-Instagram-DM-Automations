@@ -128,6 +128,7 @@ export const DESIGN_COPY: Record<Locale, Record<string, string>> = {
     "Link": "Link",
     "Contact": "Kontakt"
   },
+  "nl": {},
   "pt": {
     "Interactive preview": "Prévia interativa",
     "When someone comments": "Quando alguém comenta",

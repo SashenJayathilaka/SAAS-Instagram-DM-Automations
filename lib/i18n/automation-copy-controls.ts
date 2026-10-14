@@ -232,6 +232,7 @@ export const AUTOMATION_COPY_CONTROLS: Record<Locale,Record<string,string>> = {
     "Button": "Button",
     "Add link": "Link hinzufügen"
   },
+  "nl": {},
   "pt": {
     "Manual": "Manual",
     "Prompt": "Instruções",

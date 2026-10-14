@@ -58,4 +58,4 @@ Object.assign(pt, {
   "Date & time": "Data e hora", "Time zone": "Fuso horário", Automatic: "Automático", "AP3K detects your device time zone automatically. Choose a fixed zone if you manage the account from another location.": "O AP3K deteta automaticamente o fuso horário do seu dispositivo. Escolha um fuso fixo se gerir a conta a partir de outro local.", "Current AP3K time:": "Hora atual do AP3K:", "Save time zone": "Guardar fuso horário", "Time zone saved": "Fuso horário guardado", "Could not save the time zone.": "Não foi possível guardar o fuso horário.", "Choose a valid time zone.": "Escolha um fuso horário válido.",
 });
 
-export const PRODUCT_PHRASE_TRANSLATIONS: Record<Locale, ProductCatalog> = { en, fr, es, de, pt };
+export const PRODUCT_PHRASE_TRANSLATIONS: Record<Locale, ProductCatalog> = { en, fr, es, de, nl: en, pt };

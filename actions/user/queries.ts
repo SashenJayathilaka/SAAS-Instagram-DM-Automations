@@ -51,6 +51,15 @@ export const findUserByEmail = async (email: string) => {
   });
 };
 
+export const updateUserIdentity = async (
+  clerkId: string,
+  firstname: string,
+  lastname: string,
+) => client.user.update({
+  where: { clerkId },
+  data: { firstname, lastname },
+});
+
 export const createUser = async (
   clerkId: string,
   firstname: string,

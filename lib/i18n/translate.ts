@@ -19,6 +19,7 @@ import { MESSAGES } from "./messages";
 import { PHRASE_TRANSLATIONS } from "./phrase-translations";
 import { DASHBOARD_COPY } from "./dashboard-copy";
 import { PUBLIC_COPY } from "./public-copy";
+import { NL_PUBLIC_COPY } from "./nl-public-copy";
 import type { Locale } from "./config";
 
 const catalogs = Object.fromEntries(
@@ -50,6 +51,7 @@ const catalogs = Object.fromEntries(
       ...ENGAGEMENT_COPY[locale as Locale],
       ...AUTOMATION_COPY_CONTROLS[locale as Locale],
       ...PRODUCT_AUDIT_COPY[locale as Locale],
+      ...(locale === "nl" ? NL_PUBLIC_COPY : {}),
       // Reviewed wording overrides legacy machine translations and older phrase catalogs.
       ...(EDITORIAL_COPY as Partial<Record<Locale, Record<string, string>>>)[
         locale as Locale

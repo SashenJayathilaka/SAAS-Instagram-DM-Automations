@@ -11,6 +11,7 @@ import {
   createUser,
   findUser,
   findUserByEmail,
+  updateUserIdentity,
 } from "./queries";
 
 const onboardingSkippedCookie = (clerkId: string) =>
@@ -40,6 +41,8 @@ const publicUserProfile = <T extends { integrations?: any[] }>(profile: T) => ({
 
 type ClerkWorkspaceIdentity = {
   id: string;
+  firstName?: string | null;
+  lastName?: string | null;
   primaryEmailAddress?: { emailAddress?: string | null } | null;
   emailAddresses: Array<{ emailAddress?: string | null }>;
 };
@@ -115,8 +118,18 @@ async function resolveWorkspaceProfile(
   }
 
   if (foundByClerkId) {
+    const firstname = user.firstName?.trim() ?? "";
+    const lastname = user.lastName?.trim() ?? "";
+    let profile = foundByClerkId;
+    if (
+      (firstname || lastname) &&
+      (foundByClerkId.firstname !== firstname || foundByClerkId.lastname !== lastname)
+    ) {
+      await updateUserIdentity(user.id, firstname, lastname);
+      profile = { ...foundByClerkId, firstname, lastname };
+    }
     return {
-      profile: foundByClerkId,
+      profile,
       email,
       emailConflict: false,
       resolution: "clerk_id" as const,

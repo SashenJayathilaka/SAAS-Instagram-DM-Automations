@@ -47,6 +47,16 @@ export const HOME_SETUP_COPY: Record<Locale, SetupCopy> = {
       { title: "Auf Autopilot laufen lassen", description: "Jeder Kommentar erhält eine Antwort, während du dich auf Inhalte konzentrierst" },
     ],
   },
+  nl: {
+    title: ["Stel", "automatisering", "in enkele minuten in"],
+    description: "Beantwoord Instagram-reacties en DM’s automatisch, zodat jij je op content kunt richten in plaats van op chats.",
+    trigger: "Trigger",
+    cards: [
+      { title: "Kies trefwoorden", description: "Kies reacties of trefwoorden die direct een bericht activeren" },
+      { title: "Schrijf je antwoord", description: "Voeg berichten, links of aanbiedingen toe die je automatisch wilt versturen" },
+      { title: "Laat AP3K het werk doen", description: "Elke geschikte reactie krijgt antwoord terwijl jij content maakt" },
+    ],
+  },
   pt: {
     title: ["Configure", "a automação", "em minutos"],
     description: "Responda automaticamente a comentários e mensagens diretas no Instagram enquanto se concentra no conteúdo, não nas conversas.",

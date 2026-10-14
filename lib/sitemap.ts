@@ -11,8 +11,8 @@ import { SEO_RESOURCES } from "@/lib/seo-resources";
 import { BLOG_PAGE_SIZE, blogPagePath } from "@/lib/blog-pagination";
 import type { MetadataRoute } from "next";
 import {
-  SUPPORTED_LOCALES,
   isEnglishOnlyArticle,
+  localizedLocalesForPath,
   localizePublicPath,
   localeAlternates,
 } from "@/lib/i18n/config";
@@ -200,7 +200,7 @@ export function buildSitemap(
             `${baseUrl}${value}`,
           ]),
         );
-    return (englishOnly ? (["en"] as const) : SUPPORTED_LOCALES).map(
+    return (englishOnly ? (["en"] as const) : localizedLocalesForPath(path)).map(
       (locale) => ({
         ...page,
         url: `${baseUrl}${localizePublicPath(path, locale)}`,

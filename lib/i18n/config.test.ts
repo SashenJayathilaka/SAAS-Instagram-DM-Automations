@@ -6,6 +6,7 @@ import {
   SUPPORTED_LOCALES,
   isProtectedPath,
   localeFromPath,
+  localizedLocalesForPath,
   localizePublicPath,
   normalizeLocale,
   stripLocaleFromPath,
@@ -14,8 +15,8 @@ import { MESSAGES } from "./messages";
 import { PRODUCT_PHRASE_TRANSLATIONS } from "./product-phrase-translations";
 
 describe("AP3K locale routing", () => {
-  it("supports the five intended locales in LTR", () => {
-    expect(SUPPORTED_LOCALES).toEqual(["en", "fr", "es", "de", "pt"]);
+  it("supports the six intended locales in LTR", () => {
+    expect(SUPPORTED_LOCALES).toEqual(["en", "fr", "es", "de", "nl", "pt"]);
     expect(DEFAULT_LOCALE).toBe("en");
     expect(Object.values(LOCALE_DETAILS).every(locale => locale.direction === "ltr")).toBe(true);
   });
@@ -32,6 +33,13 @@ describe("AP3K locale routing", () => {
     expect(localizePublicPath("/es", "en")).toBe("/");
     expect(localeFromPath("/pt/blog")).toBe("pt");
     expect(stripLocaleFromPath("/pt/blog")).toBe("/blog");
+  });
+
+  it("publishes reviewed Dutch acquisition pages without duplicate fallback content", () => {
+    expect(localizePublicPath("/pricing", "nl")).toBe("/nl/pricing");
+    expect(localizePublicPath("/privacy", "nl")).toBe("/privacy");
+    expect(localizedLocalesForPath("/")).toContain("nl");
+    expect(localizedLocalesForPath("/blog")).not.toContain("nl");
   });
 
   it("never treats localized dashboard or API paths as public", () => {
@@ -75,6 +83,7 @@ describe("browser language negotiation", () => {
     expect(browserLocale("it-IT,pt-BR;q=0.8,en;q=0.5")).toBe("pt");
     expect(browserLocale("fr;q=0,en;q=0.9")).toBe("en");
     expect(browserLocale("de;q=0.5,ar;q=0.9")).toBe("de");
+    expect(browserLocale("nl-BE,nl;q=0.9,en;q=0.7")).toBe("nl");
     expect(browserLocale("ja-JP")).toBe("en");
   });
 });

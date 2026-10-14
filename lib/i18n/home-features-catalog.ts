@@ -86,6 +86,25 @@ export const HOME_FEATURES_COPY: Record<Locale, FeaturesCopy> = {
       { title: "Team-Zugangslink", description: "Funktionsvorschau: sicheren Dashboard-Zugang über einen Einladungslink mit deinem Team teilen." },
     ],
   },
+  nl: {
+    kicker: "Krachtige functies om",
+    title: "Je Instagram-strategie te versterken",
+    unavailable: "Nog niet beschikbaar",
+    featured: [
+      { title: "Vragen om te volgen", description: "Laat je publiek groeien vanuit elk gesprek. AP3K kan mensen vragen je account te volgen en hun volgstatus controleren voordat je link of bestand wordt verstuurd." },
+      { title: "Automatische AI-antwoorden", description: "Houd gesprekken gaande met relevante reacties die door AI worden geschreven. Kies je toon en instructies en laat AP3K antwoorden terwijl jij content maakt." },
+    ],
+    cards: [
+      { title: "Story-automatisering", description: "Reageer automatisch op geschikte story-interacties en houd je publiek betrokken." },
+      { title: "Volgend bericht", description: "Bereid een automatisering voor je volgende Instagram-bericht of Reel voor." },
+      { title: "Universele automatisering", description: "Gebruik regels voor alle berichten en storytriggers om gesprekken gaande te houden." },
+      { title: "Eerdere reacties", description: "Beantwoord geschikte reacties van de afgelopen zeven dagen op ondersteunde geselecteerde berichten." },
+      { title: "Storyvermelding", description: "Verstuur automatisch een antwoord wanneer iemand je account in een story vermeldt." },
+      { title: "Linktracking", description: "Bekijk unieke bezoekers op linkknoppen, vergelijk bestemmingen en controleer dagelijkse klikken." },
+      { title: "Gepromote berichten en advertenties", description: "Automatiseer geschikte interacties met advertenties en gepromote content." },
+      { title: "Teamtoegang", description: "Deel beveiligde toegang tot de werkruimte via een uitnodiging." },
+    ],
+  },
   pt: {
     kicker: "Funcionalidades poderosas para",
     title: "Melhorar a sua estratégia no Instagram",

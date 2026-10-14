@@ -1,7 +1,7 @@
 "use client";
 
 import { ClerkProvider } from "@clerk/nextjs";
-import { deDE, esES, frFR, ptPT } from "@clerk/localizations";
+import { deDE, esES, frFR, nlNL, ptPT } from "@clerk/localizations";
 import AP3KLogo from "@/components/global/ap3k-logo";
 import LanguageSwitcher from "@/components/global/language-switcher";
 import { useI18n } from "@/providers/i18n-provider";
@@ -11,12 +11,13 @@ import type { ReactNode } from "react";
 
 export default function AuthLocaleShell({ children }: { children: ReactNode }) {
   const { locale } = useI18n();
-  const base = locale === "en" ? undefined : { de: deDE, es: esES, fr: frFR, pt: ptPT }[locale];
+  const base = locale === "en" ? undefined : { de: deDE, es: esES, fr: frFR, nl: nlNL, pt: ptPT }[locale];
   const consent = {
     en: ["I agree to", "Terms of Service", "Privacy Policy", "and"],
     fr: ["J’accepte", "les conditions d’utilisation", "la politique de confidentialité", "et"],
     es: ["Acepto", "los términos del servicio", "la política de privacidad", "y"],
     de: ["Ich akzeptiere", "die Nutzungsbedingungen", "die Datenschutzerklärung", "und"],
+    nl: ["Ik ga akkoord met", "de servicevoorwaarden", "het privacybeleid", "en"],
     pt: ["Aceito", "os termos de serviço", "a política de privacidade", "e"],
   }[locale];
   const terms = `{{ termsOfServiceLink || link("${consent[1]}") }}`;

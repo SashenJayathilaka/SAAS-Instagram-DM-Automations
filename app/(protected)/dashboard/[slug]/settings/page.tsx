@@ -5,9 +5,10 @@ import ThemeToggle from "@/components/global/theme-toggle";
 import { DeleteAccountButton } from "@/components/settings/delete-account-button";
 import { ManageSignInSettings } from "@/components/settings/manage-sign-in-settings";
 import { EmailPreferences } from "@/components/settings/email-preferences";
+import { ProfileNameSettings } from "@/components/settings/profile-name-settings";
 import { getEmailPreferences } from "@/lib/email/delivery";
 import { getEmailSettingsState } from "@/lib/settings-safety";
-import { LockKeyhole, Mail, Palette, ShieldAlert, Languages } from "lucide-react";
+import { LockKeyhole, Mail, Palette, ShieldAlert, Languages, UserRound } from "lucide-react";
 import type { ReactNode } from "react";
 
 async function SettingsPage() {
@@ -58,6 +59,14 @@ async function SettingsPage() {
           <LanguageSwitcher className="!h-12 !w-full !max-w-none !justify-between !rounded-xl !px-4" />
         </SettingsSection>
       </div>
+
+      <SettingsSection icon={<UserRound className="h-4.5 w-4.5" />} label="Profile name">
+        <div className="mb-4">
+          <h2 className="text-sm font-black text-slate-950 dark:text-white"><UiText>Your AP3K name</UiText></h2>
+          <p className="mt-0.5 text-xs leading-5 text-slate-500 dark:text-slate-400"><UiText>This name appears in your dashboard and account profile.</UiText></p>
+        </div>
+        <ProfileNameSettings firstName={user?.firstname} lastName={user?.lastname} />
+      </SettingsSection>
 
         <SettingsSection
           icon={<LockKeyhole className="h-4.5 w-4.5" />}

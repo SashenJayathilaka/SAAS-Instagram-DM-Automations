@@ -1,7 +1,7 @@
 import React from "react";
 import { describe, expect, it, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { SUPPORTED_LOCALES, type Locale } from "./config";
+import { FULLY_TRANSLATED_LOCALES, SUPPORTED_LOCALES, type Locale } from "./config";
 import { DASHBOARD_ROWS } from "./dashboard-copy";
 import { translateUi } from "./translate";
 import { formatDashboardPeriod, formatMetricValue } from "./format";
@@ -26,7 +26,7 @@ const automation = {
 describe("dashboard screenshot regressions", () => {
   it("renders real vector flags without relying on operating-system emoji fonts", () => {
     const flags = SUPPORTED_LOCALES.map(locale => renderToStaticMarkup(<LanguageFlag locale={locale} />));
-    expect(new Set(flags).size).toBe(5);
+    expect(new Set(flags).size).toBe(SUPPORTED_LOCALES.length);
     for (const flag of flags) {
       expect(flag).toContain('<svg');
       expect(flag).toContain('<path');
@@ -35,7 +35,7 @@ describe("dashboard screenshot regressions", () => {
   });
   it("localizes actual automation rows and preserves user names and keywords in every language", () => {
     let english = "";
-    for (const locale of [...SUPPORTED_LOCALES, "en"] as Locale[]) {
+    for (const locale of [...FULLY_TRANSLATED_LOCALES, "en"] as Locale[]) {
       activeLocale = locale;
       const markup = renderToStaticMarkup(<AutomationTable slug="fixture" automations={[automation]} showControls={false} />);
       expect(markup).toContain('<bdi dir="auto">Save</bdi>');
@@ -63,7 +63,7 @@ describe("dashboard screenshot regressions", () => {
   });
   it("formats the inclusive month range in the selected language without ICU day fragments", () => {
     const start = new Date("2026-09-01T00:00:00Z"), end = new Date("2026-10-01T00:00:00Z");
-    for (const locale of SUPPORTED_LOCALES) {
+    for (const locale of FULLY_TRANSLATED_LOCALES) {
       const range = formatDashboardPeriod("month", start, end, locale);
       expect(range).not.toContain("day:");
       expect(range).toBe(new Intl.DateTimeFormat(locale, { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" }).formatRange(start, new Date("2026-09-30T00:00:00Z")));
@@ -72,7 +72,7 @@ describe("dashboard screenshot regressions", () => {
     expect(formatDashboardPeriod("7d", undefined, undefined, "fr")).toBe("7 derniers jours");
   });
   it("translates growth sentences while isolating numeric substitutions", () => {
-    for (const locale of SUPPORTED_LOCALES) {
+    for (const locale of FULLY_TRANSLATED_LOCALES) {
       activeLocale = locale;
       const markup = renderToStaticMarkup(<FollowerSubtitle fallback="Unused" count={961} percent={0} />);
       expect(markup).toContain('dir="ltr"');

@@ -2,7 +2,7 @@ import React from "react";
 import { describe, it, expect, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import type { Locale } from "./config";
-import { SUPPORTED_LOCALES } from "./config";
+import { FULLY_TRANSLATED_LOCALES } from "./config";
 
 const state = vi.hoisted(() => ({ locale: "en" as Locale, tab: "Knowledge" }));
 vi.mock("@/providers/i18n-provider", () => ({ useI18n: () => ({ locale: state.locale }) }));
@@ -22,7 +22,7 @@ describe("AI localization without changing business knowledge", () => {
     const labels = { Overview: "AI reply setup", Knowledge: "No knowledge yet", Behavior: "Default tone", Playground: "Your conversation is saved. Tests count toward the monthly AI limit." };
     for (const [tab, label] of Object.entries(labels)) {
       state.tab = tab;
-      for (const locale of SUPPORTED_LOCALES) {
+      for (const locale of FULLY_TRANSLATED_LOCALES) {
         state.locale = locale;
         const html = renderToStaticMarkup(<Ap3kAiConsole slug="test" initial={profile} plan="PRO" />);
         expect(html.includes(label), `${locale}/${tab}`).toBe(locale === "en");

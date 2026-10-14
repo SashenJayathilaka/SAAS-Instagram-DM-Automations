@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import fs from "node:fs";
 import { buildSitemap as sitemap } from "@/lib/sitemap";
 import robots from "@/app/robots";
-import { SUPPORTED_LOCALES, isEnglishOnlyArticle, localizePublicPath, stripLocaleFromPath } from "@/lib/i18n/config";
+import { localizedLocalesForPath, localizePublicPath, stripLocaleFromPath } from "@/lib/i18n/config";
 
 describe("public indexing contracts", () => {
   it("lists unique public URLs with complete reciprocal language alternates", () => {
@@ -13,7 +13,7 @@ describe("public indexing contracts", () => {
       const parsed = new URL(page.url);
       const path = stripLocaleFromPath(`${parsed.pathname}${parsed.search}`);
       expect(path).not.toMatch(/^\/(api|dashboard|admin|sign-in|sign-up|payment)(\/|$)/);
-      for (const locale of isEnglishOnlyArticle(path) ? ["en"] as const : SUPPORTED_LOCALES) {
+      for (const locale of localizedLocalesForPath(path)) {
         const expected = `https://ap3k.com${localizePublicPath(path, locale)}`;
         expect(page.alternates?.languages?.[locale]).toBe(expected);
         expect(urls.has(expected)).toBe(true);
@@ -23,7 +23,7 @@ describe("public indexing contracts", () => {
   });
   it("lists every canonical blog archive page and keeps article dates truthful", () => {
     const pages = sitemap();
-    for (const locale of SUPPORTED_LOCALES) {
+    for (const locale of localizedLocalesForPath("/blog")) {
       for (let page = 2; page <= 6; page++) {
         const prefix = locale === "en" ? "" : `/${locale}`;
         expect(pages.some(item => item.url === `https://ap3k.com${prefix}/blog?page=${page}`)).toBe(true);

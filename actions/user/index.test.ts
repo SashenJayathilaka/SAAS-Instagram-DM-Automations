@@ -4,6 +4,7 @@ const mockCurrentUser = vi.fn();
 const mockFindUser = vi.fn();
 const mockFindUserByEmail = vi.fn();
 const mockCreateUser = vi.fn();
+const mockUpdateUserIdentity = vi.fn();
 
 vi.mock("@clerk/nextjs/server", () => ({
   currentUser: (...args: unknown[]) => mockCurrentUser(...args),
@@ -31,6 +32,7 @@ vi.mock("./queries", () => ({
   findUser: (...args: unknown[]) => mockFindUser(...args),
   findUserByEmail: (...args: unknown[]) => mockFindUserByEmail(...args),
   createUser: (...args: unknown[]) => mockCreateUser(...args),
+  updateUserIdentity: (...args: unknown[]) => mockUpdateUserIdentity(...args),
   updateSubscription: vi.fn(),
 }));
 
@@ -113,6 +115,22 @@ describe("ensureCurrentUserProfile", () => {
         userExistsByEmail: true,
       })
     );
+  });
+
+  it("synchronizes a changed Clerk name into the AP3K profile", async () => {
+    const profile = { ...workspaceProfile(CURRENT_CLERK_ID), firstname: "Old", lastname: "Name" };
+    mockFindUser.mockResolvedValue(profile);
+    mockFindUserByEmail.mockResolvedValue(null);
+    mockUpdateUserIdentity.mockResolvedValue({ ...profile, firstname: "Abdou", lastname: "Boudofski" });
+
+    const result = await ensureCurrentUserProfile();
+
+    expect(mockUpdateUserIdentity).toHaveBeenCalledWith(CURRENT_CLERK_ID, "Abdou", "Boudofski");
+    expect(result).toEqual({
+      status: 200,
+      data: { firstname: "Abdou", lastname: "Boudofski", clerkId: CURRENT_CLERK_ID },
+      error: null,
+    });
   });
 
   it("claims the existing same-email profile only when the dev flag is enabled", async () => {

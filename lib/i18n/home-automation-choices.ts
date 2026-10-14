@@ -36,6 +36,14 @@ export const HOME_AUTOMATION_CHOICES: Record<Locale, Copy> = {
       { title: "Flow Builder", subtitle: "Erweiterte Abläufe ohne Grenzen", cta: "Mit dem Flow Builder starten", alt: "Vorschau des Flow Builders", features: ["Visueller knotenbasierter Editor mit Vorlagen", "Mehrstufige DM-Sequenzen", "Bedingte Pfade und intelligente Auslöser", "Verzögerungen, Filter und erweiterte Aktionen", "Vollständig anpassbare Abläufe"] },
     ],
   },
+  nl: {
+    title: "Maak automatiseringen op jouw manier",
+    subtitle: "Begin eenvoudig of bouw geavanceerde flows met volledige controle",
+    cards: [
+      { title: "Eenvoudige automatisering", subtitle: "Snel en makkelijk instellen", cta: "Eenvoudige automatisering starten", alt: "Voorbeeld van eenvoudige automatiseringsstappen", features: ["Binnen enkele minuten ingesteld", "Direct bruikbare templates", "Automatisch reageren op reacties en DM’s", "E-mailadressen en leads verzamelen", "Geen technische kennis nodig"] },
+      { title: "Flow Builder", subtitle: "Geavanceerde flows zonder beperkingen", cta: "Flow Builder openen", alt: "Voorbeeld van de Flow Builder", features: ["Visuele editor met knooppunten en templates", "DM-reeksen met meerdere stappen", "Voorwaardelijke paden en slimme triggers", "Vertragingen, filters en geavanceerde acties", "Volledig aanpasbare klantreizen"] },
+    ],
+  },
   pt: {
     title: "Crie automações à sua maneira",
     subtitle: "Comece de forma simples ou crie fluxos avançados com controle total",

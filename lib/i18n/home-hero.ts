@@ -17,7 +17,6 @@ export type HomeHeroCopy = {
   allowance: string;
   audience: string;
   api: string;
-  providerStatus: string;
   keywordPrefix: string;
   keywordSuffix: string;
   demoLabel: string;
@@ -45,7 +44,6 @@ export const HOME_HERO_COPY: Record<Locale, HomeHeroCopy> = {
     allowance: "500 automated actions every month. No credit card required.",
     audience: "Built for creators on Instagram",
     api: "Official Instagram API",
-    providerStatus: "Verified Tech Provider",
     keywordPrefix: "Comment",
     keywordSuffix: "and let AP3K take it from here.",
     demoLabel: "Example automation",
@@ -75,7 +73,6 @@ export const HOME_HERO_COPY: Record<Locale, HomeHeroCopy> = {
     allowance: "500 actions automatisées chaque mois. Sans carte bancaire.",
     audience: "Pensé pour les créateurs sur Instagram",
     api: "API officielle Instagram",
-    providerStatus: "Fournisseur technologique vérifié",
     keywordPrefix: "Commentez",
     keywordSuffix: "et laissez AP3K prendre le relais.",
     demoLabel: "Exemple d’automatisation",
@@ -105,7 +102,6 @@ export const HOME_HERO_COPY: Record<Locale, HomeHeroCopy> = {
     allowance: "500 acciones automatizadas al mes. Sin tarjeta de crédito.",
     audience: "Para creadores en Instagram",
     api: "API oficial de Instagram",
-    providerStatus: "Proveedor tecnológico verificado",
     keywordPrefix: "Comenta",
     keywordSuffix: "y deja que AP3K se encargue del resto.",
     demoLabel: "Ejemplo de automatización",
@@ -135,7 +131,6 @@ export const HOME_HERO_COPY: Record<Locale, HomeHeroCopy> = {
     allowance: "500 automatisierte Aktionen pro Monat. Keine Kreditkarte erforderlich.",
     audience: "Für Creator auf Instagram",
     api: "Offizielle Instagram-API",
-    providerStatus: "Verifizierter Technologieanbieter",
     keywordPrefix: "Kommentiere",
     keywordSuffix: "und lass AP3K den Rest übernehmen.",
     demoLabel: "Beispiel einer Automatisierung",
@@ -165,7 +160,6 @@ export const HOME_HERO_COPY: Record<Locale, HomeHeroCopy> = {
     allowance: "500 geautomatiseerde acties per maand. Geen creditcard nodig.",
     audience: "Gemaakt voor creators op Instagram",
     api: "Meta Business Partner",
-    providerStatus: "Geverifieerde technologieprovider",
     keywordPrefix: "Reageer met",
     keywordSuffix: "en laat AP3K de rest doen.",
     demoLabel: "Voorbeeld van een automatisering",
@@ -195,7 +189,6 @@ export const HOME_HERO_COPY: Record<Locale, HomeHeroCopy> = {
     allowance: "500 ações automatizadas por mês. Sem cartão de crédito.",
     audience: "Para criadores no Instagram",
     api: "API oficial do Instagram",
-    providerStatus: "Fornecedor de tecnologia verificado",
     keywordPrefix: "Comente",
     keywordSuffix: "e deixe a AP3K tratar do resto.",
     demoLabel: "Exemplo de automatização",

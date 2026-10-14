@@ -49,8 +49,6 @@
 .portraits { display: block; width: auto; height: 36px; max-width: 100%; object-fit: contain; }
 .api { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 10px 14px; margin: 34px 0 28px; min-height: 43px; }
 .api img { height: 43px; width: auto; max-width: 108px; object-fit: contain; }
-.techProvider { display: inline-flex; min-height: 32px; align-items: center; border: 1px solid rgba(37,99,235,.18); border-radius: 999px; background: rgba(37,99,235,.07); padding: 6px 11px; color: #254b81; font-size: 12px; font-weight: 700; letter-spacing: .01em; }
-:global(.dark) .techProvider { border-color: rgba(96,165,250,.22); background: rgba(59,130,246,.1); color: #bfdbfe; }
 .scene { display: none; position: absolute; inset: 0; z-index: -1; pointer-events: none; }
 .wing { position: absolute; top: 90px; width: 388.53px; height: 399.43px; translate: 0 calc(var(--scroll) * 1px); }
 .left { left: -50px; transform: scaleX(-1); }

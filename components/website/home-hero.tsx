@@ -114,7 +114,6 @@ export default function HomeHero() {
         <div className={styles.api}>
           <Image className={styles.lightArt} src="/media/hero/meta-business-partner-light.png" alt="Meta Business Partner" width={324} height={129} />
           <Image className={styles.darkArt} src="/media/hero/meta-business-partner-dark.png" alt="Meta Business Partner" width={324} height={129} />
-          <span className={styles.techProvider}>{copy.providerStatus}</span>
         </div>
       </div>
     </section>

@@ -41,23 +41,10 @@ export default function HomeHero() {
   const playing = motionReady && reducedMotion === false && inView && pageVisible;
 
   useEffect(() => {
-    // Keep the identical, eagerly loaded poster on small screens until the
-    // visitor interacts. Decorative video must not delay the first useful paint.
-    const media = window.matchMedia("(min-width: 768px)");
+    // Start the small muted demo as soon as the page hydrates on every screen.
+    // Keep the poster for reduced-motion and data-saving visitors.
     const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
-    const enable = () => setMotionReady(true);
-    const update = () => { if (media.matches && !connection?.saveData) enable(); };
-    update();
-    media.addEventListener("change", update);
-    window.addEventListener("pointerdown", enable, { once: true, passive: true });
-    window.addEventListener("keydown", enable, { once: true });
-    window.addEventListener("scroll", enable, { once: true, passive: true });
-    return () => {
-      media.removeEventListener("change", update);
-      window.removeEventListener("pointerdown", enable);
-      window.removeEventListener("keydown", enable);
-      window.removeEventListener("scroll", enable);
-    };
+    if (!connection?.saveData) setMotionReady(true);
   }, []);
 
   useEffect(() => {
@@ -105,7 +92,7 @@ export default function HomeHero() {
             <Image className={`${styles.keywordVideo} ${styles.posterLayer}`} data-hidden={showVideo} src="/media/hero/comment-water-drop-poster.webp"
               alt="" width={1530} height={364} priority unoptimized />
             <video ref={video} className={`${styles.keywordVideo} ${styles.motionLayer}`}
-              width={1530} height={364} muted loop playsInline preload="none" tabIndex={-1}
+              width={1530} height={364} muted loop playsInline preload="metadata" tabIndex={-1}
               src={motionReady && reducedMotion === false ? "/media/hero/comment-water-drop.webm" : undefined}
               onPlaying={() => setVideoReady(true)}
               onEmptied={() => setVideoReady(false)}

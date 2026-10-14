@@ -12,7 +12,7 @@ export default function CookiePreferencesButton({ className = "" }: Props) {
       className={`text-left ${className}`}
       onClick={() => {
         window.localStorage.removeItem("ap3k_tracking_consent_v1");
-        window.location.reload();
+        window.dispatchEvent(new Event("ap3k:open-cookie-preferences"));
       }}
     >
       {t("cookiePreferences")}

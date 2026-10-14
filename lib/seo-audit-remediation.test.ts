@@ -72,13 +72,14 @@ describe('evidence-based SEO remediation', () => {
     expect(limitation).toBeTruthy();
     for (const locale of SUPPORTED_LOCALES.filter(l => l !== 'en')) expect(translateUi(limitation, locale)).not.toBe(limitation);
   });
-  it('preloads a stable hero image and gates decorative video, preserving animation', () => {
+  it('preloads a stable hero image and starts the mobile demo without interaction', () => {
     const source = readFileSync('components/website/home-hero.tsx', 'utf8');
     expect(source).toContain('comment-water-drop-poster.webp');
     expect(source).toContain('priority unoptimized');
     expect(source).toContain('motionReady && reducedMotion === false');
-    expect(source).toContain('window.addEventListener("pointerdown"');
-    expect(source).toContain('window.removeEventListener("pointerdown"');
+    expect(source).toContain('if (!connection?.saveData) setMotionReady(true)');
+    expect(source).not.toContain('window.addEventListener("pointerdown"');
+    expect(source).toContain('preload="metadata"');
     expect(source).toContain('copy.titleTop}{" "}');
   });
 });

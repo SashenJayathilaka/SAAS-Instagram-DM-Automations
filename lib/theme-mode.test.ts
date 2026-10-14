@@ -4,9 +4,9 @@ import { describe, expect, it } from "vitest";
 import { ap3kFormControlClass, nextThemeMode, normalizeThemeMode } from "./theme-mode";
 
 describe("theme mode helpers", () => {
-  it("uses light mode for visitors without a saved preference", () => {
+  it("uses dark mode for visitors without a saved preference", () => {
     const layout = readFileSync(join(process.cwd(), "app/layout.tsx"), "utf8");
-    expect(layout).toContain('defaultTheme="light"');
+    expect(layout).toContain('defaultTheme="dark"');
     expect(layout).toContain("enableSystem={false}");
   });
 

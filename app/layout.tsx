@@ -79,7 +79,7 @@ export default function RootLayout({
       <body className={jakarta.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem={false}
           disableTransitionOnChange
         >

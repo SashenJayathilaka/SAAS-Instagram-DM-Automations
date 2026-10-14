@@ -320,6 +320,12 @@ const rows: Row[] = [
   ],
   ["Solutions", "Solutions", "Soluciones", "Lösungen", "Soluções"],
   ["Compare", "Comparer", "Comparar", "Vergleichen", "Comparar"],
+  ["Comment to DM", "Commentaire vers message privé", "Comentario a mensaje directo", "Kommentar zu DM", "Comentário para mensagem direta"],
+  ["Join for free", "Créer un compte gratuit", "Empezar gratis", "Kostenlos starten", "Começar grátis"],
+  ["Ecommerce", "E-commerce", "Comercio electrónico", "E-Commerce", "Comércio eletrónico"],
+  ["Contact us", "Nous contacter", "Contacto", "Kontakt", "Contacte-nos"],
+  ["Terms of service", "Conditions d’utilisation", "Términos del servicio", "Nutzungsbedingungen", "Termos de serviço"],
+  ["Refund policy", "Politique de remboursement", "Política de reembolso", "Rückerstattungsrichtlinie", "Política de reembolso"],
   [
     "Grow followers",
     "Développer son audience",
